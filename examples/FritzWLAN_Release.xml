@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Devices xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 310A</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 310A</ProductName>
+    <HardwareMajor>194</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>122</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>92</FirmwarePatch>
+    <FirmwareBuildNumber>47365</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:06:40.3420884+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 310B</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 310B</ProductName>
+    <HardwareMajor>215</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>143</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>92</FirmwarePatch>
+    <FirmwareBuildNumber>47437</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:06:40.4090922+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 450E</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 450E</ProductName>
+    <HardwareMajor>200</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>128</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>1</FirmwarePatch>
+    <FirmwareBuildNumber>63068</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:06:40.4770961+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 1160</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 1160</ProductName>
+    <HardwareMajor>216</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>144</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>1</FirmwarePatch>
+    <FirmwareBuildNumber>63071</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:06:40.5430999+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 1750E</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 1750E</ProductName>
+    <HardwareMajor>206</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>134</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>1</FirmwarePatch>
+    <FirmwareBuildNumber>63070</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:06:40.614104+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater DVB-C</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater DVB-C</ProductName>
+    <HardwareMajor>205</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>133</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>1</FirmwarePatch>
+    <FirmwareBuildNumber>63069</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:06:40.6801077+01:00</UpdateLastChecked>
+  </Device>
+</Devices>

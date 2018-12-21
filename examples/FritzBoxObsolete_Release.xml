@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Devices xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 3272</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 3272</ProductName>
+    <HardwareMajor>198</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>126</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>61794</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:15.9204061+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 3272 (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 3272</ProductName>
+    <HardwareMajor>198</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>126</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>61804</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:15.9904101+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7272</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7272</ProductName>
+    <HardwareMajor>192</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>120</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>61417</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.4014336+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7272 (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7272</ProductName>
+    <HardwareMajor>192</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>120</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>61805</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.4684374+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 6810 LTE</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 6810 LTE</ProductName>
+    <HardwareMajor>180</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>108</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>34</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.059414+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 6810 LTE (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 6810 LTE</ProductName>
+    <HardwareMajor>180</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>108</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>34</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.128418+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 6840 LTE</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 6840 LTE</ProductName>
+    <HardwareMajor>177</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>105</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>84</FirmwarePatch>
+    <FirmwareBuildNumber>44849</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.1954218+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 6840 LTE (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 6840 LTE</ProductName>
+    <HardwareMajor>177</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>105</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>84</FirmwarePatch>
+    <FirmwareBuildNumber>44850</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.2664259+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 6842</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 6842</ProductName>
+    <HardwareMajor>195</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>123</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>34</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.3324297+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7312</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7312</ProductName>
+    <HardwareMajor>189</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>117</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>54</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.5354413+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7360 SL</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7360 SL</ProductName>
+    <HardwareMajor>181</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>109</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>33</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.6044452+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7360 SL (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7360 SL</ProductName>
+    <HardwareMajor>181</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>109</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>30</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.6744492+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7360v1</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7360v1</ProductName>
+    <HardwareMajor>183</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>111</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>33</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.741453+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7360v1 (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7360v1</ProductName>
+    <HardwareMajor>183</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>111</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>30</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.8084569+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7360v2</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7360v2</ProductName>
+    <HardwareMajor>196</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>124</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.8734606+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7360v2 (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7360v2</ProductName>
+    <HardwareMajor>196</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>124</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>62460</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:16.9404644+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7369</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7369</ProductName>
+    <HardwareMajor>191</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>119</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>32</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:17.0104684+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7390</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7390</ProductName>
+    <HardwareMajor>156</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>84</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:17.0764722+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7390 (intl)</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7390</ProductName>
+    <HardwareMajor>156</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>84</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avme</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:17.1444761+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7412</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7412</ProductName>
+    <HardwareMajor>209</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>137</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>85</FirmwarePatch>
+    <FirmwareBuildNumber>62080</FirmwareBuildNumber>
+    <FirmwareBuildType>1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T16:18:17.2154802+01:00</UpdateLastChecked>
+  </Device>
+</Devices>

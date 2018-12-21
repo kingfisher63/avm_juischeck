@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Devices xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7490</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7490</ProductName>
+    <HardwareMajor>185</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>113</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>8</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1000</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>true</UpdateAvailable>
+    <UpdateInfo>113.07.08-64411 Inhaus</UpdateInfo>
+    <UpdateImageURL>ftp://jason:274jgjg85hh36@update.avm.de/labor/M18-Inhaus/FRITZ.Box_7490-07.08-64411-Inhaus.image</UpdateImageURL>
+    <UpdateInfoURL>http://download.avm.de/labor/MESH18/7490/infolab.txt</UpdateInfoURL>
+    <UpdateLastChecked>2018-12-21T11:33:30.6841947+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Box 7590</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Box 7590</ProductName>
+    <HardwareMajor>226</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>154</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>8</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1000</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>B</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>true</UpdateAvailable>
+    <UpdateInfo>154.07.08-64412 Inhaus</UpdateInfo>
+    <UpdateImageURL>ftp://jason:274jgjg85hh36@update.avm.de/labor/M18-Inhaus/FRITZ.Box_7590-07.08-64412-Inhaus.image</UpdateImageURL>
+    <UpdateInfoURL>http://download.avm.de/labor/MESH18/7590/infolab.txt</UpdateInfoURL>
+    <UpdateLastChecked>2018-12-21T11:33:30.7521986+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 310A</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 310A</ProductName>
+    <HardwareMajor>194</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>122</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>98</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1000</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>true</UpdateAvailable>
+    <UpdateInfo>122.06.98-63657 Intern</UpdateInfo>
+    <UpdateImageURL>ftp://jason:274jgjg85hh36@update.avm.de/labor/Phase2Inhouse/FRITZ.Box_WLAN_Repeater_310.en-de-es-it-fr-pl.122.06.98-63657.image</UpdateImageURL>
+    <UpdateInfoURL>http://ftp.avm.de/archive/fritz.box/fritz.wlan_repeater_1750E/x_misc/deutsch/infolab.txt</UpdateInfoURL>
+    <UpdateLastChecked>2018-12-21T11:33:30.8862063+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 310B</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 310B</ProductName>
+    <HardwareMajor>215</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>143</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>98</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1000</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>true</UpdateAvailable>
+    <UpdateInfo>143.06.98-63658 Inhouse</UpdateInfo>
+    <UpdateImageURL>ftp://jason:274jgjg85hh36@update.avm.de/labor/Phase2Inhouse/FRITZ.Box_WLAN_Repeater_310_.en-de-es-it-fr-pl.143.06.98-63658.image</UpdateImageURL>
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:33:30.9562103+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 1750E</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 1750E</ProductName>
+    <HardwareMajor>206</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>134</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>8</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1000</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>true</UpdateAvailable>
+    <UpdateInfo>134.07.08-64413 Inhaus</UpdateInfo>
+    <UpdateImageURL>ftp://jason:274jgjg85hh36@update.avm.de/labor/M18-Inhaus/FRITZ.Box_WLAN_Repeater_1750E.en-de-es-it-fr-pl.134.07.08-64413.image</UpdateImageURL>
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:33:31.0272143+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!WLAN Repeater 3000</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!WLAN Repeater 3000</ProductName>
+    <HardwareMajor>246</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>174</FirmwareMajor>
+    <FirmwareMinor>6</FirmwareMinor>
+    <FirmwarePatch>98</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1000</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>true</UpdateAvailable>
+    <UpdateInfo>174.06.98-64285 INTERN</UpdateInfo>
+    <UpdateImageURL>ftp://jason:274jgjg85hh36@update.avm.de/labor/Phase2Inhouse/FRITZ.Repeater_3000.en-de-es-it-fr-pl.174.06.98-64285.image</UpdateImageURL>
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:33:31.0942181+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="JUIS">
+    <DeviceName>FRITZ!Powerline 1260E</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Powerline 1260E</ProductName>
+    <HardwareMajor>229</HardwareMajor>
+    <HardwareMinor>0</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>157</FirmwareMajor>
+    <FirmwareMinor>7</FirmwareMinor>
+    <FirmwarePatch>8</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>1000</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex>Ohne</Annex>
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS />
+    <UpdateAvailable>true</UpdateAvailable>
+    <UpdateInfo>157.07.08-64414 Inhaus</UpdateInfo>
+    <UpdateImageURL>ftp://jason:274jgjg85hh36@update.avm.de/labor/M18-Inhaus/FRITZ.Powerline_1260E.en-de-es-it-fr-pl.157.07.08-64414.image</UpdateImageURL>
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:33:30.8192024+01:00</UpdateLastChecked>
+  </Device>
+</Devices>

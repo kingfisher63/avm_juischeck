@@ -1,0 +1,117 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:applang="clr-namespace:JuisCheck.Lang">
+
+    <DataTemplate x:Key="DeviceNameCellTemplate">
+        <TextBlock Text="{Binding Path=DeviceName}" ToolTipService.ShowDuration="60000">
+            <TextBlock.ToolTip>
+                <ToolTip Content="{Binding}" ContentTemplate="{Binding Path=ToolTipTemplate}"/>
+            </TextBlock.ToolTip>
+        </TextBlock>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DectDeviceToolTipContentTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="3,0,3,0"/>
+                </Style>
+            </Grid.Resources>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelDeviceName}"     />
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=DeviceName,        Mode=OneTime}"             />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelProductName}"    />
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=ProductName,       Mode=OneTime}"             />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelHardwareType}"   />
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=HardwareStr,       Mode=OneTime}"             />
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelFirmwareVersion}"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=FirmwareStr,       Mode=OneTime}"             />
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelOem}"            />
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=OEM,               Mode=OneTime}"             />
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelCountry}"        />
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=CountryFull,       Mode=OneTime}"             />
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelLanguage}"       />
+            <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=LanguageFull,      Mode=OneTime}"             />
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelUpdateInfo}"     />
+            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Path=UpdateInfo,        Mode=OneTime}"             />
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelUpdateFileName}" />
+            <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Path=UpdateFileName,    Mode=OneTime}"             />
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelLastChecked}"    />
+            <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Path=UpdateLastChecked, Mode=OneTime}"             />
+        </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="JuisDeviceToolTipContentTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="3,0,3,0"/>
+                </Style>
+            </Grid.Resources>
+            <TextBlock Grid.Row="0"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelDeviceName}"       />
+            <TextBlock Grid.Row="0"  Grid.Column="1" Text="{Binding Path=DeviceName,            Mode=OneTime}"           />
+            <TextBlock Grid.Row="1"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelDeviceAddress}"    />
+            <TextBlock Grid.Row="1"  Grid.Column="1" Text="{Binding Path=DeviceAddress,         Mode=OneTime}"           />
+            <TextBlock Grid.Row="2"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelProductName}"      />
+            <TextBlock Grid.Row="2"  Grid.Column="1" Text="{Binding Path=ProductName,           Mode=OneTime}"           />
+            <TextBlock Grid.Row="3"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelHardwareType}"     />
+            <TextBlock Grid.Row="3"  Grid.Column="1" Text="{Binding Path=HardwareStr,           Mode=OneTime}"           />
+            <TextBlock Grid.Row="4"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelFirmwareVersion}"  />
+            <TextBlock Grid.Row="4"  Grid.Column="1" Text="{Binding Path=FirmwareStr,           Mode=OneTime}"           />
+            <TextBlock Grid.Row="5"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelFirmwareBuildType}"/>
+            <TextBlock Grid.Row="5"  Grid.Column="1" Text="{Binding Path=FirmwareBuildTypeFull, Mode=OneTime}"           />
+            <TextBlock Grid.Row="6"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelOem}"              />
+            <TextBlock Grid.Row="6"  Grid.Column="1" Text="{Binding Path=OEM,                   Mode=OneTime}"           />
+            <TextBlock Grid.Row="7"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelCountry}"          />
+            <TextBlock Grid.Row="7"  Grid.Column="1" Text="{Binding Path=CountryFull,           Mode=OneTime}"           />
+            <TextBlock Grid.Row="8"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelLanguage}"         />
+            <TextBlock Grid.Row="8"  Grid.Column="1" Text="{Binding Path=LanguageFull,          Mode=OneTime}"           />
+            <TextBlock Grid.Row="9"  Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelAnnex}"            />
+            <TextBlock Grid.Row="9"  Grid.Column="1" Text="{Binding Path=AnnexFull,             Mode=OneTime}"           />
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelFlags}"            />
+            <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Path=Flags,                 Mode=OneTime}"           />
+            <TextBlock Grid.Row="11" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelUpdateInfo}"       />
+            <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Path=UpdateInfo,            Mode=OneTime}"           />
+            <TextBlock Grid.Row="12" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelUpdateFileName}"   />
+            <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding Path=UpdateFileName,        Mode=OneTime}"           />
+            <TextBlock Grid.Row="14" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelLastChecked}"      />
+            <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding Path=UpdateLastChecked,     Mode=OneTime}"           />
+        </Grid>
+    </DataTemplate>
+    
+</ResourceDictionary>

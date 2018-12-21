@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://juis.avm.de/updateinfo" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="JUIS" targetNamespace="http://juis.avm.de/updateinfo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:ns1="http://juis.avm.de/request" xmlns:ns2="http://juis.avm.de/response" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://juis.avm.de/updateinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://juis.avm.de/request" />
+      <xs:import namespace="http://juis.avm.de/response" />
+      <xs:element name="BPjMUpdateCheck" type="tns:BPjMUpdateCheck" />
+      <xs:element name="BPjMUpdateCheckResponse" type="tns:BPjMUpdateCheckResponse" />
+      <xs:element name="BoxFirmwareDowngradeCheck" type="tns:BoxFirmwareDowngradeCheck" />
+      <xs:element name="BoxFirmwareDowngradeCheckResponse" type="tns:BoxFirmwareDowngradeCheckResponse" />
+      <xs:element name="BoxFirmwareUpdateCheck" type="tns:BoxFirmwareUpdateCheck" />
+      <xs:element name="BoxFirmwareUpdateCheckResponse" type="tns:BoxFirmwareUpdateCheckResponse" />
+      <xs:element name="DeviceFirmwareUpdateCheck" type="tns:DeviceFirmwareUpdateCheck" />
+      <xs:element name="DeviceFirmwareUpdateCheckResponse" type="tns:DeviceFirmwareUpdateCheckResponse" />
+      <xs:element name="SoftwareUpdateCheck" type="tns:SoftwareUpdateCheck" />
+      <xs:element name="SoftwareUpdateCheckResponse" type="tns:SoftwareUpdateCheckResponse" />
+      <xs:complexType name="BoxFirmwareDowngradeCheck">
+        <xs:sequence>
+          <xs:element name="RequestHeader" type="ns1:RequestHeader" />
+          <xs:element name="BoxInfo" type="ns1:BoxInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BoxFirmwareDowngradeCheckResponse">
+        <xs:sequence>
+          <xs:element name="ResponseUpdateInfo" type="ns2:ResponseUpdateInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="JuisSoapExceptionBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="unqualified" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SoftwareUpdateCheck">
+        <xs:sequence>
+          <xs:element name="RequestHeader" type="ns1:RequestHeader" />
+          <xs:element name="SoftwareInfo" type="ns1:SoftwareInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SoftwareUpdateCheckResponse">
+        <xs:sequence>
+          <xs:element name="ResponseUpdateInfo" type="ns2:ResponseUpdateInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BoxFirmwareUpdateCheck">
+        <xs:sequence>
+          <xs:element name="RequestHeader" type="ns1:RequestHeader" />
+          <xs:element name="BoxInfo" type="ns1:BoxInfo" />
+          <xs:element minOccurs="0" name="BoxInfoMeshMaster" type="ns1:BoxInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BoxFirmwareUpdateCheckResponse">
+        <xs:sequence>
+          <xs:element name="ResponseUpdateInfo" type="ns2:ResponseUpdateInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeviceFirmwareUpdateCheck">
+        <xs:sequence>
+          <xs:element name="RequestHeader" type="ns1:RequestHeader" />
+          <xs:element name="BoxInfo" type="ns1:BoxInfo" />
+          <xs:element name="DeviceInfo" type="ns1:DeviceInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeviceFirmwareUpdateCheckResponse">
+        <xs:sequence>
+          <xs:element name="ResponseUpdateInfo" type="ns2:ResponseUpdateInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BPjMUpdateCheck">
+        <xs:sequence>
+          <xs:element name="RequestHeader" type="ns1:RequestHeader" />
+          <xs:element name="BoxInfo" type="ns1:BoxInfo" />
+          <xs:element name="BPjMVersion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BPjMUpdateCheckResponse">
+        <xs:sequence>
+          <xs:element name="ResponseUpdateInfo" type="ns2:ResponseUpdateInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="JuisSoapException" nillable="true" type="tns:JuisSoapExceptionBean" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://juis.avm.de/response" elementFormDefault="qualified" targetNamespace="http://juis.avm.de/response" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ResponseUpdateInfo">
+        <xs:sequence>
+          <xs:element name="ResponseHeader" type="tns:ResponseHeader" />
+          <xs:element name="UpdateInfo" type="tns:UpdateInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseHeader">
+        <xs:sequence>
+          <xs:element name="Nonce" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateInfo">
+        <xs:sequence>
+          <xs:element name="CheckInterval" type="xs:int" />
+          <xs:element name="Found" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="xs:int" />
+          <xs:element minOccurs="0" name="DownloadURL" type="xs:string" />
+          <xs:element minOccurs="0" name="InfoURL" type="xs:string" />
+          <xs:element minOccurs="0" name="InfoText" type="xs:string" />
+          <xs:element minOccurs="0" name="HintURL" type="xs:string" />
+          <xs:element minOccurs="0" name="IconURL" type="xs:string" />
+          <xs:element minOccurs="0" name="Priority" type="xs:int" />
+          <xs:element name="AutoUpdateStartTime" type="xs:int" />
+          <xs:element name="AutoUpdateEndTime" type="xs:int" />
+          <xs:element name="AutoUpdateKeepServices" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://juis.avm.de/request" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="RequestHeader">
+        <xs:sequence>
+          <xs:element name="Nonce" type="xs:string" />
+          <xs:element name="UserAgent" type="xs:string" />
+          <xs:element name="ManualRequest" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BoxInfo">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string" />
+          <xs:element name="HW" type="xs:int" />
+          <xs:element name="Major" type="xs:int" />
+          <xs:element name="Minor" type="xs:int" />
+          <xs:element name="Patch" type="xs:int" />
+          <xs:element name="Buildnumber" type="xs:int" />
+          <xs:element name="Buildtype" type="xs:int" />
+          <xs:element name="Serial" type="xs:string" />
+          <xs:element name="OEM" type="xs:string" />
+          <xs:element name="Lang" type="xs:string" />
+          <xs:element name="Country" type="xs:string" />
+          <xs:element name="Annex" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="Flag" type="xs:string" />
+          <xs:element name="UpdateConfig" type="xs:int" />
+          <xs:element name="Provider" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SoftwareInfo">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string" />
+          <xs:element name="Version" type="xs:string" />
+          <xs:element name="Lang" type="xs:string" />
+          <xs:element name="OS" type="xs:string" />
+          <xs:element name="Serial" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeviceInfo">
+        <xs:sequence>
+          <xs:element name="Type" type="xs:int" />
+          <xs:element minOccurs="0" name="HW" type="xs:int" />
+          <xs:element name="MHW" type="xs:string" />
+          <xs:element name="Version" type="xs:string" />
+          <xs:element name="Serial" type="xs:string" />
+          <xs:element name="Lang" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="BoxFirmwareDowngradeCheckResponse">
+    <wsdl:part name="parameters" element="tns:BoxFirmwareDowngradeCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="BoxFirmwareDowngradeCheck">
+    <wsdl:part name="parameters" element="tns:BoxFirmwareDowngradeCheck" />
+  </wsdl:message>
+  <wsdl:message name="BoxFirmwareUpdateCheckResponse">
+    <wsdl:part name="parameters" element="tns:BoxFirmwareUpdateCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceFirmwareUpdateCheck">
+    <wsdl:part name="parameters" element="tns:DeviceFirmwareUpdateCheck" />
+  </wsdl:message>
+  <wsdl:message name="JuisSoapException">
+    <wsdl:part name="JuisSoapException" element="tns:JuisSoapException" />
+  </wsdl:message>
+  <wsdl:message name="DeviceFirmwareUpdateCheckResponse">
+    <wsdl:part name="parameters" element="tns:DeviceFirmwareUpdateCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="SoftwareUpdateCheck">
+    <wsdl:part name="parameters" element="tns:SoftwareUpdateCheck" />
+  </wsdl:message>
+  <wsdl:message name="BoxFirmwareUpdateCheck">
+    <wsdl:part name="parameters" element="tns:BoxFirmwareUpdateCheck" />
+  </wsdl:message>
+  <wsdl:message name="BPjMUpdateCheckResponse">
+    <wsdl:part name="parameters" element="tns:BPjMUpdateCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="SoftwareUpdateCheckResponse">
+    <wsdl:part name="parameters" element="tns:SoftwareUpdateCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="BPjMUpdateCheck">
+    <wsdl:part name="parameters" element="tns:BPjMUpdateCheck" />
+  </wsdl:message>
+  <wsdl:portType name="UpdateInfoService">
+    <wsdl:operation name="BoxFirmwareDowngradeCheck">
+      <wsdl:input name="BoxFirmwareDowngradeCheck" message="tns:BoxFirmwareDowngradeCheck" />
+      <wsdl:output name="BoxFirmwareDowngradeCheckResponse" message="tns:BoxFirmwareDowngradeCheckResponse" />
+      <wsdl:fault name="JuisSoapException" message="tns:JuisSoapException" />
+    </wsdl:operation>
+    <wsdl:operation name="SoftwareUpdateCheck">
+      <wsdl:input name="SoftwareUpdateCheck" message="tns:SoftwareUpdateCheck" />
+      <wsdl:output name="SoftwareUpdateCheckResponse" message="tns:SoftwareUpdateCheckResponse" />
+      <wsdl:fault name="JuisSoapException" message="tns:JuisSoapException" />
+    </wsdl:operation>
+    <wsdl:operation name="BoxFirmwareUpdateCheck">
+      <wsdl:input name="BoxFirmwareUpdateCheck" message="tns:BoxFirmwareUpdateCheck" />
+      <wsdl:output name="BoxFirmwareUpdateCheckResponse" message="tns:BoxFirmwareUpdateCheckResponse" />
+      <wsdl:fault name="JuisSoapException" message="tns:JuisSoapException" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceFirmwareUpdateCheck">
+      <wsdl:input name="DeviceFirmwareUpdateCheck" message="tns:DeviceFirmwareUpdateCheck" />
+      <wsdl:output name="DeviceFirmwareUpdateCheckResponse" message="tns:DeviceFirmwareUpdateCheckResponse" />
+      <wsdl:fault name="JuisSoapException" message="tns:JuisSoapException" />
+    </wsdl:operation>
+    <wsdl:operation name="BPjMUpdateCheck">
+      <wsdl:input name="BPjMUpdateCheck" message="tns:BPjMUpdateCheck" />
+      <wsdl:output name="BPjMUpdateCheckResponse" message="tns:BPjMUpdateCheckResponse" />
+      <wsdl:fault name="JuisSoapException" message="tns:JuisSoapException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="JUISSoapBinding" type="tns:UpdateInfoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BoxFirmwareDowngradeCheck">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="BoxFirmwareDowngradeCheck">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BoxFirmwareDowngradeCheckResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JuisSoapException">
+        <soap:fault use="literal" name="JuisSoapException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SoftwareUpdateCheck">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="SoftwareUpdateCheck">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SoftwareUpdateCheckResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JuisSoapException">
+        <soap:fault use="literal" name="JuisSoapException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BoxFirmwareUpdateCheck">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="BoxFirmwareUpdateCheck">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BoxFirmwareUpdateCheckResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JuisSoapException">
+        <soap:fault use="literal" name="JuisSoapException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceFirmwareUpdateCheck">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="DeviceFirmwareUpdateCheck">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeviceFirmwareUpdateCheckResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JuisSoapException">
+        <soap:fault use="literal" name="JuisSoapException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BPjMUpdateCheck">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="BPjMUpdateCheck">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BPjMUpdateCheckResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JuisSoapException">
+        <soap:fault use="literal" name="JuisSoapException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="JUIS">
+    <wsdl:port name="UpdateInfoServicePort" binding="tns:JUISSoapBinding">
+      <soap:address location="http://jws.avm.de:80/Jason/UpdateInfoService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

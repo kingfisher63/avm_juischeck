@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Muon.Windows.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:Muon.Windows.Controls.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Muon.Windows.Controls.RecentFileButton">
+            <summary>
+            Represents a Recent File button control. The control contains a <see cref="P:Muon.Windows.Controls.RecentFileButton.FileName">file name</see> part,
+            a <see cref="P:Muon.Windows.Controls.RecentFileButton.DirPath">directory path</see> part and an optional <see cref="P:Muon.Windows.Controls.RecentFileButton.Image">image</see> part.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.DirPathProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.DirPath"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.DirPath">
+            <summary>
+            Gets or sets the directory path that is displayed in the button.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.DirPathFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.DirPathFontSize"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.DirPathFontSize">
+            <summary>
+            Gets or sets the font size of directory path part. The default value is 11.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.DirPathFontWeightProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.DirPathFontWeight"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.DirPathFontWeight">
+            <summary>
+            Gets or sets the font weight of the directory path part. The default value is <see cref="P:System.Windows.FontWeights.Normal"/>.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.DirPathForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.DirPathForeground"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.DirPathForeground">
+            <summary>
+            Gets or sets the foreground brush of the directory path part. The default value is <see cref="P:System.Windows.Media.Colors.Gray"/>.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.DirPathMarginProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.DirPathMargin"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.DirPathMargin">
+            <summary>
+            Gets or sets the margins of the directory path part. The default value is '0,0,0,0'.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.FileNameProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.FileName"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.FileName">
+            <summary>
+            Gets or set the file name that is displayed in the button.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.FileNameFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.FileNameFontSize"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.FileNameFontSize">
+            <summary>
+            Gets or sets the font size of the file name part. The default value is 13.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.FileNameFontWeightProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.FileNameFontWeight"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.FileNameFontWeight">
+            <summary>
+            Gets or sets the font weight of the file name part. The default value is <see cref="P:System.Windows.FontWeights.Normal"/>.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.FileNameForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.FileNameForeground"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.FileNameForeground">
+            <summary>
+            Gets or sets the foreground brush of the file name part. The default value is <see cref="P:System.Windows.Media.Colors.Black"/>.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.FileNameMarginProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.FileNameMargin"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.FileNameMargin">
+            <summary>
+            Gets or sets the margins of the of the file name part. The default value is '0,1,0,0'.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.ImageProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.Image"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.Image">
+            <summary>
+            Gets or sets the image that is displayed in the button.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.ImageHeightProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.ImageHeight"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.ImageHeight">
+            <summary>
+            Gets or set the height in pixels of the image that is displayed in the button. The default value is 32.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.ImageMarginProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.ImageMargin"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.ImageMargin">
+            <summary>
+            Gets or sets the margins of the image that is displayed in the button. The default value is '0,0,10,0'.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.ImageWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.ImageWidth"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.ImageWidth">
+            <summary>
+            Gets or sets the width in pixels of the image that is displayed in the button. The default value is 32.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.MouseOverBackgroundProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.MouseOverBackground"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.MouseOverBackground">
+            <summary>
+            Gets or sets the background brush when the mouse pointer is located over the button. The default value is <see cref="P:System.Windows.Media.Colors.LemonChiffon"/>.
+            </summary>
+            <remarks>
+            The default background brush when the mouse pointer is <u>not</u> located over the button is <see cref="P:System.Windows.Media.Colors.Transparent"/>.
+            </remarks>
+        </member>
+        <member name="F:Muon.Windows.Controls.RecentFileButton.MouseOverBorderBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Muon.Windows.Controls.RecentFileButton.MouseOverBorderBrush"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.Controls.RecentFileButton.MouseOverBorderBrush">
+            <summary>
+            Gets or sets the border brush when the mouse pointer is located over the button. The default value is <see cref="P:System.Windows.Media.Colors.Gray"/>.
+            </summary>
+            <remarks>
+            The defailt border brush when the mouse pointer is <u>not</u> located over the button is <see cref="P:System.Windows.Media.Colors.Transparent"/>.
+            </remarks>
+        </member>
+    </members>
+</doc>

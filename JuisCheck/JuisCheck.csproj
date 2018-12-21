@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1A82DAF-EE0A-43FA-BEC7-EB63EC3EF78D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>JuisCheck</RootNamespace>
+    <AssemblyName>JuisCheck</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\JuisCheck.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net40\ControlzEx.dll</HintPath>
+      <EmbedAssembly>true</EmbedAssembly>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Fluent, Version=6.1.0.326, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fluent.Ribbon.6.1.0.326\lib\net40\Fluent.dll</HintPath>
+      <Private>False</Private>
+      <EmbedAssembly>true</EmbedAssembly>
+    </Reference>
+    <Reference Include="Muon.DotNetExtensions">
+      <HintPath>..\libraries\Muon.DotNetExtensions.dll</HintPath>
+      <EmbedAssembly>true</EmbedAssembly>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Muon.Windows">
+      <HintPath>..\libraries\Muon.Windows.dll</HintPath>
+      <EmbedAssembly>true</EmbedAssembly>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Muon.Windows.Controls">
+      <HintPath>..\libraries\Muon.Windows.Controls.dll</HintPath>
+      <EmbedAssembly>true</EmbedAssembly>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net40\System.Windows.Interactivity.dll</HintPath>
+      <EmbedAssembly>true</EmbedAssembly>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ComboBoxEx.cs" />
+    <Compile Include="ComboBoxValue.cs" />
+    <Compile Include="DectDeviceDialog.xaml.cs">
+      <DependentUpon>DectDeviceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceComparer.cs" />
+    <Compile Include="DeviceKind.cs" />
+    <Compile Include="FindUpdatesDialog.xaml.cs">
+      <DependentUpon>FindUpdatesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.Devices.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NaturalStringComparer.cs" />
+    <Compile Include="NotifyPropertyChanged.cs" />
+    <Compile Include="RecentFiles.cs" />
+    <Compile Include="Rules\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Rules\ComboBoxValueSelectedRule.cs" />
+    <Compile Include="Rules\FritzOSversionRule.cs" />
+    <Compile Include="Rules\Int32RangeRule.cs" />
+    <Compile Include="Rules\NullableDateTimeToStringConverter.cs" />
+    <Compile Include="Rules\StringNotNullOrWhiteSpaceRule.cs" />
+    <Page Include="DectDeviceDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JuisDeviceDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindUpdatesDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connected Services\JUIS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Device.cs" />
+    <Compile Include="DeviceCollection.cs" />
+    <Compile Include="JuisDeviceDialog.xaml.cs">
+      <DependentUpon>JuisDeviceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\JCstring.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JCstring.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.Backstage.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\MainWindowBackstage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\MainWindowDataGridStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\BaseStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\MainWindowDataGridTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\MainWindowRibbon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MultiSelectDataGrid.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Lang\JCstring.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>JCstring.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Connected Services\JUIS\JUIS.wsdl" />
+    <None Include="Connected Services\JUIS\JuisCheck.JUIS.ResponseUpdateInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\JUIS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JUIS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JUIS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\JUIS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-document-close-32.png" />
+    <Resource Include="Images\oxygen-document-edit-32.png" />
+    <Resource Include="Images\oxygen-document-new-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-edit-clear-list-32.png" />
+    <Resource Include="Images\oxygen-edit-select-all-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-dialog-ok-apply-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-dialog-warning-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-download-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-system-search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-dialog-information-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-run-build-clean-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-system-software-update-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\JuisCheck.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-edit-paste-32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(SolutionDir)bin" (
+  mkdir "$(SolutionDir)bin"
+)
+if not exist "$(SolutionDir)bin\$(ConfigurationName)" (
+  mkdir "$(SolutionDir)bin\$(ConfigurationName)"
+)
+copy "$(TargetPath)" "$(SolutionDir)bin\$(ConfigurationName)\$(TargetFileName)"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

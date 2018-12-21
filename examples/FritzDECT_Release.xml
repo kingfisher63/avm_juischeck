@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Devices xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Device kind="DECT">
+    <DeviceName>FRITZ!DECT 100</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!DECT Repeater 100</ProductName>
+    <HardwareMajor>7</HardwareMajor>
+    <HardwareMinor>1</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>13</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.1524798+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!DECT 200</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!DECT 200</ProductName>
+    <HardwareMajor>7</HardwareMajor>
+    <HardwareMinor>2</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>9</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.1824815+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!DECT 210</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!DECT 210</ProductName>
+    <HardwareMajor>7</HardwareMajor>
+    <HardwareMinor>4</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>9</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.2134833+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!DECT 300 HKR</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!DECT 300 HKR</ProductName>
+    <HardwareMajor>6</HardwareMajor>
+    <HardwareMinor>5</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>85</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.2444851+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!DECT 301 HKR</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!DECT 301 HKR</ProductName>
+    <HardwareMajor>6</HardwareMajor>
+    <HardwareMinor>6</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>85</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.2744868+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!Fon M2</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Fon M2</ProductName>
+    <HardwareMajor>5</HardwareMajor>
+    <HardwareMinor>1</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>8</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.4254954+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!Fon C3v1</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Fon C3v1</ProductName>
+    <HardwareMajor>4</HardwareMajor>
+    <HardwareMinor>1</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>3</FirmwareMajor>
+    <FirmwareMinor>47</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.3034885+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!Fon C3v2</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Fon C3v2</ProductName>
+    <HardwareMajor>4</HardwareMajor>
+    <HardwareMinor>2</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>3</FirmwareMajor>
+    <FirmwareMinor>47</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.3334902+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!Fon C4</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Fon C4</ProductName>
+    <HardwareMajor>8</HardwareMajor>
+    <HardwareMinor>1</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>9</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.3624918+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!Fon C5</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Fon C5</ProductName>
+    <HardwareMajor>8</HardwareMajor>
+    <HardwareMinor>2</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>9</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.3934936+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>FRITZ!Fon MT-F</DeviceName>
+    <DeviceAddress />
+    <ProductName>FRITZ!Fon MT-F</ProductName>
+    <HardwareMajor>3</HardwareMajor>
+    <HardwareMinor>1</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>4</FirmwareMajor>
+    <FirmwareMinor>8</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.4544971+01:00</UpdateLastChecked>
+  </Device>
+  <Device kind="DECT">
+    <DeviceName>Comet HKR</DeviceName>
+    <DeviceAddress />
+    <ProductName>Comet HKR</ProductName>
+    <HardwareMajor>6</HardwareMajor>
+    <HardwareMinor>4</HardwareMinor>
+    <SerialNumber />
+    <FirmwareMajor>3</FirmwareMajor>
+    <FirmwareMinor>54</FirmwareMinor>
+    <FirmwarePatch>0</FirmwarePatch>
+    <FirmwareBuildNumber>0</FirmwareBuildNumber>
+    <FirmwareBuildType>-1</FirmwareBuildType>
+    <OEM>avm</OEM>
+    <Annex />
+    <Country>049</Country>
+    <Language>de</Language>
+    <BaseFritzOS>113.07.01</BaseFritzOS>
+    <UpdateAvailable>false</UpdateAvailable>
+    <UpdateInfo>None</UpdateInfo>
+    <UpdateImageURL />
+    <UpdateInfoURL />
+    <UpdateLastChecked>2018-12-21T11:07:22.1224781+01:00</UpdateLastChecked>
+  </Device>
+</Devices>
