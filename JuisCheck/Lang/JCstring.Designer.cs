@@ -1096,6 +1096,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fatal error.
+        /// </summary>
+        public static string messageCaptionFatalError {
+            get {
+                return ResourceManager.GetString("messageCaptionFatalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unsaved data.
         /// </summary>
         public static string messageCaptionUnsavedData {
@@ -1164,6 +1173,15 @@ namespace JuisCheck.Lang {
         public static string messageTextSaveDeviceCollectionFailed {
             get {
                 return ResourceManager.GetString("messageTextSaveDeviceCollectionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unhandled exception: {0}\n\nException information has been copied to the clipboard..
+        /// </summary>
+        public static string messageTextUnhandledException {
+            get {
+                return ResourceManager.GetString("messageTextUnhandledException", resourceCulture);
             }
         }
         

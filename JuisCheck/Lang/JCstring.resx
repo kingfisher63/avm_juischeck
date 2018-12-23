@@ -627,4 +627,10 @@
   <data name="backstageTabTooltipSettings" xml:space="preserve">
     <value>Open the Settings panel</value>
   </data>
+  <data name="messageCaptionFatalError" xml:space="preserve">
+    <value>Fatal error</value>
+  </data>
+  <data name="messageTextUnhandledException" xml:space="preserve">
+    <value>Unhandled exception: {0}\n\nException information has been copied to the clipboard.</value>
+  </data>
 </root>
