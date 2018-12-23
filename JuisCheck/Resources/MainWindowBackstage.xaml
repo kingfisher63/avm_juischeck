@@ -15,6 +15,12 @@
         <Setter Property="HorizontalAlignment" Value="Left"     />
         <Setter Property="Margin"              Value="0,5,0,5"  />
         <Setter Property="Width"               Value="500"      />
+        <!-- Prevent BackstageTabItem ToolTip from being shown on the tab item content -->
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Visibility="Collapsed"/>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}" x:Key="BackstageActionButtonStyle">
