@@ -108,9 +108,9 @@
             <TextBlock Grid.Row="11" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelUpdateInfo}"       />
             <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Path=UpdateInfo,            Mode=OneTime}"           />
             <TextBlock Grid.Row="12" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelUpdateFileName}"   />
-            <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding Path=UpdateFileName,        Mode=OneTime}"           />
-            <TextBlock Grid.Row="14" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelLastChecked}"      />
-            <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding Path=UpdateLastChecked,     Mode=OneTime}"           />
+            <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding Path=UpdateFileName,        Mode=OneTime}"           />
+            <TextBlock Grid.Row="13" Grid.Column="0" Text="{x:Static applang:JCstring.deviceFieldLabelLastChecked}"      />
+            <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding Path=UpdateLastChecked,     Mode=OneTime}"           />
         </Grid>
     </DataTemplate>
     
