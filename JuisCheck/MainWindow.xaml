@@ -7,6 +7,7 @@
                      xmlns:fluent="urn:fluent-ribbon"
                      xmlns:app="clr-namespace:JuisCheck"
                      xmlns:applang="clr-namespace:JuisCheck.Lang"
+                     xmlns:appprops="clr-namespace:JuisCheck.Properties"
                      xmlns:apprules="clr-namespace:JuisCheck.Rules"
                      mc:Ignorable="d"
                      Width="900" Height="700"
@@ -59,7 +60,7 @@
                 <MenuItem Header="{x:Static applang:JCstring.backstageContextMenuItemTextOpen}"   FontWeight="Bold" Click="Backstage_RecentFile_ContextMenuOpenClick_Handler"  />
                 <MenuItem Header="{x:Static applang:JCstring.backstageContextMenuItemTextRemove}"                   Click="Backstage_RecentFile_ContextMenuRemoveClick_Handler"/>
             </ContextMenu>
-            
+
             <apprules:NullableDateTimeToStringConverter x:Key="cnvDateTimeToString"/>
 
             <Style TargetType="{x:Type mwc:RecentFileButton}" BasedOn="{StaticResource RecentFileButtonStyle}">
@@ -218,15 +219,36 @@
 
         <app:MultiSelectDataGrid DockPanel.Dock="Top" ItemsSource="{Binding Devices}" x:Name="dgDevices" MouseDoubleClick="Devices_DataGrid_MouseDoubleClick_Handler" Sorting="Devices_DataGrid_Sorting_Handler">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceName}"        CellTemplate="{StaticResource DeviceNameCellTemplate}" SortMemberPath="DeviceName"  x:Name="dgcDeviceName"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceAddress}"     Binding="{Binding Path=DeviceAddress}"       />
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderProductName}"       Binding="{Binding Path=ProductName}"                   SortMemberPath="ProductName" x:Name="dgcProductName"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderFirmware}"          Binding="{Binding Path=FirmwareStr}"         />
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderFirmwareBuildType}" Binding="{Binding Path=FirmwareBuildTypeStr}"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderOem}"               Binding="{Binding Path=OEM}"                 />
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderBaseFritzOS}"       Binding="{Binding Path=BaseFritzOS}"         />
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderUpdate}"            Binding="{Binding Path=UpdateInfo}"          />
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderLastChecked}"       Binding="{Binding Path=UpdateLastChecked, Converter={StaticResource cnvDateTimeToString}}"/>
+                <DataGridTemplateColumn x:Name="dgcDeviceName"
+                                        Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceName}"
+                                        CellTemplate="{StaticResource DeviceNameCellTemplate}"
+                                        SortMemberPath="DeviceName"/>
+                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceAddress}"
+                                        Binding="{Binding Path=DeviceAddress}"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     x:Name="dgcProductName"
+                                        Header="{x:Static applang:JCstring.datagridColumnHeaderProductName}"
+                                        Binding="{Binding Path=ProductName}"
+                                        SortMemberPath="ProductName"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleProductName, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderFirmware}"
+                                        Binding="{Binding Path=FirmwareStr}"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleFirmware, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderFirmwareBuildType}"
+                                        Binding="{Binding Path=FirmwareBuildTypeStr}"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderOEM}"
+                                        Binding="{Binding Path=OEM}"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleOEM, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderBaseFritzOS}"
+                                        Binding="{Binding Path=BaseFritzOS}"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderUpdateInfo}"
+                                        Binding="{Binding Path=UpdateInfo}"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderUpdateLastChecked}"
+                                        Binding="{Binding Path=UpdateLastChecked, Converter={StaticResource cnvDateTimeToString}}"
+                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Converter={StaticResource cnvBoolToVisibility}}"/>
             </DataGrid.Columns>
         </app:MultiSelectDataGrid>
 

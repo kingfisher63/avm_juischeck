@@ -291,7 +291,7 @@
   <data name="datagridColumnHeaderFirmwareBuildType" xml:space="preserve">
     <value>Type</value>
   </data>
-  <data name="datagridColumnHeaderOem" xml:space="preserve">
+  <data name="datagridColumnHeaderOEM" xml:space="preserve">
     <value>OEM</value>
   </data>
   <data name="validationErrorNoValueSelected" xml:space="preserve">
@@ -474,7 +474,7 @@
   <data name="deviceFieldLabelFlags" xml:space="preserve">
     <value>Flags</value>
   </data>
-  <data name="datagridColumnHeaderUpdate" xml:space="preserve">
+  <data name="datagridColumnHeaderUpdateInfo" xml:space="preserve">
     <value>Update</value>
   </data>
   <data name="dialogCaptionFindUpdates" xml:space="preserve">
@@ -531,7 +531,7 @@
   <data name="deviceFieldLabelLastChecked" xml:space="preserve">
     <value>Last checked</value>
   </data>
-  <data name="datagridColumnHeaderLastChecked" xml:space="preserve">
+  <data name="datagridColumnHeaderUpdateLastChecked" xml:space="preserve">
     <value>Last checked</value>
   </data>
   <data name="ribbonTabHeaderDevices" xml:space="preserve">
@@ -647,5 +647,8 @@
   </data>
   <data name="backstageButtonTextRemoveAllFiles" xml:space="preserve">
     <value>Remove all files from list</value>
+  </data>
+  <data name="contextMenuTitleTextSelectColumns" xml:space="preserve">
+    <value>Select columns</value>
   </data>
 </root>

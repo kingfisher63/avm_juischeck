@@ -790,6 +790,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select columns.
+        /// </summary>
+        public static string contextMenuTitleTextSelectColumns {
+            get {
+                return ResourceManager.GetString("contextMenuTitleTextSelectColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Base Fritz!OS.
         /// </summary>
         public static string datagridColumnHeaderBaseFritzOS {
@@ -835,20 +844,11 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last checked.
-        /// </summary>
-        public static string datagridColumnHeaderLastChecked {
-            get {
-                return ResourceManager.GetString("datagridColumnHeaderLastChecked", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to OEM.
         /// </summary>
-        public static string datagridColumnHeaderOem {
+        public static string datagridColumnHeaderOEM {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderOem", resourceCulture);
+                return ResourceManager.GetString("datagridColumnHeaderOEM", resourceCulture);
             }
         }
         
@@ -864,9 +864,18 @@ namespace JuisCheck.Lang {
         /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
-        public static string datagridColumnHeaderUpdate {
+        public static string datagridColumnHeaderUpdateInfo {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderUpdate", resourceCulture);
+                return ResourceManager.GetString("datagridColumnHeaderUpdateInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last checked.
+        /// </summary>
+        public static string datagridColumnHeaderUpdateLastChecked {
+            get {
+                return ResourceManager.GetString("datagridColumnHeaderUpdateLastChecked", resourceCulture);
             }
         }
         

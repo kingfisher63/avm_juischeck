@@ -10,7 +10,7 @@ namespace JuisCheck.Rules
 	{
 		public object Convert( object value, Type targetType, object parameter, CultureInfo culture )
 		{
-			Visibility falseVisibility = Visibility.Hidden;
+			Visibility falseVisibility = Visibility.Collapsed;
 
 			if (parameter is string parameterStr) {
 				if (!string.IsNullOrEmpty(parameterStr)) {

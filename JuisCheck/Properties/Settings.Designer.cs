@@ -232,5 +232,101 @@ namespace JuisCheck.Properties {
                 this["MainWindowMaximized"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleDeviceAddress {
+            get {
+                return ((bool)(this["DataGridColumnVisibleDeviceAddress"]));
+            }
+            set {
+                this["DataGridColumnVisibleDeviceAddress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleProductName {
+            get {
+                return ((bool)(this["DataGridColumnVisibleProductName"]));
+            }
+            set {
+                this["DataGridColumnVisibleProductName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleFirmware {
+            get {
+                return ((bool)(this["DataGridColumnVisibleFirmware"]));
+            }
+            set {
+                this["DataGridColumnVisibleFirmware"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleFirmwareBuildType {
+            get {
+                return ((bool)(this["DataGridColumnVisibleFirmwareBuildType"]));
+            }
+            set {
+                this["DataGridColumnVisibleFirmwareBuildType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleOEM {
+            get {
+                return ((bool)(this["DataGridColumnVisibleOEM"]));
+            }
+            set {
+                this["DataGridColumnVisibleOEM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleBaseFritzOS {
+            get {
+                return ((bool)(this["DataGridColumnVisibleBaseFritzOS"]));
+            }
+            set {
+                this["DataGridColumnVisibleBaseFritzOS"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleUpdateInfo {
+            get {
+                return ((bool)(this["DataGridColumnVisibleUpdateInfo"]));
+            }
+            set {
+                this["DataGridColumnVisibleUpdateInfo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DataGridColumnVisibleUpdateLastChecked {
+            get {
+                return ((bool)(this["DataGridColumnVisibleUpdateLastChecked"]));
+            }
+            set {
+                this["DataGridColumnVisibleUpdateLastChecked"] = value;
+            }
+        }
     }
 }
