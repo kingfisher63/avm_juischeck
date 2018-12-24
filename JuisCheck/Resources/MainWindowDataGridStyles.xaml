@@ -5,6 +5,25 @@
                     xmlns:properties="clr-namespace:JuisCheck.Properties"
                     xmlns:rules="clr-namespace:JuisCheck.Rules">
 
+    <ContextMenu x:Key="cmDataGridHeaderContextMenu">
+        <MenuItem Header="{x:Static lang:JCstring.ContextMenuTitleTextSelectColumns}"
+                              FontWeight="Bold" IsCheckable="False"/>
+        <Separator/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceName}"        IsChecked="True" IsEnabled="False"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceAddress}"     IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress,     Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderProductName}"       IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleProductName,       Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderHardware}"          IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleHardware,          Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmware}"          IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmware,          Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmwareBuildType}" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderOEM}"               IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleOEM,               Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderCountry}"           IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleCountry,           Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderLanguage}"          IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleLanguage,          Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderBaseFritzOS}"       IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS,       Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateInfo}"        IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo,        Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateFileName}"    IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateFileName,    Mode=TwoWay}"/>
+        <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateLastChecked}" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Mode=TwoWay}"/>
+    </ContextMenu>
+
     <rules:BooleanToVisibilityConverter x:Key="cnvBoolToVisibility"/>
 
     <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundBrushDefault" Color="#B0B0B0"/>
@@ -45,34 +64,8 @@
                 <Setter Property="IsCheckable" Value="True"/>
             </Style>
         </Style.Resources>
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="ContextMenu">
-            <Setter.Value>
-                <ContextMenu>
-                    <MenuItem Header="{x:Static lang:JCstring.ContextMenuTitleTextSelectColumns}"
-                              FontWeight="Bold" IsCheckable="False"/>
-                    <Separator/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceName}"
-                              IsChecked="True" IsEnabled="False"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceAddress}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderProductName}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleProductName, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmware}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmware, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmwareBuildType}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderOEM}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleOEM, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderBaseFritzOS}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateInfo}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateLastChecked}"
-                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Mode=TwoWay}"/>
-                </ContextMenu>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="FontWeight"  Value="Bold"                                        />
+        <Setter Property="ContextMenu" Value="{StaticResource cmDataGridHeaderContextMenu}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">

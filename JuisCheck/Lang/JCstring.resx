@@ -651,4 +651,16 @@
   <data name="ContextMenuTitleTextSelectColumns" xml:space="preserve">
     <value>Select columns</value>
   </data>
+  <data name="DataGridColumnHeaderCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="DataGridColumnHeaderHardware" xml:space="preserve">
+    <value>HW</value>
+  </data>
+  <data name="DataGridColumnHeaderLanguage" xml:space="preserve">
+    <value>Lang</value>
+  </data>
+  <data name="DataGridColumnHeaderUpdateFileName" xml:space="preserve">
+    <value>Update file name</value>
+  </data>
 </root>

@@ -231,6 +231,9 @@
                                         Binding="{Binding Path=ProductName}"
                                         SortMemberPath="ProductName"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleProductName, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderHardware}"
+                                        Binding="{Binding Path=HardwareStr}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleHardware, Converter={StaticResource cnvBoolToVisibility}}"/>
                 <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmware}"
                                         Binding="{Binding Path=FirmwareStr}"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmware, Converter={StaticResource cnvBoolToVisibility}}"/>
@@ -240,12 +243,21 @@
                 <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderOEM}"
                                         Binding="{Binding Path=OEM}"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleOEM, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderCountry}"
+                                        Binding="{Binding Path=Country}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleCountry, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderLanguage}"
+                                        Binding="{Binding Path=Language}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleLanguage, Converter={StaticResource cnvBoolToVisibility}}"/>
                 <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderBaseFritzOS}"
                                         Binding="{Binding Path=BaseFritzOS}"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Converter={StaticResource cnvBoolToVisibility}}"/>
                 <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateInfo}"
                                         Binding="{Binding Path=UpdateInfo}"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateFileName}"
+                                        Binding="{Binding Path=UpdateFileName}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateFileName, Converter={StaticResource cnvBoolToVisibility}}"/>
                 <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateLastChecked}"
                                         Binding="{Binding Path=UpdateLastChecked, Converter={StaticResource cnvDateTimeToString}}"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Converter={StaticResource cnvBoolToVisibility}}"/>

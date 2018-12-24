@@ -295,7 +295,7 @@ namespace JuisCheck.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool DataGridColumnVisibleBaseFritzOS {
             get {
                 return ((bool)(this["DataGridColumnVisibleBaseFritzOS"]));
@@ -326,6 +326,54 @@ namespace JuisCheck.Properties {
             }
             set {
                 this["DataGridColumnVisibleUpdateLastChecked"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DataGridColumnVisibleHardware {
+            get {
+                return ((bool)(this["DataGridColumnVisibleHardware"]));
+            }
+            set {
+                this["DataGridColumnVisibleHardware"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DataGridColumnVisibleCountry {
+            get {
+                return ((bool)(this["DataGridColumnVisibleCountry"]));
+            }
+            set {
+                this["DataGridColumnVisibleCountry"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DataGridColumnVisibleLanguage {
+            get {
+                return ((bool)(this["DataGridColumnVisibleLanguage"]));
+            }
+            set {
+                this["DataGridColumnVisibleLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DataGridColumnVisibleUpdateFileName {
+            get {
+                return ((bool)(this["DataGridColumnVisibleUpdateFileName"]));
+            }
+            set {
+                this["DataGridColumnVisibleUpdateFileName"] = value;
             }
         }
     }

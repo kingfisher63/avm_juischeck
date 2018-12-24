@@ -808,6 +808,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string DataGridColumnHeaderCountry {
+            get {
+                return ResourceManager.GetString("DataGridColumnHeaderCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
         public static string DataGridColumnHeaderDeviceAddress {
@@ -844,6 +853,24 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HW.
+        /// </summary>
+        public static string DataGridColumnHeaderHardware {
+            get {
+                return ResourceManager.GetString("DataGridColumnHeaderHardware", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lang.
+        /// </summary>
+        public static string DataGridColumnHeaderLanguage {
+            get {
+                return ResourceManager.GetString("DataGridColumnHeaderLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OEM.
         /// </summary>
         public static string DataGridColumnHeaderOEM {
@@ -858,6 +885,15 @@ namespace JuisCheck.Lang {
         public static string DataGridColumnHeaderProductName {
             get {
                 return ResourceManager.GetString("DataGridColumnHeaderProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update file name.
+        /// </summary>
+        public static string DataGridColumnHeaderUpdateFileName {
+            get {
+                return ResourceManager.GetString("DataGridColumnHeaderUpdateFileName", resourceCulture);
             }
         }
         
