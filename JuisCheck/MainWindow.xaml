@@ -3,6 +3,7 @@
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls"
                      xmlns:fluent="urn:fluent-ribbon"
                      xmlns:app="clr-namespace:JuisCheck"
                      xmlns:applang="clr-namespace:JuisCheck.Lang"
@@ -19,6 +20,7 @@
         <CommandBinding Command="app:MainWindow.Backstage_CmdExit"             CanExecute="Backstage_CmdExit_CanExecute"             Executed="Backstage_CmdExit_Executed"            />
         <CommandBinding Command="app:MainWindow.Backstage_CmdOpen"             CanExecute="Backstage_CmdOpen_CanExecute"             Executed="Backstage_CmdOpen_Executed"            />
         <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFileOpen"   CanExecute="Backstage_CmdRecentFileOpen_CanExecute"   Executed="Backstage_CmdRecentFileOpen_Executed"  />
+        <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFileRemove" CanExecute="Backstage_CmdRecentFileRemove_CanExecute" Executed="Backstage_CmdRecentFileRemove_Executed"/>
         <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFilesClean" CanExecute="Backstage_CmdRecentFilesClean_CanExecute" Executed="Backstage_CmdRecentFilesClean_Executed"/>
         <CommandBinding Command="app:MainWindow.Backstage_CmdSave"             CanExecute="Backstage_CmdSave_CanExecute"             Executed="Backstage_CmdSave_Executed"            />
         <CommandBinding Command="app:MainWindow.Backstage_CmdSaveAs"           CanExecute="Backstage_CmdSaveAs_CanExecute"           Executed="Backstage_CmdSaveAs_Executed"          />
@@ -52,7 +54,16 @@
                 <ResourceDictionary Source="Resources/MainWindowRibbon.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            <ContextMenu x:Key="cmRecentFileContextMenu">
+                <MenuItem Header="{x:Static applang:JCstring.backstageContextMenuItemTextOpen}"   FontWeight="Bold" Click="Backstage_RecentFile_ContextMenuOpenClick_Handler"  />
+                <MenuItem Header="{x:Static applang:JCstring.backstageContextMenuItemTextRemove}"                   Click="Backstage_RecentFile_ContextMenuRemoveClick_Handler"/>
+            </ContextMenu>
+            
             <apprules:NullableDateTimeToStringConverter x:Key="cnvDateTimeToString"/>
+
+            <Style TargetType="{x:Type mwc:RecentFileButton}" BasedOn="{StaticResource RecentFileButtonStyle}">
+                <Setter Property="ContextMenu" Value="{StaticResource cmRecentFileContextMenu}"/>
+            </Style>
             
             <Style TargetType="{x:Type ToolTip}">
                 <Setter Property="Background" Value="Beige"/>

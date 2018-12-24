@@ -639,4 +639,10 @@
   <data name="messageTextUnhandledExceptionCopyFailure" xml:space="preserve">
     <value>Unhandled exception: {0}\n\nException information could not be copied to the clipboard.</value>
   </data>
+  <data name="backstageContextMenuItemTextOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="backstageContextMenuItemTextRemove" xml:space="preserve">
+    <value>Remove from list</value>
+  </data>
 </root>

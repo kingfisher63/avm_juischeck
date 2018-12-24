@@ -15,6 +15,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
+using WinControls = System.Windows.Controls;
 
 using JuisCheck.Lang;
 
@@ -179,6 +180,23 @@ namespace JuisCheck
 			}
 		}
 
+		// Command: Backstage_CmdRecentFileRemove
+
+		public static RoutedCommand Backstage_CmdRecentFileRemove = new RoutedCommand();
+
+		private void Backstage_CmdRecentFileRemove_CanExecute(object sender, CanExecuteRoutedEventArgs evt)
+		{
+			evt.CanExecute = true;
+		}
+
+		private void Backstage_CmdRecentFileRemove_Executed(object sender, ExecutedRoutedEventArgs evt)
+		{
+			if (evt.Source is RecentFileButton button) {
+				RecentFiles.Remove(button.Tag as string);
+				Backstage_PopulateRecentFiles();
+			}
+		}
+
 		// Command: Backstage_CmdSave
 
 		public static RoutedCommand Backstage_CmdSave = new RoutedCommand();
@@ -216,6 +234,32 @@ namespace JuisCheck
 				Backstage_PopulateRecentFiles();
 			} else {
 				Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => SetDataGridFocus()));
+			}
+		}
+
+		// Event: RecentFile_ContextMenuOpenClick
+
+		private void Backstage_RecentFile_ContextMenuOpenClick_Handler( object sender, RoutedEventArgs evt )
+		{
+			if (evt.Source is WinControls.MenuItem menuItem) {
+				if (menuItem.Parent is WinControls.ContextMenu contextMenu) {
+					if (contextMenu.PlacementTarget is RecentFileButton recentFileButton) {
+						Backstage_CmdRecentFileOpen.Execute( null, recentFileButton );
+					}
+				}
+			}
+		}
+
+		// Event: RecentFile_ContextMenuRemoveClick
+
+		private void Backstage_RecentFile_ContextMenuRemoveClick_Handler(object sender, RoutedEventArgs evt)
+		{
+			if (evt.Source is WinControls.MenuItem menuItem) {
+				if (menuItem.Parent is WinControls.ContextMenu contextMenu) {
+					if (contextMenu.PlacementTarget is RecentFileButton recentFileButton) {
+						Backstage_CmdRecentFileRemove.Execute(null, recentFileButton);
+					}
+				}
 			}
 		}
 	}

@@ -91,7 +91,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="{x:Type mwc:RecentFileButton}">
+    <Style TargetType="{x:Type mwc:RecentFileButton}" x:Key="RecentFileButtonStyle">
         <Setter Property="Command"        Value="{x:Static app:MainWindow.Backstage_CmdRecentFileOpen}"/>
         <Setter Property="DockPanel.Dock" Value="Top"                                                  />
         <Setter Property="Image"          Value="{StaticResource imgRecentFile32}"                     />

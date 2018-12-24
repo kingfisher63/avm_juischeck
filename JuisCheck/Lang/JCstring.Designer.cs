@@ -178,6 +178,24 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open.
+        /// </summary>
+        public static string backstageContextMenuItemTextOpen {
+            get {
+                return ResourceManager.GetString("backstageContextMenuItemTextOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove from list.
+        /// </summary>
+        public static string backstageContextMenuItemTextRemove {
+            get {
+                return ResourceManager.GetString("backstageContextMenuItemTextRemove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Defaults.
         /// </summary>
         public static string backstageSectionHeaderDefaults {
