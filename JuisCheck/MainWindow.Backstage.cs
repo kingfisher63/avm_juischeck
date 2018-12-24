@@ -184,12 +184,12 @@ namespace JuisCheck
 
 		public static RoutedCommand Backstage_CmdRecentFileRemove = new RoutedCommand();
 
-		private void Backstage_CmdRecentFileRemove_CanExecute(object sender, CanExecuteRoutedEventArgs evt)
+		private void Backstage_CmdRecentFileRemove_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
 			evt.CanExecute = true;
 		}
 
-		private void Backstage_CmdRecentFileRemove_Executed(object sender, ExecutedRoutedEventArgs evt)
+		private void Backstage_CmdRecentFileRemove_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
 			if (evt.Source is RecentFileButton button) {
 				RecentFiles.Remove(button.Tag as string);
@@ -252,7 +252,7 @@ namespace JuisCheck
 
 		// Event: RecentFile_ContextMenuRemoveClick
 
-		private void Backstage_RecentFile_ContextMenuRemoveClick_Handler(object sender, RoutedEventArgs evt)
+		private void Backstage_RecentFile_ContextMenuRemoveClick_Handler( object sender, RoutedEventArgs evt )
 		{
 			if (evt.Source is WinControls.MenuItem menuItem) {
 				if (menuItem.Parent is WinControls.ContextMenu contextMenu) {
