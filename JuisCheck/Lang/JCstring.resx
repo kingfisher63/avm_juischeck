@@ -630,7 +630,13 @@
   <data name="messageCaptionFatalError" xml:space="preserve">
     <value>Fatal error</value>
   </data>
-  <data name="messageTextUnhandledException" xml:space="preserve">
+  <data name="messageTextUnhandledExceptionCopySuccess" xml:space="preserve">
     <value>Unhandled exception: {0}\n\nException information has been copied to the clipboard.</value>
+  </data>
+  <data name="messageTextClipboardCopyFailure" xml:space="preserve">
+    <value>The data could not be copied to the clipboard.\nThe clipboard may be locked by another program.</value>
+  </data>
+  <data name="messageTextUnhandledExceptionCopyFailure" xml:space="preserve">
+    <value>Unhandled exception: {0}\n\nException information could not be copied to the clipboard.</value>
   </data>
 </root>

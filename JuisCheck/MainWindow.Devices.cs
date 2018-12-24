@@ -95,7 +95,7 @@ namespace JuisCheck
 		private static bool IsSelectedDevice					(Device d) => d.IsSelected;
 		private static bool IsSelectedDeviceWithUpdateAvailable	(Device d) => d.IsSelected && d.UpdateAvailable;
 		private static bool IsSelectedDeviceWithUpdateInfo		(Device d) => d.IsSelected && !string.IsNullOrWhiteSpace(d.UpdateInfo);
-		private static bool IsSelectedDeviceWithImageURL		(Device d) => d.IsSelected && !string.IsNullOrWhiteSpace(d.UpdateImageURL);
+		private static bool IsSelectedDeviceWithUpdateImageURL	(Device d) => d.IsSelected && !string.IsNullOrWhiteSpace(d.UpdateImageURL);
 
 		// Routed command: Devices_CmdAddDECT
 
@@ -173,13 +173,15 @@ namespace JuisCheck
 
 		private void Devices_CmdCopyURLs_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
-			evt.CanExecute = Devices.Any(predicate: IsSelectedDeviceWithImageURL);
+			evt.CanExecute = Devices.Any(predicate: IsSelectedDeviceWithUpdateImageURL);
 		}
 
 		private void Devices_CmdCopyURLs_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			string[] urls = Devices.Where(predicate: IsSelectedDeviceWithImageURL).Select( d => d.UpdateImageURL ).ToArray();
-			Clipboard.SetText(string.Join("\n", urls));
+			string[] urls = Devices.Where(predicate: IsSelectedDeviceWithUpdateImageURL).Select( d => d.UpdateImageURL ).ToArray();
+			if (!App.SafeClipboardSetText(string.Join("\r\n", urls) + "\r\n")) {
+				ShowErrorMessage(JCstring.messageTextClipboardCopyFailure.Unescape());
+			}
 
 			Devices_SetDataGridFocus();
 		}

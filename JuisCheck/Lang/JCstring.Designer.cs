@@ -1123,6 +1123,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The data could not be copied to the clipboard.\nThe clipboard may be locked by another program..
+        /// </summary>
+        public static string messageTextClipboardCopyFailure {
+            get {
+                return ResourceManager.GetString("messageTextClipboardCopyFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete {0} selected devices?.
         /// </summary>
         public static string messageTextDeleteMultipleDevices {
@@ -1177,11 +1186,20 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unhandled exception: {0}\n\nException information could not be copied to the clipboard..
+        /// </summary>
+        public static string messageTextUnhandledExceptionCopyFailure {
+            get {
+                return ResourceManager.GetString("messageTextUnhandledExceptionCopyFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unhandled exception: {0}\n\nException information has been copied to the clipboard..
         /// </summary>
-        public static string messageTextUnhandledException {
+        public static string messageTextUnhandledExceptionCopySuccess {
             get {
-                return ResourceManager.GetString("messageTextUnhandledException", resourceCulture);
+                return ResourceManager.GetString("messageTextUnhandledExceptionCopySuccess", resourceCulture);
             }
         }
         

@@ -7,9 +7,11 @@
 using Muon.DotNetExtensions;
 using Muon.Windows;
 using System;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Threading;
+using WinForms = System.Windows.Forms;
 
 using JuisCheck.Lang;
 using JuisCheck.Properties;
@@ -21,6 +23,18 @@ namespace JuisCheck
 	/// </summary>
 	public partial class App : Application
 	{
+		public static bool SafeClipboardSetText( string text )
+		{
+			try {
+				// Does retries internally if needed (System.Windows.Clipboard does not do this)
+				WinForms.Clipboard.SetDataObject(text, true);
+				return true;
+			}
+			catch (ExternalException) {
+				return false;
+			}
+		}
+
 		// Event: Exit
 
 		private void Exit_Handler( object sender, ExitEventArgs evt )
@@ -41,14 +55,19 @@ namespace JuisCheck
 			}
 		}
 
-        private void DispatcherUnhandledException_Handler( object sender, DispatcherUnhandledExceptionEventArgs evt )
+		// Event: DispatcherUnhandledException
+
+		private void DispatcherUnhandledException_Handler( object sender, DispatcherUnhandledExceptionEventArgs evt )
         {
 			string exceptionText = string.Empty;
 
 			for (Exception exception = evt.Exception; exception != null; exception = exception.InnerException) {
-				exceptionText += string.Format("Type     = {0}\r\n", exception.GetType().Name);
-				exceptionText += string.Format("Message  = {0}\r\n", exception.Message);
-				exceptionText += string.Format("Source   = {0}\r\n", exception.Source);
+				exceptionText += string.Format("Type      = {0}\r\n", exception.GetType().Name);
+				exceptionText += string.Format("Message   = {0}\r\n", exception.Message);
+
+				if (exception is ExternalException externalException) {
+					exceptionText += string.Format("HResult   = 0x{0:X8}", externalException.ErrorCode);
+				}
 
 				if (exception is XamlParseException xamlParseException) {
 					exceptionText += string.Format("XAML URI  = {0}\r\n", xamlParseException.BaseUri.ToString());
@@ -58,16 +77,21 @@ namespace JuisCheck
 					exceptionText += string.Format("XAML name = {0}\r\n", xamlParseException.NameContext);
 				}
 
-				exceptionText += string.Format("HasInner = {0}\r\n", exception.InnerException != null);
+				exceptionText += string.Format("HasInner  = {0}\r\n", exception.InnerException != null);
 				exceptionText += string.Format("{0}\r\n\r\n", exception.StackTrace);
 			}
 
-			Clipboard.SetText(exceptionText);
+			string message;
+			if (SafeClipboardSetText(exceptionText)) {
+				message = JCstring.messageTextUnhandledExceptionCopySuccess.Unescape();
+			} else {
+				message = JCstring.messageTextUnhandledExceptionCopyFailure.Unescape();
+			}
 
 			MessageBoxEx.Show(
 				new MessageBoxExParams {
 					CaptionText = JCstring.messageCaptionFatalError,
-					MessageText = string.Format(JCstring.messageTextUnhandledException.Unescape(), evt.Exception.GetType().Name),
+					MessageText = string.Format(message, evt.Exception.GetType().Name),
 					Image       = MessageBoxExImage.Error,
 					Button      = MessageBoxExButton.OK
 				}

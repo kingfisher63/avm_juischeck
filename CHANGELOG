@@ -1,0 +1,19 @@
+﻿v1.0.1 (2018/12/24)
+-------------------
+
+Fix: JuisCheck would exit silently in case of an unhandled exception. It now
+     displays an error message and attempts to copy the exception data to the
+     clipboard before exiting.
+Fix: A COMException might be thrown when copying image URLs to the clipboard.
+     The cause is probably that the clipboard is locked by another program
+     (e.g. some tool that monitors the clipboard). JuisCheck now retries
+     in case of errors and displays an error message if all attempts fail.
+Fix: JuisCheck used Linux style newline (\n) when copying multiple URLs to
+     the clipboard instead of Windows style newline (\r\n).
+Fix: The tooltips of the Recent and Settings backstage menu buttons would
+     also be shown on the panel area. The tooltips are now restricted to the
+     button area.
+
+v1.0.0 (2018/12/20)
+-------------------
+Initial release

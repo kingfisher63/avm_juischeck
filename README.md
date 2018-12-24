@@ -59,20 +59,20 @@ for information about the update.
 ## Device dialogs
 
 These dialogs open when you click the *Add Device*, *Add DECT* or *Edit* button.
-Input fields are checked for valid input. A input field with invalid input will
+Input fields are checked for valid input. An input field with invalid input will
 have a red border. In this case the input field has a tooltip that explains the
 reason for this. If any field has invalid input, you cannot click the *OK* button.
 
 If the device is a device that uses the JUIS service (all devices except DECT),
-you can supply a network address (IP-address or DNS name) and click the *Query*
+you can supply a network address (IP address or DNS name) and click the *Query*
 button. JuisCheck for Windows will then populate the device properties from the
 *juis_boxinfo.xml* file retrieved from the device.
 
 ## Device collection files
 
-Device collections are stored in XML-files. The *examples* folder contains a number
+Device collections are stored in XML files. The *examples* folder contains a number
 of device collections that are provided as a courtasy. Despite considerable efforts
-from the author, you must not assume that the data is either complete or fully correct.
+from the author you must not assume that the data is either complete or fully correct.
 
 ## Miscellaneous
 
