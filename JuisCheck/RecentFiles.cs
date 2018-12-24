@@ -27,6 +27,13 @@ namespace JuisCheck
 			fileNames.Insert(0, fileName);
 		}
 
+		public static void Clear()
+		{
+			LoadFileNames();
+
+			fileNames.Clear();
+		}
+
 		public static List<string> GetFileNames( bool all = false )
 		{
 			LoadFileNames();

@@ -155,12 +155,28 @@ namespace JuisCheck
 
 		private void Backstage_CmdRecentFilesClean_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background,
-				new Action(() => {
-					Backstage_CleanRecentFiles();
-					Backstage_PopulateRecentFiles();
-				})
-			);
+			Backstage_CleanRecentFiles();
+			Backstage_PopulateRecentFiles();
+		}
+
+		// Command: Backstage_CmdRecentFilesClear
+
+		public static RoutedCommand Backstage_CmdRecentFilesClear = new RoutedCommand();
+
+		private void Backstage_CmdRecentFilesClear_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
+		{
+			if (dpRecentFiles != null) {
+				evt.CanExecute = dpRecentFiles.Children.Count != 0;
+				return;
+			}
+
+			evt.CanExecute = false;
+		}
+
+		private void Backstage_CmdRecentFilesClear_Executed( object sender, ExecutedRoutedEventArgs evt )
+		{
+			RecentFiles.Clear();
+			Backstage_PopulateRecentFiles();
 		}
 
 		// Command: Backstage_CmdRecentFileOpen

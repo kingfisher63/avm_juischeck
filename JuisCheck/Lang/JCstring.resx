@@ -645,4 +645,7 @@
   <data name="backstageContextMenuItemTextRemove" xml:space="preserve">
     <value>Remove from list</value>
   </data>
+  <data name="backstageButtonTextRemoveAllFiles" xml:space="preserve">
+    <value>Remove all files from list</value>
+  </data>
 </root>

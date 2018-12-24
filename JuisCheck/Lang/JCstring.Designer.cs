@@ -97,6 +97,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove all files from list.
+        /// </summary>
+        public static string backstageButtonTextRemoveAllFiles {
+            get {
+                return ResourceManager.GetString("backstageButtonTextRemoveAllFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove non-existing files from list.
         /// </summary>
         public static string backstageButtonTextRemoveNonExistingFiles {

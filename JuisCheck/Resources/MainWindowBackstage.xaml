@@ -24,10 +24,11 @@
     </Style>
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}" x:Key="BackstageActionButtonStyle">
-        <Setter Property="Background"      Value="White"  />
-        <Setter Property="BorderBrush"     Value="Black"  />
-        <Setter Property="BorderThickness" Value="2"      />
-        <Setter Property="Padding"         Value="5,3,5,3"/>
+        <Setter Property="Background"      Value="White"   />
+        <Setter Property="BorderBrush"     Value="Black"   />
+        <Setter Property="BorderThickness" Value="2"       />
+        <Setter Property="Margin"          Value="0,0,10,0"/>
+        <Setter Property="Padding"         Value="5,3,5,3" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">

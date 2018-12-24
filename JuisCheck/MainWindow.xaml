@@ -22,6 +22,7 @@
         <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFileOpen"   CanExecute="Backstage_CmdRecentFileOpen_CanExecute"   Executed="Backstage_CmdRecentFileOpen_Executed"  />
         <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFileRemove" CanExecute="Backstage_CmdRecentFileRemove_CanExecute" Executed="Backstage_CmdRecentFileRemove_Executed"/>
         <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFilesClean" CanExecute="Backstage_CmdRecentFilesClean_CanExecute" Executed="Backstage_CmdRecentFilesClean_Executed"/>
+        <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFilesClear" CanExecute="Backstage_CmdRecentFilesClear_CanExecute" Executed="Backstage_CmdRecentFilesClear_Executed"/>
         <CommandBinding Command="app:MainWindow.Backstage_CmdSave"             CanExecute="Backstage_CmdSave_CanExecute"             Executed="Backstage_CmdSave_Executed"            />
         <CommandBinding Command="app:MainWindow.Backstage_CmdSaveAs"           CanExecute="Backstage_CmdSaveAs_CanExecute"           Executed="Backstage_CmdSaveAs_Executed"          />
         <CommandBinding Command="app:MainWindow.Devices_CmdAddDECT"            CanExecute="Devices_CmdAddDECT_CanExecute"            Executed="Devices_CmdAddDECT_Executed"           />
@@ -88,6 +89,7 @@
                                     <TextBlock Text="{x:Static applang:JCstring.backstageSectionHeaderRecentFiles}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
                                     <StackPanel Style="{StaticResource BackstageActionButtonsStackPanelStyle}">
                                         <Button Command="app:MainWindow.Backstage_CmdRecentFilesClean" Content="{x:Static applang:JCstring.backstageButtonTextRemoveNonExistingFiles}" Style="{StaticResource BackstageActionButtonStyle}"/>
+                                        <Button Command="app:MainWindow.Backstage_CmdRecentFilesClear" Content="{x:Static applang:JCstring.backstageButtonTextRemoveAllFiles}"         Style="{StaticResource BackstageActionButtonStyle}"/>
                                     </StackPanel>
                                     <Border Style="{StaticResource RecentFilesBorderStyle}">
                                         <ScrollViewer Style="{StaticResource RecentFilesScrollViewerStyle}">
