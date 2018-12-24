@@ -73,8 +73,8 @@ namespace JuisCheck
 			catch ( Exception ex ) {
 				MessageBoxEx.Show(
 					new MessageBoxExParams {
-						CaptionText = JCstring.messageCaptionError,
-						MessageText = string.Format(JCstring.messageTextDeviceQueryFailed.Unescape(), ex.Message),
+						CaptionText = JCstring.MessageCaptionError,
+						MessageText = string.Format(JCstring.MessageTextDeviceQueryFailed.Unescape(), ex.Message),
 						Image       = MessageBoxExImage.Error,
 						Button      = MessageBoxExButton.OK,
 						Owner       = this

@@ -11,7 +11,7 @@ namespace JuisCheck.Rules
 		public override ValidationResult Validate( object value, CultureInfo cultureInfo )
 		{
 			if ((int)value < 0) {
-				return new ValidationResult(false, JCstring.validationErrorNoValueSelected);
+				return new ValidationResult(false, JCstring.ValidationErrorNoValueSelected);
 			}
 			return ValidationResult.ValidResult;
 		}

@@ -77,7 +77,7 @@ namespace JuisCheck
 					InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
 					ReadOnlyChecked  = false,
 					ShowReadOnly     = false,
-					Title            = JCstring.dialogCaptionOpen,
+					Title            = JCstring.DialogCaptionOpen,
 					ValidateNames    = true
 				};
 
@@ -94,7 +94,7 @@ namespace JuisCheck
 				RecentFiles.Add(fileName);
 			}
 			catch ( Exception ex ) {
-				ShowErrorMessage(string.Format(JCstring.messageTextOpenDeviceCollectionFailed.Unescape(), ex.Message));
+				ShowErrorMessage(string.Format(JCstring.MessageTextOpenDeviceCollectionFailed.Unescape(), ex.Message));
 			}
 		}
 
@@ -154,7 +154,7 @@ namespace JuisCheck
 				DefaultExt      = "xml",
 				Filter          = "XML files (*.xml)|*.xml",
 				OverwritePrompt = true,
-				Title           = JCstring.dialogCaptionSave,
+				Title           = JCstring.DialogCaptionSave,
 				ValidateNames   = true
 			};
 
@@ -176,7 +176,7 @@ namespace JuisCheck
 				return true;
 			}
 			catch ( Exception ex ) {
-				ShowErrorMessage(string.Format(JCstring.messageTextSaveDeviceCollectionFailed.Unescape(), ex.Message));
+				ShowErrorMessage(string.Format(JCstring.MessageTextSaveDeviceCollectionFailed.Unescape(), ex.Message));
 				return false;
 			}
 		}
@@ -199,8 +199,8 @@ namespace JuisCheck
 			while (true) {
 				MessageBoxExResult result =	MessageBoxEx.Show(
 					new MessageBoxExParams {
-						CaptionText = JCstring.messageCaptionUnsavedData,
-						MessageText = JCstring.messageTextUnsavedData.Unescape(),
+						CaptionText = JCstring.MessageCaptionUnsavedData,
+						MessageText = JCstring.MessageTextUnsavedData.Unescape(),
 						Image       = MessageBoxExImage.Warning,
 						Button      = MessageBoxExButton.YesNoCancel,
 						Owner       = this
@@ -231,16 +231,16 @@ namespace JuisCheck
 		private void SetWindowTitle()
 		{
 			string modifiedInfo = Devices.IsModified ? "*" : string.Empty;
-			string fileInfo     = Devices.FileName ?? JCstring.fileNameNew;
+			string fileInfo     = Devices.FileName ?? JCstring.FileNameNew;
 
-			Title = string.Format("{0} - {1} {2}", modifiedInfo + fileInfo, JCstring.programName, Assembly.GetExecutingAssembly().GetVersion(3));
+			Title = string.Format("{0} - {1} {2}", modifiedInfo + fileInfo, JCstring.ProgramName, Assembly.GetExecutingAssembly().GetVersion(3));
 		}
 
 		private void ShowErrorMessage( string message )
 		{
 			MessageBoxEx.Show(
 				new MessageBoxExParams {
-					CaptionText = JCstring.messageCaptionError,
+					CaptionText = JCstring.MessageCaptionError,
 					MessageText = message,
 					Image       = MessageBoxExImage.Error,
 					Button      = MessageBoxExButton.OK,

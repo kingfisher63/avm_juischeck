@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:app="clr-namespace:JuisCheck"
-                    xmlns:applang="clr-namespace:JuisCheck.Lang"
-                    xmlns:appprops="clr-namespace:JuisCheck.Properties"
-                    xmlns:apprules="clr-namespace:JuisCheck.Rules">
+                    xmlns:jc="clr-namespace:JuisCheck"
+                    xmlns:lang="clr-namespace:JuisCheck.Lang"
+                    xmlns:properties="clr-namespace:JuisCheck.Properties"
+                    xmlns:rules="clr-namespace:JuisCheck.Rules">
 
-    <apprules:BooleanToVisibilityConverter x:Key="cnvBoolToVisibility"/>
+    <rules:BooleanToVisibilityConverter x:Key="cnvBoolToVisibility"/>
 
     <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundBrushDefault" Color="#B0B0B0"/>
     <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundBrushSorted"  Color="#A0A0A0"/>
@@ -49,27 +49,27 @@
         <Setter Property="ContextMenu">
             <Setter.Value>
                 <ContextMenu>
-                    <MenuItem Header="{x:Static applang:JCstring.contextMenuTitleTextSelectColumns}"
+                    <MenuItem Header="{x:Static lang:JCstring.ContextMenuTitleTextSelectColumns}"
                               FontWeight="Bold" IsCheckable="False"/>
                     <Separator/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceName}"
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceName}"
                               IsChecked="True" IsEnabled="False"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceAddress}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderProductName}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleProductName, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderFirmware}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleFirmware, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderFirmwareBuildType}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderOEM}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleOEM, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderBaseFritzOS}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderUpdateInfo}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Mode=TwoWay}"/>
-                    <MenuItem Header="{x:Static applang:JCstring.datagridColumnHeaderUpdateLastChecked}"
-                              IsChecked="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceAddress}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderProductName}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleProductName, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmware}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmware, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmwareBuildType}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderOEM}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleOEM, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderBaseFritzOS}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateInfo}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Mode=TwoWay}"/>
+                    <MenuItem Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateLastChecked}"
+                              IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Mode=TwoWay}"/>
                 </ContextMenu>
             </Setter.Value>
         </Setter>
@@ -121,25 +121,25 @@
         <Setter Property="IsSelected" Value="{Binding Path=IsSelected}"/>
     </Style>
 
-    <Style TargetType="{x:Type app:MultiSelectDataGrid}">
+    <Style TargetType="{x:Type jc:MultiSelectDataGrid}">
         <Setter Property="AlternatingRowBackground" Value="{StaticResource DataGridRowBackgroundBrushAlternate}"/>
-        <Setter Property="AutoGenerateColumns"      Value="False"/>
+        <Setter Property="AutoGenerateColumns"      Value="False"   />
         <Setter Property="Background"               Value="{StaticResource DataGridRowBackgroundBrush}"/>
-        <Setter Property="BorderThickness"          Value="0"/>
-        <Setter Property="CanUserAddRows"           Value="False"/>
-        <Setter Property="CanUserDeleteRows"        Value="False"/>
-        <Setter Property="CanUserReorderColumns"    Value="False"/>
-        <Setter Property="CanUserResizeColumns"     Value="True"/>
-        <Setter Property="CanUserResizeRows"        Value="False"/>
-        <Setter Property="CanUserSortColumns"       Value="True"/>
+        <Setter Property="BorderThickness"          Value="0"       />
+        <Setter Property="CanUserAddRows"           Value="False"   />
+        <Setter Property="CanUserDeleteRows"        Value="False"   />
+        <Setter Property="CanUserReorderColumns"    Value="False"   />
+        <Setter Property="CanUserResizeColumns"     Value="True"    />
+        <Setter Property="CanUserResizeRows"        Value="False"   />
+        <Setter Property="CanUserSortColumns"       Value="True"    />
         <Setter Property="ColumnHeaderStyle"        Value="{StaticResource DataGridColumnHeaderStyle}"/>
-        <Setter Property="FontSize"                 Value="13"/>
-        <Setter Property="FontWeight"               Value="Normal"/>
-        <Setter Property="GridLinesVisibility"      Value="None"/>
-        <Setter Property="HeadersVisibility"        Value="Column"/>
-        <Setter Property="IsReadOnly"               Value="True"/>
+        <Setter Property="FontSize"                 Value="13"      />
+        <Setter Property="FontWeight"               Value="Normal"  />
+        <Setter Property="GridLinesVisibility"      Value="None"    />
+        <Setter Property="HeadersVisibility"        Value="Column"  />
+        <Setter Property="IsReadOnly"               Value="True"    />
         <Setter Property="SelectionMode"            Value="Extended"/>
-        <Setter Property="SelectionUnit"            Value="FullRow"/>
+        <Setter Property="SelectionUnit"            Value="FullRow" />
     </Style>
 
 </ResourceDictionary>

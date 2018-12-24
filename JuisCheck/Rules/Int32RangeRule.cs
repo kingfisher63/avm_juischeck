@@ -15,15 +15,15 @@ namespace JuisCheck.Rules
 			string	strval = ((string)value).Trim();
 
 			if (strval.Length == 0) {
-				return new ValidationResult(false, JCstring.validationErrorEmptyOrWhiteSpace);
+				return new ValidationResult(false, JCstring.ValidationErrorEmptyOrWhiteSpace);
 			}
 
 			if (!int.TryParse((string)value, out int intval)) {
-				return new ValidationResult(false, JCstring.validationErrorInvalidCharacters);
+				return new ValidationResult(false, JCstring.ValidationErrorInvalidCharacters);
 			}
 
 			if (intval < Min || intval > Max) {
-				return new ValidationResult(false, string.Format(JCstring.validationErrorValueOutOfRange, Min, Max));
+				return new ValidationResult(false, string.Format(JCstring.ValidationErrorValueOutOfRange, Min, Max));
 			}
 
 			return ValidationResult.ValidResult;

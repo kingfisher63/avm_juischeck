@@ -63,1521 +63,1521 @@ namespace JuisCheck.Lang {
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        public static string backstageButtonTextAbout {
+        public static string BackstageButtonTextAbout {
             get {
-                return ResourceManager.GetString("backstageButtonTextAbout", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextAbout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
-        public static string backstageButtonTextClose {
+        public static string BackstageButtonTextClose {
             get {
-                return ResourceManager.GetString("backstageButtonTextClose", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextClose", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
-        public static string backstageButtonTextExit {
+        public static string BackstageButtonTextExit {
             get {
-                return ResourceManager.GetString("backstageButtonTextExit", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextExit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Open....
         /// </summary>
-        public static string backstageButtonTextOpen {
+        public static string BackstageButtonTextOpen {
             get {
-                return ResourceManager.GetString("backstageButtonTextOpen", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextOpen", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Remove all files from list.
         /// </summary>
-        public static string backstageButtonTextRemoveAllFiles {
+        public static string BackstageButtonTextRemoveAllFiles {
             get {
-                return ResourceManager.GetString("backstageButtonTextRemoveAllFiles", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextRemoveAllFiles", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Remove non-existing files from list.
         /// </summary>
-        public static string backstageButtonTextRemoveNonExistingFiles {
+        public static string BackstageButtonTextRemoveNonExistingFiles {
             get {
-                return ResourceManager.GetString("backstageButtonTextRemoveNonExistingFiles", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextRemoveNonExistingFiles", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        public static string backstageButtonTextSave {
+        public static string BackstageButtonTextSave {
             get {
-                return ResourceManager.GetString("backstageButtonTextSave", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextSave", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save As....
         /// </summary>
-        public static string backstageButtonTextSaveAs {
+        public static string BackstageButtonTextSaveAs {
             get {
-                return ResourceManager.GetString("backstageButtonTextSaveAs", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTextSaveAs", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Display program information.
         /// </summary>
-        public static string backstageButtonTooltipAbout {
+        public static string BackstageButtonTooltipAbout {
             get {
-                return ResourceManager.GetString("backstageButtonTooltipAbout", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTooltipAbout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Close the device collection [Ctrl+W].
         /// </summary>
-        public static string backstageButtonTooltipClose {
+        public static string BackstageButtonTooltipClose {
             get {
-                return ResourceManager.GetString("backstageButtonTooltipClose", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTooltipClose", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Exit the program.
         /// </summary>
-        public static string backstageButtonTooltipExit {
+        public static string BackstageButtonTooltipExit {
             get {
-                return ResourceManager.GetString("backstageButtonTooltipExit", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTooltipExit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Load a device collection from a file [Ctrl+O].
         /// </summary>
-        public static string backstageButtonTooltipOpen {
+        public static string BackstageButtonTooltipOpen {
             get {
-                return ResourceManager.GetString("backstageButtonTooltipOpen", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTooltipOpen", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save the device collection to the file from which it was loaded [Ctrl+S].
         /// </summary>
-        public static string backstageButtonTooltipSave {
+        public static string BackstageButtonTooltipSave {
             get {
-                return ResourceManager.GetString("backstageButtonTooltipSave", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTooltipSave", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save the device collection to a different file [Ctrl+Alt+S].
         /// </summary>
-        public static string backstageButtonTooltipSaveAs {
+        public static string BackstageButtonTooltipSaveAs {
             get {
-                return ResourceManager.GetString("backstageButtonTooltipSaveAs", resourceCulture);
+                return ResourceManager.GetString("BackstageButtonTooltipSaveAs", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Open.
         /// </summary>
-        public static string backstageContextMenuItemTextOpen {
+        public static string BackstageContextMenuItemTextOpen {
             get {
-                return ResourceManager.GetString("backstageContextMenuItemTextOpen", resourceCulture);
+                return ResourceManager.GetString("BackstageContextMenuItemTextOpen", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Remove from list.
         /// </summary>
-        public static string backstageContextMenuItemTextRemove {
+        public static string BackstageContextMenuItemTextRemove {
             get {
-                return ResourceManager.GetString("backstageContextMenuItemTextRemove", resourceCulture);
+                return ResourceManager.GetString("BackstageContextMenuItemTextRemove", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Defaults.
         /// </summary>
-        public static string backstageSectionHeaderDefaults {
+        public static string BackstageSectionHeaderDefaults {
             get {
-                return ResourceManager.GetString("backstageSectionHeaderDefaults", resourceCulture);
+                return ResourceManager.GetString("BackstageSectionHeaderDefaults", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
-        public static string backstageSectionHeaderGeneral {
+        public static string BackstageSectionHeaderGeneral {
             get {
-                return ResourceManager.GetString("backstageSectionHeaderGeneral", resourceCulture);
+                return ResourceManager.GetString("BackstageSectionHeaderGeneral", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to JUIS devices.
         /// </summary>
-        public static string backstageSectionHeaderJuisDevices {
+        public static string BackstageSectionHeaderJuisDevices {
             get {
-                return ResourceManager.GetString("backstageSectionHeaderJuisDevices", resourceCulture);
+                return ResourceManager.GetString("BackstageSectionHeaderJuisDevices", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Recent device collections.
         /// </summary>
-        public static string backstageSectionHeaderRecentFiles {
+        public static string BackstageSectionHeaderRecentFiles {
             get {
-                return ResourceManager.GetString("backstageSectionHeaderRecentFiles", resourceCulture);
+                return ResourceManager.GetString("BackstageSectionHeaderRecentFiles", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Recent.
         /// </summary>
-        public static string backstageTabTextRecent {
+        public static string BackstageTabTextRecent {
             get {
-                return ResourceManager.GetString("backstageTabTextRecent", resourceCulture);
+                return ResourceManager.GetString("BackstageTabTextRecent", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        public static string backstageTabTextSettings {
+        public static string BackstageTabTextSettings {
             get {
-                return ResourceManager.GetString("backstageTabTextSettings", resourceCulture);
+                return ResourceManager.GetString("BackstageTabTextSettings", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Open the Recent Files panel.
         /// </summary>
-        public static string backstageTabTooltipRecent {
+        public static string BackstageTabTooltipRecent {
             get {
-                return ResourceManager.GetString("backstageTabTooltipRecent", resourceCulture);
+                return ResourceManager.GetString("BackstageTabTooltipRecent", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Open the Settings panel.
         /// </summary>
-        public static string backstageTabTooltipSettings {
+        public static string BackstageTabTooltipSettings {
             get {
-                return ResourceManager.GetString("backstageTabTooltipSettings", resourceCulture);
+                return ResourceManager.GetString("BackstageTabTooltipSettings", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to A (A).
         /// </summary>
-        public static string comboboxValueAnnexA {
+        public static string ComboBoxValueAnnexA {
             get {
-                return ResourceManager.GetString("comboboxValueAnnexA", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueAnnexA", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to B (B).
         /// </summary>
-        public static string comboboxValueAnnexB {
+        public static string ComboBoxValueAnnexB {
             get {
-                return ResourceManager.GetString("comboboxValueAnnexB", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueAnnexB", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cable (Kabel).
         /// </summary>
-        public static string comboboxValueAnnexCable {
+        public static string ComboBoxValueAnnexCable {
             get {
-                return ResourceManager.GetString("comboboxValueAnnexCable", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueAnnexCable", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to No annex (Ohne).
         /// </summary>
-        public static string comboboxValueAnnexNone {
+        public static string ComboBoxValueAnnexNone {
             get {
-                return ResourceManager.GetString("comboboxValueAnnexNone", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueAnnexNone", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Inhouse beta (1000).
         /// </summary>
-        public static string comboboxValueBuildtypeBetaInhouse {
+        public static string ComboBoxValueBuildtypeBetaInhouse {
             get {
-                return ResourceManager.GetString("comboboxValueBuildtypeBetaInhouse", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueBuildtypeBetaInhouse", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Public beta (1001).
         /// </summary>
-        public static string comboboxValueBuildtypeBetaPublic {
+        public static string ComboBoxValueBuildtypeBetaPublic {
             get {
-                return ResourceManager.GetString("comboboxValueBuildtypeBetaPublic", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueBuildtypeBetaPublic", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Release (1).
         /// </summary>
-        public static string comboboxValueBuildtypeRelease {
+        public static string ComboBoxValueBuildtypeRelease {
             get {
-                return ResourceManager.GetString("comboboxValueBuildtypeRelease", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueBuildtypeRelease", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Nigeria (0234).
         /// </summary>
-        public static string comboboxValueCountry0234 {
+        public static string ComboBoxValueCountry0234 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0234", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0234", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tanzania (0255).
         /// </summary>
-        public static string comboboxValueCountry0255 {
+        public static string ComboBoxValueCountry0255 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0255", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0255", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Uganda (0256).
         /// </summary>
-        public static string comboboxValueCountry0256 {
+        public static string ComboBoxValueCountry0256 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0256", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0256", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Namibia (0264).
         /// </summary>
-        public static string comboboxValueCountry0264 {
+        public static string ComboBoxValueCountry0264 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0264", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0264", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to South Africa (027).
         /// </summary>
-        public static string comboboxValueCountry027 {
+        public static string ComboBoxValueCountry027 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry027", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry027", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Greece (030).
         /// </summary>
-        public static string comboboxValueCountry030 {
+        public static string ComboBoxValueCountry030 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry030", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry030", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Netherlands (031).
         /// </summary>
-        public static string comboboxValueCountry031 {
+        public static string ComboBoxValueCountry031 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry031", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry031", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Belgium (032).
         /// </summary>
-        public static string comboboxValueCountry032 {
+        public static string ComboBoxValueCountry032 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry032", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry032", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to France (033).
         /// </summary>
-        public static string comboboxValueCountry033 {
+        public static string ComboBoxValueCountry033 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry033", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry033", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Spain (034).
         /// </summary>
-        public static string comboboxValueCountry034 {
+        public static string ComboBoxValueCountry034 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry034", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry034", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Portugal (0351).
         /// </summary>
-        public static string comboboxValueCountry0351 {
+        public static string ComboBoxValueCountry0351 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0351", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0351", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Luxembourg (0352).
         /// </summary>
-        public static string comboboxValueCountry0352 {
+        public static string ComboBoxValueCountry0352 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0352", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0352", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ireland (0353).
         /// </summary>
-        public static string comboboxValueCountry0353 {
+        public static string ComboBoxValueCountry0353 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0353", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0353", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cyprus (0357).
         /// </summary>
-        public static string comboboxValueCountry0357 {
+        public static string ComboBoxValueCountry0357 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0357", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0357", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Finland (0358).
         /// </summary>
-        public static string comboboxValueCountry0358 {
+        public static string ComboBoxValueCountry0358 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0358", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0358", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hungary (036).
         /// </summary>
-        public static string comboboxValueCountry036 {
+        public static string ComboBoxValueCountry036 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry036", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry036", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latvia (0371).
         /// </summary>
-        public static string comboboxValueCountry0371 {
+        public static string ComboBoxValueCountry0371 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0371", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0371", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Estonia (0372).
         /// </summary>
-        public static string comboboxValueCountry0372 {
+        public static string ComboBoxValueCountry0372 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0372", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0372", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Andorra (0376).
         /// </summary>
-        public static string comboboxValueCountry0376 {
+        public static string ComboBoxValueCountry0376 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0376", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0376", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Montenegro (0382).
         /// </summary>
-        public static string comboboxValueCountry0382 {
+        public static string ComboBoxValueCountry0382 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0382", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0382", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Croatia (0385).
         /// </summary>
-        public static string comboboxValueCountry0385 {
+        public static string ComboBoxValueCountry0385 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0385", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0385", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Slovenia (0386).
         /// </summary>
-        public static string comboboxValueCountry0386 {
+        public static string ComboBoxValueCountry0386 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0386", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0386", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Bosnia and Herzegovina (0387).
         /// </summary>
-        public static string comboboxValueCountry0387 {
+        public static string ComboBoxValueCountry0387 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0387", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0387", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Macedonia (0389).
         /// </summary>
-        public static string comboboxValueCountry0389 {
+        public static string ComboBoxValueCountry0389 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0389", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0389", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Italy (039).
         /// </summary>
-        public static string comboboxValueCountry039 {
+        public static string ComboBoxValueCountry039 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry039", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry039", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Switzerland (041).
         /// </summary>
-        public static string comboboxValueCountry041 {
+        public static string ComboBoxValueCountry041 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry041", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry041", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Czech Republic (0420).
         /// </summary>
-        public static string comboboxValueCountry0420 {
+        public static string ComboBoxValueCountry0420 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0420", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0420", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Slovakia (0421).
         /// </summary>
-        public static string comboboxValueCountry0421 {
+        public static string ComboBoxValueCountry0421 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0421", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0421", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Austria (043).
         /// </summary>
-        public static string comboboxValueCountry043 {
+        public static string ComboBoxValueCountry043 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry043", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry043", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to United Kingdom (044).
         /// </summary>
-        public static string comboboxValueCountry044 {
+        public static string ComboBoxValueCountry044 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry044", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry044", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Denmark (045).
         /// </summary>
-        public static string comboboxValueCountry045 {
+        public static string ComboBoxValueCountry045 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry045", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry045", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sweden (046).
         /// </summary>
-        public static string comboboxValueCountry046 {
+        public static string ComboBoxValueCountry046 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry046", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry046", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Norway (047).
         /// </summary>
-        public static string comboboxValueCountry047 {
+        public static string ComboBoxValueCountry047 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry047", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry047", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Poland (048).
         /// </summary>
-        public static string comboboxValueCountry048 {
+        public static string ComboBoxValueCountry048 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry048", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry048", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Germany (049).
         /// </summary>
-        public static string comboboxValueCountry049 {
+        public static string ComboBoxValueCountry049 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry049", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry049", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Argentina (054).
         /// </summary>
-        public static string comboboxValueCountry054 {
+        public static string ComboBoxValueCountry054 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry054", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry054", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Australia (061).
         /// </summary>
-        public static string comboboxValueCountry061 {
+        public static string ComboBoxValueCountry061 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry061", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry061", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to New Zealand (064).
         /// </summary>
-        public static string comboboxValueCountry064 {
+        public static string ComboBoxValueCountry064 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry064", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry064", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Thailand (066).
         /// </summary>
-        public static string comboboxValueCountry066 {
+        public static string ComboBoxValueCountry066 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry066", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry066", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Israel (0972).
         /// </summary>
-        public static string comboboxValueCountry0972 {
+        public static string ComboBoxValueCountry0972 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry0972", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry0972", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Other country (99).
         /// </summary>
-        public static string comboboxValueCountry99 {
+        public static string ComboBoxValueCountry99 {
             get {
-                return ResourceManager.GetString("comboboxValueCountry99", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueCountry99", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to German (de).
         /// </summary>
-        public static string comboboxValueLanguageDE {
+        public static string ComboBoxValueLanguageDE {
             get {
-                return ResourceManager.GetString("comboboxValueLanguageDE", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueLanguageDE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to English (en).
         /// </summary>
-        public static string comboboxValueLanguageEN {
+        public static string ComboBoxValueLanguageEN {
             get {
-                return ResourceManager.GetString("comboboxValueLanguageEN", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueLanguageEN", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Spanish (es).
         /// </summary>
-        public static string comboboxValueLanguageES {
+        public static string ComboBoxValueLanguageES {
             get {
-                return ResourceManager.GetString("comboboxValueLanguageES", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueLanguageES", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to French (fr).
         /// </summary>
-        public static string comboboxValueLanguageFR {
+        public static string ComboBoxValueLanguageFR {
             get {
-                return ResourceManager.GetString("comboboxValueLanguageFR", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueLanguageFR", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Italian (it).
         /// </summary>
-        public static string comboboxValueLanguageIT {
+        public static string ComboBoxValueLanguageIT {
             get {
-                return ResourceManager.GetString("comboboxValueLanguageIT", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueLanguageIT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Dutch (nl).
         /// </summary>
-        public static string comboboxValueLanguageNL {
+        public static string ComboBoxValueLanguageNL {
             get {
-                return ResourceManager.GetString("comboboxValueLanguageNL", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueLanguageNL", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Polish (pl).
         /// </summary>
-        public static string comboboxValueLanguagePL {
+        public static string ComboBoxValueLanguagePL {
             get {
-                return ResourceManager.GetString("comboboxValueLanguagePL", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueLanguagePL", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (not set).
         /// </summary>
-        public static string comboboxValueNotSet {
+        public static string ComboBoxValueNotSet {
             get {
-                return ResourceManager.GetString("comboboxValueNotSet", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueNotSet", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to UNKNOWN ({0}).
         /// </summary>
-        public static string comboboxValueUnknown {
+        public static string ComboBoxValueUnknown {
             get {
-                return ResourceManager.GetString("comboboxValueUnknown", resourceCulture);
+                return ResourceManager.GetString("ComboBoxValueUnknown", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select columns.
         /// </summary>
-        public static string contextMenuTitleTextSelectColumns {
+        public static string ContextMenuTitleTextSelectColumns {
             get {
-                return ResourceManager.GetString("contextMenuTitleTextSelectColumns", resourceCulture);
+                return ResourceManager.GetString("ContextMenuTitleTextSelectColumns", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Base Fritz!OS.
         /// </summary>
-        public static string datagridColumnHeaderBaseFritzOS {
+        public static string DataGridColumnHeaderBaseFritzOS {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderBaseFritzOS", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderBaseFritzOS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
-        public static string datagridColumnHeaderDeviceAddress {
+        public static string DataGridColumnHeaderDeviceAddress {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderDeviceAddress", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderDeviceAddress", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Device name.
         /// </summary>
-        public static string datagridColumnHeaderDeviceName {
+        public static string DataGridColumnHeaderDeviceName {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderDeviceName", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderDeviceName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Firmware.
         /// </summary>
-        public static string datagridColumnHeaderFirmware {
+        public static string DataGridColumnHeaderFirmware {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderFirmware", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderFirmware", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
-        public static string datagridColumnHeaderFirmwareBuildType {
+        public static string DataGridColumnHeaderFirmwareBuildType {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderFirmwareBuildType", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderFirmwareBuildType", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to OEM.
         /// </summary>
-        public static string datagridColumnHeaderOEM {
+        public static string DataGridColumnHeaderOEM {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderOEM", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderOEM", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Product name.
         /// </summary>
-        public static string datagridColumnHeaderProductName {
+        public static string DataGridColumnHeaderProductName {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderProductName", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderProductName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
-        public static string datagridColumnHeaderUpdateInfo {
+        public static string DataGridColumnHeaderUpdateInfo {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderUpdateInfo", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderUpdateInfo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Last checked.
         /// </summary>
-        public static string datagridColumnHeaderUpdateLastChecked {
+        public static string DataGridColumnHeaderUpdateLastChecked {
             get {
-                return ResourceManager.GetString("datagridColumnHeaderUpdateLastChecked", resourceCulture);
+                return ResourceManager.GetString("DataGridColumnHeaderUpdateLastChecked", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Annex.
         /// </summary>
-        public static string deviceFieldLabelAnnex {
+        public static string DeviceFieldLabelAnnex {
             get {
-                return ResourceManager.GetString("deviceFieldLabelAnnex", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelAnnex", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Base Fritz!OS.
         /// </summary>
-        public static string deviceFieldLabelBaseFritzOS {
+        public static string DeviceFieldLabelBaseFritzOS {
             get {
-                return ResourceManager.GetString("deviceFieldLabelBaseFritzOS", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelBaseFritzOS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
-        public static string deviceFieldLabelCountry {
+        public static string DeviceFieldLabelCountry {
             get {
-                return ResourceManager.GetString("deviceFieldLabelCountry", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelCountry", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Device address.
         /// </summary>
-        public static string deviceFieldLabelDeviceAddress {
+        public static string DeviceFieldLabelDeviceAddress {
             get {
-                return ResourceManager.GetString("deviceFieldLabelDeviceAddress", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelDeviceAddress", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Device name.
         /// </summary>
-        public static string deviceFieldLabelDeviceName {
+        public static string DeviceFieldLabelDeviceName {
             get {
-                return ResourceManager.GetString("deviceFieldLabelDeviceName", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelDeviceName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Firmware type.
         /// </summary>
-        public static string deviceFieldLabelFirmwareBuildType {
+        public static string DeviceFieldLabelFirmwareBuildType {
             get {
-                return ResourceManager.GetString("deviceFieldLabelFirmwareBuildType", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelFirmwareBuildType", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Firmware version.
         /// </summary>
-        public static string deviceFieldLabelFirmwareVersion {
+        public static string DeviceFieldLabelFirmwareVersion {
             get {
-                return ResourceManager.GetString("deviceFieldLabelFirmwareVersion", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelFirmwareVersion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Flags.
         /// </summary>
-        public static string deviceFieldLabelFlags {
+        public static string DeviceFieldLabelFlags {
             get {
-                return ResourceManager.GetString("deviceFieldLabelFlags", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelFlags", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hardware type.
         /// </summary>
-        public static string deviceFieldLabelHardwareType {
+        public static string DeviceFieldLabelHardwareType {
             get {
-                return ResourceManager.GetString("deviceFieldLabelHardwareType", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelHardwareType", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
-        public static string deviceFieldLabelLanguage {
+        public static string DeviceFieldLabelLanguage {
             get {
-                return ResourceManager.GetString("deviceFieldLabelLanguage", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelLanguage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Last checked.
         /// </summary>
-        public static string deviceFieldLabelLastChecked {
+        public static string DeviceFieldLabelLastChecked {
             get {
-                return ResourceManager.GetString("deviceFieldLabelLastChecked", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelLastChecked", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to OEM.
         /// </summary>
-        public static string deviceFieldLabelOem {
+        public static string DeviceFieldLabelOEM {
             get {
-                return ResourceManager.GetString("deviceFieldLabelOem", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelOEM", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Product name.
         /// </summary>
-        public static string deviceFieldLabelProductName {
+        public static string DeviceFieldLabelProductName {
             get {
-                return ResourceManager.GetString("deviceFieldLabelProductName", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelProductName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Serial number.
         /// </summary>
-        public static string deviceFieldLabelSerialNumber {
+        public static string DeviceFieldLabelSerialNumber {
             get {
-                return ResourceManager.GetString("deviceFieldLabelSerialNumber", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelSerialNumber", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Update file name.
         /// </summary>
-        public static string deviceFieldLabelUpdateFileName {
+        public static string DeviceFieldLabelUpdateFileName {
             get {
-                return ResourceManager.GetString("deviceFieldLabelUpdateFileName", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelUpdateFileName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Update info.
         /// </summary>
-        public static string deviceFieldLabelUpdateInfo {
+        public static string DeviceFieldLabelUpdateInfo {
             get {
-                return ResourceManager.GetString("deviceFieldLabelUpdateInfo", resourceCulture);
+                return ResourceManager.GetString("DeviceFieldLabelUpdateInfo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unusual firmware major version (should be hardware type - 72).
         /// </summary>
-        public static string deviceTooltipUnusualFirmwareMajorWarning {
+        public static string DeviceTooltipUnusualFirmwareMajorWarning {
             get {
-                return ResourceManager.GetString("deviceTooltipUnusualFirmwareMajorWarning", resourceCulture);
+                return ResourceManager.GetString("DeviceTooltipUnusualFirmwareMajorWarning", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        public static string dialogButtonTextCancel {
+        public static string DialogButtonTextCancel {
             get {
-                return ResourceManager.GetString("dialogButtonTextCancel", resourceCulture);
+                return ResourceManager.GetString("DialogButtonTextCancel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
-        public static string dialogButtonTextOk {
+        public static string DialogButtonTextOk {
             get {
-                return ResourceManager.GetString("dialogButtonTextOk", resourceCulture);
+                return ResourceManager.GetString("DialogButtonTextOk", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Query.
         /// </summary>
-        public static string dialogButtonTextQuery {
+        public static string DialogButtonTextQuery {
             get {
-                return ResourceManager.GetString("dialogButtonTextQuery", resourceCulture);
+                return ResourceManager.GetString("DialogButtonTextQuery", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Device properties.
         /// </summary>
-        public static string dialogCaptionDeviceProperties {
+        public static string DialogCaptionDeviceProperties {
             get {
-                return ResourceManager.GetString("dialogCaptionDeviceProperties", resourceCulture);
+                return ResourceManager.GetString("DialogCaptionDeviceProperties", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Find updates.
         /// </summary>
-        public static string dialogCaptionFindUpdates {
+        public static string DialogCaptionFindUpdates {
             get {
-                return ResourceManager.GetString("dialogCaptionFindUpdates", resourceCulture);
+                return ResourceManager.GetString("DialogCaptionFindUpdates", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Open.
         /// </summary>
-        public static string dialogCaptionOpen {
+        public static string DialogCaptionOpen {
             get {
-                return ResourceManager.GetString("dialogCaptionOpen", resourceCulture);
+                return ResourceManager.GetString("DialogCaptionOpen", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save As.
         /// </summary>
-        public static string dialogCaptionSave {
+        public static string DialogCaptionSave {
             get {
-                return ResourceManager.GetString("dialogCaptionSave", resourceCulture);
+                return ResourceManager.GetString("DialogCaptionSave", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to New.
         /// </summary>
-        public static string fileNameNew {
+        public static string FileNameNew {
             get {
-                return ResourceManager.GetString("fileNameNew", resourceCulture);
+                return ResourceManager.GetString("FileNameNew", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        public static string messageCaptionAbout {
+        public static string MessageCaptionAbout {
             get {
-                return ResourceManager.GetString("messageCaptionAbout", resourceCulture);
+                return ResourceManager.GetString("MessageCaptionAbout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
-        public static string messageCaptionDelete {
+        public static string MessageCaptionDelete {
             get {
-                return ResourceManager.GetString("messageCaptionDelete", resourceCulture);
+                return ResourceManager.GetString("MessageCaptionDelete", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        public static string messageCaptionError {
+        public static string MessageCaptionError {
             get {
-                return ResourceManager.GetString("messageCaptionError", resourceCulture);
+                return ResourceManager.GetString("MessageCaptionError", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Fatal error.
         /// </summary>
-        public static string messageCaptionFatalError {
+        public static string MessageCaptionFatalError {
             get {
-                return ResourceManager.GetString("messageCaptionFatalError", resourceCulture);
+                return ResourceManager.GetString("MessageCaptionFatalError", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unsaved data.
         /// </summary>
-        public static string messageCaptionUnsavedData {
+        public static string MessageCaptionUnsavedData {
             get {
-                return ResourceManager.GetString("messageCaptionUnsavedData", resourceCulture);
+                return ResourceManager.GetString("MessageCaptionUnsavedData", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to JuisCheck for Windows\n\nCopyright (C) 2018 Roger Hünen.
         /// </summary>
-        public static string messageTextAbout {
+        public static string MessageTextAbout {
             get {
-                return ResourceManager.GetString("messageTextAbout", resourceCulture);
+                return ResourceManager.GetString("MessageTextAbout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The data could not be copied to the clipboard.\nThe clipboard may be locked by another program..
         /// </summary>
-        public static string messageTextClipboardCopyFailure {
+        public static string MessageTextClipboardCopyFailure {
             get {
-                return ResourceManager.GetString("messageTextClipboardCopyFailure", resourceCulture);
+                return ResourceManager.GetString("MessageTextClipboardCopyFailure", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Delete {0} selected devices?.
         /// </summary>
-        public static string messageTextDeleteMultipleDevices {
+        public static string MessageTextDeleteMultipleDevices {
             get {
-                return ResourceManager.GetString("messageTextDeleteMultipleDevices", resourceCulture);
+                return ResourceManager.GetString("MessageTextDeleteMultipleDevices", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Delete 1 selected device?.
         /// </summary>
-        public static string messageTextDeleteOneDevice {
+        public static string MessageTextDeleteOneDevice {
             get {
-                return ResourceManager.GetString("messageTextDeleteOneDevice", resourceCulture);
+                return ResourceManager.GetString("MessageTextDeleteOneDevice", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Could not get data from device.\n\n{0}.
         /// </summary>
-        public static string messageTextDeviceQueryFailed {
+        public static string MessageTextDeviceQueryFailed {
             get {
-                return ResourceManager.GetString("messageTextDeviceQueryFailed", resourceCulture);
+                return ResourceManager.GetString("MessageTextDeviceQueryFailed", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Invalid firmware update version.\n\nDevice: {0}\nVersion: {1}.
         /// </summary>
-        public static string messageTextInvalidUpdateVersion {
+        public static string MessageTextInvalidUpdateVersion {
             get {
-                return ResourceManager.GetString("messageTextInvalidUpdateVersion", resourceCulture);
+                return ResourceManager.GetString("MessageTextInvalidUpdateVersion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The device collection could not be loaded.\n\n{0}.
         /// </summary>
-        public static string messageTextOpenDeviceCollectionFailed {
+        public static string MessageTextOpenDeviceCollectionFailed {
             get {
-                return ResourceManager.GetString("messageTextOpenDeviceCollectionFailed", resourceCulture);
+                return ResourceManager.GetString("MessageTextOpenDeviceCollectionFailed", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The device collection could not be saved.\n\n{0}.
         /// </summary>
-        public static string messageTextSaveDeviceCollectionFailed {
+        public static string MessageTextSaveDeviceCollectionFailed {
             get {
-                return ResourceManager.GetString("messageTextSaveDeviceCollectionFailed", resourceCulture);
+                return ResourceManager.GetString("MessageTextSaveDeviceCollectionFailed", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unhandled exception: {0}\n\nException information could not be copied to the clipboard..
         /// </summary>
-        public static string messageTextUnhandledExceptionCopyFailure {
+        public static string MessageTextUnhandledExceptionCopyFailure {
             get {
-                return ResourceManager.GetString("messageTextUnhandledExceptionCopyFailure", resourceCulture);
+                return ResourceManager.GetString("MessageTextUnhandledExceptionCopyFailure", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unhandled exception: {0}\n\nException information has been copied to the clipboard..
         /// </summary>
-        public static string messageTextUnhandledExceptionCopySuccess {
+        public static string MessageTextUnhandledExceptionCopySuccess {
             get {
-                return ResourceManager.GetString("messageTextUnhandledExceptionCopySuccess", resourceCulture);
+                return ResourceManager.GetString("MessageTextUnhandledExceptionCopySuccess", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The data is modified. Changes will be\nlost if you do not save the data.\n\nSave the data now?.
         /// </summary>
-        public static string messageTextUnsavedData {
+        public static string MessageTextUnsavedData {
             get {
-                return ResourceManager.GetString("messageTextUnsavedData", resourceCulture);
+                return ResourceManager.GetString("MessageTextUnsavedData", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to JuisCheck for Windows.
         /// </summary>
-        public static string programName {
+        public static string ProgramName {
             get {
-                return ResourceManager.GetString("programName", resourceCulture);
+                return ResourceManager.GetString("ProgramName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Add DECT.
         /// </summary>
-        public static string ribbonButtonTextAddDECT {
+        public static string RibbonButtonTextAddDECT {
             get {
-                return ResourceManager.GetString("ribbonButtonTextAddDECT", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextAddDECT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Add Device.
         /// </summary>
-        public static string ribbonButtonTextAddJUIS {
+        public static string RibbonButtonTextAddJUIS {
             get {
-                return ResourceManager.GetString("ribbonButtonTextAddJUIS", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextAddJUIS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Clear Updates.
         /// </summary>
-        public static string ribbonButtonTextClearUpdates {
+        public static string RibbonButtonTextClearUpdates {
             get {
-                return ResourceManager.GetString("ribbonButtonTextClearUpdates", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextClearUpdates", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Copy URLs.
         /// </summary>
-        public static string ribbonButtonTextCopyURLs {
+        public static string RibbonButtonTextCopyURLs {
             get {
-                return ResourceManager.GetString("ribbonButtonTextCopyURLs", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextCopyURLs", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
-        public static string ribbonButtonTextDelete {
+        public static string RibbonButtonTextDelete {
             get {
-                return ResourceManager.GetString("ribbonButtonTextDelete", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextDelete", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
-        public static string ribbonButtonTextEdit {
+        public static string RibbonButtonTextEdit {
             get {
-                return ResourceManager.GetString("ribbonButtonTextEdit", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextEdit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Find Updates.
         /// </summary>
-        public static string ribbonButtonTextFindUpdates {
+        public static string RibbonButtonTextFindUpdates {
             get {
-                return ResourceManager.GetString("ribbonButtonTextFindUpdates", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextFindUpdates", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Get Image.
         /// </summary>
-        public static string ribbonButtonTextGetImage {
+        public static string RibbonButtonTextGetImage {
             get {
-                return ResourceManager.GetString("ribbonButtonTextGetImage", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextGetImage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Make Current.
         /// </summary>
-        public static string ribbonButtonTextMakeCurrent {
+        public static string RibbonButtonTextMakeCurrent {
             get {
-                return ResourceManager.GetString("ribbonButtonTextMakeCurrent", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextMakeCurrent", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select All.
         /// </summary>
-        public static string ribbonButtonTextSelectAll {
+        public static string RibbonButtonTextSelectAll {
             get {
-                return ResourceManager.GetString("ribbonButtonTextSelectAll", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextSelectAll", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select None.
         /// </summary>
-        public static string ribbonButtonTextSelectNone {
+        public static string RibbonButtonTextSelectNone {
             get {
-                return ResourceManager.GetString("ribbonButtonTextSelectNone", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextSelectNone", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to View Info.
         /// </summary>
-        public static string ribbonButtonTextViewInfo {
+        public static string RibbonButtonTextViewInfo {
             get {
-                return ResourceManager.GetString("ribbonButtonTextViewInfo", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTextViewInfo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Add a new device to the list (FRITZ!DECT).
         /// </summary>
-        public static string ribbonButtonTooltipAddDECT {
+        public static string RibbonButtonTooltipAddDECT {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipAddDECT", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipAddDECT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN).
         /// </summary>
-        public static string ribbonButtonTooltipAddJUIS {
+        public static string RibbonButtonTooltipAddJUIS {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipAddJUIS", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipAddJUIS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Clear the update information for the selected devices.
         /// </summary>
-        public static string ribbonButtonTooltipClearUpdates {
+        public static string RibbonButtonTooltipClearUpdates {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipClearUpdates", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipClearUpdates", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Copy the image download URLs of the selected devices to the clipboard.
         /// </summary>
-        public static string ribbonButtonTooltipCopyURLs {
+        public static string RibbonButtonTooltipCopyURLs {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipCopyURLs", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipCopyURLs", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Remove the selected devices from the device collection.
         /// </summary>
-        public static string ribbonButtonTooltipDelete {
+        public static string RibbonButtonTooltipDelete {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipDelete", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipDelete", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Edit the selected device.
         /// </summary>
-        public static string ribbonButtonTooltipEdit {
+        public static string RibbonButtonTooltipEdit {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipEdit", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipEdit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Query the AVM update service to find new firmware for the selected devices.
         /// </summary>
-        public static string ribbonButtonTooltipFindUpdates {
+        public static string RibbonButtonTooltipFindUpdates {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipFindUpdates", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipFindUpdates", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Launch the default browser to get the firmware image for the selected device.
         /// </summary>
-        public static string ribbonButtonTooltipGetImage {
+        public static string RibbonButtonTooltipGetImage {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipGetImage", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipGetImage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Make the latest firmware the current firmware for the selected devices.
         /// </summary>
-        public static string ribbonButtonTooltipMakeCurrent {
+        public static string RibbonButtonTooltipMakeCurrent {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipMakeCurrent", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipMakeCurrent", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select all devices.
         /// </summary>
-        public static string ribbonButtonTooltipSelectAll {
+        public static string RibbonButtonTooltipSelectAll {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipSelectAll", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipSelectAll", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select no device.
         /// </summary>
-        public static string ribbonButtonTooltipSelectNone {
+        public static string RibbonButtonTooltipSelectNone {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipSelectNone", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipSelectNone", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Launch the default browser to view the firmware release notes for the selected device.
         /// </summary>
-        public static string ribbonButtonTooltipViewInfo {
+        public static string RibbonButtonTooltipViewInfo {
             get {
-                return ResourceManager.GetString("ribbonButtonTooltipViewInfo", resourceCulture);
+                return ResourceManager.GetString("RibbonButtonTooltipViewInfo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Devices.
         /// </summary>
-        public static string ribbonGroupBoxTextDevices {
+        public static string RibbonGroupBoxTextDevices {
             get {
-                return ResourceManager.GetString("ribbonGroupBoxTextDevices", resourceCulture);
+                return ResourceManager.GetString("RibbonGroupBoxTextDevices", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Firmware Update.
         /// </summary>
-        public static string ribbonGroupBoxTextFirmwareUpdate {
+        public static string RibbonGroupBoxTextFirmwareUpdate {
             get {
-                return ResourceManager.GetString("ribbonGroupBoxTextFirmwareUpdate", resourceCulture);
+                return ResourceManager.GetString("RibbonGroupBoxTextFirmwareUpdate", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Devices.
         /// </summary>
-        public static string ribbonTabHeaderDevices {
+        public static string RibbonTabHeaderDevices {
             get {
-                return ResourceManager.GetString("ribbonTabHeaderDevices", resourceCulture);
+                return ResourceManager.GetString("RibbonTabHeaderDevices", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
-        public static string ribbontabHeaderFile {
+        public static string RribbontabHeaderFile {
             get {
-                return ResourceManager.GetString("ribbontabHeaderFile", resourceCulture);
+                return ResourceManager.GetString("RribbontabHeaderFile", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Annex.
         /// </summary>
-        public static string settingLabelDefaultAnnex {
+        public static string SettingLabelDefaultAnnex {
             get {
-                return ResourceManager.GetString("settingLabelDefaultAnnex", resourceCulture);
+                return ResourceManager.GetString("SettingLabelDefaultAnnex", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to DECT base Fritz!OS.
         /// </summary>
-        public static string settingLabelDefaultBaseFritzOS {
+        public static string SettingLabelDefaultBaseFritzOS {
             get {
-                return ResourceManager.GetString("settingLabelDefaultBaseFritzOS", resourceCulture);
+                return ResourceManager.GetString("SettingLabelDefaultBaseFritzOS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
-        public static string settingLabelDefaultCountry {
+        public static string SettingLabelDefaultCountry {
             get {
-                return ResourceManager.GetString("settingLabelDefaultCountry", resourceCulture);
+                return ResourceManager.GetString("SettingLabelDefaultCountry", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Firmware type.
         /// </summary>
-        public static string settingLabelDefaultFirmwareBuildType {
+        public static string SettingLabelDefaultFirmwareBuildType {
             get {
-                return ResourceManager.GetString("settingLabelDefaultFirmwareBuildType", resourceCulture);
+                return ResourceManager.GetString("SettingLabelDefaultFirmwareBuildType", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
-        public static string settingLabelDefaultLanguage {
+        public static string SettingLabelDefaultLanguage {
             get {
-                return ResourceManager.GetString("settingLabelDefaultLanguage", resourceCulture);
+                return ResourceManager.GetString("SettingLabelDefaultLanguage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to OEM.
         /// </summary>
-        public static string settingLabelDefaultOEM {
+        public static string SettingLabelDefaultOEM {
             get {
-                return ResourceManager.GetString("settingLabelDefaultOEM", resourceCulture);
+                return ResourceManager.GetString("SettingLabelDefaultOEM", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Show build number for release versions (if available).
         /// </summary>
-        public static string settingLabelJuisReleaseShowBuildNumber {
+        public static string SettingLabelJuisReleaseShowBuildNumber {
             get {
-                return ResourceManager.GetString("settingLabelJuisReleaseShowBuildNumber", resourceCulture);
+                return ResourceManager.GetString("SettingLabelJuisReleaseShowBuildNumber", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Restore window size and position on startup.
         /// </summary>
-        public static string settingLabelMainWindowRestoreMetrics {
+        public static string SettingLabelMainWindowRestoreMetrics {
             get {
-                return ResourceManager.GetString("settingLabelMainWindowRestoreMetrics", resourceCulture);
+                return ResourceManager.GetString("SettingLabelMainWindowRestoreMetrics", resourceCulture);
             }
         }
         
@@ -1593,72 +1593,72 @@ namespace JuisCheck.Lang {
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        public static string updateInfoError {
+        public static string UpdateInfoError {
             get {
-                return ResourceManager.GetString("updateInfoError", resourceCulture);
+                return ResourceManager.GetString("UpdateInfoError", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
-        public static string updateInfoNone {
+        public static string UpdateInfoNone {
             get {
-                return ResourceManager.GetString("updateInfoNone", resourceCulture);
+                return ResourceManager.GetString("UpdateInfoNone", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>
-        public static string updateInfoUnknown {
+        public static string UpdateInfoUnknown {
             get {
-                return ResourceManager.GetString("updateInfoUnknown", resourceCulture);
+                return ResourceManager.GetString("UpdateInfoUnknown", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The input is empty or white space.
         /// </summary>
-        public static string validationErrorEmptyOrWhiteSpace {
+        public static string ValidationErrorEmptyOrWhiteSpace {
             get {
-                return ResourceManager.GetString("validationErrorEmptyOrWhiteSpace", resourceCulture);
+                return ResourceManager.GetString("ValidationErrorEmptyOrWhiteSpace", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The input contains invalid characters.
         /// </summary>
-        public static string validationErrorInvalidCharacters {
+        public static string ValidationErrorInvalidCharacters {
             get {
-                return ResourceManager.GetString("validationErrorInvalidCharacters", resourceCulture);
+                return ResourceManager.GetString("ValidationErrorInvalidCharacters", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to This Fritz!OS version format is invalid (example: 113.07.01).
         /// </summary>
-        public static string validationErrorInvalidFritzOSversion {
+        public static string ValidationErrorInvalidFritzOSversion {
             get {
-                return ResourceManager.GetString("validationErrorInvalidFritzOSversion", resourceCulture);
+                return ResourceManager.GetString("ValidationErrorInvalidFritzOSversion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to No value selected.
         /// </summary>
-        public static string validationErrorNoValueSelected {
+        public static string ValidationErrorNoValueSelected {
             get {
-                return ResourceManager.GetString("validationErrorNoValueSelected", resourceCulture);
+                return ResourceManager.GetString("ValidationErrorNoValueSelected", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The input is out of range ({0}-{1}).
         /// </summary>
-        public static string validationErrorValueOutOfRange {
+        public static string ValidationErrorValueOutOfRange {
             get {
-                return ResourceManager.GetString("validationErrorValueOutOfRange", resourceCulture);
+                return ResourceManager.GetString("ValidationErrorValueOutOfRange", resourceCulture);
             }
         }
     }

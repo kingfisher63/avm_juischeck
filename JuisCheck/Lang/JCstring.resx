@@ -117,538 +117,538 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="backstageButtonTextAbout" xml:space="preserve">
+  <data name="BackstageButtonTextAbout" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="ribbonButtonTextAddDECT" xml:space="preserve">
+  <data name="RibbonButtonTextAddDECT" xml:space="preserve">
     <value>Add DECT</value>
   </data>
-  <data name="deviceFieldLabelDeviceAddress" xml:space="preserve">
+  <data name="DeviceFieldLabelDeviceAddress" xml:space="preserve">
     <value>Device address</value>
   </data>
-  <data name="dialogButtonTextCancel" xml:space="preserve">
+  <data name="DialogButtonTextCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="backstageButtonTextClose" xml:space="preserve">
+  <data name="BackstageButtonTextClose" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="ribbonButtonTextDelete" xml:space="preserve">
+  <data name="RibbonButtonTextDelete" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="deviceFieldLabelDeviceName" xml:space="preserve">
+  <data name="DeviceFieldLabelDeviceName" xml:space="preserve">
     <value>Device name</value>
   </data>
-  <data name="ribbonButtonTextEdit" xml:space="preserve">
+  <data name="RibbonButtonTextEdit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="backstageButtonTextExit" xml:space="preserve">
+  <data name="BackstageButtonTextExit" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="ribbonButtonTextFindUpdates" xml:space="preserve">
+  <data name="RibbonButtonTextFindUpdates" xml:space="preserve">
     <value>Find Updates</value>
   </data>
-  <data name="ribbonGroupBoxTextFirmwareUpdate" xml:space="preserve">
+  <data name="RibbonGroupBoxTextFirmwareUpdate" xml:space="preserve">
     <value>Firmware Update</value>
   </data>
-  <data name="ribbonButtonTextMakeCurrent" xml:space="preserve">
+  <data name="RibbonButtonTextMakeCurrent" xml:space="preserve">
     <value>Make Current</value>
   </data>
-  <data name="dialogButtonTextOk" xml:space="preserve">
+  <data name="DialogButtonTextOk" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="backstageButtonTextOpen" xml:space="preserve">
+  <data name="BackstageButtonTextOpen" xml:space="preserve">
     <value>Open...</value>
   </data>
-  <data name="deviceFieldLabelProductName" xml:space="preserve">
+  <data name="DeviceFieldLabelProductName" xml:space="preserve">
     <value>Product name</value>
   </data>
-  <data name="dialogButtonTextQuery" xml:space="preserve">
+  <data name="DialogButtonTextQuery" xml:space="preserve">
     <value>Query</value>
   </data>
-  <data name="backstageButtonTextSave" xml:space="preserve">
+  <data name="BackstageButtonTextSave" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="backstageButtonTextSaveAs" xml:space="preserve">
+  <data name="BackstageButtonTextSaveAs" xml:space="preserve">
     <value>Save As...</value>
   </data>
-  <data name="ribbonButtonTextSelectAll" xml:space="preserve">
+  <data name="RibbonButtonTextSelectAll" xml:space="preserve">
     <value>Select All</value>
   </data>
-  <data name="ribbonButtonTextSelectNone" xml:space="preserve">
+  <data name="RibbonButtonTextSelectNone" xml:space="preserve">
     <value>Select None</value>
   </data>
-  <data name="messageTextUnsavedData" xml:space="preserve">
+  <data name="MessageTextUnsavedData" xml:space="preserve">
     <value>The data is modified. Changes will be\nlost if you do not save the data.\n\nSave the data now?</value>
   </data>
-  <data name="messageCaptionUnsavedData" xml:space="preserve">
+  <data name="MessageCaptionUnsavedData" xml:space="preserve">
     <value>Unsaved data</value>
   </data>
-  <data name="ribbonButtonTooltipAddDECT" xml:space="preserve">
+  <data name="RibbonButtonTooltipAddDECT" xml:space="preserve">
     <value>Add a new device to the list (FRITZ!DECT)</value>
   </data>
-  <data name="ribbonButtonTooltipDelete" xml:space="preserve">
+  <data name="RibbonButtonTooltipDelete" xml:space="preserve">
     <value>Remove the selected devices from the device collection</value>
   </data>
-  <data name="ribbonButtonTooltipEdit" xml:space="preserve">
+  <data name="RibbonButtonTooltipEdit" xml:space="preserve">
     <value>Edit the selected device</value>
   </data>
-  <data name="ribbonButtonTooltipFindUpdates" xml:space="preserve">
+  <data name="RibbonButtonTooltipFindUpdates" xml:space="preserve">
     <value>Query the AVM update service to find new firmware for the selected devices</value>
   </data>
-  <data name="ribbonButtonTooltipMakeCurrent" xml:space="preserve">
+  <data name="RibbonButtonTooltipMakeCurrent" xml:space="preserve">
     <value>Make the latest firmware the current firmware for the selected devices</value>
   </data>
-  <data name="ribbonButtonTooltipSelectAll" xml:space="preserve">
+  <data name="RibbonButtonTooltipSelectAll" xml:space="preserve">
     <value>Select all devices</value>
   </data>
-  <data name="ribbonButtonTooltipSelectNone" xml:space="preserve">
+  <data name="RibbonButtonTooltipSelectNone" xml:space="preserve">
     <value>Select no device</value>
   </data>
-  <data name="messageCaptionError" xml:space="preserve">
+  <data name="MessageCaptionError" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="messageTextSaveDeviceCollectionFailed" xml:space="preserve">
+  <data name="MessageTextSaveDeviceCollectionFailed" xml:space="preserve">
     <value>The device collection could not be saved.\n\n{0}</value>
   </data>
-  <data name="programName" xml:space="preserve">
+  <data name="ProgramName" xml:space="preserve">
     <value>JuisCheck for Windows</value>
   </data>
-  <data name="fileNameNew" xml:space="preserve">
+  <data name="FileNameNew" xml:space="preserve">
     <value>New</value>
   </data>
-  <data name="messageTextOpenDeviceCollectionFailed" xml:space="preserve">
+  <data name="MessageTextOpenDeviceCollectionFailed" xml:space="preserve">
     <value>The device collection could not be loaded.\n\n{0}</value>
   </data>
-  <data name="messageTextDeleteMultipleDevices" xml:space="preserve">
+  <data name="MessageTextDeleteMultipleDevices" xml:space="preserve">
     <value>Delete {0} selected devices?</value>
   </data>
-  <data name="messageTextDeleteOneDevice" xml:space="preserve">
+  <data name="MessageTextDeleteOneDevice" xml:space="preserve">
     <value>Delete 1 selected device?</value>
   </data>
-  <data name="messageTextDeviceQueryFailed" xml:space="preserve">
+  <data name="MessageTextDeviceQueryFailed" xml:space="preserve">
     <value>Could not get data from device.\n\n{0}</value>
   </data>
-  <data name="ribbontabHeaderFile" xml:space="preserve">
+  <data name="RribbontabHeaderFile" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="deviceFieldLabelHardwareType" xml:space="preserve">
+  <data name="DeviceFieldLabelHardwareType" xml:space="preserve">
     <value>Hardware type</value>
   </data>
-  <data name="datagridColumnHeaderDeviceAddress" xml:space="preserve">
+  <data name="DataGridColumnHeaderDeviceAddress" xml:space="preserve">
     <value>Address</value>
   </data>
-  <data name="datagridColumnHeaderDeviceName" xml:space="preserve">
+  <data name="DataGridColumnHeaderDeviceName" xml:space="preserve">
     <value>Device name</value>
   </data>
-  <data name="datagridColumnHeaderProductName" xml:space="preserve">
+  <data name="DataGridColumnHeaderProductName" xml:space="preserve">
     <value>Product name</value>
   </data>
-  <data name="ribbonGroupBoxTextDevices" xml:space="preserve">
+  <data name="RibbonGroupBoxTextDevices" xml:space="preserve">
     <value>Devices</value>
   </data>
-  <data name="dialogCaptionOpen" xml:space="preserve">
+  <data name="DialogCaptionOpen" xml:space="preserve">
     <value>Open</value>
   </data>
-  <data name="dialogCaptionSave" xml:space="preserve">
+  <data name="DialogCaptionSave" xml:space="preserve">
     <value>Save As</value>
   </data>
-  <data name="messageCaptionAbout" xml:space="preserve">
+  <data name="MessageCaptionAbout" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="messageTextAbout" xml:space="preserve">
+  <data name="MessageTextAbout" xml:space="preserve">
     <value>JuisCheck for Windows\n\nCopyright (C) 2018 Roger Hünen</value>
   </data>
-  <data name="messageCaptionDelete" xml:space="preserve">
+  <data name="MessageCaptionDelete" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="validationErrorEmptyOrWhiteSpace" xml:space="preserve">
+  <data name="ValidationErrorEmptyOrWhiteSpace" xml:space="preserve">
     <value>The input is empty or white space</value>
   </data>
-  <data name="validationErrorInvalidCharacters" xml:space="preserve">
+  <data name="ValidationErrorInvalidCharacters" xml:space="preserve">
     <value>The input contains invalid characters</value>
   </data>
-  <data name="validationErrorValueOutOfRange" xml:space="preserve">
+  <data name="ValidationErrorValueOutOfRange" xml:space="preserve">
     <value>The input is out of range ({0}-{1})</value>
   </data>
-  <data name="deviceFieldLabelFirmwareVersion" xml:space="preserve">
+  <data name="DeviceFieldLabelFirmwareVersion" xml:space="preserve">
     <value>Firmware version</value>
   </data>
-  <data name="datagridColumnHeaderFirmware" xml:space="preserve">
+  <data name="DataGridColumnHeaderFirmware" xml:space="preserve">
     <value>Firmware</value>
   </data>
-  <data name="dialogCaptionDeviceProperties" xml:space="preserve">
+  <data name="DialogCaptionDeviceProperties" xml:space="preserve">
     <value>Device properties</value>
   </data>
-  <data name="deviceTooltipUnusualFirmwareMajorWarning" xml:space="preserve">
+  <data name="DeviceTooltipUnusualFirmwareMajorWarning" xml:space="preserve">
     <value>Unusual firmware major version (should be hardware type - 72)</value>
   </data>
-  <data name="deviceFieldLabelFirmwareBuildType" xml:space="preserve">
+  <data name="DeviceFieldLabelFirmwareBuildType" xml:space="preserve">
     <value>Firmware type</value>
   </data>
-  <data name="deviceFieldLabelOem" xml:space="preserve">
+  <data name="DeviceFieldLabelOEM" xml:space="preserve">
     <value>OEM</value>
   </data>
-  <data name="datagridColumnHeaderFirmwareBuildType" xml:space="preserve">
+  <data name="DataGridColumnHeaderFirmwareBuildType" xml:space="preserve">
     <value>Type</value>
   </data>
-  <data name="datagridColumnHeaderOEM" xml:space="preserve">
+  <data name="DataGridColumnHeaderOEM" xml:space="preserve">
     <value>OEM</value>
   </data>
-  <data name="validationErrorNoValueSelected" xml:space="preserve">
+  <data name="ValidationErrorNoValueSelected" xml:space="preserve">
     <value>No value selected</value>
   </data>
-  <data name="comboboxValueBuildtypeBetaInhouse" xml:space="preserve">
+  <data name="ComboBoxValueBuildtypeBetaInhouse" xml:space="preserve">
     <value>Inhouse beta (1000)</value>
   </data>
-  <data name="comboboxValueBuildtypeBetaPublic" xml:space="preserve">
+  <data name="ComboBoxValueBuildtypeBetaPublic" xml:space="preserve">
     <value>Public beta (1001)</value>
   </data>
-  <data name="comboboxValueBuildtypeRelease" xml:space="preserve">
+  <data name="ComboBoxValueBuildtypeRelease" xml:space="preserve">
     <value>Release (1)</value>
   </data>
-  <data name="comboboxValueUnknown" xml:space="preserve">
+  <data name="ComboBoxValueUnknown" xml:space="preserve">
     <value>UNKNOWN ({0})</value>
   </data>
-  <data name="comboboxValueLanguageDE" xml:space="preserve">
+  <data name="ComboBoxValueLanguageDE" xml:space="preserve">
     <value>German (de)</value>
   </data>
-  <data name="comboboxValueLanguageEN" xml:space="preserve">
+  <data name="ComboBoxValueLanguageEN" xml:space="preserve">
     <value>English (en)</value>
   </data>
-  <data name="comboboxValueLanguageES" xml:space="preserve">
+  <data name="ComboBoxValueLanguageES" xml:space="preserve">
     <value>Spanish (es)</value>
   </data>
-  <data name="comboboxValueLanguageFR" xml:space="preserve">
+  <data name="ComboBoxValueLanguageFR" xml:space="preserve">
     <value>French (fr)</value>
   </data>
-  <data name="comboboxValueLanguageIT" xml:space="preserve">
+  <data name="ComboBoxValueLanguageIT" xml:space="preserve">
     <value>Italian (it)</value>
   </data>
-  <data name="comboboxValueLanguageNL" xml:space="preserve">
+  <data name="ComboBoxValueLanguageNL" xml:space="preserve">
     <value>Dutch (nl)</value>
   </data>
-  <data name="comboboxValueLanguagePL" xml:space="preserve">
+  <data name="ComboBoxValueLanguagePL" xml:space="preserve">
     <value>Polish (pl)</value>
   </data>
-  <data name="deviceFieldLabelLanguage" xml:space="preserve">
+  <data name="DeviceFieldLabelLanguage" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="comboboxValueCountry0234" xml:space="preserve">
+  <data name="ComboBoxValueCountry0234" xml:space="preserve">
     <value>Nigeria (0234)</value>
   </data>
-  <data name="comboboxValueCountry0255" xml:space="preserve">
+  <data name="ComboBoxValueCountry0255" xml:space="preserve">
     <value>Tanzania (0255)</value>
   </data>
-  <data name="comboboxValueCountry0256" xml:space="preserve">
+  <data name="ComboBoxValueCountry0256" xml:space="preserve">
     <value>Uganda (0256)</value>
   </data>
-  <data name="comboboxValueCountry0264" xml:space="preserve">
+  <data name="ComboBoxValueCountry0264" xml:space="preserve">
     <value>Namibia (0264)</value>
   </data>
-  <data name="comboboxValueCountry027" xml:space="preserve">
+  <data name="ComboBoxValueCountry027" xml:space="preserve">
     <value>South Africa (027)</value>
   </data>
-  <data name="comboboxValueCountry030" xml:space="preserve">
+  <data name="ComboBoxValueCountry030" xml:space="preserve">
     <value>Greece (030)</value>
   </data>
-  <data name="comboboxValueCountry031" xml:space="preserve">
+  <data name="ComboBoxValueCountry031" xml:space="preserve">
     <value>Netherlands (031)</value>
   </data>
-  <data name="comboboxValueCountry032" xml:space="preserve">
+  <data name="ComboBoxValueCountry032" xml:space="preserve">
     <value>Belgium (032)</value>
   </data>
-  <data name="comboboxValueCountry033" xml:space="preserve">
+  <data name="ComboBoxValueCountry033" xml:space="preserve">
     <value>France (033)</value>
   </data>
-  <data name="comboboxValueCountry034" xml:space="preserve">
+  <data name="ComboBoxValueCountry034" xml:space="preserve">
     <value>Spain (034)</value>
   </data>
-  <data name="comboboxValueCountry0351" xml:space="preserve">
+  <data name="ComboBoxValueCountry0351" xml:space="preserve">
     <value>Portugal (0351)</value>
   </data>
-  <data name="comboboxValueCountry0352" xml:space="preserve">
+  <data name="ComboBoxValueCountry0352" xml:space="preserve">
     <value>Luxembourg (0352)</value>
   </data>
-  <data name="comboboxValueCountry0353" xml:space="preserve">
+  <data name="ComboBoxValueCountry0353" xml:space="preserve">
     <value>Ireland (0353)</value>
   </data>
-  <data name="comboboxValueCountry0357" xml:space="preserve">
+  <data name="ComboBoxValueCountry0357" xml:space="preserve">
     <value>Cyprus (0357)</value>
   </data>
-  <data name="comboboxValueCountry0358" xml:space="preserve">
+  <data name="ComboBoxValueCountry0358" xml:space="preserve">
     <value>Finland (0358)</value>
   </data>
-  <data name="comboboxValueCountry036" xml:space="preserve">
+  <data name="ComboBoxValueCountry036" xml:space="preserve">
     <value>Hungary (036)</value>
   </data>
-  <data name="comboboxValueCountry0371" xml:space="preserve">
+  <data name="ComboBoxValueCountry0371" xml:space="preserve">
     <value>Latvia (0371)</value>
   </data>
-  <data name="comboboxValueCountry0372" xml:space="preserve">
+  <data name="ComboBoxValueCountry0372" xml:space="preserve">
     <value>Estonia (0372)</value>
   </data>
-  <data name="comboboxValueCountry0376" xml:space="preserve">
+  <data name="ComboBoxValueCountry0376" xml:space="preserve">
     <value>Andorra (0376)</value>
   </data>
-  <data name="comboboxValueCountry0382" xml:space="preserve">
+  <data name="ComboBoxValueCountry0382" xml:space="preserve">
     <value>Montenegro (0382)</value>
   </data>
-  <data name="comboboxValueCountry0385" xml:space="preserve">
+  <data name="ComboBoxValueCountry0385" xml:space="preserve">
     <value>Croatia (0385)</value>
   </data>
-  <data name="comboboxValueCountry0386" xml:space="preserve">
+  <data name="ComboBoxValueCountry0386" xml:space="preserve">
     <value>Slovenia (0386)</value>
   </data>
-  <data name="comboboxValueCountry0387" xml:space="preserve">
+  <data name="ComboBoxValueCountry0387" xml:space="preserve">
     <value>Bosnia and Herzegovina (0387)</value>
   </data>
-  <data name="comboboxValueCountry0389" xml:space="preserve">
+  <data name="ComboBoxValueCountry0389" xml:space="preserve">
     <value>Macedonia (0389)</value>
   </data>
-  <data name="comboboxValueCountry039" xml:space="preserve">
+  <data name="ComboBoxValueCountry039" xml:space="preserve">
     <value>Italy (039)</value>
   </data>
-  <data name="comboboxValueCountry041" xml:space="preserve">
+  <data name="ComboBoxValueCountry041" xml:space="preserve">
     <value>Switzerland (041)</value>
   </data>
-  <data name="comboboxValueCountry0420" xml:space="preserve">
+  <data name="ComboBoxValueCountry0420" xml:space="preserve">
     <value>Czech Republic (0420)</value>
   </data>
-  <data name="comboboxValueCountry0421" xml:space="preserve">
+  <data name="ComboBoxValueCountry0421" xml:space="preserve">
     <value>Slovakia (0421)</value>
   </data>
-  <data name="comboboxValueCountry043" xml:space="preserve">
+  <data name="ComboBoxValueCountry043" xml:space="preserve">
     <value>Austria (043)</value>
   </data>
-  <data name="comboboxValueCountry044" xml:space="preserve">
+  <data name="ComboBoxValueCountry044" xml:space="preserve">
     <value>United Kingdom (044)</value>
   </data>
-  <data name="comboboxValueCountry045" xml:space="preserve">
+  <data name="ComboBoxValueCountry045" xml:space="preserve">
     <value>Denmark (045)</value>
   </data>
-  <data name="comboboxValueCountry046" xml:space="preserve">
+  <data name="ComboBoxValueCountry046" xml:space="preserve">
     <value>Sweden (046)</value>
   </data>
-  <data name="comboboxValueCountry047" xml:space="preserve">
+  <data name="ComboBoxValueCountry047" xml:space="preserve">
     <value>Norway (047)</value>
   </data>
-  <data name="comboboxValueCountry048" xml:space="preserve">
+  <data name="ComboBoxValueCountry048" xml:space="preserve">
     <value>Poland (048)</value>
   </data>
-  <data name="comboboxValueCountry049" xml:space="preserve">
+  <data name="ComboBoxValueCountry049" xml:space="preserve">
     <value>Germany (049)</value>
   </data>
-  <data name="comboboxValueCountry054" xml:space="preserve">
+  <data name="ComboBoxValueCountry054" xml:space="preserve">
     <value>Argentina (054)</value>
   </data>
-  <data name="comboboxValueCountry061" xml:space="preserve">
+  <data name="ComboBoxValueCountry061" xml:space="preserve">
     <value>Australia (061)</value>
   </data>
-  <data name="comboboxValueCountry064" xml:space="preserve">
+  <data name="ComboBoxValueCountry064" xml:space="preserve">
     <value>New Zealand (064)</value>
   </data>
-  <data name="comboboxValueCountry066" xml:space="preserve">
+  <data name="ComboBoxValueCountry066" xml:space="preserve">
     <value>Thailand (066)</value>
   </data>
-  <data name="comboboxValueCountry0972" xml:space="preserve">
+  <data name="ComboBoxValueCountry0972" xml:space="preserve">
     <value>Israel (0972)</value>
   </data>
-  <data name="comboboxValueCountry99" xml:space="preserve">
+  <data name="ComboBoxValueCountry99" xml:space="preserve">
     <value>Other country (99)</value>
   </data>
-  <data name="deviceFieldLabelCountry" xml:space="preserve">
+  <data name="DeviceFieldLabelCountry" xml:space="preserve">
     <value>Country</value>
   </data>
-  <data name="comboboxValueAnnexA" xml:space="preserve">
+  <data name="ComboBoxValueAnnexA" xml:space="preserve">
     <value>A (A)</value>
   </data>
-  <data name="comboboxValueAnnexB" xml:space="preserve">
+  <data name="ComboBoxValueAnnexB" xml:space="preserve">
     <value>B (B)</value>
   </data>
-  <data name="comboboxValueAnnexNone" xml:space="preserve">
+  <data name="ComboBoxValueAnnexNone" xml:space="preserve">
     <value>No annex (Ohne)</value>
   </data>
-  <data name="deviceFieldLabelAnnex" xml:space="preserve">
+  <data name="DeviceFieldLabelAnnex" xml:space="preserve">
     <value>Annex</value>
   </data>
-  <data name="deviceFieldLabelFlags" xml:space="preserve">
+  <data name="DeviceFieldLabelFlags" xml:space="preserve">
     <value>Flags</value>
   </data>
-  <data name="datagridColumnHeaderUpdateInfo" xml:space="preserve">
+  <data name="DataGridColumnHeaderUpdateInfo" xml:space="preserve">
     <value>Update</value>
   </data>
-  <data name="dialogCaptionFindUpdates" xml:space="preserve">
+  <data name="DialogCaptionFindUpdates" xml:space="preserve">
     <value>Find updates</value>
   </data>
-  <data name="deviceFieldLabelSerialNumber" xml:space="preserve">
+  <data name="DeviceFieldLabelSerialNumber" xml:space="preserve">
     <value>Serial number</value>
   </data>
-  <data name="deviceFieldLabelUpdateInfo" xml:space="preserve">
+  <data name="DeviceFieldLabelUpdateInfo" xml:space="preserve">
     <value>Update info</value>
   </data>
-  <data name="updateInfoError" xml:space="preserve">
+  <data name="UpdateInfoError" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="updateInfoNone" xml:space="preserve">
+  <data name="UpdateInfoNone" xml:space="preserve">
     <value>None</value>
   </data>
-  <data name="ribbonButtonTextClearUpdates" xml:space="preserve">
+  <data name="RibbonButtonTextClearUpdates" xml:space="preserve">
     <value>Clear Updates</value>
   </data>
-  <data name="ribbonButtonTooltipClearUpdates" xml:space="preserve">
+  <data name="RibbonButtonTooltipClearUpdates" xml:space="preserve">
     <value>Clear the update information for the selected devices</value>
   </data>
-  <data name="ribbonButtonTextGetImage" xml:space="preserve">
+  <data name="RibbonButtonTextGetImage" xml:space="preserve">
     <value>Get Image</value>
   </data>
-  <data name="ribbonButtonTooltipGetImage" xml:space="preserve">
+  <data name="RibbonButtonTooltipGetImage" xml:space="preserve">
     <value>Launch the default browser to get the firmware image for the selected device</value>
   </data>
-  <data name="ribbonButtonTextViewInfo" xml:space="preserve">
+  <data name="RibbonButtonTextViewInfo" xml:space="preserve">
     <value>View Info</value>
   </data>
-  <data name="ribbonButtonTooltipViewInfo" xml:space="preserve">
+  <data name="RibbonButtonTooltipViewInfo" xml:space="preserve">
     <value>Launch the default browser to view the firmware release notes for the selected device</value>
   </data>
-  <data name="messageTextInvalidUpdateVersion" xml:space="preserve">
+  <data name="MessageTextInvalidUpdateVersion" xml:space="preserve">
     <value>Invalid firmware update version.\n\nDevice: {0}\nVersion: {1}</value>
   </data>
-  <data name="backstageButtonTextRemoveNonExistingFiles" xml:space="preserve">
+  <data name="BackstageButtonTextRemoveNonExistingFiles" xml:space="preserve">
     <value>Remove non-existing files from list</value>
   </data>
-  <data name="backstageSectionHeaderRecentFiles" xml:space="preserve">
+  <data name="BackstageSectionHeaderRecentFiles" xml:space="preserve">
     <value>Recent device collections</value>
   </data>
-  <data name="backstageTabTextRecent" xml:space="preserve">
+  <data name="BackstageTabTextRecent" xml:space="preserve">
     <value>Recent</value>
   </data>
-  <data name="comboboxValueAnnexCable" xml:space="preserve">
+  <data name="ComboBoxValueAnnexCable" xml:space="preserve">
     <value>Cable (Kabel)</value>
   </data>
-  <data name="deviceFieldLabelUpdateFileName" xml:space="preserve">
+  <data name="DeviceFieldLabelUpdateFileName" xml:space="preserve">
     <value>Update file name</value>
   </data>
-  <data name="deviceFieldLabelLastChecked" xml:space="preserve">
+  <data name="DeviceFieldLabelLastChecked" xml:space="preserve">
     <value>Last checked</value>
   </data>
-  <data name="datagridColumnHeaderUpdateLastChecked" xml:space="preserve">
+  <data name="DataGridColumnHeaderUpdateLastChecked" xml:space="preserve">
     <value>Last checked</value>
   </data>
-  <data name="ribbonTabHeaderDevices" xml:space="preserve">
+  <data name="RibbonTabHeaderDevices" xml:space="preserve">
     <value>Devices</value>
   </data>
-  <data name="backstageTabTextSettings" xml:space="preserve">
+  <data name="BackstageTabTextSettings" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="backstageSectionHeaderDefaults" xml:space="preserve">
+  <data name="BackstageSectionHeaderDefaults" xml:space="preserve">
     <value>Defaults</value>
   </data>
-  <data name="backstageSectionHeaderGeneral" xml:space="preserve">
+  <data name="BackstageSectionHeaderGeneral" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="backstageSectionHeaderJuisDevices" xml:space="preserve">
+  <data name="BackstageSectionHeaderJuisDevices" xml:space="preserve">
     <value>JUIS devices</value>
   </data>
-  <data name="settingLabelJuisReleaseShowBuildNumber" xml:space="preserve">
+  <data name="SettingLabelJuisReleaseShowBuildNumber" xml:space="preserve">
     <value>Show build number for release versions (if available)</value>
   </data>
-  <data name="settingLabelMainWindowRestoreMetrics" xml:space="preserve">
+  <data name="SettingLabelMainWindowRestoreMetrics" xml:space="preserve">
     <value>Restore window size and position on startup</value>
   </data>
-  <data name="datagridColumnHeaderBaseFritzOS" xml:space="preserve">
+  <data name="DataGridColumnHeaderBaseFritzOS" xml:space="preserve">
     <value>Base Fritz!OS</value>
   </data>
-  <data name="deviceFieldLabelBaseFritzOS" xml:space="preserve">
+  <data name="DeviceFieldLabelBaseFritzOS" xml:space="preserve">
     <value>Base Fritz!OS</value>
   </data>
-  <data name="settingLabelDefaultBaseFritzOS" xml:space="preserve">
+  <data name="SettingLabelDefaultBaseFritzOS" xml:space="preserve">
     <value>DECT base Fritz!OS</value>
   </data>
-  <data name="updateInfoUnknown" xml:space="preserve">
+  <data name="UpdateInfoUnknown" xml:space="preserve">
     <value>Unknown</value>
   </data>
-  <data name="validationErrorInvalidFritzOSversion" xml:space="preserve">
+  <data name="ValidationErrorInvalidFritzOSversion" xml:space="preserve">
     <value>This Fritz!OS version format is invalid (example: 113.07.01)</value>
   </data>
-  <data name="settingLabelDefaultAnnex" xml:space="preserve">
+  <data name="SettingLabelDefaultAnnex" xml:space="preserve">
     <value>Annex</value>
   </data>
-  <data name="settingLabelDefaultCountry" xml:space="preserve">
+  <data name="SettingLabelDefaultCountry" xml:space="preserve">
     <value>Country</value>
   </data>
-  <data name="settingLabelDefaultFirmwareBuildType" xml:space="preserve">
+  <data name="SettingLabelDefaultFirmwareBuildType" xml:space="preserve">
     <value>Firmware type</value>
   </data>
-  <data name="settingLabelDefaultLanguage" xml:space="preserve">
+  <data name="SettingLabelDefaultLanguage" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="settingLabelDefaultOEM" xml:space="preserve">
+  <data name="SettingLabelDefaultOEM" xml:space="preserve">
     <value>OEM</value>
   </data>
-  <data name="comboboxValueNotSet" xml:space="preserve">
+  <data name="ComboBoxValueNotSet" xml:space="preserve">
     <value>(not set)</value>
   </data>
   <data name="settingLabelRecentFilesMax" xml:space="preserve">
     <value>Maximum number of recent files</value>
   </data>
-  <data name="ribbonButtonTextAddJUIS" xml:space="preserve">
+  <data name="RibbonButtonTextAddJUIS" xml:space="preserve">
     <value>Add Device</value>
   </data>
-  <data name="ribbonButtonTooltipAddJUIS" xml:space="preserve">
+  <data name="RibbonButtonTooltipAddJUIS" xml:space="preserve">
     <value>Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN)</value>
   </data>
-  <data name="ribbonButtonTextCopyURLs" xml:space="preserve">
+  <data name="RibbonButtonTextCopyURLs" xml:space="preserve">
     <value>Copy URLs</value>
   </data>
-  <data name="ribbonButtonTooltipCopyURLs" xml:space="preserve">
+  <data name="RibbonButtonTooltipCopyURLs" xml:space="preserve">
     <value>Copy the image download URLs of the selected devices to the clipboard</value>
   </data>
-  <data name="backstageButtonTooltipAbout" xml:space="preserve">
+  <data name="BackstageButtonTooltipAbout" xml:space="preserve">
     <value>Display program information</value>
   </data>
-  <data name="backstageButtonTooltipClose" xml:space="preserve">
+  <data name="BackstageButtonTooltipClose" xml:space="preserve">
     <value>Close the device collection [Ctrl+W]</value>
   </data>
-  <data name="backstageButtonTooltipExit" xml:space="preserve">
+  <data name="BackstageButtonTooltipExit" xml:space="preserve">
     <value>Exit the program</value>
   </data>
-  <data name="backstageButtonTooltipOpen" xml:space="preserve">
+  <data name="BackstageButtonTooltipOpen" xml:space="preserve">
     <value>Load a device collection from a file [Ctrl+O]</value>
   </data>
-  <data name="backstageButtonTooltipSave" xml:space="preserve">
+  <data name="BackstageButtonTooltipSave" xml:space="preserve">
     <value>Save the device collection to the file from which it was loaded [Ctrl+S]</value>
   </data>
-  <data name="backstageButtonTooltipSaveAs" xml:space="preserve">
+  <data name="BackstageButtonTooltipSaveAs" xml:space="preserve">
     <value>Save the device collection to a different file [Ctrl+Alt+S]</value>
   </data>
-  <data name="backstageTabTooltipRecent" xml:space="preserve">
+  <data name="BackstageTabTooltipRecent" xml:space="preserve">
     <value>Open the Recent Files panel</value>
   </data>
-  <data name="backstageTabTooltipSettings" xml:space="preserve">
+  <data name="BackstageTabTooltipSettings" xml:space="preserve">
     <value>Open the Settings panel</value>
   </data>
-  <data name="messageCaptionFatalError" xml:space="preserve">
+  <data name="MessageCaptionFatalError" xml:space="preserve">
     <value>Fatal error</value>
   </data>
-  <data name="messageTextUnhandledExceptionCopySuccess" xml:space="preserve">
+  <data name="MessageTextUnhandledExceptionCopySuccess" xml:space="preserve">
     <value>Unhandled exception: {0}\n\nException information has been copied to the clipboard.</value>
   </data>
-  <data name="messageTextClipboardCopyFailure" xml:space="preserve">
+  <data name="MessageTextClipboardCopyFailure" xml:space="preserve">
     <value>The data could not be copied to the clipboard.\nThe clipboard may be locked by another program.</value>
   </data>
-  <data name="messageTextUnhandledExceptionCopyFailure" xml:space="preserve">
+  <data name="MessageTextUnhandledExceptionCopyFailure" xml:space="preserve">
     <value>Unhandled exception: {0}\n\nException information could not be copied to the clipboard.</value>
   </data>
-  <data name="backstageContextMenuItemTextOpen" xml:space="preserve">
+  <data name="BackstageContextMenuItemTextOpen" xml:space="preserve">
     <value>Open</value>
   </data>
-  <data name="backstageContextMenuItemTextRemove" xml:space="preserve">
+  <data name="BackstageContextMenuItemTextRemove" xml:space="preserve">
     <value>Remove from list</value>
   </data>
-  <data name="backstageButtonTextRemoveAllFiles" xml:space="preserve">
+  <data name="BackstageButtonTextRemoveAllFiles" xml:space="preserve">
     <value>Remove all files from list</value>
   </data>
-  <data name="contextMenuTitleTextSelectColumns" xml:space="preserve">
+  <data name="ContextMenuTitleTextSelectColumns" xml:space="preserve">
     <value>Select columns</value>
   </data>
 </root>

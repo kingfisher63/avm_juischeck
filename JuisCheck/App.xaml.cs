@@ -83,14 +83,14 @@ namespace JuisCheck
 
 			string message;
 			if (SafeClipboardSetText(exceptionText)) {
-				message = JCstring.messageTextUnhandledExceptionCopySuccess.Unescape();
+				message = JCstring.MessageTextUnhandledExceptionCopySuccess.Unescape();
 			} else {
-				message = JCstring.messageTextUnhandledExceptionCopyFailure.Unescape();
+				message = JCstring.MessageTextUnhandledExceptionCopyFailure.Unescape();
 			}
 
 			MessageBoxEx.Show(
 				new MessageBoxExParams {
-					CaptionText = JCstring.messageCaptionFatalError,
+					CaptionText = JCstring.MessageCaptionFatalError,
 					MessageText = string.Format(message, evt.Exception.GetType().Name),
 					Image       = MessageBoxExImage.Error,
 					Button      = MessageBoxExButton.OK

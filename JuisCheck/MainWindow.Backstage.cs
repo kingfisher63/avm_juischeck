@@ -82,8 +82,8 @@ namespace JuisCheck
 				new Action(() => {
 					MessageBoxEx.Show(
 						new MessageBoxExParams {
-							CaptionText = JCstring.messageCaptionAbout,
-							MessageText = JCstring.messageTextAbout.Unescape(),
+							CaptionText = JCstring.MessageCaptionAbout,
+							MessageText = JCstring.MessageTextAbout.Unescape(),
 							Image       = MessageBoxExImage.Information,
 							Button      = MessageBoxExButton.OK,
 							Owner       = this

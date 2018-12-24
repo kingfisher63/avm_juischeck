@@ -180,7 +180,7 @@ namespace JuisCheck
 		{
 			string[] urls = Devices.Where(predicate: IsSelectedDeviceWithUpdateImageURL).Select( d => d.UpdateImageURL ).ToArray();
 			if (!App.SafeClipboardSetText(string.Join("\r\n", urls) + "\r\n")) {
-				ShowErrorMessage(JCstring.messageTextClipboardCopyFailure.Unescape());
+				ShowErrorMessage(JCstring.MessageTextClipboardCopyFailure.Unescape());
 			}
 
 			Devices_SetDataGridFocus();
@@ -198,11 +198,11 @@ namespace JuisCheck
 		private void Devices_CmdDelete_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
 			int		count   = Devices.Count(predicate: IsSelectedDevice);
-			string	message = count == 1 ? JCstring.messageTextDeleteOneDevice : string.Format(JCstring.messageTextDeleteMultipleDevices, count);
+			string	message = count == 1 ? JCstring.MessageTextDeleteOneDevice : string.Format(JCstring.MessageTextDeleteMultipleDevices, count);
 
 			MessageBoxExResult result = MessageBoxEx.Show(
 				new MessageBoxExParams {
-					CaptionText = JCstring.messageCaptionDelete,
+					CaptionText = JCstring.MessageCaptionDelete,
 					MessageText = message,
 					Image       = MessageBoxExImage.Question,
 					Button      = MessageBoxExButton.YesNo,
@@ -292,7 +292,7 @@ namespace JuisCheck
 					device.MakeUpdateCurrent();
 				}
 				catch (FormatException) {
-					ShowErrorMessage(string.Format(JCstring.messageTextInvalidUpdateVersion.Unescape(), device.DeviceName, device.UpdateInfo));
+					ShowErrorMessage(string.Format(JCstring.MessageTextInvalidUpdateVersion.Unescape(), device.DeviceName, device.UpdateInfo));
 				}
 			}
 

@@ -10,7 +10,7 @@ namespace JuisCheck.Rules
 		public override ValidationResult Validate( object value, CultureInfo cultureInfo )
 		{
 			if (string.IsNullOrWhiteSpace(value as string)) {
-				return new ValidationResult(false, JCstring.validationErrorEmptyOrWhiteSpace);
+				return new ValidationResult(false, JCstring.ValidationErrorEmptyOrWhiteSpace);
 			}
 
 			return ValidationResult.ValidResult;

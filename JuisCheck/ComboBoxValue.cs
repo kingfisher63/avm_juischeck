@@ -36,7 +36,7 @@ namespace JuisCheck
 			if (currentValue >= 0) {
 				string currentValueStr = currentValue.ToString();
 				if (!values.Any( v => currentValueStr == v.Value )) {
-					values.Add(new ComboBoxValue(currentValueStr, string.Format(JCstring.comboboxValueUnknown, currentValueStr)));
+					values.Add(new ComboBoxValue(currentValueStr, string.Format(JCstring.ComboBoxValueUnknown, currentValueStr)));
 				}
 			}
 			return values;
@@ -46,7 +46,7 @@ namespace JuisCheck
 		{
 			if (!string.IsNullOrWhiteSpace(currentValue)) {
 				if (!values.Any( v => currentValue == v.Value )) {
-					values.Add(new ComboBoxValue(currentValue, string.Format(JCstring.comboboxValueUnknown, currentValue)));
+					values.Add(new ComboBoxValue(currentValue, string.Format(JCstring.ComboBoxValueUnknown, currentValue)));
 				}
 			}
 			return values;
@@ -54,7 +54,7 @@ namespace JuisCheck
 
 		public static List<ComboBoxValue> PrependNotSet( this List<ComboBoxValue> values, string value = null )
 		{
-			values.Insert(0, new ComboBoxValue(value ?? string.Empty, JCstring.comboboxValueNotSet));
+			values.Insert(0, new ComboBoxValue(value ?? string.Empty, JCstring.ComboBoxValueNotSet));
 			return values;
 		}
 	}

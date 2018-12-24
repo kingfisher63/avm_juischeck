@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:applang="clr-namespace:JuisCheck.Lang"
+        xmlns:lang="clr-namespace:JuisCheck.Lang"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         SizeToContent="WidthAndHeight"
         SnapsToDevicePixels="True"
-        Title="{x:Static applang:JCstring.dialogCaptionFindUpdates}">
+        Title="{x:Static lang:JCstring.DialogCaptionFindUpdates}">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -37,7 +37,7 @@
             </Grid.RowDefinitions>
             
             <ProgressBar Grid.Row="0" Width="400" Height="25" Style="{StaticResource ProgressBarStyle}" x:Name="pbProgress"/>
-            <Button      Grid.Row="2" Content="{x:Static applang:JCstring.dialogButtonTextCancel}" IsCancel="True" Style="{StaticResource ButtonStyle}"/>
+            <Button      Grid.Row="2" Content="{x:Static lang:JCstring.DialogButtonTextCancel}" IsCancel="True" Style="{StaticResource ButtonStyle}"/>
         </Grid>
     </Grid>
 </Window>

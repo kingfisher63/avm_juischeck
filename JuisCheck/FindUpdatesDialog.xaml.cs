@@ -75,7 +75,7 @@ namespace JuisCheck
 						new Action(() => {
 							device.ClearUpdateInfo();
 							device.UpdateAvailable   = true;
-							device.UpdateInfo        = parts.Length >= 4 ? string.Format("{0}.{1}", parts[2], parts[3]) : JCstring.updateInfoUnknown;
+							device.UpdateInfo        = parts.Length >= 4 ? string.Format("{0}.{1}", parts[2], parts[3]) : JCstring.UpdateInfoUnknown;
  							device.UpdateImageURL    = updateURL;
 							device.UpdateLastChecked = DateTime.Now;
 						})
@@ -84,7 +84,7 @@ namespace JuisCheck
 					Dispatcher.Invoke(DispatcherPriority.Normal,
 						new Action(() => {
 							device.ClearUpdateInfo();
-							device.UpdateInfo        = JCstring.updateInfoNone;
+							device.UpdateInfo        = JCstring.UpdateInfoNone;
 							device.UpdateLastChecked = DateTime.Now;
 						})
 					);
@@ -94,7 +94,7 @@ namespace JuisCheck
 				Dispatcher.Invoke(DispatcherPriority.Normal,
 					new Action(() => {
 						device.ClearUpdateInfo();
-						device.UpdateInfo        = JCstring.updateInfoError;
+						device.UpdateInfo        = JCstring.UpdateInfoError;
 						device.UpdateLastChecked = DateTime.Now;
 					})
 				);
@@ -149,7 +149,7 @@ namespace JuisCheck
 					Dispatcher.Invoke(DispatcherPriority.Normal,
 						new Action(() => {
 							device.ClearUpdateInfo();
-							device.UpdateInfo        = JCstring.updateInfoNone;
+							device.UpdateInfo        = JCstring.UpdateInfoNone;
 							device.UpdateLastChecked = DateTime.Now;
 						})
 					);
@@ -159,7 +159,7 @@ namespace JuisCheck
 				Dispatcher.Invoke(DispatcherPriority.Normal,
 					new Action(() => {
 						device.ClearUpdateInfo();
-						device.UpdateInfo        = JCstring.updateInfoError;
+						device.UpdateInfo        = JCstring.UpdateInfoError;
 						device.UpdateLastChecked = DateTime.Now;
 					})
 				);

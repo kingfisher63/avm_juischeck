@@ -14,16 +14,16 @@ namespace JuisCheck.Rules
 		{
 			string	strval = ((string)value).Trim();
 			if (string.IsNullOrWhiteSpace(strval)) {
-				return AcceptEmpty ? ValidationResult.ValidResult : new ValidationResult(false, JCstring.validationErrorEmptyOrWhiteSpace);
+				return AcceptEmpty ? ValidationResult.ValidResult : new ValidationResult(false, JCstring.ValidationErrorEmptyOrWhiteSpace);
 			}
 
 			string[] parts = strval.Split('.');
 			if (parts.Length != 3) {
-				return new ValidationResult(false, JCstring.validationErrorInvalidFritzOSversion);
+				return new ValidationResult(false, JCstring.ValidationErrorInvalidFritzOSversion);
 			}
 
 			if (!CheckPart(parts[0], 1, 3) || !CheckPart(parts[1], 2, 2) || !CheckPart(parts[2], 2, 3)) {
-				return new ValidationResult(false, JCstring.validationErrorInvalidFritzOSversion);
+				return new ValidationResult(false, JCstring.ValidationErrorInvalidFritzOSversion);
 			}
 
 			return ValidationResult.ValidResult;

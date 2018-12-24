@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:app="clr-namespace:JuisCheck"
+                    xmlns:jc="clr-namespace:JuisCheck"
                     xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls">
 
     <ResourceDictionary.MergedDictionaries>
@@ -93,7 +93,7 @@
     </Style>
 
     <Style TargetType="{x:Type mwc:RecentFileButton}" x:Key="RecentFileButtonStyle">
-        <Setter Property="Command"        Value="{x:Static app:MainWindow.Backstage_CmdRecentFileOpen}"/>
+        <Setter Property="Command"        Value="{x:Static jc:MainWindow.Backstage_CmdRecentFileOpen}"/>
         <Setter Property="DockPanel.Dock" Value="Top"                                                  />
         <Setter Property="Image"          Value="{StaticResource imgRecentFile32}"                     />
     </Style>
@@ -106,7 +106,7 @@
         <Setter Property="Padding"        Value="4,0,0,0"/>
     </Style>
 
-    <Style TargetType="{x:Type app:ComboBoxEx}" BasedOn="{StaticResource ComboBoxExBaseStyle}" x:Key="SettingsComboBoxExStyle">
+    <Style TargetType="{x:Type jc:ComboBoxEx}" BasedOn="{StaticResource ComboBoxExBaseStyle}" x:Key="SettingsComboBoxExStyle">
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin"              Value="3"   />
         <Setter Property="Width"               Value="210" />

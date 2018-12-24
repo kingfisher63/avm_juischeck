@@ -5,10 +5,10 @@
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls"
                      xmlns:fluent="urn:fluent-ribbon"
-                     xmlns:app="clr-namespace:JuisCheck"
-                     xmlns:applang="clr-namespace:JuisCheck.Lang"
-                     xmlns:appprops="clr-namespace:JuisCheck.Properties"
-                     xmlns:apprules="clr-namespace:JuisCheck.Rules"
+                     xmlns:jc="clr-namespace:JuisCheck"
+                     xmlns:lang="clr-namespace:JuisCheck.Lang"
+                     xmlns:properties="clr-namespace:JuisCheck.Properties"
+                     xmlns:rules="clr-namespace:JuisCheck.Rules"
                      mc:Ignorable="d"
                      Width="900" Height="700"
                      ResizeMode="CanResizeWithGrip"
@@ -16,35 +16,35 @@
                      Closing="Closing_Handler">
 
     <fluent:RibbonWindow.CommandBindings>
-        <CommandBinding Command="app:MainWindow.Backstage_CmdAbout"            CanExecute="Backstage_CmdAbout_CanExecute"            Executed="Backstage_CmdAbout_Executed"           />
-        <CommandBinding Command="app:MainWindow.Backstage_CmdClose"            CanExecute="Backstage_CmdClose_CanExecute"            Executed="Backstage_CmdClose_Executed"           />
-        <CommandBinding Command="app:MainWindow.Backstage_CmdExit"             CanExecute="Backstage_CmdExit_CanExecute"             Executed="Backstage_CmdExit_Executed"            />
-        <CommandBinding Command="app:MainWindow.Backstage_CmdOpen"             CanExecute="Backstage_CmdOpen_CanExecute"             Executed="Backstage_CmdOpen_Executed"            />
-        <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFileOpen"   CanExecute="Backstage_CmdRecentFileOpen_CanExecute"   Executed="Backstage_CmdRecentFileOpen_Executed"  />
-        <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFileRemove" CanExecute="Backstage_CmdRecentFileRemove_CanExecute" Executed="Backstage_CmdRecentFileRemove_Executed"/>
-        <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFilesClean" CanExecute="Backstage_CmdRecentFilesClean_CanExecute" Executed="Backstage_CmdRecentFilesClean_Executed"/>
-        <CommandBinding Command="app:MainWindow.Backstage_CmdRecentFilesClear" CanExecute="Backstage_CmdRecentFilesClear_CanExecute" Executed="Backstage_CmdRecentFilesClear_Executed"/>
-        <CommandBinding Command="app:MainWindow.Backstage_CmdSave"             CanExecute="Backstage_CmdSave_CanExecute"             Executed="Backstage_CmdSave_Executed"            />
-        <CommandBinding Command="app:MainWindow.Backstage_CmdSaveAs"           CanExecute="Backstage_CmdSaveAs_CanExecute"           Executed="Backstage_CmdSaveAs_Executed"          />
-        <CommandBinding Command="app:MainWindow.Devices_CmdAddDECT"            CanExecute="Devices_CmdAddDECT_CanExecute"            Executed="Devices_CmdAddDECT_Executed"           />
-        <CommandBinding Command="app:MainWindow.Devices_CmdAddJUIS"            CanExecute="Devices_CmdAddJUIS_CanExecute"            Executed="Devices_CmdAddJUIS_Executed"           />
-        <CommandBinding Command="app:MainWindow.Devices_CmdClearUpdates"       CanExecute="Devices_CmdClearUpdates_CanExecute"       Executed="Devices_CmdClearUpdates_Executed"      />
-        <CommandBinding Command="app:MainWindow.Devices_CmdCopyURLs"           CanExecute="Devices_CmdCopyURLs_CanExecute"           Executed="Devices_CmdCopyURLs_Executed"          />
-        <CommandBinding Command="app:MainWindow.Devices_CmdDelete"             CanExecute="Devices_CmdDelete_CanExecute"             Executed="Devices_CmdDelete_Executed"            />
-        <CommandBinding Command="app:MainWindow.Devices_CmdEdit"               CanExecute="Devices_CmdEdit_CanExecute"               Executed="Devices_CmdEdit_Executed"              />
-        <CommandBinding Command="app:MainWindow.Devices_CmdFindUpdates"        CanExecute="Devices_CmdFindUpdates_CanExecute"        Executed="Devices_CmdFindUpdates_Executed"       />
-        <CommandBinding Command="app:MainWindow.Devices_CmdGetImage"           CanExecute="Devices_CmdGetImage_CanExecute"           Executed="Devices_CmdGetImage_Executed"          />
-        <CommandBinding Command="app:MainWindow.Devices_CmdMakeCurrent"        CanExecute="Devices_CmdMakeCurrent_CanExecute"        Executed="Devices_CmdMakeCurrent_Executed"       />
-        <CommandBinding Command="app:MainWindow.Devices_CmdSelectAll"          CanExecute="Devices_CmdSelectAll_CanExecute"          Executed="Devices_CmdSelectAll_Executed"         />
-        <CommandBinding Command="app:MainWindow.Devices_CmdSelectNone"         CanExecute="Devices_CmdSelectNone_CanExecute"         Executed="Devices_CmdSelectNone_Executed"        />
-        <CommandBinding Command="app:MainWindow.Devices_CmdViewInfo"           CanExecute="Devices_CmdViewInfo_CanExecute"           Executed="Devices_CmdViewInfo_Executed"          />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdAbout"            CanExecute="Backstage_CmdAbout_CanExecute"            Executed="Backstage_CmdAbout_Executed"           />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdClose"            CanExecute="Backstage_CmdClose_CanExecute"            Executed="Backstage_CmdClose_Executed"           />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdExit"             CanExecute="Backstage_CmdExit_CanExecute"             Executed="Backstage_CmdExit_Executed"            />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdOpen"             CanExecute="Backstage_CmdOpen_CanExecute"             Executed="Backstage_CmdOpen_Executed"            />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdRecentFileOpen"   CanExecute="Backstage_CmdRecentFileOpen_CanExecute"   Executed="Backstage_CmdRecentFileOpen_Executed"  />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdRecentFileRemove" CanExecute="Backstage_CmdRecentFileRemove_CanExecute" Executed="Backstage_CmdRecentFileRemove_Executed"/>
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdRecentFilesClean" CanExecute="Backstage_CmdRecentFilesClean_CanExecute" Executed="Backstage_CmdRecentFilesClean_Executed"/>
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdRecentFilesClear" CanExecute="Backstage_CmdRecentFilesClear_CanExecute" Executed="Backstage_CmdRecentFilesClear_Executed"/>
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdSave"             CanExecute="Backstage_CmdSave_CanExecute"             Executed="Backstage_CmdSave_Executed"            />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdSaveAs"           CanExecute="Backstage_CmdSaveAs_CanExecute"           Executed="Backstage_CmdSaveAs_Executed"          />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdAddDECT"            CanExecute="Devices_CmdAddDECT_CanExecute"            Executed="Devices_CmdAddDECT_Executed"           />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdAddJUIS"            CanExecute="Devices_CmdAddJUIS_CanExecute"            Executed="Devices_CmdAddJUIS_Executed"           />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdClearUpdates"       CanExecute="Devices_CmdClearUpdates_CanExecute"       Executed="Devices_CmdClearUpdates_Executed"      />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdCopyURLs"           CanExecute="Devices_CmdCopyURLs_CanExecute"           Executed="Devices_CmdCopyURLs_Executed"          />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdDelete"             CanExecute="Devices_CmdDelete_CanExecute"             Executed="Devices_CmdDelete_Executed"            />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdEdit"               CanExecute="Devices_CmdEdit_CanExecute"               Executed="Devices_CmdEdit_Executed"              />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdFindUpdates"        CanExecute="Devices_CmdFindUpdates_CanExecute"        Executed="Devices_CmdFindUpdates_Executed"       />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdGetImage"           CanExecute="Devices_CmdGetImage_CanExecute"           Executed="Devices_CmdGetImage_Executed"          />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdMakeCurrent"        CanExecute="Devices_CmdMakeCurrent_CanExecute"        Executed="Devices_CmdMakeCurrent_Executed"       />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdSelectAll"          CanExecute="Devices_CmdSelectAll_CanExecute"          Executed="Devices_CmdSelectAll_Executed"         />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdSelectNone"         CanExecute="Devices_CmdSelectNone_CanExecute"         Executed="Devices_CmdSelectNone_Executed"        />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdViewInfo"           CanExecute="Devices_CmdViewInfo_CanExecute"           Executed="Devices_CmdViewInfo_Executed"          />
     </fluent:RibbonWindow.CommandBindings>
 
     <fluent:RibbonWindow.InputBindings>
-        <KeyBinding Gesture="Ctrl+O"     Command="app:MainWindow.Backstage_CmdOpen"/>
-        <KeyBinding Gesture="Ctrl+S"     Command="app:MainWindow.Backstage_CmdSave"/>
-        <KeyBinding Gesture="Ctrl+Alt+S" Command="app:MainWindow.Backstage_CmdSaveAs"/>
-        <KeyBinding Gesture="Ctrl+W"     Command="app:MainWindow.Backstage_CmdClose"/>
+        <KeyBinding Gesture="Ctrl+O"     Command="jc:MainWindow.Backstage_CmdOpen"/>
+        <KeyBinding Gesture="Ctrl+S"     Command="jc:MainWindow.Backstage_CmdSave"/>
+        <KeyBinding Gesture="Ctrl+Alt+S" Command="jc:MainWindow.Backstage_CmdSaveAs"/>
+        <KeyBinding Gesture="Ctrl+W"     Command="jc:MainWindow.Backstage_CmdClose"/>
     </fluent:RibbonWindow.InputBindings>
 
     <fluent:RibbonWindow.Resources>
@@ -57,11 +57,11 @@
             </ResourceDictionary.MergedDictionaries>
 
             <ContextMenu x:Key="cmRecentFileContextMenu">
-                <MenuItem Header="{x:Static applang:JCstring.backstageContextMenuItemTextOpen}"   FontWeight="Bold" Click="Backstage_RecentFile_ContextMenuOpenClick_Handler"  />
-                <MenuItem Header="{x:Static applang:JCstring.backstageContextMenuItemTextRemove}"                   Click="Backstage_RecentFile_ContextMenuRemoveClick_Handler"/>
+                <MenuItem Header="{x:Static lang:JCstring.BackstageContextMenuItemTextOpen}"   FontWeight="Bold" Click="Backstage_RecentFile_ContextMenuOpenClick_Handler"  />
+                <MenuItem Header="{x:Static lang:JCstring.BackstageContextMenuItemTextRemove}"                   Click="Backstage_RecentFile_ContextMenuRemoveClick_Handler"/>
             </ContextMenu>
 
-            <apprules:NullableDateTimeToStringConverter x:Key="cnvDateTimeToString"/>
+            <rules:NullableDateTimeToStringConverter x:Key="cnvDateTimeToString"/>
 
             <Style TargetType="{x:Type mwc:RecentFileButton}" BasedOn="{StaticResource RecentFileButtonStyle}">
                 <Setter Property="ContextMenu" Value="{StaticResource cmRecentFileContextMenu}"/>
@@ -78,19 +78,19 @@
         <fluent:Ribbon DockPanel.Dock="Top">
 
             <fluent:Ribbon.Menu>
-                <fluent:Backstage Header="{x:Static applang:JCstring.ribbontabHeaderFile}" IsOpenAnimationEnabled="False" IsOpenChanged="Backstage_IsOpenChanged_Handler">
+                <fluent:Backstage Header="{x:Static lang:JCstring.RribbontabHeaderFile}" IsOpenAnimationEnabled="False" IsOpenChanged="Backstage_IsOpenChanged_Handler">
                     <fluent:BackstageTabControl>
-                        <fluent:Button Command="app:MainWindow.Backstage_CmdSave"   Header="{x:Static applang:JCstring.backstageButtonTextSave}"   ToolTip="{x:Static applang:JCstring.backstageButtonTooltipSave}"  />
-                        <fluent:Button Command="app:MainWindow.Backstage_CmdSaveAs" Header="{x:Static applang:JCstring.backstageButtonTextSaveAs}" ToolTip="{x:Static applang:JCstring.backstageButtonTooltipSaveAs}"/>
-                        <fluent:Button Command="app:MainWindow.Backstage_CmdOpen"   Header="{x:Static applang:JCstring.backstageButtonTextOpen}"   ToolTip="{x:Static applang:JCstring.backstageButtonTooltipOpen}"  />
-                        <fluent:Button Command="app:MainWindow.Backstage_CmdClose"  Header="{x:Static applang:JCstring.backstageButtonTextClose}"  ToolTip="{x:Static applang:JCstring.backstageButtonTooltipClose}" />
-                        <fluent:BackstageTabItem Header="{x:Static applang:JCstring.backstageTabTextRecent}" ToolTip="{x:Static applang:JCstring.backstageTabTooltipRecent}" x:Name="backstageTabRecentFiles">
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdSave"   Header="{x:Static lang:JCstring.BackstageButtonTextSave}"   ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipSave}"  />
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdSaveAs" Header="{x:Static lang:JCstring.BackstageButtonTextSaveAs}" ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipSaveAs}"/>
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdOpen"   Header="{x:Static lang:JCstring.BackstageButtonTextOpen}"   ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipOpen}"  />
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdClose"  Header="{x:Static lang:JCstring.BackstageButtonTextClose}"  ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipClose}" />
+                        <fluent:BackstageTabItem Header="{x:Static lang:JCstring.BackstageTabTextRecent}" ToolTip="{x:Static lang:JCstring.BackstageTabTooltipRecent}" x:Name="backstageTabRecentFiles">
                             <Border Style="{StaticResource BackstageBorderStyle}">
                                 <DockPanel Style="{StaticResource RecentFilesOuterDockPanelStyle}">
-                                    <TextBlock Text="{x:Static applang:JCstring.backstageSectionHeaderRecentFiles}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
+                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderRecentFiles}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
                                     <StackPanel Style="{StaticResource BackstageActionButtonsStackPanelStyle}">
-                                        <Button Command="app:MainWindow.Backstage_CmdRecentFilesClean" Content="{x:Static applang:JCstring.backstageButtonTextRemoveNonExistingFiles}" Style="{StaticResource BackstageActionButtonStyle}"/>
-                                        <Button Command="app:MainWindow.Backstage_CmdRecentFilesClear" Content="{x:Static applang:JCstring.backstageButtonTextRemoveAllFiles}"         Style="{StaticResource BackstageActionButtonStyle}"/>
+                                        <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClean" Content="{x:Static lang:JCstring.BackstageButtonTextRemoveNonExistingFiles}" Style="{StaticResource BackstageActionButtonStyle}"/>
+                                        <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClear" Content="{x:Static lang:JCstring.BackstageButtonTextRemoveAllFiles}"         Style="{StaticResource BackstageActionButtonStyle}"/>
                                     </StackPanel>
                                     <Border Style="{StaticResource RecentFilesBorderStyle}">
                                         <ScrollViewer Style="{StaticResource RecentFilesScrollViewerStyle}">
@@ -100,32 +100,32 @@
                                 </DockPanel>
                             </Border>
                         </fluent:BackstageTabItem>
-                        <fluent:BackstageTabItem Header="{x:Static applang:JCstring.backstageTabTextSettings}" ToolTip="{x:Static applang:JCstring.backstageTabTooltipSettings}">
+                        <fluent:BackstageTabItem Header="{x:Static lang:JCstring.BackstageTabTextSettings}" ToolTip="{x:Static lang:JCstring.BackstageTabTooltipSettings}">
                             <Border Style="{StaticResource BackstageBorderStyle}">
                                 <DockPanel Style="{StaticResource SettingsDockPanelStyle}">
-                                    <TextBlock Text="{x:Static applang:JCstring.backstageSectionHeaderGeneral}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
+                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderGeneral}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
                                     <CheckBox IsChecked="{Binding Path=AppSettings.MainWindowRestoreMetrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
-                                        <TextBlock Text="{x:Static applang:JCstring.settingLabelMainWindowRestoreMetrics}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                        <TextBlock Text="{x:Static lang:JCstring.SettingLabelMainWindowRestoreMetrics}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
                                     </CheckBox>
                                     <StackPanel Style="{StaticResource SettingsStackPanelStyle}">
-                                        <TextBlock Text="{x:Static applang:JCstring.settingLabelRecentFilesMax}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                        <TextBlock Text="{x:Static lang:JCstring.settingLabelRecentFilesMax}" Style="{StaticResource SettingsTextBlockStyle}"/>
                                         <TextBox MaxLength="2" Width="24" Style="{StaticResource SettingsTextBoxStyle}">
                                             <TextBox.Text>
                                                 <Binding Path="AppSettings.RecentFilesMax" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                                     <Binding.ValidationRules>
-                                                        <apprules:Int32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
+                                                        <rules:Int32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
                                                     </Binding.ValidationRules>
                                                 </Binding>
                                             </TextBox.Text>
                                         </TextBox>
                                     </StackPanel>
 
-                                    <TextBlock Text="{x:Static applang:JCstring.backstageSectionHeaderJuisDevices}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
+                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderJuisDevices}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
                                     <CheckBox IsChecked="{Binding Path=AppSettings.JuisReleaseShowBuildNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
-                                        <TextBlock Text="{x:Static applang:JCstring.settingLabelJuisReleaseShowBuildNumber}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                        <TextBlock Text="{x:Static lang:JCstring.SettingLabelJuisReleaseShowBuildNumber}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
                                     </CheckBox>
 
-                                    <TextBlock Text="{x:Static applang:JCstring.backstageSectionHeaderDefaults}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
+                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderDefaults}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
                                     <Grid Style="{StaticResource SettingsGridStyle}">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -140,47 +140,47 @@
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         
-                                        <TextBlock      Grid.Row="0" Grid.Column="0" Text="{x:Static applang:JCstring.settingLabelDefaultFirmwareBuildType}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <app:ComboBoxEx Grid.Row="0" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                        <TextBlock      Grid.Row="0" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultFirmwareBuildType}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                        <jc:ComboBoxEx Grid.Row="0" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_BuildTypeValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultFirmwareBuildType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="1" Grid.Column="0" Text="{x:Static applang:JCstring.settingLabelDefaultOEM}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <app:ComboBoxEx Grid.Row="1" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                        <TextBlock      Grid.Row="1" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultOEM}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                        <jc:ComboBoxEx Grid.Row="1" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_OEMValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultOEM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="2" Grid.Column="0" Text="{x:Static applang:JCstring.settingLabelDefaultCountry}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <app:ComboBoxEx Grid.Row="2" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                        <TextBlock      Grid.Row="2" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultCountry}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                        <jc:ComboBoxEx Grid.Row="2" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_CountryValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="3" Grid.Column="0" Text="{x:Static applang:JCstring.settingLabelDefaultLanguage}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <app:ComboBoxEx Grid.Row="3" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                        <TextBlock      Grid.Row="3" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultLanguage}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                        <jc:ComboBoxEx Grid.Row="3" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_LanguageValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="4" Grid.Column="0" Text="{x:Static applang:JCstring.settingLabelDefaultAnnex}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <app:ComboBoxEx Grid.Row="4" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                        <TextBlock      Grid.Row="4" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultAnnex}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                        <jc:ComboBoxEx Grid.Row="4" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_AnnexValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultAnnex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static applang:JCstring.settingLabelDefaultBaseFritzOS}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                        <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultBaseFritzOS}" Style="{StaticResource SettingsTextBlockStyle}"/>
                                         <TextBox   Grid.Row="5" Grid.Column="1" MaxLength="10" Width="80" Style="{StaticResource SettingsTextBoxStyle}">
                                             <TextBox.Text>
                                                 <Binding Path="AppSettings.DefaultBaseFritzOS" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                                     <Binding.ValidationRules>
-                                                        <apprules:FritzOSversionRule AcceptEmpty="True" ValidatesOnTargetUpdated="True"/>
+                                                        <rules:FritzOSversionRule AcceptEmpty="True" ValidatesOnTargetUpdated="True"/>
                                                     </Binding.ValidationRules>
                                                 </Binding>
                                             </TextBox.Text>
@@ -190,67 +190,67 @@
                                 </DockPanel>
                             </Border>
                         </fluent:BackstageTabItem>
-                        <fluent:Button Command="app:MainWindow.Backstage_CmdAbout" Header="{x:Static applang:JCstring.backstageButtonTextAbout}" ToolTip="{x:Static applang:JCstring.backstageButtonTooltipAbout}"/>
-                        <fluent:Button Command="app:MainWindow.Backstage_CmdExit"  Header="{x:Static applang:JCstring.backstageButtonTextExit}"  ToolTip="{x:Static applang:JCstring.backstageButtonTooltipExit}" />
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdAbout" Header="{x:Static lang:JCstring.BackstageButtonTextAbout}" ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipAbout}"/>
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdExit"  Header="{x:Static lang:JCstring.BackstageButtonTextExit}"  ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipExit}" />
                     </fluent:BackstageTabControl>
                 </fluent:Backstage>
             </fluent:Ribbon.Menu>
 
-            <fluent:RibbonTabItem Header="{x:Static applang:JCstring.ribbonTabHeaderDevices}">
-                <fluent:RibbonGroupBox Header="{x:Static applang:JCstring.ribbonGroupBoxTextDevices}">
-                    <fluent:Button Command="app:MainWindow.Devices_CmdAddJUIS"      LargeIcon="{StaticResource imgDevicesButtonAdd32}"          Header="{x:Static applang:JCstring.ribbonButtonTextAddJUIS}"      ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipAddJUIS}"     />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdAddDECT"      LargeIcon="{StaticResource imgDevicesButtonAdd32}"          Header="{x:Static applang:JCstring.ribbonButtonTextAddDECT}"      ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipAddDECT}"     />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdDelete"       LargeIcon="{StaticResource imgDevicesButtonDelete32}"       Header="{x:Static applang:JCstring.ribbonButtonTextDelete}"       ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipDelete}"      />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdEdit"         LargeIcon="{StaticResource imgDevicesButtonEdit32}"         Header="{x:Static applang:JCstring.ribbonButtonTextEdit}"         ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipEdit}"        />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdSelectAll"    LargeIcon="{StaticResource imgDevicesButtonSelectAll32}"    Header="{x:Static applang:JCstring.ribbonButtonTextSelectAll}"    ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipSelectAll}"   />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdSelectNone"   LargeIcon="{StaticResource imgDevicesButtonSelectNone32}"   Header="{x:Static applang:JCstring.ribbonButtonTextSelectNone}"   ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipSelectNone}"  />
+            <fluent:RibbonTabItem Header="{x:Static lang:JCstring.RibbonTabHeaderDevices}">
+                <fluent:RibbonGroupBox Header="{x:Static lang:JCstring.RibbonGroupBoxTextDevices}">
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddJUIS"      LargeIcon="{StaticResource imgDevicesButtonAdd32}"          Header="{x:Static lang:JCstring.RibbonButtonTextAddJUIS}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddJUIS}"     />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddDECT"      LargeIcon="{StaticResource imgDevicesButtonAdd32}"          Header="{x:Static lang:JCstring.RibbonButtonTextAddDECT}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddDECT}"     />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdDelete"       LargeIcon="{StaticResource imgDevicesButtonDelete32}"       Header="{x:Static lang:JCstring.RibbonButtonTextDelete}"       ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipDelete}"      />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdEdit"         LargeIcon="{StaticResource imgDevicesButtonEdit32}"         Header="{x:Static lang:JCstring.RibbonButtonTextEdit}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipEdit}"        />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectAll"    LargeIcon="{StaticResource imgDevicesButtonSelectAll32}"    Header="{x:Static lang:JCstring.RibbonButtonTextSelectAll}"    ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectAll}"   />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectNone"   LargeIcon="{StaticResource imgDevicesButtonSelectNone32}"   Header="{x:Static lang:JCstring.RibbonButtonTextSelectNone}"   ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectNone}"  />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="{x:Static applang:JCstring.ribbonGroupBoxTextFirmwareUpdate}">
-                    <fluent:Button Command="app:MainWindow.Devices_CmdFindUpdates"  LargeIcon="{StaticResource imgDevicesButtonFindUpdates32}"  Header="{x:Static applang:JCstring.ribbonButtonTextFindUpdates}"  ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipFindUpdates}" />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdCopyURLs"     LargeIcon="{StaticResource imgDevicesButtonCopyURLs32}"     Header="{x:Static applang:JCstring.ribbonButtonTextCopyURLs}"     ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipCopyURLs}"    />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdGetImage"     LargeIcon="{StaticResource imgDevicesButtonGetImage32}"     Header="{x:Static applang:JCstring.ribbonButtonTextGetImage}"     ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipGetImage}"    />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdViewInfo"     LargeIcon="{StaticResource imgDevicesButtonViewInfo32}"     Header="{x:Static applang:JCstring.ribbonButtonTextViewInfo}"     ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipViewInfo}"    />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdMakeCurrent"  LargeIcon="{StaticResource imgDevicesButtonMakeCurrent32}"  Header="{x:Static applang:JCstring.ribbonButtonTextMakeCurrent}"  ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipMakeCurrent}" />
-                    <fluent:Button Command="app:MainWindow.Devices_CmdClearUpdates" LargeIcon="{StaticResource imgDevicesButtonClearUpdates32}" Header="{x:Static applang:JCstring.ribbonButtonTextClearUpdates}" ToolTip="{x:Static applang:JCstring.ribbonButtonTooltipClearUpdates}"/>
+                <fluent:RibbonGroupBox Header="{x:Static lang:JCstring.RibbonGroupBoxTextFirmwareUpdate}">
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdFindUpdates"  LargeIcon="{StaticResource imgDevicesButtonFindUpdates32}"  Header="{x:Static lang:JCstring.RibbonButtonTextFindUpdates}"  ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipFindUpdates}" />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopyURLs"     LargeIcon="{StaticResource imgDevicesButtonCopyURLs32}"     Header="{x:Static lang:JCstring.RibbonButtonTextCopyURLs}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopyURLs}"    />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdGetImage"     LargeIcon="{StaticResource imgDevicesButtonGetImage32}"     Header="{x:Static lang:JCstring.RibbonButtonTextGetImage}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipGetImage}"    />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdViewInfo"     LargeIcon="{StaticResource imgDevicesButtonViewInfo32}"     Header="{x:Static lang:JCstring.RibbonButtonTextViewInfo}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipViewInfo}"    />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdMakeCurrent"  LargeIcon="{StaticResource imgDevicesButtonMakeCurrent32}"  Header="{x:Static lang:JCstring.RibbonButtonTextMakeCurrent}"  ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipMakeCurrent}" />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdClearUpdates" LargeIcon="{StaticResource imgDevicesButtonClearUpdates32}" Header="{x:Static lang:JCstring.RibbonButtonTextClearUpdates}" ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipClearUpdates}"/>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
 
         </fluent:Ribbon>
 
-        <app:MultiSelectDataGrid DockPanel.Dock="Top" ItemsSource="{Binding Devices}" x:Name="dgDevices" MouseDoubleClick="Devices_DataGrid_MouseDoubleClick_Handler" Sorting="Devices_DataGrid_Sorting_Handler">
+        <jc:MultiSelectDataGrid DockPanel.Dock="Top" ItemsSource="{Binding Devices}" x:Name="dgDevices" MouseDoubleClick="Devices_DataGrid_MouseDoubleClick_Handler" Sorting="Devices_DataGrid_Sorting_Handler">
             <DataGrid.Columns>
                 <DataGridTemplateColumn x:Name="dgcDeviceName"
-                                        Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceName}"
+                                        Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceName}"
                                         CellTemplate="{StaticResource DeviceNameCellTemplate}"
                                         SortMemberPath="DeviceName"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderDeviceAddress}"
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceAddress}"
                                         Binding="{Binding Path=DeviceAddress}"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Converter={StaticResource cnvBoolToVisibility}}"/>
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Converter={StaticResource cnvBoolToVisibility}}"/>
                 <DataGridTextColumn     x:Name="dgcProductName"
-                                        Header="{x:Static applang:JCstring.datagridColumnHeaderProductName}"
+                                        Header="{x:Static lang:JCstring.DataGridColumnHeaderProductName}"
                                         Binding="{Binding Path=ProductName}"
                                         SortMemberPath="ProductName"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleProductName, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderFirmware}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleProductName, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmware}"
                                         Binding="{Binding Path=FirmwareStr}"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleFirmware, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderFirmwareBuildType}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmware, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmwareBuildType}"
                                         Binding="{Binding Path=FirmwareBuildTypeStr}"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderOEM}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderOEM}"
                                         Binding="{Binding Path=OEM}"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleOEM, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderBaseFritzOS}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleOEM, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderBaseFritzOS}"
                                         Binding="{Binding Path=BaseFritzOS}"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderUpdateInfo}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateInfo}"
                                         Binding="{Binding Path=UpdateInfo}"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static applang:JCstring.datagridColumnHeaderUpdateLastChecked}"
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateLastChecked}"
                                         Binding="{Binding Path=UpdateLastChecked, Converter={StaticResource cnvDateTimeToString}}"
-                                        Visibility="{Binding Source={x:Static appprops:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Converter={StaticResource cnvBoolToVisibility}}"/>
+                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Converter={StaticResource cnvBoolToVisibility}}"/>
             </DataGrid.Columns>
-        </app:MultiSelectDataGrid>
+        </jc:MultiSelectDataGrid>
 
     </DockPanel>
 

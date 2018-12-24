@@ -25,10 +25,10 @@ namespace JuisCheck
 		// Annex
 
 		private static readonly Dictionary<string, string> annexDictionary = new Dictionary<string, string>() {
-			{ "A",     JCstring.comboboxValueAnnexA     },
-			{ "B",     JCstring.comboboxValueAnnexB     },
-			{ "Kabel", JCstring.comboboxValueAnnexCable },
-			{ "Ohne",  JCstring.comboboxValueAnnexNone  }
+			{ "A",     JCstring.ComboBoxValueAnnexA     },
+			{ "B",     JCstring.ComboBoxValueAnnexB     },
+			{ "Kabel", JCstring.ComboBoxValueAnnexCable },
+			{ "Ohne",  JCstring.ComboBoxValueAnnexNone  }
 		};
 
 		private static readonly List<ComboBoxValue> annexValues;
@@ -43,7 +43,7 @@ namespace JuisCheck
 		{
 			get {
 				if (!annexDictionary.TryGetValue(Annex, out string value)) {
-					value = string.Format(JCstring.comboboxValueUnknown, Annex);
+					value = string.Format(JCstring.ComboBoxValueUnknown, Annex);
 				}
 				return value;
 			}
@@ -56,9 +56,9 @@ namespace JuisCheck
 		public const int	firmwareBuildTypeBetaPublic  = 1001;
 
 		private static readonly Dictionary<int, string> firmwareBuildTypeDictionary = new Dictionary<int, string>() {
-			{ firmwareBuildTypeRelease,     JCstring.comboboxValueBuildtypeRelease     },
-			{ firmwareBuildTypeBetaInhouse, JCstring.comboboxValueBuildtypeBetaInhouse },
-			{ firmwareBuildTypeBetaPublic,  JCstring.comboboxValueBuildtypeBetaPublic  }
+			{ firmwareBuildTypeRelease,     JCstring.ComboBoxValueBuildtypeRelease     },
+			{ firmwareBuildTypeBetaInhouse, JCstring.ComboBoxValueBuildtypeBetaInhouse },
+			{ firmwareBuildTypeBetaPublic,  JCstring.ComboBoxValueBuildtypeBetaPublic  }
 		};
 
 		private static readonly List<ComboBoxValue> firmwareBuildTypeValues;
@@ -73,7 +73,7 @@ namespace JuisCheck
 		{
 			get {
 				if (!firmwareBuildTypeDictionary.TryGetValue(FirmwareBuildType, out string value)) {
-					value = string.Format(JCstring.comboboxValueUnknown, FirmwareBuildType);
+					value = string.Format(JCstring.ComboBoxValueUnknown, FirmwareBuildType);
 				}
 				return value;
 			}
@@ -82,46 +82,46 @@ namespace JuisCheck
 		// Country
 
 		private static readonly Dictionary<string, string> countryDictionary = new Dictionary<string, string>()	{
-			{ "0234", JCstring.comboboxValueCountry0234 },
-			{ "0255", JCstring.comboboxValueCountry0255 },
-			{ "0256", JCstring.comboboxValueCountry0256 },
-			{ "0264", JCstring.comboboxValueCountry0264 },
-			{ "027",  JCstring.comboboxValueCountry027  },
-			{ "030",  JCstring.comboboxValueCountry030  },
-			{ "031",  JCstring.comboboxValueCountry031  },
-			{ "032",  JCstring.comboboxValueCountry032  },
-			{ "033",  JCstring.comboboxValueCountry033  },
-			{ "034",  JCstring.comboboxValueCountry034  },
-			{ "0351", JCstring.comboboxValueCountry0351 },
-			{ "0352", JCstring.comboboxValueCountry0352 },
-			{ "0353", JCstring.comboboxValueCountry0353 },
-			{ "0357", JCstring.comboboxValueCountry0357 },
-			{ "0358", JCstring.comboboxValueCountry0358 },
-			{ "036",  JCstring.comboboxValueCountry036  },
-			{ "0371", JCstring.comboboxValueCountry0371 },
-			{ "0372", JCstring.comboboxValueCountry0372 },
-			{ "0376", JCstring.comboboxValueCountry0376 },
-			{ "0382", JCstring.comboboxValueCountry0382 },
-			{ "0385", JCstring.comboboxValueCountry0385 },
-			{ "0386", JCstring.comboboxValueCountry0386 },
-			{ "0387", JCstring.comboboxValueCountry0387 },
-			{ "0389", JCstring.comboboxValueCountry0389 },
-			{ "039",  JCstring.comboboxValueCountry039  },
-			{ "041",  JCstring.comboboxValueCountry041  },
-			{ "0420", JCstring.comboboxValueCountry0420 },
-			{ "0421", JCstring.comboboxValueCountry0421 },
-			{ "043",  JCstring.comboboxValueCountry043  },
-			{ "044",  JCstring.comboboxValueCountry044  },
-			{ "045",  JCstring.comboboxValueCountry045  },
-			{ "046",  JCstring.comboboxValueCountry046  },
-			{ "047",  JCstring.comboboxValueCountry047  },
-			{ "048",  JCstring.comboboxValueCountry048  },
-			{ "049",  JCstring.comboboxValueCountry049  },
-			{ "054",  JCstring.comboboxValueCountry054  },
-			{ "061",  JCstring.comboboxValueCountry061  },
-			{ "064",  JCstring.comboboxValueCountry064  },
-			{ "066",  JCstring.comboboxValueCountry066  },
-			{ "0972", JCstring.comboboxValueCountry0972 }
+			{ "0234", JCstring.ComboBoxValueCountry0234 },
+			{ "0255", JCstring.ComboBoxValueCountry0255 },
+			{ "0256", JCstring.ComboBoxValueCountry0256 },
+			{ "0264", JCstring.ComboBoxValueCountry0264 },
+			{ "027",  JCstring.ComboBoxValueCountry027  },
+			{ "030",  JCstring.ComboBoxValueCountry030  },
+			{ "031",  JCstring.ComboBoxValueCountry031  },
+			{ "032",  JCstring.ComboBoxValueCountry032  },
+			{ "033",  JCstring.ComboBoxValueCountry033  },
+			{ "034",  JCstring.ComboBoxValueCountry034  },
+			{ "0351", JCstring.ComboBoxValueCountry0351 },
+			{ "0352", JCstring.ComboBoxValueCountry0352 },
+			{ "0353", JCstring.ComboBoxValueCountry0353 },
+			{ "0357", JCstring.ComboBoxValueCountry0357 },
+			{ "0358", JCstring.ComboBoxValueCountry0358 },
+			{ "036",  JCstring.ComboBoxValueCountry036  },
+			{ "0371", JCstring.ComboBoxValueCountry0371 },
+			{ "0372", JCstring.ComboBoxValueCountry0372 },
+			{ "0376", JCstring.ComboBoxValueCountry0376 },
+			{ "0382", JCstring.ComboBoxValueCountry0382 },
+			{ "0385", JCstring.ComboBoxValueCountry0385 },
+			{ "0386", JCstring.ComboBoxValueCountry0386 },
+			{ "0387", JCstring.ComboBoxValueCountry0387 },
+			{ "0389", JCstring.ComboBoxValueCountry0389 },
+			{ "039",  JCstring.ComboBoxValueCountry039  },
+			{ "041",  JCstring.ComboBoxValueCountry041  },
+			{ "0420", JCstring.ComboBoxValueCountry0420 },
+			{ "0421", JCstring.ComboBoxValueCountry0421 },
+			{ "043",  JCstring.ComboBoxValueCountry043  },
+			{ "044",  JCstring.ComboBoxValueCountry044  },
+			{ "045",  JCstring.ComboBoxValueCountry045  },
+			{ "046",  JCstring.ComboBoxValueCountry046  },
+			{ "047",  JCstring.ComboBoxValueCountry047  },
+			{ "048",  JCstring.ComboBoxValueCountry048  },
+			{ "049",  JCstring.ComboBoxValueCountry049  },
+			{ "054",  JCstring.ComboBoxValueCountry054  },
+			{ "061",  JCstring.ComboBoxValueCountry061  },
+			{ "064",  JCstring.ComboBoxValueCountry064  },
+			{ "066",  JCstring.ComboBoxValueCountry066  },
+			{ "0972", JCstring.ComboBoxValueCountry0972 }
 		};
 
 		private static readonly List<ComboBoxValue> countryValues;
@@ -136,7 +136,7 @@ namespace JuisCheck
 		{
 			get {
 				if (!countryDictionary.TryGetValue(Country, out string value)) {
-					value = string.Format(JCstring.comboboxValueUnknown, Country);
+					value = string.Format(JCstring.ComboBoxValueUnknown, Country);
 				}
 				return value;
 			}
@@ -146,13 +146,13 @@ namespace JuisCheck
 
 		private static readonly Dictionary<string, string> languageDictionary = new Dictionary<string, string>()
 		{
-			{ "de", JCstring.comboboxValueLanguageDE },
-			{ "en", JCstring.comboboxValueLanguageEN },
-			{ "es", JCstring.comboboxValueLanguageES },
-			{ "fr", JCstring.comboboxValueLanguageFR },
-			{ "it", JCstring.comboboxValueLanguageIT },
-			{ "nl", JCstring.comboboxValueLanguageNL },
-			{ "pl", JCstring.comboboxValueLanguagePL }
+			{ "de", JCstring.ComboBoxValueLanguageDE },
+			{ "en", JCstring.ComboBoxValueLanguageEN },
+			{ "es", JCstring.ComboBoxValueLanguageES },
+			{ "fr", JCstring.ComboBoxValueLanguageFR },
+			{ "it", JCstring.ComboBoxValueLanguageIT },
+			{ "nl", JCstring.ComboBoxValueLanguageNL },
+			{ "pl", JCstring.ComboBoxValueLanguagePL }
 		};
 
 		private static readonly List<ComboBoxValue> languageValues;
@@ -167,7 +167,7 @@ namespace JuisCheck
 		{
 			get {
 				if (!languageDictionary.TryGetValue(Language, out string value)) {
-					value = string.Format(JCstring.comboboxValueUnknown, Language);
+					value = string.Format(JCstring.ComboBoxValueUnknown, Language);
 				}
 				return value;
 			}
@@ -196,8 +196,8 @@ namespace JuisCheck
 
 			countryValues = countryDictionary.Select( country => new ComboBoxValue(country.Key, country.Value) ).ToList();
 			countryValues.Sort();
-			countryValues.Add(new ComboBoxValue("99", JCstring.comboboxValueCountry99));
-			countryDictionary.Add("99", JCstring.comboboxValueCountry99);
+			countryValues.Add(new ComboBoxValue("99", JCstring.ComboBoxValueCountry99));
+			countryDictionary.Add("99", JCstring.ComboBoxValueCountry99);
 
 			languageValues = languageDictionary.Select( language => new ComboBoxValue(language.Key, language.Value) ).ToList();
 			languageValues.Sort();
