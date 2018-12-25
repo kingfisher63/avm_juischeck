@@ -44,7 +44,7 @@ namespace JuisCheck
 		private static void LoadFileNames()
 		{
 			if (fileNames == null) {
-				fileNames = new List<string>(Settings.Default.RecentFiles.Split('|'));
+				fileNames = new List<string>(Settings.Default.RecentFiles.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries));
 			}
 		}
 
