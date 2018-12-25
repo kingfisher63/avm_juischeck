@@ -62,7 +62,11 @@ namespace JuisCheck
 
 					dpRecentFiles.Children.Add(button);
 				}
-				catch {
+				catch (Exception ex) {
+					if (ex is ArgumentException) {
+						// Path is apparently invalid path
+						RecentFiles.Remove(path);
+					}
 				}
 			}
 		}
