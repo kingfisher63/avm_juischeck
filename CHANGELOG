@@ -6,8 +6,8 @@ New: Hide/show datagrid columns via a context menu on the column headers.
 New: Datagrid columns for hardware, country, language and update file name
      (hidden by default).
 New: Button to reset settings to defaults.
-Fix: The device information tooltip on the datagrid was garbled ('Update file'
-     name and 'Last checked' fields were in the same row for non-DECT devices).
+Fix: The device information tooltip on the datagrid was garbled ('Update file
+     name' and 'Last checked' fields were in the same row for non-DECT devices).
 Change: Base Fritz!OS column is hidden by default.
 
 v1.0.1 (2018/12/24)
