@@ -241,6 +241,20 @@ namespace JuisCheck
 			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => SaveDeviceCollectionAs()));
 		}
 
+		// Command: Backstage_CmdSettingsDefault
+
+		public static RoutedCommand Backstage_CmdSettingsDefault = new RoutedCommand();
+
+		private void Backstage_CmdSettingsDefault_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
+		{
+			evt.CanExecute = true;
+		}
+
+		private void Backstage_CmdSettingsDefault_Executed( object sender, ExecutedRoutedEventArgs evt )
+		{
+			AppSettings.Reset();
+		}
+
 		// Event: Backstage_IsOpenChanged
 
 		private void Backstage_IsOpenChanged_Handler( object sender, DependencyPropertyChangedEventArgs evt )

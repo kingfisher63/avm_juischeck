@@ -9,7 +9,7 @@
     
     <BitmapImage x:Key="imgRecentFile32" UriSource="../Images/oxygen-system-software-update-32.png"/>
 
-    <Style TargetType="{x:Type Border}" x:Key="BackstageBorderStyle">
+    <Style TargetType="{x:Type Border}" x:Key="BackstageOuterBorderStyle">
         <Setter Property="BorderBrush"         Value="LightGray"/>
         <Setter Property="BorderThickness"     Value="0,0,1,0"  />
         <Setter Property="HorizontalAlignment" Value="Left"     />
@@ -49,39 +49,16 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type StackPanel}" x:Key="BackstageActionButtonsStackPanelStyle">
-        <Setter Property="DockPanel.Dock"      Value="Bottom"    />
-        <Setter Property="Margin"              Value="0,10,0,5"  />
-        <Setter Property="HorizontalAlignment" Value="Left"      />
-        <Setter Property="Orientation"         Value="Horizontal"/>
-    </Style>
-
-    <Style TargetType="{x:Type TextBlock}" x:Key="BackstageSectionHeaderTextBlockStyle">
-        <Setter Property="DockPanel.Dock" Value="Top"     />
-        <Setter Property="FontSize"       Value="18"      />
-        <Setter Property="Foreground"     Value="Black"   />
-        <Setter Property="Margin"         Value="0,15,0,0"/>
-    </Style>
-
-    <!-- Recent files tab -->
-    
-    <Style TargetType="{x:Type Border}" x:Key="RecentFilesBorderStyle">
-        <Setter Property="DockPanel.Dock"  Value="Top"      />
-        <Setter Property="BorderBrush"     Value="LightGray"/>
-        <Setter Property="BorderThickness" Value="0,1,0,1"  />
-        <Setter Property="Margin"          Value="0,10,0,0" />
-    </Style>
-
-    <Style TargetType="{x:Type DockPanel}" x:Key="RecentFilesOuterDockPanelStyle">
+    <Style TargetType="{x:Type DockPanel}" x:Key="BackstageOuterDockPanelStyle">
         <Setter Property="LastChildFill" Value="True"     />
         <Setter Property="Margin"        Value="10,0,10,0"/>
     </Style>
 
-    <Style TargetType="{x:Type DockPanel}" x:Key="RecentFilesInnerDockPanelStyle">
+    <Style TargetType="{x:Type DockPanel}" x:Key="BackstageInnerDockPanelStyle">
         <Setter Property="LastChildFill" Value="False"/>
     </Style>
 
-    <Style TargetType="{x:Type ScrollViewer}" x:Key="RecentFilesScrollViewerStyle">
+    <Style TargetType="{x:Type ScrollViewer}" x:Key="BackstageScrollViewerStyle">
         <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"   />
         <Setter Property="VerticalScrollBarVisibility"   Value="Auto"     />
         <Setter Property="Margin"                        Value="0,10,0,10"/>
@@ -92,14 +69,51 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="{x:Type StackPanel}" x:Key="BackstageActionButtonsStackPanelStyle">
+        <Setter Property="DockPanel.Dock"      Value="Bottom"    />
+        <Setter Property="Margin"              Value="0,10,0,5"  />
+        <Setter Property="HorizontalAlignment" Value="Left"      />
+        <Setter Property="Orientation"         Value="Horizontal"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="BackstageSectionHeaderTextBlockBaseStyle">
+        <Setter Property="DockPanel.Dock" Value="Top"     />
+        <Setter Property="FontSize"       Value="18"      />
+        <Setter Property="Foreground"     Value="Black"   />
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BackstageSectionHeaderTextBlockBaseStyle}" x:Key="BackstageFirstSectionHeaderTextBlockStyle">
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+        
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BackstageSectionHeaderTextBlockBaseStyle}" x:Key="BackstageNextSectionHeaderTextBlockStyle">
+        <Setter Property="Margin" Value="0,15,0,0"/>
+    </Style>
+                
+    <!-- Recent files tab -->
+    
+    <Style TargetType="{x:Type Border}" x:Key="RecentFilesInnerBorderStyle">
+        <Setter Property="DockPanel.Dock"  Value="Top"      />
+        <Setter Property="BorderBrush"     Value="LightGray"/>
+        <Setter Property="BorderThickness" Value="0,1,0,1"  />
+        <Setter Property="Margin"          Value="0,10,0,0" />
+    </Style>
+
     <Style TargetType="{x:Type mwc:RecentFileButton}" x:Key="RecentFileButtonStyle">
         <Setter Property="Command"        Value="{x:Static jc:MainWindow.Backstage_CmdRecentFileOpen}"/>
-        <Setter Property="DockPanel.Dock" Value="Top"                                                  />
-        <Setter Property="Image"          Value="{StaticResource imgRecentFile32}"                     />
+        <Setter Property="DockPanel.Dock" Value="Top"                                                 />
+        <Setter Property="Image"          Value="{StaticResource imgRecentFile32}"                    />
     </Style>
 
     <!-- Settings tab -->
-    
+
+    <Style TargetType="{x:Type Border}" x:Key="SettingsInnerBorderStyle">
+        <Setter Property="DockPanel.Dock"  Value="Top"      />
+        <Setter Property="BorderBrush"     Value="LightGray"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"  />
+        <Setter Property="Margin"          Value="0,10,0,0" />
+    </Style>
+
     <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource CheckBoxBaseStyle}" x:Key="SettingsCheckBoxSettingStyle">
         <Setter Property="DockPanel.Dock" Value="Top"    />
         <Setter Property="Margin"         Value="2,5,5,0"/>
@@ -112,11 +126,6 @@
         <Setter Property="Width"               Value="210" />
     </Style>
     
-    <Style TargetType="{x:Type DockPanel}" x:Key="SettingsDockPanelStyle">
-        <Setter Property="LastChildFill" Value="False"    />
-        <Setter Property="Margin"        Value="10,0,10,0"/>
-    </Style>
-
     <Style TargetType="{x:Type Grid}" x:Key="SettingsGridStyle">
         <Setter Property="DockPanel.Dock"      Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Left"/>

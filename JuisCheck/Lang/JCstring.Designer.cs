@@ -115,6 +115,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset to defaults.
+        /// </summary>
+        public static string BackstageButtonTextResetToDefaults {
+            get {
+                return ResourceManager.GetString("BackstageButtonTextResetToDefaults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string BackstageButtonTextSave {
@@ -219,15 +228,6 @@ namespace JuisCheck.Lang {
         public static string BackstageSectionHeaderGeneral {
             get {
                 return ResourceManager.GetString("BackstageSectionHeaderGeneral", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to JUIS devices.
-        /// </summary>
-        public static string BackstageSectionHeaderJuisDevices {
-            get {
-                return ResourceManager.GetString("BackstageSectionHeaderJuisDevices", resourceCulture);
             }
         }
         
@@ -1620,9 +1620,9 @@ namespace JuisCheck.Lang {
         /// <summary>
         ///   Looks up a localized string similar to Maximum number of recent files.
         /// </summary>
-        public static string settingLabelRecentFilesMax {
+        public static string SettingLabelRecentFilesMax {
             get {
-                return ResourceManager.GetString("settingLabelRecentFilesMax", resourceCulture);
+                return ResourceManager.GetString("SettingLabelRecentFilesMax", resourceCulture);
             }
         }
         

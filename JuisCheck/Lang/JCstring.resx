@@ -546,9 +546,6 @@
   <data name="BackstageSectionHeaderGeneral" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="BackstageSectionHeaderJuisDevices" xml:space="preserve">
-    <value>JUIS devices</value>
-  </data>
   <data name="SettingLabelJuisReleaseShowBuildNumber" xml:space="preserve">
     <value>Show build number for release versions (if available)</value>
   </data>
@@ -588,7 +585,7 @@
   <data name="ComboBoxValueNotSet" xml:space="preserve">
     <value>(not set)</value>
   </data>
-  <data name="settingLabelRecentFilesMax" xml:space="preserve">
+  <data name="SettingLabelRecentFilesMax" xml:space="preserve">
     <value>Maximum number of recent files</value>
   </data>
   <data name="RibbonButtonTextAddJUIS" xml:space="preserve">
@@ -662,5 +659,8 @@
   </data>
   <data name="DataGridColumnHeaderUpdateFileName" xml:space="preserve">
     <value>Update file name</value>
+  </data>
+  <data name="BackstageButtonTextResetToDefaults" xml:space="preserve">
+    <value>Reset to defaults</value>
   </data>
 </root>

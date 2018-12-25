@@ -26,6 +26,7 @@
         <CommandBinding Command="jc:MainWindow.Backstage_CmdRecentFilesClear" CanExecute="Backstage_CmdRecentFilesClear_CanExecute" Executed="Backstage_CmdRecentFilesClear_Executed"/>
         <CommandBinding Command="jc:MainWindow.Backstage_CmdSave"             CanExecute="Backstage_CmdSave_CanExecute"             Executed="Backstage_CmdSave_Executed"            />
         <CommandBinding Command="jc:MainWindow.Backstage_CmdSaveAs"           CanExecute="Backstage_CmdSaveAs_CanExecute"           Executed="Backstage_CmdSaveAs_Executed"          />
+        <CommandBinding Command="jc:MainWindow.Backstage_CmdSettingsDefault"  CanExecute="Backstage_CmdSettingsDefault_CanExecute"  Executed="Backstage_CmdSettingsDefault_Executed" />
         <CommandBinding Command="jc:MainWindow.Devices_CmdAddDECT"            CanExecute="Devices_CmdAddDECT_CanExecute"            Executed="Devices_CmdAddDECT_Executed"           />
         <CommandBinding Command="jc:MainWindow.Devices_CmdAddJUIS"            CanExecute="Devices_CmdAddJUIS_CanExecute"            Executed="Devices_CmdAddJUIS_Executed"           />
         <CommandBinding Command="jc:MainWindow.Devices_CmdClearUpdates"       CanExecute="Devices_CmdClearUpdates_CanExecute"       Executed="Devices_CmdClearUpdates_Executed"      />
@@ -85,108 +86,116 @@
                         <fluent:Button Command="jc:MainWindow.Backstage_CmdOpen"   Header="{x:Static lang:JCstring.BackstageButtonTextOpen}"   ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipOpen}"  />
                         <fluent:Button Command="jc:MainWindow.Backstage_CmdClose"  Header="{x:Static lang:JCstring.BackstageButtonTextClose}"  ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipClose}" />
                         <fluent:BackstageTabItem Header="{x:Static lang:JCstring.BackstageTabTextRecent}" ToolTip="{x:Static lang:JCstring.BackstageTabTooltipRecent}" x:Name="backstageTabRecentFiles">
-                            <Border Style="{StaticResource BackstageBorderStyle}">
-                                <DockPanel Style="{StaticResource RecentFilesOuterDockPanelStyle}">
-                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderRecentFiles}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
+                            <Border Style="{StaticResource BackstageOuterBorderStyle}">
+                                <DockPanel Style="{StaticResource BackstageOuterDockPanelStyle}">
                                     <StackPanel Style="{StaticResource BackstageActionButtonsStackPanelStyle}">
                                         <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClean" Content="{x:Static lang:JCstring.BackstageButtonTextRemoveNonExistingFiles}" Style="{StaticResource BackstageActionButtonStyle}"/>
                                         <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClear" Content="{x:Static lang:JCstring.BackstageButtonTextRemoveAllFiles}"         Style="{StaticResource BackstageActionButtonStyle}"/>
                                     </StackPanel>
-                                    <Border Style="{StaticResource RecentFilesBorderStyle}">
-                                        <ScrollViewer Style="{StaticResource RecentFilesScrollViewerStyle}">
-                                            <DockPanel Style="{StaticResource RecentFilesInnerDockPanelStyle}" x:Name="dpRecentFiles"/>
+                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderRecentFiles}" Style="{StaticResource BackstageFirstSectionHeaderTextBlockStyle}"/>
+                                    <Border Style="{StaticResource RecentFilesInnerBorderStyle}">
+                                        <ScrollViewer Style="{StaticResource BackstageScrollViewerStyle}">
+                                            <DockPanel Style="{StaticResource BackstageInnerDockPanelStyle}" x:Name="dpRecentFiles"/>
                                         </ScrollViewer>
                                     </Border>
                                 </DockPanel>
                             </Border>
                         </fluent:BackstageTabItem>
                         <fluent:BackstageTabItem Header="{x:Static lang:JCstring.BackstageTabTextSettings}" ToolTip="{x:Static lang:JCstring.BackstageTabTooltipSettings}">
-                            <Border Style="{StaticResource BackstageBorderStyle}">
-                                <DockPanel Style="{StaticResource SettingsDockPanelStyle}">
-                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderGeneral}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
-                                    <CheckBox IsChecked="{Binding Path=AppSettings.MainWindowRestoreMetrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
-                                        <TextBlock Text="{x:Static lang:JCstring.SettingLabelMainWindowRestoreMetrics}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
-                                    </CheckBox>
-                                    <StackPanel Style="{StaticResource SettingsStackPanelStyle}">
-                                        <TextBlock Text="{x:Static lang:JCstring.settingLabelRecentFilesMax}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <TextBox MaxLength="2" Width="24" Style="{StaticResource SettingsTextBoxStyle}">
-                                            <TextBox.Text>
-                                                <Binding Path="AppSettings.RecentFilesMax" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
-                                                    <Binding.ValidationRules>
-                                                        <rules:Int32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
-                                                    </Binding.ValidationRules>
-                                                </Binding>
-                                            </TextBox.Text>
-                                        </TextBox>
+                            <Border Style="{StaticResource BackstageOuterBorderStyle}">
+                                <DockPanel Style="{StaticResource BackstageOuterDockPanelStyle}">
+                                    <StackPanel Style="{StaticResource BackstageActionButtonsStackPanelStyle}">
+                                        <Button Command="jc:MainWindow.Backstage_CmdSettingsDefault" Content="{x:Static lang:JCstring.BackstageButtonTextResetToDefaults}" Style="{StaticResource BackstageActionButtonStyle}"/>
                                     </StackPanel>
+                                    <Border Style="{StaticResource SettingsInnerBorderStyle}">
+                                        <ScrollViewer Style="{StaticResource BackstageScrollViewerStyle}">
+                                            <DockPanel Style="{StaticResource BackstageInnerDockPanelStyle}">
+                                                
+                                                <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderGeneral}" Style="{StaticResource BackstageFirstSectionHeaderTextBlockStyle}"/>
+                                                <CheckBox IsChecked="{Binding Path=AppSettings.MainWindowRestoreMetrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
+                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelMainWindowRestoreMetrics}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                </CheckBox>
+                                                <CheckBox IsChecked="{Binding Path=AppSettings.JuisReleaseShowBuildNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
+                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelJuisReleaseShowBuildNumber}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                </CheckBox>
+                                                <StackPanel Style="{StaticResource SettingsStackPanelStyle}">
+                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelRecentFilesMax}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <TextBox MaxLength="2" Width="24" Style="{StaticResource SettingsTextBoxStyle}">
+                                                        <TextBox.Text>
+                                                            <Binding Path="AppSettings.RecentFilesMax" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                                                                <Binding.ValidationRules>
+                                                                    <rules:Int32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
+                                                                </Binding.ValidationRules>
+                                                            </Binding>
+                                                        </TextBox.Text>
+                                                    </TextBox>
+                                                </StackPanel>
+                                                
+                                                <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderDefaults}" Style="{StaticResource BackstageNextSectionHeaderTextBlockStyle}"/>
+                                                <Grid Style="{StaticResource SettingsGridStyle}">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
 
-                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderJuisDevices}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
-                                    <CheckBox IsChecked="{Binding Path=AppSettings.JuisReleaseShowBuildNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
-                                        <TextBlock Text="{x:Static lang:JCstring.SettingLabelJuisReleaseShowBuildNumber}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
-                                    </CheckBox>
-
-                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderDefaults}" Style="{StaticResource BackstageSectionHeaderTextBlockStyle}"/>
-                                    <Grid Style="{StaticResource SettingsGridStyle}">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        
-                                        <TextBlock      Grid.Row="0" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultFirmwareBuildType}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <jc:ComboBoxEx Grid.Row="0" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                    <TextBlock     Grid.Row="0" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultFirmwareBuildType}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="0" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_BuildTypeValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultFirmwareBuildType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="1" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultOEM}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <jc:ComboBoxEx Grid.Row="1" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                    <TextBlock     Grid.Row="1" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultOEM}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="1" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_OEMValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultOEM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="2" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultCountry}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <jc:ComboBoxEx Grid.Row="2" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                    <TextBlock     Grid.Row="2" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultCountry}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="2" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_CountryValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="3" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultLanguage}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <jc:ComboBoxEx Grid.Row="3" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                    <TextBlock     Grid.Row="3" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultLanguage}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="3" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_LanguageValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock      Grid.Row="4" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultAnnex}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <jc:ComboBoxEx Grid.Row="4" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                    <TextBlock     Grid.Row="4" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultAnnex}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="4" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
                                                         ItemsSource="{Binding Path=Backstage_AnnexValues, Mode=OneTime}"
                                                         SelectedValue="{Binding Path=AppSettings.DefaultAnnex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                        <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultBaseFritzOS}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                        <TextBox   Grid.Row="5" Grid.Column="1" MaxLength="10" Width="80" Style="{StaticResource SettingsTextBoxStyle}">
-                                            <TextBox.Text>
-                                                <Binding Path="AppSettings.DefaultBaseFritzOS" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
-                                                    <Binding.ValidationRules>
-                                                        <rules:FritzOSversionRule AcceptEmpty="True" ValidatesOnTargetUpdated="True"/>
-                                                    </Binding.ValidationRules>
-                                                </Binding>
-                                            </TextBox.Text>
-                                        </TextBox>
-                                    </Grid>
-
+                                                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultBaseFritzOS}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <TextBox   Grid.Row="5" Grid.Column="1" MaxLength="10" Width="80" Style="{StaticResource SettingsTextBoxStyle}">
+                                                        <TextBox.Text>
+                                                            <Binding Path="AppSettings.DefaultBaseFritzOS" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                                                                <Binding.ValidationRules>
+                                                                    <rules:FritzOSversionRule AcceptEmpty="True" ValidatesOnTargetUpdated="True"/>
+                                                                </Binding.ValidationRules>
+                                                            </Binding>
+                                                        </TextBox.Text>
+                                                    </TextBox>
+                                                </Grid>
+                                                
+                                            </DockPanel>
+                                        </ScrollViewer>
+                                    </Border>
                                 </DockPanel>
                             </Border>
                         </fluent:BackstageTabItem>
