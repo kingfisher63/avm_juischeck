@@ -12,9 +12,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
 using System.Windows;
-using System.Windows.Threading;
 using WinForms = System.Windows.Forms;
 
 using JuisCheck.Lang;
@@ -233,7 +231,7 @@ namespace JuisCheck
 			string modifiedInfo = Devices.IsModified ? "*" : string.Empty;
 			string fileInfo     = Devices.FileName ?? JCstring.FileNameNew;
 
-			Title = string.Format("{0} - {1} {2}", modifiedInfo + fileInfo, JCstring.ProgramName, Assembly.GetExecutingAssembly().GetVersion(3));
+			Title = string.Format("{0} - {1} {2}", modifiedInfo + fileInfo, JCstring.ProgramName, App.GetVersion());
 		}
 
 		private void ShowErrorMessage( string message )

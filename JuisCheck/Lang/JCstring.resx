@@ -256,7 +256,7 @@
     <value>About</value>
   </data>
   <data name="MessageTextAbout" xml:space="preserve">
-    <value>JuisCheck for Windows\n\nCopyright (C) 2018 Roger Hünen</value>
+    <value>JuisCheck for Windows v{0}\n\nCopyright (C) 2018 Roger Hünen</value>
   </data>
   <data name="MessageCaptionDelete" xml:space="preserve">
     <value>Delete</value>

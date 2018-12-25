@@ -7,6 +7,7 @@
 using Muon.DotNetExtensions;
 using Muon.Windows;
 using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Markup;
@@ -23,6 +24,11 @@ namespace JuisCheck
 	/// </summary>
 	public partial class App : Application
 	{
+		public static string GetVersion()
+		{
+			return Assembly.GetExecutingAssembly().GetVersion(3);
+		}
+
 		public static bool SafeClipboardSetText( string text )
 		{
 			try {

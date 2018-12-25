@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Program   : JuisCheck for Windows
+ * Copyright : Copyright (C) 2018 Roger Hünen
+ * License   : GNU General Public License version 3 (see LICENSE)
+ */
+
+using System;
 using System.Collections.Generic;
 
 namespace JuisCheck

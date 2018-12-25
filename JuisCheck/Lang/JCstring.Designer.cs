@@ -1186,7 +1186,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to JuisCheck for Windows\n\nCopyright (C) 2018 Roger Hünen.
+        ///   Looks up a localized string similar to JuisCheck for Windows v{0}\n\nCopyright (C) 2018 Roger Hünen.
         /// </summary>
         public static string MessageTextAbout {
             get {
