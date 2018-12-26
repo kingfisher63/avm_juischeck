@@ -13,7 +13,8 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows;
-using WinForms = System.Windows.Forms;
+using WinControls = System.Windows.Controls;
+using WinForms    = System.Windows.Forms;
 
 using JuisCheck.Lang;
 using JuisCheck.Properties;
@@ -49,6 +50,20 @@ namespace JuisCheck
 				Devices.Empty();
 				Devices_InitSorting();
 			}
+		}
+
+		private UIElement FindContextMenuPlacementTarget( object obj )
+		{
+			if (obj is DependencyObject element) {
+				while (element != null) {
+					if (element is WinControls.ContextMenu contextMenu) {
+						return contextMenu.PlacementTarget;
+					}
+					element = LogicalTreeHelper.GetParent(element);
+				}
+			}
+
+			return null;
 		}
 
 		private bool IsInfinityOrNaN( double number )

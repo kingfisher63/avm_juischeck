@@ -275,12 +275,8 @@ namespace JuisCheck
 
 		private void Backstage_RecentFile_ContextMenuOpenClick_Handler( object sender, RoutedEventArgs evt )
 		{
-			if (evt.Source is WinControls.MenuItem menuItem) {
-				if (menuItem.Parent is WinControls.ContextMenu contextMenu) {
-					if (contextMenu.PlacementTarget is RecentFileButton recentFileButton) {
-						Backstage_CmdRecentFileOpen.Execute(null, recentFileButton);
-					}
-				}
+			if (FindContextMenuPlacementTarget(evt.Source) is RecentFileButton recentFileButton) {
+				Backstage_CmdRecentFileOpen.Execute(null, recentFileButton);
 			}
 		}
 
@@ -288,12 +284,8 @@ namespace JuisCheck
 
 		private void Backstage_RecentFile_ContextMenuRemoveClick_Handler( object sender, RoutedEventArgs evt )
 		{
-			if (evt.Source is WinControls.MenuItem menuItem) {
-				if (menuItem.Parent is WinControls.ContextMenu contextMenu) {
-					if (contextMenu.PlacementTarget is RecentFileButton recentFileButton) {
-						Backstage_CmdRecentFileRemove.Execute(null, recentFileButton);
-					}
-				}
+			if (FindContextMenuPlacementTarget(evt.Source) is RecentFileButton recentFileButton) {
+				Backstage_CmdRecentFileRemove.Execute(null, recentFileButton);
 			}
 		}
 	}
