@@ -105,7 +105,7 @@ namespace JuisCheck
 		private readonly StringParser		mParser2;
 		private readonly StringComparison	mStringComparison;
 
-		public NaturalStringComparer( StringComparison stringComparison = StringComparison.CurrentCulture)
+		public NaturalStringComparer( StringComparison stringComparison = StringComparison.CurrentCulture )
 		{
 			mParser1          = new StringParser();
 			mParser2          = new StringParser();

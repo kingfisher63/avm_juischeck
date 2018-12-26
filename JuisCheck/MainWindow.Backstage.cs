@@ -278,7 +278,7 @@ namespace JuisCheck
 			if (evt.Source is WinControls.MenuItem menuItem) {
 				if (menuItem.Parent is WinControls.ContextMenu contextMenu) {
 					if (contextMenu.PlacementTarget is RecentFileButton recentFileButton) {
-						Backstage_CmdRecentFileOpen.Execute( null, recentFileButton );
+						Backstage_CmdRecentFileOpen.Execute(null, recentFileButton);
 					}
 				}
 			}

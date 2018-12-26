@@ -91,7 +91,7 @@ namespace JuisCheck
 				Devices_InitSorting();
 				RecentFiles.Add(fileName);
 			}
-			catch ( Exception ex ) {
+			catch (Exception ex) {
 				ShowErrorMessage(string.Format(JCstring.MessageTextOpenDeviceCollectionFailed.Unescape(), ex.Message));
 			}
 		}
@@ -173,7 +173,7 @@ namespace JuisCheck
 				RecentFiles.Add(sfd.FileName);
 				return true;
 			}
-			catch ( Exception ex ) {
+			catch (Exception ex) {
 				ShowErrorMessage(string.Format(JCstring.MessageTextSaveDeviceCollectionFailed.Unescape(), ex.Message));
 				return false;
 			}

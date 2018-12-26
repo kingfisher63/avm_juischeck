@@ -29,7 +29,7 @@ namespace JuisCheck.Rules
 			return ValidationResult.ValidResult;
 		}
 
-		protected bool CheckPart( string part, int minLength, int MaxLength)
+		protected bool CheckPart( string part, int minLength, int MaxLength )
 		{
 			if (part.Length < minLength) { return false; }
 			if (part.Length > MaxLength) { return false; }

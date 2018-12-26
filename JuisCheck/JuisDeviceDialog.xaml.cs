@@ -70,7 +70,7 @@ namespace JuisCheck
 			try {
 				DeviceData.QueryDevice();
 			}
-			catch ( Exception ex ) {
+			catch (Exception ex) {
 				MessageBoxEx.Show(
 					new MessageBoxExParams {
 						CaptionText = JCstring.MessageCaptionError,
