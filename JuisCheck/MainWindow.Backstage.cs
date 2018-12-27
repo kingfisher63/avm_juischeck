@@ -15,7 +15,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using WinControls = System.Windows.Controls;
 
 using JuisCheck.Lang;
 
@@ -275,7 +274,7 @@ namespace JuisCheck
 
 		private void Backstage_RecentFile_ContextMenuOpenClick_Handler( object sender, RoutedEventArgs evt )
 		{
-			if (FindContextMenuPlacementTarget(evt.Source) is RecentFileButton recentFileButton) {
+			if (ContextMenuHelper.GetPlacementTarget(evt.Source) is RecentFileButton recentFileButton) {
 				Backstage_CmdRecentFileOpen.Execute(null, recentFileButton);
 			}
 		}
@@ -284,7 +283,7 @@ namespace JuisCheck
 
 		private void Backstage_RecentFile_ContextMenuRemoveClick_Handler( object sender, RoutedEventArgs evt )
 		{
-			if (FindContextMenuPlacementTarget(evt.Source) is RecentFileButton recentFileButton) {
+			if (ContextMenuHelper.GetPlacementTarget(evt.Source) is RecentFileButton recentFileButton) {
 				Backstage_CmdRecentFileRemove.Execute(null, recentFileButton);
 			}
 		}
