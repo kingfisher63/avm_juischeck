@@ -8,18 +8,18 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Windows;
 using System.Xml;
 using System.Xml.Serialization;
 
-using JuisCheck.JUIS;
 using JuisCheck.Lang;
 using JuisCheck.Properties;
 
 namespace JuisCheck
 {
 	[Serializable]
-	[XmlType("Device")]
+	[XmlType(TypeName = "Device")]
 	public class Device : INotifyPropertyChanged
 	{
 		// Annex
@@ -220,7 +220,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_DeviceName = string.Empty;
-		[XmlElement("DeviceName")]
+		[XmlElement(ElementName = "DeviceName")]
 		public		string   DeviceName
 		{
 			get => _DeviceName;
@@ -234,7 +234,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_DeviceAddress = string.Empty;
-		[XmlElement("DeviceAddress")]
+		[XmlElement(ElementName = "DeviceAddress")]
 		public		string	 DeviceAddress
 		{
 			get => _DeviceAddress;
@@ -248,7 +248,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_ProductName = string.Empty;
-		[XmlElement("ProductName")]
+		[XmlElement(ElementName = "ProductName")]
 		public		string	 ProductName
 		{
 			get => _ProductName;
@@ -262,7 +262,7 @@ namespace JuisCheck
 		}
 
 		protected	int	_HardwareMajor = 0;
-		[XmlElement("HardwareMajor")]
+		[XmlElement(ElementName = "HardwareMajor")]
 		public		int	 HardwareMajor
 		{
 			get => _HardwareMajor;
@@ -278,7 +278,7 @@ namespace JuisCheck
 		}
 
 		protected	int	_HardwareMinor = 0;
-		[XmlElement("HardwareMinor")]
+		[XmlElement(ElementName = "HardwareMinor")]
 		public		int	 HardwareMinor
 		{
 			get => _HardwareMinor;
@@ -293,7 +293,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_SerialNumber = string.Empty;
-		[XmlElement("SerialNumber")]
+		[XmlElement(ElementName = "SerialNumber")]
 		public		string	 SerialNumber
 		{
 			get => _SerialNumber;
@@ -307,7 +307,7 @@ namespace JuisCheck
 		}
 
 		protected	int	_FirmwareMajor = 0;
-		[XmlElement("FirmwareMajor")]
+		[XmlElement(ElementName = "FirmwareMajor")]
 		public		int	 FirmwareMajor
 		{
 			get => _FirmwareMajor;
@@ -323,7 +323,7 @@ namespace JuisCheck
 		}
 
 		protected	int	_FirmwareMinor = 0;
-		[XmlElement("FirmwareMinor")]
+		[XmlElement(ElementName = "FirmwareMinor")]
 		public		int	 FirmwareMinor
 		{
 			get => _FirmwareMinor;
@@ -338,7 +338,7 @@ namespace JuisCheck
 		}
 
 		protected	int	_FirmwarePatch = 0;
-		[XmlElement("FirmwarePatch")]
+		[XmlElement(ElementName = "FirmwarePatch")]
 		public		int	 FirmwarePatch
 		{
 			get => _FirmwarePatch;
@@ -353,7 +353,7 @@ namespace JuisCheck
 		}
 
 		protected	int	_FirmwareBuildNumber = 0;
-		[XmlElement("FirmwareBuildNumber")]
+		[XmlElement(ElementName = "FirmwareBuildNumber")]
 		public		int	 FirmwareBuildNumber
 		{
 			get => _FirmwareBuildNumber;
@@ -368,7 +368,7 @@ namespace JuisCheck
 		}
 
 		protected	int	_FirmwareBuildType = -1;
-		[XmlElement("FirmwareBuildType")]
+		[XmlElement(ElementName = "FirmwareBuildType")]
 		public		int	 FirmwareBuildType
 		{
 			get => _FirmwareBuildType;
@@ -384,7 +384,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_OEM = string.Empty;
-		[XmlElement("OEM")]
+		[XmlElement(ElementName = "OEM")]
 		public		string	 OEM
 		{
 			get => _OEM;
@@ -398,7 +398,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_Annex = string.Empty;
-		[XmlElement("Annex")]
+		[XmlElement(ElementName = "Annex")]
 		public		string	 Annex
 		{
 			get => _Annex;
@@ -413,7 +413,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_Country = string.Empty;
-		[XmlElement("Country")]
+		[XmlElement(ElementName = "Country")]
 		public		string	 Country
 		{
 			get => _Country;
@@ -428,7 +428,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_Language = string.Empty;
-		[XmlElement("Language")]
+		[XmlElement(ElementName = "Language")]
 		public		string	 Language
 		{
 			get => _Language;
@@ -442,7 +442,7 @@ namespace JuisCheck
 			}
 		}
 
-		[XmlElement("Flag")]
+		[XmlElement(ElementName = "Flag")]
 		public string[] Flag {
 			get {
 				return Flags.Split(new char[] { '\n', '\r', '\t', ' '}, StringSplitOptions.RemoveEmptyEntries);
@@ -453,7 +453,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_BaseFritzOS = string.Empty;
-		[XmlElement("BaseFritzOS")]
+		[XmlElement(ElementName = "BaseFritzOS")]
 		public		string	 BaseFritzOS
 		{
 			get => _BaseFritzOS;
@@ -467,7 +467,7 @@ namespace JuisCheck
 		}
 
 		protected	bool	_UpdateAvailable = false;
-		[XmlElement("UpdateAvailable")]
+		[XmlElement(ElementName = "UpdateAvailable")]
 		public		bool	 UpdateAvailable
 		{
 			get => _UpdateAvailable;
@@ -481,7 +481,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_UpdateInfo = string.Empty;
-		[XmlElement("UpdateInfo")]
+		[XmlElement(ElementName = "UpdateInfo")]
 		public		string	 UpdateInfo
 		{
 			get => _UpdateInfo;
@@ -495,7 +495,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_UpdateImageURL = string.Empty;
-		[XmlElement("UpdateImageURL")]
+		[XmlElement(ElementName = "UpdateImageURL")]
 		public		string	 UpdateImageURL
 		{
 			get => _UpdateImageURL;
@@ -509,7 +509,7 @@ namespace JuisCheck
 		}
 
 		protected	string	_UpdateInfoURL = string.Empty;
-		[XmlElement("UpdateInfoURL")]
+		[XmlElement(ElementName = "UpdateInfoURL")]
 		public		string	 UpdateInfoURL
 		{
 			get => _UpdateInfoURL;
@@ -523,7 +523,7 @@ namespace JuisCheck
 		}
 
 		protected	DateTime?	_UpdateLastChecked = null;
-		[XmlElement("UpdateLastChecked")]
+		[XmlElement(ElementName = "UpdateLastChecked")]
 		public		DateTime?	 UpdateLastChecked
 		{
 			get => _UpdateLastChecked;
@@ -681,11 +681,11 @@ namespace JuisCheck
 			}
 
 			if (!boxInfoOnly) {
-				device.DeviceName      = trim ? DeviceName.Trim()        : DeviceName;
-				device.DeviceAddress   = trim ? DeviceAddress.Trim()     : DeviceAddress;
+				device.DeviceName      = trim ? DeviceName.Trim()     : DeviceName;
+				device.DeviceAddress   = trim ? DeviceAddress.Trim()  : DeviceAddress;
 			}
 
-			device.ProductName         = trim ? ProductName.Trim()       : ProductName;
+			device.ProductName         = trim ? ProductName.Trim()    : ProductName;
 			device.HardwareMajor       = HardwareMajor;
 			device.HardwareMinor       = HardwareMinor;
 			device.FirmwareMajor       = FirmwareMajor;
@@ -795,11 +795,82 @@ namespace JuisCheck
 					throw new InvalidOperationException("Attempt to query a DECT device");
 
 				case DeviceKind.JUIS:
-					QueryJuisDevice();
+					try {
+						QueryJuisDevice();
+					}
+					catch (WebException ex) when (ex.Status == WebExceptionStatus.ProtocolError && ex.Message.Contains("404")) {
+						QueryJasonDevice();
+					}
+					ClearUpdateInfo();
 					break;
 
 				default:
 					throw new InvalidOperationException("Unsupported device kind");
+			}
+		}
+
+		protected void QueryJasonDevice()
+		{
+			if (string.IsNullOrWhiteSpace(DeviceAddress)) {
+				throw new ArgumentException("Device address is null or whitespace");
+			}
+
+			XmlRootAttribute xmlRootAttribute = new XmlRootAttribute() { ElementName = "BoxInfo", Namespace = "http://jason.avm.de/updatecheck/" };
+			XmlSerializer boxInfoSerializer = new XmlSerializer(typeof(Jason.BoxInfo), xmlRootAttribute);
+
+			using (XmlReader xmlReader = XmlReader.Create(string.Format("http://{0}/jason_boxinfo.xml", DeviceAddress.Trim()))) {
+				Jason.BoxInfo boxInfo = (Jason.BoxInfo)boxInfoSerializer.Deserialize(xmlReader);
+
+				// General
+
+				ProductName   = boxInfo.Name;
+				HardwareMajor = boxInfo.HW;
+				SerialNumber  = boxInfo.Serial;
+				OEM           = boxInfo.OEM;
+				Annex         = boxInfo.Annex;
+				Country       = boxInfo.Country;
+				Language      = boxInfo.Lang;
+				Flag          = boxInfo.Flag;
+
+				// Firmware version
+
+				string[] versionParts = boxInfo.Version.Split('.');
+				if (versionParts.Length != 3) {
+					throw new FormatException();
+				}
+
+				try {
+					FirmwareMajor = (int)Convert.ToUInt32(versionParts[0]);
+					FirmwareMinor = (int)Convert.ToUInt32(versionParts[1]);
+					FirmwarePatch = (int)Convert.ToUInt32(versionParts[2]);
+				}
+				catch {
+					throw new FormatException();
+				}
+
+				// Firmware build number
+
+				FirmwareBuildNumber = boxInfo.Revision;
+
+				// Firmware build type
+
+				switch (boxInfo.Lab.ToLower()) {
+					case "inhaus":
+					case "intern":
+						FirmwareBuildType = firmwareBuildTypeBetaInhouse;
+						break;
+
+					case "beta":
+					case "extern":
+					case "labbeta":
+					case "labor":
+						FirmwareBuildType = firmwareBuildTypeBetaPublic;
+						break;
+
+					default:
+						FirmwareBuildType = firmwareBuildTypeRelease;
+						break;
+				}
 			}
 		}
 
@@ -810,10 +881,10 @@ namespace JuisCheck
 			}
 
 			XmlRootAttribute	xmlRootAttribute  = new XmlRootAttribute() { ElementName = "BoxInfo", Namespace = "http://juis.avm.de/updateinfo" };
-			XmlSerializer		boxInfoSerializer = new XmlSerializer(typeof(BoxInfo), xmlRootAttribute);
+			XmlSerializer		boxInfoSerializer = new XmlSerializer(typeof(JUIS.BoxInfo), xmlRootAttribute);
 
 			using (XmlReader xmlReader = XmlReader.Create(string.Format("http://{0}/juis_boxinfo.xml", DeviceAddress.Trim()))) {
-				BoxInfo boxInfo = (BoxInfo)boxInfoSerializer.Deserialize(xmlReader);
+				JUIS.BoxInfo boxInfo = (JUIS.BoxInfo)boxInfoSerializer.Deserialize(xmlReader);
 
 				ProductName         = boxInfo.Name;
 				HardwareMajor       = boxInfo.HW;
@@ -828,8 +899,6 @@ namespace JuisCheck
 				Country             = boxInfo.Country;
 				Language            = boxInfo.Lang;
 				Flag                = boxInfo.Flag;
-
-				ClearUpdateInfo();
 			}
 		}
 

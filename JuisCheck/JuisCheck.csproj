@@ -101,6 +101,7 @@
     <Compile Include="FindUpdatesDialog.xaml.cs">
       <DependentUpon>FindUpdatesDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Jason\BoxInfo.cs" />
     <Compile Include="MainWindow.Devices.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
