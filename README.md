@@ -113,7 +113,7 @@ If any field has invalid input, you cannot click the *OK* button.
 If the device is a device that uses the JUIS service (all devices except DECT),
 you can supply a network address (IP address or DNS name) and click the *Query*
 button. JuisCheck for Windows will then populate the device properties from the
-*juis_boxinfo.xml* file retrieved from the device.
+*juis_boxinfo.xml* or *jason_boxinfo.xml* file retrieved from the device.
 
 ## Device collection files
 

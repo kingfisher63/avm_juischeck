@@ -1,4 +1,12 @@
-﻿v1.1.0 (2018/12/25)
+﻿v1.2.0 (2018/12/27)
+-------------------
+New: Support for the legacy jason_boxinfo.xml device information. When a
+     request for juis_boxinfo.xml fails with HTTP error 404 (Not Found),
+     JuisCheck will make a request for jason_boxinfo.xml. A heuristic is
+     used to determine the firmware build type from the Lab element (the
+     default is Release).
+
+v1.1.0 (2018/12/25)
 -------------------
 New: Recent files context menu: open file, remove file from the list.
 New: Recent files: button to remove all files from the list.
