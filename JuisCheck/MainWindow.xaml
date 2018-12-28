@@ -31,6 +31,7 @@
         <CommandBinding Command="jc:MainWindow.Devices_CmdAddDECT"            CanExecute="Devices_CmdAddDECT_CanExecute"            Executed="Devices_CmdAddDECT_Executed"           />
         <CommandBinding Command="jc:MainWindow.Devices_CmdAddJUIS"            CanExecute="Devices_CmdAddJUIS_CanExecute"            Executed="Devices_CmdAddJUIS_Executed"           />
         <CommandBinding Command="jc:MainWindow.Devices_CmdClearUpdates"       CanExecute="Devices_CmdClearUpdates_CanExecute"       Executed="Devices_CmdClearUpdates_Executed"      />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdCopy"               CanExecute="Devices_CmdCopy_CanExecute"               Executed="Devices_CmdCopy_Executed"              />
         <CommandBinding Command="jc:MainWindow.Devices_CmdCopyURLs"           CanExecute="Devices_CmdCopyURLs_CanExecute"           Executed="Devices_CmdCopyURLs_Executed"          />
         <CommandBinding Command="jc:MainWindow.Devices_CmdDelete"             CanExecute="Devices_CmdDelete_CanExecute"             Executed="Devices_CmdDelete_Executed"            />
         <CommandBinding Command="jc:MainWindow.Devices_CmdEdit"               CanExecute="Devices_CmdEdit_CanExecute"               Executed="Devices_CmdEdit_Executed"              />
@@ -215,6 +216,7 @@
                     <fluent:Button Command="jc:MainWindow.Devices_CmdAddDECT"      LargeIcon="{StaticResource imgDevicesButtonAdd32}"          Header="{x:Static lang:JCstring.RibbonButtonTextAddDECT}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddDECT}"     />
                     <fluent:Button Command="jc:MainWindow.Devices_CmdDelete"       LargeIcon="{StaticResource imgDevicesButtonDelete32}"       Header="{x:Static lang:JCstring.RibbonButtonTextDelete}"       ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipDelete}"      />
                     <fluent:Button Command="jc:MainWindow.Devices_CmdEdit"         LargeIcon="{StaticResource imgDevicesButtonEdit32}"         Header="{x:Static lang:JCstring.RibbonButtonTextEdit}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipEdit}"        />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopy"         LargeIcon="{StaticResource imgDevicesButtonCopy32}"         Header="{x:Static lang:JCstring.RibbonButtonTextCopy}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopy}"        />
                     <fluent:Button Command="jc:MainWindow.Devices_CmdSelectAll"    LargeIcon="{StaticResource imgDevicesButtonSelectAll32}"    Header="{x:Static lang:JCstring.RibbonButtonTextSelectAll}"    ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectAll}"   />
                     <fluent:Button Command="jc:MainWindow.Devices_CmdSelectNone"   LargeIcon="{StaticResource imgDevicesButtonSelectNone32}"   Header="{x:Static lang:JCstring.RibbonButtonTextSelectNone}"   ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectNone}"  />
                 </fluent:RibbonGroupBox>

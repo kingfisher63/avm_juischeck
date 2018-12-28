@@ -666,4 +666,10 @@
   <data name="SettingLabelAutoLoad" xml:space="preserve">
     <value>Automatically load the current device collection at next program start</value>
   </data>
+  <data name="RibbonButtonTextCopy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="RibbonButtonTooltipCopy" xml:space="preserve">
+    <value>Add a device that is a copy of the selected device</value>
+  </data>
 </root>

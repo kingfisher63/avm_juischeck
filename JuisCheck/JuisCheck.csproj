@@ -266,6 +266,9 @@
   <ItemGroup>
     <Resource Include="Images\oxygen-edit-paste-32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\oxygen-edit-copy-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if not exist "$(SolutionDir)bin" (

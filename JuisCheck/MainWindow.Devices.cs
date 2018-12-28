@@ -173,6 +173,21 @@ namespace JuisCheck
 			Devices_SetDataGridFocus();
 		}
 
+		// Routed command: Devices_CmdCopy
+
+		public static RoutedCommand Devices_CmdCopy = new RoutedCommand();
+
+		private void Devices_CmdCopy_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
+		{
+			evt.CanExecute = Devices.Count(predicate: IsSelectedDevice) == 1;
+		}
+
+		private void Devices_CmdCopy_Executed( object sender, ExecutedRoutedEventArgs evt )
+		{
+			Devices_EditDevice(new Device(Devices.First(predicate: IsSelectedDevice)));
+			Devices_SetDataGridFocus();
+		}
+
 		// Routed command: Devices_CmdCopyURLs
 
 		public static RoutedCommand Devices_CmdCopyURLs = new RoutedCommand();

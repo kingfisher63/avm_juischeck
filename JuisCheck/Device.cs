@@ -665,6 +665,12 @@ namespace JuisCheck
 			SetFirmwareMajorWarning();
 		}
 
+		public Device( Device device )
+		{
+			DeviceKind = device.DeviceKind;
+			device.CopyTo(this);
+		}
+
 		public void ClearUpdateInfo()
 		{
 			UpdateAvailable   = false;

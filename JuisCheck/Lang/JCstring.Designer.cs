@@ -1321,6 +1321,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        public static string RibbonButtonTextCopy {
+            get {
+                return ResourceManager.GetString("RibbonButtonTextCopy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy URLs.
         /// </summary>
         public static string RibbonButtonTextCopyURLs {
@@ -1425,6 +1434,15 @@ namespace JuisCheck.Lang {
         public static string RibbonButtonTooltipClearUpdates {
             get {
                 return ResourceManager.GetString("RibbonButtonTooltipClearUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add a device that is a copy of the selected device.
+        /// </summary>
+        public static string RibbonButtonTooltipCopy {
+            get {
+                return ResourceManager.GetString("RibbonButtonTooltipCopy", resourceCulture);
             }
         }
         

@@ -4,6 +4,7 @@
     
     <BitmapImage x:Key="imgDevicesButtonAdd32"          UriSource="../Images/oxygen-document-new-32.png"      />
     <BitmapImage x:Key="imgDevicesButtonClearUpdates32" UriSource="../Images/oxygen-run-build-clean-32.png"   />
+    <BitmapImage x:Key="imgDevicesButtonCopy32"         UriSource="../Images/oxygen-edit-copy-32.png"         />
     <BitmapImage x:Key="imgDevicesButtonCopyURLs32"     UriSource="../Images/oxygen-edit-paste-32.png"        />
     <BitmapImage x:Key="imgDevicesButtonDelete32"       UriSource="../Images/oxygen-document-close-32.png"    />
     <BitmapImage x:Key="imgDevicesButtonEdit32"         UriSource="../Images/oxygen-document-edit-32.png"     />
