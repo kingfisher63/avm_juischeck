@@ -815,8 +815,8 @@ namespace JuisCheck
 				throw new ArgumentException("Device address is null or whitespace");
 			}
 
-			XmlRootAttribute xmlRootAttribute = new XmlRootAttribute() { ElementName = "BoxInfo", Namespace = "http://jason.avm.de/updatecheck/" };
-			XmlSerializer boxInfoSerializer = new XmlSerializer(typeof(Jason.BoxInfo), xmlRootAttribute);
+			XmlRootAttribute	xmlRootAttribute  = new XmlRootAttribute() { ElementName = "BoxInfo", Namespace = "http://jason.avm.de/updatecheck/" };
+			XmlSerializer		boxInfoSerializer = new XmlSerializer(typeof(Jason.BoxInfo), xmlRootAttribute);
 
 			using (XmlReader xmlReader = XmlReader.Create(string.Format("http://{0}/jason_boxinfo.xml", DeviceAddress.Trim()))) {
 				Jason.BoxInfo boxInfo = (Jason.BoxInfo)boxInfoSerializer.Deserialize(xmlReader);
