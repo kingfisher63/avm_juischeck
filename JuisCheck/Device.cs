@@ -505,6 +505,7 @@ namespace JuisCheck
 
 				_UpdateImageURL = newvalue;
 				RaisePropertyChanged(nameof(UpdateImageURL), newvalue != oldvalue);
+				RaisePropertyChanged(nameof(UpdateFileName), newvalue != oldvalue);
 			}
 		}
 
