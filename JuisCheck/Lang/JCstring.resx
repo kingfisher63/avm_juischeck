@@ -663,4 +663,7 @@
   <data name="BackstageButtonTextResetToDefaults" xml:space="preserve">
     <value>Reset to defaults</value>
   </data>
+  <data name="SettingLabelAutoLoad" xml:space="preserve">
+    <value>Automatically load the current device collection at next program start</value>
+  </data>
 </root>

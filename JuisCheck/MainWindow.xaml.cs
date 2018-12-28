@@ -256,8 +256,19 @@ namespace JuisCheck
 				return;
 			}
 
+			AppSettings.AutoLoadFile = AppSettings.AutoLoad && !string.IsNullOrWhiteSpace(Devices.FileName) ? Devices.FileName : string.Empty;
 			SaveWindowMetrics();
+
 			evt.Cancel = false;
+		}
+
+		// Event: Loaded
+
+		private void Loaded_Handler( object sender, RoutedEventArgs evt )
+		{
+			if (!string.IsNullOrWhiteSpace(AppSettings.AutoLoadFile)) {
+				OpenDeviceCollection(AppSettings.AutoLoadFile);
+			}
 		}
 
 		// Event: Devices_IsModifiedChanged

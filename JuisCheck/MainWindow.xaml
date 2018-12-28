@@ -13,7 +13,8 @@
                      Width="900" Height="700"
                      ResizeMode="CanResizeWithGrip"
                      SnapsToDevicePixels="True"
-                     Closing="Closing_Handler">
+                     Closing="Closing_Handler"
+                     Loaded="Loaded_Handler">
 
     <fluent:RibbonWindow.CommandBindings>
         <CommandBinding Command="jc:MainWindow.Backstage_CmdAbout"            CanExecute="Backstage_CmdAbout_CanExecute"            Executed="Backstage_CmdAbout_Executed"           />
@@ -114,6 +115,9 @@
                                                 <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderGeneral}" Style="{StaticResource BackstageFirstSectionHeaderTextBlockStyle}"/>
                                                 <CheckBox IsChecked="{Binding Path=AppSettings.MainWindowRestoreMetrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
                                                     <TextBlock Text="{x:Static lang:JCstring.SettingLabelMainWindowRestoreMetrics}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                </CheckBox>
+                                                <CheckBox IsChecked="{Binding Path=AppSettings.AutoLoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
+                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelAutoLoad}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
                                                 </CheckBox>
                                                 <CheckBox IsChecked="{Binding Path=AppSettings.JuisReleaseShowBuildNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
                                                     <TextBlock Text="{x:Static lang:JCstring.SettingLabelJuisReleaseShowBuildNumber}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>

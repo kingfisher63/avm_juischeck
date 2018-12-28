@@ -1546,6 +1546,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically load the current device collection at next program start.
+        /// </summary>
+        public static string SettingLabelAutoLoad {
+            get {
+                return ResourceManager.GetString("SettingLabelAutoLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Annex.
         /// </summary>
         public static string SettingLabelDefaultAnnex {

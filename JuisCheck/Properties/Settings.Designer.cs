@@ -376,5 +376,29 @@ namespace JuisCheck.Properties {
                 this["DataGridColumnVisibleUpdateFileName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoLoad {
+            get {
+                return ((bool)(this["AutoLoad"]));
+            }
+            set {
+                this["AutoLoad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AutoLoadFile {
+            get {
+                return ((string)(this["AutoLoadFile"]));
+            }
+            set {
+                this["AutoLoadFile"] = value;
+            }
+        }
     }
 }
