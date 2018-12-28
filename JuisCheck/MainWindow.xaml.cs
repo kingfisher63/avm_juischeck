@@ -47,7 +47,7 @@ namespace JuisCheck
 		{
 			if (SaveUnsavedData()) {
 				Devices.Empty();
-				Devices_InitSorting();
+				Devices_InitDataGrid();
 			}
 		}
 
@@ -88,8 +88,8 @@ namespace JuisCheck
 			}
 
 			try {
+				Devices_InitDataGrid();
 				Devices.Load(fileName);
-				Devices_InitSorting();
 				RecentFiles.Add(fileName);
 			}
 			catch (Exception ex) {

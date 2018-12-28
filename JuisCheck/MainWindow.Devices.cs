@@ -58,13 +58,16 @@ namespace JuisCheck
 		private void Devices_Init()
 		{
 			Devices_collectionView = CollectionViewSource.GetDefaultView(dgDevices.ItemsSource);
-			Devices_InitSorting();
+			Devices_InitDataGrid();
 		}
 
-		private void Devices_InitSorting()
+		private void Devices_InitDataGrid()
 		{
-			dgcDeviceName .SortDirection = null;
-			dgcProductName.SortDirection = null;
+			foreach (DataGridColumn column in dgDevices.Columns) {
+				column.SortDirection = null;
+				column.Width         = new DataGridLength(0, DataGridLengthUnitType.Pixel);
+				column.Width         = new DataGridLength(0, DataGridLengthUnitType.Auto );
+			}
 
 			DeviceComparer.SetComparer(Devices_collectionView as ListCollectionView, dgcDeviceName);
 		}

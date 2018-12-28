@@ -241,8 +241,7 @@
                 <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceAddress}"
                                         Binding="{Binding Path=DeviceAddress}"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     x:Name="dgcProductName"
-                                        Header="{x:Static lang:JCstring.DataGridColumnHeaderProductName}"
+                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderProductName}"
                                         Binding="{Binding Path=ProductName}"
                                         SortMemberPath="ProductName"
                                         Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleProductName, Converter={StaticResource cnvBoolToVisibility}}"/>
