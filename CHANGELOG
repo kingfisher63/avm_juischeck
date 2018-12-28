@@ -1,4 +1,9 @@
-﻿v1.2.0 (2018/12/27)
+﻿v1.3.0 (2018/12/18)
+-------------------
+New: Setting to automatically load the current device collection at next
+     program start.
+
+v1.2.0 (2018/12/27)
 -------------------
 New: Support for the legacy jason_boxinfo.xml device information. When a
      request for juis_boxinfo.xml fails with HTTP error 404 (Not Found),
