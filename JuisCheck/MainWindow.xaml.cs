@@ -53,7 +53,7 @@ namespace JuisCheck
 
 		private bool IsInfinityOrNaN( double number )
 		{
-			return (double.IsInfinity(number) || double.IsNaN(number));
+			return double.IsInfinity(number) || double.IsNaN(number);
 		}
 
 		private void OpenDeviceCollection( string fileName = null )
@@ -72,7 +72,7 @@ namespace JuisCheck
 					CheckFileExists  = true,
 					CheckPathExists  = true,
 					Filter           = "XML files (*.xml)|*.xml",
-					InitialDirectory = Directory.Exists(AppSettings.LastOpenSaveAsDirectory) ? AppSettings.LastOpenSaveAsDirectory : Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+					InitialDirectory = Directory.Exists(AppSettings.LastDirectoryPath) ? AppSettings.LastDirectoryPath : Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
 					ReadOnlyChecked  = false,
 					ShowReadOnly     = false,
 					Title            = JCstring.DialogCaptionOpen,
@@ -82,7 +82,7 @@ namespace JuisCheck
 				if (ofd.ShowDialog(this) != true ) {
 					return;
 				}
-				AppSettings.LastOpenSaveAsDirectory = Path.GetDirectoryName(ofd.FileName);
+				AppSettings.LastDirectoryPath = Path.GetDirectoryName(ofd.FileName);
 
 				fileName = ofd.FileName;
 			}
@@ -158,7 +158,7 @@ namespace JuisCheck
 			};
 
 			if (Devices.FileName == null) {
-				sfd.InitialDirectory = Directory.Exists(AppSettings.LastOpenSaveAsDirectory) ? AppSettings.LastOpenSaveAsDirectory : Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+				sfd.InitialDirectory = Directory.Exists(AppSettings.LastDirectoryPath) ? AppSettings.LastDirectoryPath : Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 				sfd.FileName         = string.Empty;
 			} else {
 				sfd.InitialDirectory = Path.GetDirectoryName(Devices.FileName);
@@ -168,7 +168,7 @@ namespace JuisCheck
 			if (sfd.ShowDialog(this) != true) {
 				return false;
 			}
-			AppSettings.LastOpenSaveAsDirectory = Path.GetDirectoryName(sfd.FileName);
+			AppSettings.LastDirectoryPath = Path.GetDirectoryName(sfd.FileName);
 
 			try {
 				Devices.Save(sfd.FileName);

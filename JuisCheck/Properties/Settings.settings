@@ -98,7 +98,7 @@
     <Setting Name="AutoLoadFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="LastOpenSaveAsDirectory" Type="System.String" Scope="User">
+    <Setting Name="LastDirectoryPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

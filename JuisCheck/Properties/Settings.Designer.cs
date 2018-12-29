@@ -404,12 +404,12 @@ namespace JuisCheck.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastOpenSaveAsDirectory {
+        public string LastDirectoryPath {
             get {
-                return ((string)(this["LastOpenSaveAsDirectory"]));
+                return ((string)(this["LastDirectoryPath"]));
             }
             set {
-                this["LastOpenSaveAsDirectory"] = value;
+                this["LastDirectoryPath"] = value;
             }
         }
     }
