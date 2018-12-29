@@ -1,4 +1,20 @@
-﻿v1.3.0 (2018/12/28)
+﻿v1.4.0 (2018/12/29)
+-------------------
+New: Add a device that is a copy of the selected device.
+New: JuisCheck remembers the directory of the last successful 'Open' or
+     'Save As' dialog. Opening a device collection from the Recent Files
+     list does not change the remembered directory.
+Fix: The column width would jump when resizing a column to a width less
+     than the column header text width.
+Fix: The sort direction was only cleared on the 'Device name' and 'Product
+     name' columns when a new device collection was opened or the current
+     collection was closed.
+Fix: The column width was not reset to Auto when a new device collection
+     was opened or the current collection was closed.
+Fix: The 'Update file name' column was not cleared in the data grid when
+     an update was made current.
+
+v1.3.0 (2018/12/28)
 -------------------
 New: Setting to automatically load the current device collection at next
      program start.
