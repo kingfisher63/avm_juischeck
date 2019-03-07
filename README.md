@@ -6,7 +6,8 @@ all types of AVM devices (FRITZ!Box, FRITZ!DECT, FRITZ!Powerline and FRITZ!WLAN)
 
 ## Basic program usage
 
-+ Run *JuisCheck.exe* in the *bin\Release* folder.
++ Download *JuisCheck.exe* from the *bin\Release* folder, store it on
+  your computer and run it from there.
 + Add your devices.
 + Select one or more devices and click *Find Updates*.
 
@@ -63,27 +64,28 @@ properties.
 
 #### Devices section
 
-+ *Add Device*. Add a FRITZ!Box, FRITZ!Powerline or FRITZ!WLAN device. Firmware
++ *Add Device* (Insert). Add a FRITZ!Box, FRITZ!Powerline or FRITZ!WLAN device. Firmware
   update information for these devices is retrieved from the AVM JUIS service.
-+ *Add DECT*. Add a FRITZ!DECT device. Firmware update information for DECT devices
++ *Add DECT* (Ctrl+Insert). Add a FRITZ!DECT device. Firmware update information for DECT devices
   is retrieved from the AVM CATI service.
-+ *Delete*. Remove the selected devices from the device collection.
-+ *Edit*. Edit the selected device.
-+ *Select All*. Select all devices in the device collection.
-+ *Select None*. Unselect all devices in the device collection.
++ *Delete* (Delete). Remove the selected devices from the device collection.
++ *Edit* (Ctrl+E). Edit the selected device.
++ *Copy* (Ctrl+C). Add a device that is a copy of the selected device.
++ *Select All* (Ctrl+A). Select all devices in the device collection.
++ *Select None* (Ctrl+N). Unselect all devices in the device collection.
 
 #### Firmware Update section
 
-+ *Find Updates*. Query the appropriate AVM update information services for the
++ *Find Updates* (Ctrl+F). Query the appropriate AVM update information services for the
   selected devices.
-+ *Copy URLs*. Copy the image download URLs for the selected devices to the clipboard.
-+ *Get Image*. Download the firmware image for the selected device using the default
++ *Copy URLs* (Ctrl+U). Copy the image download URLs for the selected devices to the clipboard.
++ *Download Firmware* (Ctrl+D). Download the firmware image for the selected device using the default
   web browser.
-+ *View Info*. View the release notes for the selected device (if available) using
++ *View Info* (Ctrl+I). View the release notes for the selected device (if available) using
   the default web browser (not available for FRITZ!DECT devices).
-+ *Make Current*. Make the updated version the current firmware version for the
++ *Make Current* (Ctrl+M). Make the updated version the current firmware version for the
   selected devices and clear the update information.
-+ *Clear Updates*. Clear the update information for the seleted devices.
++ *Clear Updates* (Shift+U)	. Clear the update information for the seleted devices.
 
 *Note:* Buttons are only enabled if they can do something useful. For example, the
 *View Info* button is only enabled if the update information service supplied a URL
