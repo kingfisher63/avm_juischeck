@@ -266,7 +266,7 @@ namespace JuisCheck
 				backstageTabRecentFiles.IsSelected = true;
 				Backstage_PopulateRecentFiles();
 			} else {
-				Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => SetDataGridFocus()));
+				SetDataGridFocus();
 			}
 		}
 

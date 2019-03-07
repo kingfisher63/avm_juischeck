@@ -16,6 +16,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 using JuisCheck.Lang;
 
@@ -99,6 +100,19 @@ namespace JuisCheck
 			}
 		}
 
+		private void Devices_SetDataGridFocus()
+		{
+			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+				if (dgDevices.SelectedCells.Count != 0) {
+					DataGridCellInfo cellInfo    = dgDevices.SelectedCells[0];
+					FrameworkElement cellContent = cellInfo.Column.GetCellContent(cellInfo.Item);
+					if (cellContent != null) {
+						(cellContent.Parent as DataGridCell).Focus();
+					}
+				}
+			}));
+		}
+	
 		// Predicate functions
 
 		private static bool IsSelectedDevice					(Device d) => d.IsSelected;
@@ -127,11 +141,6 @@ namespace JuisCheck
 
 			Devices_EditDevice(newDevice);
 			Devices_SetDataGridFocus();
-		}
-
-		private void Devices_SetDataGridFocus()
-		{
-			dgDevices.Focus();
 		}
 
 		// Routed command: Devices_CmdAddJUIS
