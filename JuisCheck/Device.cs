@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -714,84 +715,79 @@ namespace JuisCheck
 			device.UpdateLastChecked   = trim ? UpdateLastChecked     : UpdateLastChecked;
 		}
 
+		private int GetFirmwareBuildType( string buildTypeStr, int defaultBuildType )
+		{
+			switch (buildTypeStr.ToLower()) {
+				case "inhaus":
+				case "intern":
+					return firmwareBuildTypeBetaInhouse;
+
+				case "beta":
+				case "extern":
+				case "labbeta":
+				case "labor":
+					return firmwareBuildTypeBetaPublic;
+
+				default:
+					return defaultBuildType;
+			}
+		}
+
 		public void MakeUpdateCurrent()
 		{
 			if (!UpdateAvailable) {
 				throw new InvalidOperationException("No update available");
 			}
 
-			char[]		infoSeparator        = new char[] { ' ' };
-			string[]	infoParts;
-
-			char[]		dectVersionSeparator = new char[] { '.' };
-			char[]		juisVersionSeparator = new char[] { '.', '-' };
-			string[]	versionParts;
-
-			infoParts = UpdateInfo.Split(infoSeparator, StringSplitOptions.RemoveEmptyEntries);
-			if (infoParts.Length == 0) {
-				throw new FormatException();
-			}
+			Match match;
 
 			switch (DeviceKind) {
 				case DeviceKind.DECT:
-					versionParts = infoParts[0].Split(dectVersionSeparator);
-					if (versionParts.Length !=2) {
-						throw new FormatException();
+					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)$");
+					if (match.Success) {
+						FirmwareMajor = Convert.ToInt32(match.Groups[1].Value);
+						FirmwareMinor = Convert.ToInt32(match.Groups[2].Value);
+						ClearUpdateInfo();
+						break;
 					}
 
-					try {
-						FirmwareMajor = (int)Convert.ToUInt32(versionParts[0]);
-						FirmwareMinor = (int)Convert.ToUInt32(versionParts[1]);
-					}
-					catch {
-						throw new FormatException();
-					}
-
-					ClearUpdateInfo();
-					break;
+					throw new FormatException();
 
 				case DeviceKind.JUIS:
-					versionParts = infoParts[0].Split(juisVersionSeparator);
-					if (versionParts.Length !=3 && versionParts.Length != 4) {
-						throw new FormatException();
+					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)\w*$");
+					if (match.Success) {
+						FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value);
+						FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value);
+						FirmwarePatch       = Convert.ToInt32(match.Groups[3].Value);
+						FirmwareBuildNumber = 0;
+						FirmwareBuildType   = firmwareBuildTypeRelease;
+						ClearUpdateInfo();
+						break;
 					}
 
-					try {
-						FirmwareMajor       = (int)Convert.ToUInt32(versionParts[0]);
-						FirmwareMinor       = (int)Convert.ToUInt32(versionParts[1]);
-						FirmwarePatch       = (int)Convert.ToUInt32(versionParts[2]);
-						FirmwareBuildNumber = versionParts.Length == 3 ? 0: (int)Convert.ToUInt32(versionParts[3]);
-					}
-					catch {
-						throw new FormatException();
-					}
-
-					if (versionParts.Length == 3) {
-						FirmwareBuildType = firmwareBuildTypeRelease;
-					} else {
-						if (infoParts.Length > 1) {
-							switch (infoParts[1].ToLower()) {
-								case "inhaus":
-								case "intern":
-									FirmwareBuildType = firmwareBuildTypeBetaInhouse;
-									break;
-
-								case "beta":
-								case "extern":
-								case "labbeta":
-								case "labor":
-									FirmwareBuildType = firmwareBuildTypeBetaPublic;
-									break;
-
-								default:
-									// Keep curr build type
-									break;
-							}
-						}
+					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)-(\d+)$");
+					if (match.Success) {
+						FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value);
+						FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value);
+						FirmwarePatch       = Convert.ToInt32(match.Groups[3].Value);
+						FirmwareBuildNumber = Convert.ToInt32(match.Groups[4].Value);
+						// FirmwareBuildType: no info => keep current build type
+						ClearUpdateInfo();
+						break;
 					}
 
-					ClearUpdateInfo();
-					break;
+					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)-(\d+)\s+(\w+)$");
+					if (match.Success) {
+						FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value);
+						FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value);
+						FirmwarePatch       = Convert.ToInt32(match.Groups[3].Value);
+						FirmwareBuildNumber = Convert.ToInt32(match.Groups[4].Value);
+						FirmwareBuildType   = GetFirmwareBuildType(match.Groups[5].Value, FirmwareBuildType);
+						ClearUpdateInfo();
+						break;
+					}
+
+					throw new FormatException();
 			}
 		}
 
@@ -839,45 +835,16 @@ namespace JuisCheck
 				Language      = boxInfo.Lang;
 				Flag          = boxInfo.Flag;
 
-				// Firmware version
-
-				string[] versionParts = boxInfo.Version.Split('.');
-				if (versionParts.Length != 3) {
+				Match match = Regex.Match(boxInfo.Version, @"^(\d+)\.(\d+)\.(\d+)$");
+				if (!match.Success) {
 					throw new FormatException();
 				}
 
-				try {
-					FirmwareMajor = (int)Convert.ToUInt32(versionParts[0]);
-					FirmwareMinor = (int)Convert.ToUInt32(versionParts[1]);
-					FirmwarePatch = (int)Convert.ToUInt32(versionParts[2]);
-				}
-				catch {
-					throw new FormatException();
-				}
-
-				// Firmware build number
-
+				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value);
+				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value);
+				FirmwarePatch       = Convert.ToInt32(match.Groups[3].Value);
 				FirmwareBuildNumber = boxInfo.Revision;
-
-				// Firmware build type
-
-				switch (boxInfo.Lab.ToLower()) {
-					case "inhaus":
-					case "intern":
-						FirmwareBuildType = firmwareBuildTypeBetaInhouse;
-						break;
-
-					case "beta":
-					case "extern":
-					case "labbeta":
-					case "labor":
-						FirmwareBuildType = firmwareBuildTypeBetaPublic;
-						break;
-
-					default:
-						FirmwareBuildType = firmwareBuildTypeRelease;
-						break;
-				}
+				FirmwareBuildType   = GetFirmwareBuildType(boxInfo.Lab, firmwareBuildTypeRelease);
 			}
 		}
 
