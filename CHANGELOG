@@ -1,8 +1,8 @@
-﻿v1.4.1 (2018/03/07)
+﻿v1.4.1 (2019/03/07)
 -------------------
 New: Keyboard shortcuts for all ribbon buttons.
 Fix: Datagrid keyboard navigation did not work correctly when focus was
-     returned to the datagrid (e.g. after addring or editing a device).
+     returned to the datagrid (e.g. after adding or editing a device).
 Fix: Update version 105.06.85i for FRITZ!Box 6840 LTE International could
      not be made current due to trailing 'i'.
 
