@@ -1,4 +1,12 @@
-﻿v1.4.0 (2018/12/29)
+﻿v1.4.1 (2018/03/07)
+-------------------
+New: Keyboard shortcuts for all ribbon buttons.
+Fix: Datagrid keyboard navigation did not work correctly when focus was
+     returned to the datagrid (e.g. after addring or editing a device).
+Fix: Update version 105.06.85i for FRITZ!Box 6840 LTE International could
+     not be made current due to trailing 'i'.
+
+v1.4.0 (2018/12/29)
 -------------------
 New: Add a device that is a copy of the selected device.
 New: JuisCheck remembers the directory of the last successful 'Open' or
