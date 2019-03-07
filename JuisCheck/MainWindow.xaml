@@ -14,7 +14,8 @@
                      ResizeMode="CanResizeWithGrip"
                      SnapsToDevicePixels="True"
                      Closing="Closing_Handler"
-                     Loaded="Loaded_Handler">
+                     Loaded="Loaded_Handler"
+                     PreviewKeyDown="PreviewKeyDown_Handler">
 
     <fluent:RibbonWindow.CommandBindings>
         <CommandBinding Command="jc:MainWindow.Backstage_CmdAbout"            CanExecute="Backstage_CmdAbout_CanExecute"            Executed="Backstage_CmdAbout_Executed"           />
@@ -34,9 +35,9 @@
         <CommandBinding Command="jc:MainWindow.Devices_CmdCopy"               CanExecute="Devices_CmdCopy_CanExecute"               Executed="Devices_CmdCopy_Executed"              />
         <CommandBinding Command="jc:MainWindow.Devices_CmdCopyURLs"           CanExecute="Devices_CmdCopyURLs_CanExecute"           Executed="Devices_CmdCopyURLs_Executed"          />
         <CommandBinding Command="jc:MainWindow.Devices_CmdDelete"             CanExecute="Devices_CmdDelete_CanExecute"             Executed="Devices_CmdDelete_Executed"            />
+        <CommandBinding Command="jc:MainWindow.Devices_CmdDownloadFirmware"   CanExecute="Devices_CmdDownloadFirmware_CanExecute"   Executed="Devices_CmdDownloadFirmware_Executed"  />
         <CommandBinding Command="jc:MainWindow.Devices_CmdEdit"               CanExecute="Devices_CmdEdit_CanExecute"               Executed="Devices_CmdEdit_Executed"              />
         <CommandBinding Command="jc:MainWindow.Devices_CmdFindUpdates"        CanExecute="Devices_CmdFindUpdates_CanExecute"        Executed="Devices_CmdFindUpdates_Executed"       />
-        <CommandBinding Command="jc:MainWindow.Devices_CmdGetImage"           CanExecute="Devices_CmdGetImage_CanExecute"           Executed="Devices_CmdGetImage_Executed"          />
         <CommandBinding Command="jc:MainWindow.Devices_CmdMakeCurrent"        CanExecute="Devices_CmdMakeCurrent_CanExecute"        Executed="Devices_CmdMakeCurrent_Executed"       />
         <CommandBinding Command="jc:MainWindow.Devices_CmdSelectAll"          CanExecute="Devices_CmdSelectAll_CanExecute"          Executed="Devices_CmdSelectAll_Executed"         />
         <CommandBinding Command="jc:MainWindow.Devices_CmdSelectNone"         CanExecute="Devices_CmdSelectNone_CanExecute"         Executed="Devices_CmdSelectNone_Executed"        />
@@ -44,10 +45,24 @@
     </fluent:RibbonWindow.CommandBindings>
 
     <fluent:RibbonWindow.InputBindings>
-        <KeyBinding Gesture="Ctrl+O"     Command="jc:MainWindow.Backstage_CmdOpen"/>
-        <KeyBinding Gesture="Ctrl+S"     Command="jc:MainWindow.Backstage_CmdSave"/>
-        <KeyBinding Gesture="Ctrl+Alt+S" Command="jc:MainWindow.Backstage_CmdSaveAs"/>
-        <KeyBinding Gesture="Ctrl+W"     Command="jc:MainWindow.Backstage_CmdClose"/>
+        <KeyBinding Key="O"      Modifiers="Ctrl"     Command="jc:MainWindow.Backstage_CmdOpen"          />
+        <KeyBinding Key="S"      Modifiers="Ctrl"     Command="jc:MainWindow.Backstage_CmdSave"          />
+        <KeyBinding Key="S"      Modifiers="Ctrl+Alt" Command="jc:MainWindow.Backstage_CmdSaveAs"        />
+        <KeyBinding Key="W"      Modifiers="Ctrl"     Command="jc:MainWindow.Backstage_CmdClose"         />
+
+        <KeyBinding Key="A"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdSelectAll"       />
+        <KeyBinding Key="C"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdCopy"            />
+        <KeyBinding Key="D"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdDownloadFirmware"/>
+        <KeyBinding Key="Delete" Modifiers=""         Command="jc:MainWindow.Devices_CmdDelete"          />
+        <KeyBinding Key="E"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdEdit"            />
+        <KeyBinding Key="F"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdFindUpdates"     />
+        <KeyBinding Key="I"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdViewInfo"        />
+        <KeyBinding Key="Insert" Modifiers=""         Command="jc:MainWindow.Devices_CmdAddJUIS"         />
+        <KeyBinding Key="Insert" Modifiers="Shift"    Command="jc:MainWindow.Devices_CmdAddDECT"         />
+        <KeyBinding Key="M"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdMakeCurrent"     />
+        <KeyBinding Key="N"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdSelectNone"      />
+        <KeyBinding Key="U"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdCopyURLs"        />
+        <KeyBinding Key="U"      Modifiers="Shift"    Command="jc:MainWindow.Devices_CmdClearUpdates"    />
     </fluent:RibbonWindow.InputBindings>
 
     <fluent:RibbonWindow.Resources>
@@ -212,21 +227,21 @@
 
             <fluent:RibbonTabItem Header="{x:Static lang:JCstring.RibbonTabHeaderDevices}">
                 <fluent:RibbonGroupBox Header="{x:Static lang:JCstring.RibbonGroupBoxTextDevices}">
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddJUIS"      LargeIcon="{StaticResource imgDevicesButtonAdd32}"          Header="{x:Static lang:JCstring.RibbonButtonTextAddJUIS}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddJUIS}"     />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddDECT"      LargeIcon="{StaticResource imgDevicesButtonAdd32}"          Header="{x:Static lang:JCstring.RibbonButtonTextAddDECT}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddDECT}"     />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdDelete"       LargeIcon="{StaticResource imgDevicesButtonDelete32}"       Header="{x:Static lang:JCstring.RibbonButtonTextDelete}"       ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipDelete}"      />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdEdit"         LargeIcon="{StaticResource imgDevicesButtonEdit32}"         Header="{x:Static lang:JCstring.RibbonButtonTextEdit}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipEdit}"        />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopy"         LargeIcon="{StaticResource imgDevicesButtonCopy32}"         Header="{x:Static lang:JCstring.RibbonButtonTextCopy}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopy}"        />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectAll"    LargeIcon="{StaticResource imgDevicesButtonSelectAll32}"    Header="{x:Static lang:JCstring.RibbonButtonTextSelectAll}"    ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectAll}"   />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectNone"   LargeIcon="{StaticResource imgDevicesButtonSelectNone32}"   Header="{x:Static lang:JCstring.RibbonButtonTextSelectNone}"   ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectNone}"  />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddJUIS"    LargeIcon="{StaticResource imgDevicesButtonAdd32}"        Header="{x:Static lang:JCstring.RibbonButtonTextAddJUIS}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddJUIS}"   />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddDECT"    LargeIcon="{StaticResource imgDevicesButtonAdd32}"        Header="{x:Static lang:JCstring.RibbonButtonTextAddDECT}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddDECT}"   />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdDelete"     LargeIcon="{StaticResource imgDevicesButtonDelete32}"     Header="{x:Static lang:JCstring.RibbonButtonTextDelete}"       ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipDelete}"    />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdEdit"       LargeIcon="{StaticResource imgDevicesButtonEdit32}"       Header="{x:Static lang:JCstring.RibbonButtonTextEdit}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipEdit}"      />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopy"       LargeIcon="{StaticResource imgDevicesButtonCopy32}"       Header="{x:Static lang:JCstring.RibbonButtonTextCopy}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopy}"      />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectAll"  LargeIcon="{StaticResource imgDevicesButtonSelectAll32}"  Header="{x:Static lang:JCstring.RibbonButtonTextSelectAll}"    ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectAll}" />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectNone" LargeIcon="{StaticResource imgDevicesButtonSelectNone32}" Header="{x:Static lang:JCstring.RibbonButtonTextSelectNone}"   ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectNone}"/>
                 </fluent:RibbonGroupBox>
                 <fluent:RibbonGroupBox Header="{x:Static lang:JCstring.RibbonGroupBoxTextFirmwareUpdate}">
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdFindUpdates"  LargeIcon="{StaticResource imgDevicesButtonFindUpdates32}"  Header="{x:Static lang:JCstring.RibbonButtonTextFindUpdates}"  ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipFindUpdates}" />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopyURLs"     LargeIcon="{StaticResource imgDevicesButtonCopyURLs32}"     Header="{x:Static lang:JCstring.RibbonButtonTextCopyURLs}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopyURLs}"    />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdGetImage"     LargeIcon="{StaticResource imgDevicesButtonGetImage32}"     Header="{x:Static lang:JCstring.RibbonButtonTextGetImage}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipGetImage}"    />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdViewInfo"     LargeIcon="{StaticResource imgDevicesButtonViewInfo32}"     Header="{x:Static lang:JCstring.RibbonButtonTextViewInfo}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipViewInfo}"    />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdMakeCurrent"  LargeIcon="{StaticResource imgDevicesButtonMakeCurrent32}"  Header="{x:Static lang:JCstring.RibbonButtonTextMakeCurrent}"  ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipMakeCurrent}" />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdClearUpdates" LargeIcon="{StaticResource imgDevicesButtonClearUpdates32}" Header="{x:Static lang:JCstring.RibbonButtonTextClearUpdates}" ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipClearUpdates}"/>
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdFindUpdates"      LargeIcon="{StaticResource imgDevicesButtonFindUpdates32}"      Header="{x:Static lang:JCstring.RibbonButtonTextFindUpdates}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipFindUpdates}"     />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopyURLs"         LargeIcon="{StaticResource imgDevicesButtonCopyURLs32}"         Header="{x:Static lang:JCstring.RibbonButtonTextCopyURLs}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopyURLs}"        />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdDownloadFirmware" LargeIcon="{StaticResource imgDevicesButtonDownloadFirmware32}" Header="{x:Static lang:JCstring.RibbonButtonTextDownloadFirmware}" ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipDownloadFirmware}"/>
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdViewInfo"         LargeIcon="{StaticResource imgDevicesButtonViewInfo32}"         Header="{x:Static lang:JCstring.RibbonButtonTextViewInfo}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipViewInfo}"        />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdMakeCurrent"      LargeIcon="{StaticResource imgDevicesButtonMakeCurrent32}"      Header="{x:Static lang:JCstring.RibbonButtonTextMakeCurrent}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipMakeCurrent}"     />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdClearUpdates"     LargeIcon="{StaticResource imgDevicesButtonClearUpdates32}"     Header="{x:Static lang:JCstring.RibbonButtonTextClearUpdates}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipClearUpdates}"    />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
 

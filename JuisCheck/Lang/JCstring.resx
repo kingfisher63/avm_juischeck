@@ -184,25 +184,25 @@
     <value>Unsaved data</value>
   </data>
   <data name="RibbonButtonTooltipAddDECT" xml:space="preserve">
-    <value>Add a new device to the list (FRITZ!DECT)</value>
+    <value>Add a new device to the list (FRITZ!DECT) [Sihft+Insert]</value>
   </data>
   <data name="RibbonButtonTooltipDelete" xml:space="preserve">
-    <value>Remove the selected devices from the device collection</value>
+    <value>Remove the selected devices from the device collection [Delete]</value>
   </data>
   <data name="RibbonButtonTooltipEdit" xml:space="preserve">
-    <value>Edit the selected device</value>
+    <value>Edit the selected device [Ctrl+E]</value>
   </data>
   <data name="RibbonButtonTooltipFindUpdates" xml:space="preserve">
-    <value>Query the AVM update service to find new firmware for the selected devices</value>
+    <value>Query the AVM update service to find new firmware for the selected devices [Ctrl+F]</value>
   </data>
   <data name="RibbonButtonTooltipMakeCurrent" xml:space="preserve">
-    <value>Make the latest firmware the current firmware for the selected devices</value>
+    <value>Make the latest firmware the current firmware for the selected devices [Ctrl+M]</value>
   </data>
   <data name="RibbonButtonTooltipSelectAll" xml:space="preserve">
-    <value>Select all devices</value>
+    <value>Select all devices [Ctrl+A]</value>
   </data>
   <data name="RibbonButtonTooltipSelectNone" xml:space="preserve">
-    <value>Select no device</value>
+    <value>Select no device [Ctrl+N]</value>
   </data>
   <data name="MessageCaptionError" xml:space="preserve">
     <value>Error</value>
@@ -496,19 +496,19 @@
     <value>Clear Updates</value>
   </data>
   <data name="RibbonButtonTooltipClearUpdates" xml:space="preserve">
-    <value>Clear the update information for the selected devices</value>
+    <value>Clear the update information for the selected devices [Shift+U]</value>
   </data>
-  <data name="RibbonButtonTextGetImage" xml:space="preserve">
-    <value>Get Image</value>
+  <data name="RibbonButtonTextDownloadFirmware" xml:space="preserve">
+    <value>Download Firmware</value>
   </data>
-  <data name="RibbonButtonTooltipGetImage" xml:space="preserve">
-    <value>Launch the default browser to get the firmware image for the selected device</value>
+  <data name="RibbonButtonTooltipDownloadFirmware" xml:space="preserve">
+    <value>Launch the default browser to download the firmware image for the selected device [Ctrl+D]</value>
   </data>
   <data name="RibbonButtonTextViewInfo" xml:space="preserve">
     <value>View Info</value>
   </data>
   <data name="RibbonButtonTooltipViewInfo" xml:space="preserve">
-    <value>Launch the default browser to view the firmware release notes for the selected device</value>
+    <value>Launch the default browser to view the firmware release notes for the selected device [Ctrl+I]</value>
   </data>
   <data name="MessageTextInvalidUpdateVersion" xml:space="preserve">
     <value>Invalid firmware update version.\n\nDevice: {0}\nVersion: {1}</value>
@@ -592,13 +592,13 @@
     <value>Add Device</value>
   </data>
   <data name="RibbonButtonTooltipAddJUIS" xml:space="preserve">
-    <value>Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN)</value>
+    <value>Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN) [Insert]</value>
   </data>
   <data name="RibbonButtonTextCopyURLs" xml:space="preserve">
     <value>Copy URLs</value>
   </data>
   <data name="RibbonButtonTooltipCopyURLs" xml:space="preserve">
-    <value>Copy the image download URLs of the selected devices to the clipboard</value>
+    <value>Copy the image download URLs of the selected devices to the clipboard [Ctrl+U]</value>
   </data>
   <data name="BackstageButtonTooltipAbout" xml:space="preserve">
     <value>Display program information</value>
@@ -670,6 +670,6 @@
     <value>Copy</value>
   </data>
   <data name="RibbonButtonTooltipCopy" xml:space="preserve">
-    <value>Add a device that is a copy of the selected device</value>
+    <value>Add a device that is a copy of the selected device [Ctrl+C]</value>
   </data>
 </root>

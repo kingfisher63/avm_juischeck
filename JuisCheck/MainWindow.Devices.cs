@@ -253,6 +253,23 @@ namespace JuisCheck
 			Devices_SetDataGridFocus();
 		}
 
+		// Routed command: Devices_CmdDownloadFirmware
+
+		public static RoutedCommand Devices_CmdDownloadFirmware = new RoutedCommand();
+
+		private void Devices_CmdDownloadFirmware_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
+		{
+			if (Devices.Count(predicate: IsSelectedDevice) == 1) {
+				evt.CanExecute = !string.IsNullOrWhiteSpace(Devices.First(predicate: IsSelectedDevice).UpdateImageURL);
+			}
+		}
+
+		private void Devices_CmdDownloadFirmware_Executed( object sender, ExecutedRoutedEventArgs evt )
+		{
+			Process.Start(Devices.First(predicate: IsSelectedDevice).UpdateImageURL);
+			Devices_SetDataGridFocus();
+		}
+
 		// Routed command: Devices_CmdEdit
 
 		public static RoutedCommand Devices_CmdEdit = new RoutedCommand();
@@ -289,23 +306,6 @@ namespace JuisCheck
 			findDialog.Dispose();
 
 			Devices_RefreshView();
-			Devices_SetDataGridFocus();
-		}
-
-		// Routed command: Devices_CmdGetImage
-
-		public static RoutedCommand Devices_CmdGetImage = new RoutedCommand();
-
-		private void Devices_CmdGetImage_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
-		{
-			if (Devices.Count(predicate: IsSelectedDevice) == 1) {
-				evt.CanExecute = !string.IsNullOrWhiteSpace(Devices.First(predicate: IsSelectedDevice).UpdateImageURL);
-			}
-		}
-
-		private void Devices_CmdGetImage_Executed( object sender, ExecutedRoutedEventArgs evt )
-		{
-			Process.Start(Devices.First(predicate: IsSelectedDevice).UpdateImageURL);
 			Devices_SetDataGridFocus();
 		}
 

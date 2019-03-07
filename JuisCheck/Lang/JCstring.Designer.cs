@@ -1348,6 +1348,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Firmware.
+        /// </summary>
+        public static string RibbonButtonTextDownloadFirmware {
+            get {
+                return ResourceManager.GetString("RibbonButtonTextDownloadFirmware", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string RibbonButtonTextEdit {
@@ -1362,15 +1371,6 @@ namespace JuisCheck.Lang {
         public static string RibbonButtonTextFindUpdates {
             get {
                 return ResourceManager.GetString("RibbonButtonTextFindUpdates", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Get Image.
-        /// </summary>
-        public static string RibbonButtonTextGetImage {
-            get {
-                return ResourceManager.GetString("RibbonButtonTextGetImage", resourceCulture);
             }
         }
         
@@ -1411,7 +1411,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add a new device to the list (FRITZ!DECT).
+        ///   Looks up a localized string similar to Add a new device to the list (FRITZ!DECT) [Sihft+Insert].
         /// </summary>
         public static string RibbonButtonTooltipAddDECT {
             get {
@@ -1420,7 +1420,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN).
+        ///   Looks up a localized string similar to Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN) [Insert].
         /// </summary>
         public static string RibbonButtonTooltipAddJUIS {
             get {
@@ -1429,7 +1429,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear the update information for the selected devices.
+        ///   Looks up a localized string similar to Clear the update information for the selected devices [Shift+U].
         /// </summary>
         public static string RibbonButtonTooltipClearUpdates {
             get {
@@ -1438,7 +1438,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add a device that is a copy of the selected device.
+        ///   Looks up a localized string similar to Add a device that is a copy of the selected device [Ctrl+C].
         /// </summary>
         public static string RibbonButtonTooltipCopy {
             get {
@@ -1447,7 +1447,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy the image download URLs of the selected devices to the clipboard.
+        ///   Looks up a localized string similar to Copy the image download URLs of the selected devices to the clipboard [Ctrl+U].
         /// </summary>
         public static string RibbonButtonTooltipCopyURLs {
             get {
@@ -1456,7 +1456,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove the selected devices from the device collection.
+        ///   Looks up a localized string similar to Remove the selected devices from the device collection [Delete].
         /// </summary>
         public static string RibbonButtonTooltipDelete {
             get {
@@ -1465,7 +1465,16 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit the selected device.
+        ///   Looks up a localized string similar to Launch the default browser to download the firmware image for the selected device [Ctrl+D].
+        /// </summary>
+        public static string RibbonButtonTooltipDownloadFirmware {
+            get {
+                return ResourceManager.GetString("RibbonButtonTooltipDownloadFirmware", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit the selected device [Ctrl+E].
         /// </summary>
         public static string RibbonButtonTooltipEdit {
             get {
@@ -1474,7 +1483,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Query the AVM update service to find new firmware for the selected devices.
+        ///   Looks up a localized string similar to Query the AVM update service to find new firmware for the selected devices [Ctrl+F].
         /// </summary>
         public static string RibbonButtonTooltipFindUpdates {
             get {
@@ -1483,16 +1492,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Launch the default browser to get the firmware image for the selected device.
-        /// </summary>
-        public static string RibbonButtonTooltipGetImage {
-            get {
-                return ResourceManager.GetString("RibbonButtonTooltipGetImage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Make the latest firmware the current firmware for the selected devices.
+        ///   Looks up a localized string similar to Make the latest firmware the current firmware for the selected devices [Ctrl+M].
         /// </summary>
         public static string RibbonButtonTooltipMakeCurrent {
             get {
@@ -1501,7 +1501,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select all devices.
+        ///   Looks up a localized string similar to Select all devices [Ctrl+A].
         /// </summary>
         public static string RibbonButtonTooltipSelectAll {
             get {
@@ -1510,7 +1510,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select no device.
+        ///   Looks up a localized string similar to Select no device [Ctrl+N].
         /// </summary>
         public static string RibbonButtonTooltipSelectNone {
             get {
@@ -1519,7 +1519,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Launch the default browser to view the firmware release notes for the selected device.
+        ///   Looks up a localized string similar to Launch the default browser to view the firmware release notes for the selected device [Ctrl+I].
         /// </summary>
         public static string RibbonButtonTooltipViewInfo {
             get {

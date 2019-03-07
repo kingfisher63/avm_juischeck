@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows;
+using System.Windows.Input;
 using WinForms = System.Windows.Forms;
 
 using JuisCheck.Lang;
@@ -270,6 +271,24 @@ namespace JuisCheck
 		{
 			if (!string.IsNullOrWhiteSpace(AppSettings.AutoLoadFile)) {
 				OpenDeviceCollection(AppSettings.AutoLoadFile);
+			}
+		}
+
+		// Event: PreviewKeyDown
+		//
+		// We handle the key input bindings ourself because some keypresses are consumed
+		// by controls deep down in the tree.
+
+		private void PreviewKeyDown_Handler( object sender, KeyEventArgs evt )
+		{
+			foreach (InputBinding inputBinding in InputBindings) {
+				if (inputBinding is KeyBinding keyBinding) {
+					if (keyBinding.Key == evt.Key && keyBinding.Modifiers == evt.KeyboardDevice.Modifiers) {
+						keyBinding.Command.Execute(null);
+						evt.Handled = true;
+						return;
+					}
+				}
 			}
 		}
 
