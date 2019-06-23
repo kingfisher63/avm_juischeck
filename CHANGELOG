@@ -1,10 +1,19 @@
-﻿v1.4.1 (2019/03/07)
+﻿v1.4.2 (2019/06/23)
+-------------------
+New: Support for build type 1007 (PLUS beta).
+Fix: Update version 149.07.08-67660Labor for FRITZ!Box 7560 could not be
+     made current due to missing white space between the build number (67660)
+     and the build type qualifier (Labor). The update version is a string
+     that is apparently hand crafted by AVM which may cause unanticipated
+     format variations.
+
+v1.4.1 (2019/03/07)
 -------------------
 New: Keyboard shortcuts for all ribbon buttons.
 Fix: Datagrid keyboard navigation did not work correctly when focus was
      returned to the datagrid (e.g. after adding or editing a device).
 Fix: Update version 105.06.85i for FRITZ!Box 6840 LTE International could
-     not be made current due to trailing 'i'.
+     not be made current due to the trailing 'i'.
 
 v1.4.0 (2018/12/29)
 -------------------

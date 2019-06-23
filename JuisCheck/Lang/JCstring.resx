@@ -672,4 +672,7 @@
   <data name="RibbonButtonTooltipCopy" xml:space="preserve">
     <value>Add a device that is a copy of the selected device [Ctrl+C]</value>
   </data>
+  <data name="ComboBoxValueBuildtypeBetaPLUS" xml:space="preserve">
+    <value>PLUS beta (1007)</value>
+  </data>
 </root>

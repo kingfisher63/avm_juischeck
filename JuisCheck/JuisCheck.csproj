@@ -271,10 +271,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(SolutionDir)bin" (
-  mkdir "$(SolutionDir)bin"
-)
-if not exist "$(SolutionDir)bin\$(ConfigurationName)" (
+    <PostBuildEvent>if not exist "$(SolutionDir)bin\$(ConfigurationName)" (
   mkdir "$(SolutionDir)bin\$(ConfigurationName)"
 )
 copy "$(TargetPath)" "$(SolutionDir)bin\$(ConfigurationName)\$(TargetFileName)"

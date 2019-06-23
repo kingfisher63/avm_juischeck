@@ -55,11 +55,13 @@ namespace JuisCheck
 		public const int	firmwareBuildTypeRelease     =    1;
 		public const int	firmwareBuildTypeBetaInhouse = 1000;
 		public const int	firmwareBuildTypeBetaPublic  = 1001;
+		public const int	firmwareBuildTypeBetaPLUS    = 1007;
 
 		private static readonly Dictionary<int, string> firmwareBuildTypeDictionary = new Dictionary<int, string>() {
 			{ firmwareBuildTypeRelease,     JCstring.ComboBoxValueBuildtypeRelease     },
 			{ firmwareBuildTypeBetaInhouse, JCstring.ComboBoxValueBuildtypeBetaInhouse },
-			{ firmwareBuildTypeBetaPublic,  JCstring.ComboBoxValueBuildtypeBetaPublic  }
+			{ firmwareBuildTypeBetaPublic,  JCstring.ComboBoxValueBuildtypeBetaPublic  },
+			{ firmwareBuildTypeBetaPLUS,    JCstring.ComboBoxValueBuildtypeBetaPLUS    }
 		};
 
 		private static readonly List<ComboBoxValue> firmwareBuildTypeValues;
@@ -728,6 +730,9 @@ namespace JuisCheck
 				case "labor":
 					return firmwareBuildTypeBetaPublic;
 
+				case "plus":
+					return firmwareBuildTypeBetaPLUS;
+
 				default:
 					return defaultBuildType;
 			}
@@ -754,7 +759,7 @@ namespace JuisCheck
 					throw new FormatException();
 
 				case DeviceKind.JUIS:
-					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)\w*$");
+					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)[A-Za-z]*$");
 					if (match.Success) {
 						FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value);
 						FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value);
@@ -776,7 +781,7 @@ namespace JuisCheck
 						break;
 					}
 
-					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)-(\d+)\s+(\w+)$");
+					match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
 					if (match.Success) {
 						FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value);
 						FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value);

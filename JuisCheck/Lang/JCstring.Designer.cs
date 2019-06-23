@@ -322,6 +322,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PLUS beta (1007).
+        /// </summary>
+        public static string ComboBoxValueBuildtypeBetaPLUS {
+            get {
+                return ResourceManager.GetString("ComboBoxValueBuildtypeBetaPLUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Public beta (1001).
         /// </summary>
         public static string ComboBoxValueBuildtypeBetaPublic {
