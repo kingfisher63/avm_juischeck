@@ -1,46 +1,62 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.IO;
 using System.Linq;
-using System.Xml;
-using System.Xml.Serialization;
+using System.Runtime.CompilerServices;
+using System.Windows.Threading;
 
 namespace JuisCheck
 {
 	public class DeviceCollection : ObservableCollection<Device>
 	{
-		public const string	 xmlRootElementName = "Devices";
+		public CollectionSettings Settings { get; protected set; } = new CollectionSettings();
 
-		public string		 FileName { get; protected set; } = null;
-
-		protected	bool	_isModified = false;
-		public		bool	 IsModified
+		private string _FileName = null;
+		public  string  FileName
 		{
-			get {
-				return _isModified;
-			}
+			get => _FileName;
 			protected set {
-				if (_isModified != value) {
-					_isModified = value;
-					RaiseIsModifiedChanged();
+				if (_FileName != value) {
+					_FileName  = value;
+					NotifyPropertyChanged();
+				}
+
+			}
+		}
+
+		private bool _IsModified = false;
+		public  bool  IsModified
+		{
+			get => _IsModified;
+			protected set {
+				if (_IsModified != value) {
+					_IsModified  = value;
+					NotifyPropertyChanged();
 				}
 			}
 		}
 
+		/****************/
+		/* Constructors */
+		/****************/
+
 		public DeviceCollection () : base()
 		{
-			CollectionChanged += CollectionChanged_Handler;
+			CollectionChanged        += CollectionChanged_Handler;
+			Settings.PropertyChanged += Settings_PropertyChanged_Handler;
 		}
+
+		/*****************/
+		/* Other methods */
+		/*****************/
 
 		protected void AddItemPropertyChangedHandlers()
 		{
@@ -49,6 +65,10 @@ namespace JuisCheck
 
 		protected void AddItemPropertyChangedHandlers( IList devices )
 		{
+            if (devices == null) {
+                throw new ArgumentNullException(nameof(devices));
+            }
+
 			foreach (Device device in devices) {
 				device.PropertyChanged += Item_PropertyChanged_Handler;
 			}
@@ -59,31 +79,36 @@ namespace JuisCheck
 			Clear();
 
 			FileName   = null;
-			IsModified = true;
 			IsModified = false;
+		}
+
+		public Device FindByID( string id )
+		{
+			return this.FirstOrDefault( d => d.ID == id );
 		}
 
 		public void Load( string fileName )
 		{
-			if (fileName == null) {
-				throw new ArgumentNullException(nameof(fileName));
+			FileName = fileName;
+
+			bool isModified = XML.JCData.LoadFromFile(fileName, this);
+			foreach (Device device in this) {
+				if (string.IsNullOrWhiteSpace(device.ID)) {
+					device.ID  = Guid.NewGuid().ToString();
+					isModified = true;
+				}
 			}
+			Settings.NotifySettingsProperties();
 
-			using (XmlReader xmlReader = XmlReader.Create(fileName)) {
-				XmlSerializer	xmlSerializer = new XmlSerializer(typeof(List<Device>), new XmlRootAttribute(xmlRootElementName));
-				List<Device>	devices       = (List<Device>)xmlSerializer.Deserialize(xmlReader);
-
-				Clear();
-				devices.ForEach(d => Add(d));
-			}
-
-			FileName   = fileName;
-			IsModified = true;
-			IsModified = false;
+			IsModified = isModified;
 		}
 
 		protected void RemoveItemPropertyChangedHandlers( IList devices )
 		{
+            if (devices == null) {
+                throw new ArgumentNullException(nameof(devices));
+            }
+
 			foreach (Device device in devices) {
 				device.PropertyChanged -= Item_PropertyChanged_Handler;
 			}
@@ -91,26 +116,15 @@ namespace JuisCheck
 
 		public void Save( string fileName = null )
 		{
-			if (fileName == null) {
-				if (FileName == null) {
-					throw new ArgumentNullException(nameof(fileName));
-				}
-				fileName = FileName;
-			}
+			FileName = fileName ?? FileName;
+			XML.JCData.SaveToFile(FileName, this);
 
-			using (XmlWriter xmlWriter = XmlWriter.Create(fileName, new XmlWriterSettings { Indent = true })) {
-				XmlSerializer xmlSerializer = new XmlSerializer(typeof(DeviceCollection), new XmlRootAttribute(xmlRootElementName));
-				xmlSerializer.Serialize(xmlWriter, this);
-			}
-
-			FileName   = fileName;
-			IsModified = true;
 			IsModified = false;
 		}
 
-		// Event: CollectionChanged
+		// Event handler: CollectionChanged
 
-		protected void CollectionChanged_Handler ( object sender, NotifyCollectionChangedEventArgs evt )
+		private void CollectionChanged_Handler( object sender, NotifyCollectionChangedEventArgs evt )
 		{
 			switch (evt.Action) {
 				case NotifyCollectionChangedAction.Add:
@@ -139,27 +153,38 @@ namespace JuisCheck
 			}
 		}
 
-		// Event: IsModifiedChanged
+		// Event handler: Item_PropertyChanged
 
-		public event EventHandler IsModifiedChanged;
-
-		protected void RaiseIsModifiedChanged()
+		private void Item_PropertyChanged_Handler( object sender, PropertyChangedEventArgs evt )
 		{
-			IsModifiedChanged?.Invoke(this, new EventArgs());
+			if (evt.PropertyName == nameof(Device.DeviceName)) {
+				foreach (Device device in this) {
+					device.NotifyDeviceNameChanged(((Device)sender).ID);
+				}
+			}
+
+			if (evt.PropertyName != nameof(Device.IsSelected)) {
+				IsModified = true;
+			}
 		}
 
-		// Event: Item_PropertyChanged
+		// Event handler: Settings_PropertyChanged
 
-		protected void Item_PropertyChanged_Handler( object sender, PropertyChangedEventArgs evt )
+		private void Settings_PropertyChanged_Handler( object sender, PropertyChangedEventArgs evt )
 		{
-			switch (evt.PropertyName) {
-				case nameof(Device.IsSelected):
-					break;
+			IsModified = true;
+		}
 
-				default:
-					IsModified = true;
-					break;
-			}
+		// Event source: CollectionPropertyChanged
+		//
+		// Note: we cannot use the INotifyPropertyChanged implementation from the
+		//       ObservableCollection class because PropertyChanged is protected.
+
+		public event PropertyChangedEventHandler CollectionPropertyChanged;
+
+		protected void NotifyPropertyChanged( [CallerMemberName] string propertyName = null )
+		{
+			CollectionPropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }

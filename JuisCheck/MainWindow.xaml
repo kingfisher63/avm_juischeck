@@ -3,12 +3,13 @@
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                     xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls"
                      xmlns:fluent="urn:fluent-ribbon"
                      xmlns:jc="clr-namespace:JuisCheck"
-                     xmlns:lang="clr-namespace:JuisCheck.Lang"
-                     xmlns:properties="clr-namespace:JuisCheck.Properties"
-                     xmlns:rules="clr-namespace:JuisCheck.Rules"
+                     xmlns:jclang="clr-namespace:JuisCheck.Lang"
+                     xmlns:jcprops="clr-namespace:JuisCheck.Properties"
+                     xmlns:jcvld="clr-namespace:JuisCheck.Resources.ValidationRules"
+                     xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls"
+                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                      mc:Ignorable="d"
                      Width="900" Height="700"
                      ResizeMode="CanResizeWithGrip"
@@ -49,6 +50,7 @@
         <KeyBinding Key="S"      Modifiers="Ctrl"     Command="jc:MainWindow.Backstage_CmdSave"          />
         <KeyBinding Key="S"      Modifiers="Ctrl+Alt" Command="jc:MainWindow.Backstage_CmdSaveAs"        />
         <KeyBinding Key="W"      Modifiers="Ctrl"     Command="jc:MainWindow.Backstage_CmdClose"         />
+        <KeyBinding Key="X"      Modifiers="Ctrl"     Command="jc:MainWindow.Backstage_CmdExit"          />
 
         <KeyBinding Key="A"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdSelectAll"       />
         <KeyBinding Key="C"      Modifiers="Ctrl"     Command="jc:MainWindow.Devices_CmdCopy"            />
@@ -68,48 +70,64 @@
     <fluent:RibbonWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/MainWindowBackstage.xaml"/>
-                <ResourceDictionary Source="Resources/MainWindowDataGridStyles.xaml"/>
-                <ResourceDictionary Source="Resources/MainWindowDataGridTemplates.xaml"/>
-                <ResourceDictionary Source="Resources/MainWindowRibbon.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/Converters.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/MainWindowBackstageStyles.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/MainWindowDataGridStyles.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/MainWindowDataGridTemplates.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/MainWindowRibbonStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <ContextMenu x:Key="cmRecentFileContextMenu">
-                <MenuItem Header="{x:Static lang:JCstring.BackstageContextMenuItemTextOpen}"   FontWeight="Bold" Click="Backstage_RecentFile_ContextMenuOpenClick_Handler"  />
-                <MenuItem Header="{x:Static lang:JCstring.BackstageContextMenuItemTextRemove}"                   Click="Backstage_RecentFile_ContextMenuRemoveClick_Handler"/>
-            </ContextMenu>
+            <CollectionViewSource x:Key="cvsDevices" Source="{Binding Devices}" IsLiveSortingRequested="True">
+                <CollectionViewSource.LiveSortingProperties>
+                    <system:String>DeviceName</system:String>
+                    <system:String>DeviceAddressStr</system:String>
+                    <system:String>ProductName</system:String>
+                    <system:String>HardwareStr</system:String>
+                    <system:String>FirmwareStr</system:String>
+                    <system:String>FirmwareBuildTypeStr</system:String>
+                    <system:String>OEM</system:String>
+                    <system:String>Country</system:String>
+                    <system:String>Language</system:String>
+                    <system:String>UpdateInfo</system:String>
+                    <system:String>UpdateFileName</system:String>
+                    <system:String>UpdateLastChecked</system:String>
+                </CollectionViewSource.LiveSortingProperties>
+            </CollectionViewSource>
 
-            <rules:NullableDateTimeToStringConverter x:Key="cnvDateTimeToString"/>
+            <ContextMenu x:Key="cmRecentFileContextMenu">
+                <MenuItem Header="{x:Static jclang:JCstring.BackstageContextMenuItemTextOpen}"   FontWeight="Bold" Click="Backstage_RecentFile_ContextMenuOpenClick_Handler"  />
+                <MenuItem Header="{x:Static jclang:JCstring.BackstageContextMenuItemTextRemove}"                   Click="Backstage_RecentFile_ContextMenuRemoveClick_Handler"/>
+            </ContextMenu>
 
             <Style TargetType="{x:Type mwc:RecentFileButton}" BasedOn="{StaticResource RecentFileButtonStyle}">
                 <Setter Property="ContextMenu" Value="{StaticResource cmRecentFileContextMenu}"/>
             </Style>
-            
+
             <Style TargetType="{x:Type ToolTip}">
-                <Setter Property="Background" Value="Beige"/>
+                <Setter Property="Background" Value="{StaticResource ToolTipBackgroundBrush}"/>
             </Style>
         </ResourceDictionary>
     </fluent:RibbonWindow.Resources>
 
     <DockPanel LastChildFill="True">
-        
+
         <fluent:Ribbon DockPanel.Dock="Top">
 
             <fluent:Ribbon.Menu>
-                <fluent:Backstage Header="{x:Static lang:JCstring.RribbontabHeaderFile}" IsOpenAnimationEnabled="False" IsOpenChanged="Backstage_IsOpenChanged_Handler">
+                <fluent:Backstage Header="{x:Static jclang:JCstring.RribbontabHeaderFile}" IsOpenChanged="Backstage_IsOpenChanged_Handler">
                     <fluent:BackstageTabControl>
-                        <fluent:Button Command="jc:MainWindow.Backstage_CmdSave"   Header="{x:Static lang:JCstring.BackstageButtonTextSave}"   ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipSave}"  />
-                        <fluent:Button Command="jc:MainWindow.Backstage_CmdSaveAs" Header="{x:Static lang:JCstring.BackstageButtonTextSaveAs}" ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipSaveAs}"/>
-                        <fluent:Button Command="jc:MainWindow.Backstage_CmdOpen"   Header="{x:Static lang:JCstring.BackstageButtonTextOpen}"   ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipOpen}"  />
-                        <fluent:Button Command="jc:MainWindow.Backstage_CmdClose"  Header="{x:Static lang:JCstring.BackstageButtonTextClose}"  ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipClose}" />
-                        <fluent:BackstageTabItem Header="{x:Static lang:JCstring.BackstageTabTextRecent}" ToolTip="{x:Static lang:JCstring.BackstageTabTooltipRecent}" x:Name="backstageTabRecentFiles">
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdSave"   Header="{x:Static jclang:JCstring.BackstageButtonTextSave}"   Icon="{StaticResource imgButtonSave16}"   ToolTip="{x:Static jclang:JCstring.BackstageButtonTooltipSave}"  />
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdSaveAs" Header="{x:Static jclang:JCstring.BackstageButtonTextSaveAs}" Icon="{StaticResource imgButtonSaveAs16}" ToolTip="{x:Static jclang:JCstring.BackstageButtonTooltipSaveAs}"/>
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdOpen"   Header="{x:Static jclang:JCstring.BackstageButtonTextOpen}"   Icon="{StaticResource imgButtonOpen16}"   ToolTip="{x:Static jclang:JCstring.BackstageButtonTooltipOpen}"  />
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdClose"  Header="{x:Static jclang:JCstring.BackstageButtonTextClose}"  Icon="{StaticResource imgButtonClose16}"  ToolTip="{x:Static jclang:JCstring.BackstageButtonTooltipClose}" />
+                        <fluent:BackstageTabItem Header="{x:Static jclang:JCstring.BackstageTabTextRecent}" Icon="{StaticResource imgButtonRecent16}" ToolTip="{x:Static jclang:JCstring.BackstageTabTooltipRecent}" x:Name="backstageTabRecentFiles">
                             <Border Style="{StaticResource BackstageOuterBorderStyle}">
                                 <DockPanel Style="{StaticResource BackstageOuterDockPanelStyle}">
-                                    <StackPanel Style="{StaticResource BackstageActionButtonsStackPanelStyle}">
-                                        <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClean" Content="{x:Static lang:JCstring.BackstageButtonTextRemoveNonExistingFiles}" Style="{StaticResource BackstageActionButtonStyle}"/>
-                                        <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClear" Content="{x:Static lang:JCstring.BackstageButtonTextRemoveAllFiles}"         Style="{StaticResource BackstageActionButtonStyle}"/>
+                                    <StackPanel Style="{StaticResource BackstageButtonsStackPanelStyle}">
+                                        <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClean" Content="{x:Static jclang:JCstring.BackstageButtonTextRemoveNonExistingFiles}" Style="{StaticResource BackstageButtonStyle}"/>
+                                        <Button Command="jc:MainWindow.Backstage_CmdRecentFilesClear" Content="{x:Static jclang:JCstring.BackstageButtonTextRemoveAllFiles}"         Style="{StaticResource BackstageButtonStyle}"/>
                                     </StackPanel>
-                                    <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderRecentFiles}" Style="{StaticResource BackstageFirstSectionHeaderTextBlockStyle}"/>
+                                    <TextBlock Text="{x:Static jclang:JCstring.BackstageSectionHeaderRecentFiles}" Style="{StaticResource BackstageFirstSectionHeaderTextBlockStyle}"/>
                                     <Border Style="{StaticResource RecentFilesInnerBorderStyle}">
                                         <ScrollViewer Style="{StaticResource BackstageScrollViewerStyle}">
                                             <DockPanel Style="{StaticResource BackstageInnerDockPanelStyle}" x:Name="dpRecentFiles"/>
@@ -118,178 +136,263 @@
                                 </DockPanel>
                             </Border>
                         </fluent:BackstageTabItem>
-                        <fluent:BackstageTabItem Header="{x:Static lang:JCstring.BackstageTabTextSettings}" ToolTip="{x:Static lang:JCstring.BackstageTabTooltipSettings}">
+                        <fluent:BackstageTabItem Header="{x:Static jclang:JCstring.BackstageTabTextSettings}" Icon="{StaticResource imgButtonSettings16}" ToolTip="{x:Static jclang:JCstring.BackstageTabTooltipSettings}">
                             <Border Style="{StaticResource BackstageOuterBorderStyle}">
                                 <DockPanel Style="{StaticResource BackstageOuterDockPanelStyle}">
-                                    <StackPanel Style="{StaticResource BackstageActionButtonsStackPanelStyle}">
-                                        <Button Command="jc:MainWindow.Backstage_CmdSettingsDefault" Content="{x:Static lang:JCstring.BackstageButtonTextResetToDefaults}" Style="{StaticResource BackstageActionButtonStyle}"/>
+                                    <StackPanel Style="{StaticResource BackstageButtonsStackPanelStyle}">
+                                        <Button Command="jc:MainWindow.Backstage_CmdSettingsDefault" Content="{x:Static jclang:JCstring.BackstageButtonTextResetToDefaults}" Style="{StaticResource BackstageButtonStyle}"/>
                                     </StackPanel>
                                     <Border Style="{StaticResource SettingsInnerBorderStyle}">
                                         <ScrollViewer Style="{StaticResource BackstageScrollViewerStyle}">
                                             <DockPanel Style="{StaticResource BackstageInnerDockPanelStyle}">
-                                                
-                                                <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderGeneral}" Style="{StaticResource BackstageFirstSectionHeaderTextBlockStyle}"/>
-                                                <CheckBox IsChecked="{Binding Path=AppSettings.MainWindowRestoreMetrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
-                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelMainWindowRestoreMetrics}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
-                                                </CheckBox>
-                                                <CheckBox IsChecked="{Binding Path=AppSettings.AutoLoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
-                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelAutoLoad}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
-                                                </CheckBox>
-                                                <CheckBox IsChecked="{Binding Path=AppSettings.JuisReleaseShowBuildNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingsCheckBoxSettingStyle}">
-                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelJuisReleaseShowBuildNumber}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
-                                                </CheckBox>
-                                                <StackPanel Style="{StaticResource SettingsStackPanelStyle}">
-                                                    <TextBlock Text="{x:Static lang:JCstring.SettingLabelRecentFilesMax}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                                    <TextBox MaxLength="2" Width="24" Style="{StaticResource SettingsTextBoxStyle}">
-                                                        <TextBox.Text>
-                                                            <Binding Path="AppSettings.RecentFilesMax" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
-                                                                <Binding.ValidationRules>
-                                                                    <rules:Int32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
-                                                                </Binding.ValidationRules>
-                                                            </Binding>
-                                                        </TextBox.Text>
-                                                    </TextBox>
-                                                </StackPanel>
-                                                
-                                                <TextBlock Text="{x:Static lang:JCstring.BackstageSectionHeaderDefaults}" Style="{StaticResource BackstageNextSectionHeaderTextBlockStyle}"/>
                                                 <Grid Style="{StaticResource SettingsGridStyle}">
                                                     <Grid.RowDefinitions>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
                                                     </Grid.RowDefinitions>
                                                     <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition/>
-                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
                                                     </Grid.ColumnDefinitions>
 
-                                                    <TextBlock     Grid.Row="0" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultFirmwareBuildType}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                                    <jc:ComboBoxEx Grid.Row="0" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
-                                                        ItemsSource="{Binding Path=Backstage_BuildTypeValues, Mode=OneTime}"
-                                                        SelectedValue="{Binding Path=AppSettings.DefaultFirmwareBuildType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                        DisplayMemberPath="DisplayString"
-                                                        SelectedValuePath="Value"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static jclang:JCstring.BackstageSectionHeaderGeneral}" Style="{StaticResource BackstageFirstSectionHeaderTextBlockStyle}"/>
 
-                                                    <TextBlock     Grid.Row="1" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultOEM}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <TextBlock     Grid.Row="1" Grid.Column="0" Text="{x:Static jclang:JCstring.SettingLabelUserInterfaceLanguage}" Style="{StaticResource SettingsTextBlockStyle}"/>
                                                     <jc:ComboBoxEx Grid.Row="1" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
-                                                        ItemsSource="{Binding Path=Backstage_OEMValues, Mode=OneTime}"
-                                                        SelectedValue="{Binding Path=AppSettings.DefaultOEM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        IsEnabled="{Binding Source={x:Static Application.Current}, Path=IsLanguageSelectionEnabled, Mode=OneWay}"
+                                                        ItemsSource="{Binding Path=Backstage_UILanguageValues, Mode=OneTime}"
+                                                        SelectedValue="{Binding Source={x:Static jcprops:Settings.Default}, Path=UserInterfaceLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                                    <TextBlock     Grid.Row="2" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultCountry}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                                    <jc:ComboBoxEx Grid.Row="2" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
-                                                        ItemsSource="{Binding Path=Backstage_CountryValues, Mode=OneTime}"
-                                                        SelectedValue="{Binding Path=AppSettings.DefaultCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                    <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsEnabled="{Binding Source={x:Static Application.Current}, Path=IsPortableMode, Mode=OneWay, Converter={StaticResource cnvInverseBoolean}}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=MainWindowRestoreMetrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.SettingLabelMainWindowRestoreMetrics}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsEnabled="{Binding Source={x:Static Application.Current}, Path=IsPortableMode, Mode=OneWay, Converter={StaticResource cnvInverseBoolean}}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=AutoLoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.SettingLabelAutoLoad}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=JuisReleaseShowBuildNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.SettingLabelJuisReleaseShowBuildNumber}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsStackPanelStyle}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.SettingLabelRecentFilesMax}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                        <TextBox MaxLength="2" Width="26" Style="{StaticResource SettingsTextBoxStyle}">
+                                                            <TextBox.Text>
+                                                                <Binding Source="{x:Static jcprops:Settings.Default}" Path="RecentFilesMax" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                                                                    <Binding.ValidationRules>
+                                                                        <jcvld:StringInt32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
+                                                                    </Binding.ValidationRules>
+                                                                </Binding>
+                                                            </TextBox.Text>
+                                                        </TextBox>
+                                                    </StackPanel>
+
+                                                    <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static jclang:JCstring.BackstageSectionHeaderDefaultValues}" Style="{StaticResource BackstageNextSectionHeaderTextBlockStyle}"/>
+
+                                                    <TextBlock     Grid.Row="7" Grid.Column="0" Text="{x:Static jclang:JCstring.SettingLabelDefaultFirmwareBuildType}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="7" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                        ItemsSource="{Binding Path=Backstage_DefaultBuildTypeValues, Mode=OneTime}"
+                                                        SelectedValue="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultFirmwareBuildType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                                    <TextBlock     Grid.Row="3" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultLanguage}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                                    <jc:ComboBoxEx Grid.Row="3" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
-                                                        ItemsSource="{Binding Path=Backstage_LanguageValues, Mode=OneTime}"
-                                                        SelectedValue="{Binding Path=AppSettings.DefaultLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                    <TextBlock     Grid.Row="8" Grid.Column="0" Text="{x:Static jclang:JCstring.SettingLabelDefaultOEM}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="8" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                        ItemsSource="{Binding Path=Backstage_DefaultOEMValues, Mode=OneTime}"
+                                                        SelectedValue="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultOEM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                                    <TextBlock     Grid.Row="4" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultAnnex}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                                    <jc:ComboBoxEx Grid.Row="4" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
-                                                        ItemsSource="{Binding Path=Backstage_AnnexValues, Mode=OneTime}"
-                                                        SelectedValue="{Binding Path=AppSettings.DefaultAnnex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                    <TextBlock     Grid.Row="9" Grid.Column="0" Text="{x:Static jclang:JCstring.SettingLabelDefaultCountry}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="9" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                        ItemsSource="{Binding Path=Backstage_DefaultCountryValues, Mode=OneTime}"
+                                                        SelectedValue="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                         DisplayMemberPath="DisplayString"
                                                         SelectedValuePath="Value"/>
 
-                                                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static lang:JCstring.SettingLabelDefaultBaseFritzOS}" Style="{StaticResource SettingsTextBlockStyle}"/>
-                                                    <TextBox   Grid.Row="5" Grid.Column="1" MaxLength="10" Width="80" Style="{StaticResource SettingsTextBoxStyle}">
-                                                        <TextBox.Text>
-                                                            <Binding Path="AppSettings.DefaultBaseFritzOS" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
-                                                                <Binding.ValidationRules>
-                                                                    <rules:FritzOSversionRule AcceptEmpty="True" ValidatesOnTargetUpdated="True"/>
-                                                                </Binding.ValidationRules>
-                                                            </Binding>
-                                                        </TextBox.Text>
-                                                    </TextBox>
+                                                    <TextBlock     Grid.Row="10" Grid.Column="0" Text="{x:Static jclang:JCstring.SettingLabelDefaultLanguage}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="10" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                        ItemsSource="{Binding Path=Backstage_DefaultLanguageValues, Mode=OneTime}"
+                                                        SelectedValue="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        DisplayMemberPath="DisplayString"
+                                                        SelectedValuePath="Value"/>
+
+                                                    <TextBlock     Grid.Row="11" Grid.Column="0" Text="{x:Static jclang:JCstring.SettingLabelDefaultAnnex}" Style="{StaticResource SettingsTextBlockStyle}"/>
+                                                    <jc:ComboBoxEx Grid.Row="11" Grid.Column="1" Style="{StaticResource SettingsComboBoxExStyle}"
+                                                        ItemsSource="{Binding Path=Backstage_DefaultAnnexValues, Mode=OneTime}"
+                                                        SelectedValue="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultAnnex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        DisplayMemberPath="DisplayString"
+                                                        SelectedValuePath="Value"/>
+
+                                                    <TextBlock Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static jclang:JCstring.BackstageSectionHeaderDefaultColumns}" Style="{StaticResource BackstageNextSectionHeaderTextBlockStyle}"/>
+
+                                                    <CheckBox Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleDeviceAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderDeviceAddress}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderProductName}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleHardware, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderHardware}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleFirmware, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderFirmware}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleFirmwareBuildType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderFirmwareBuildType}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleMasterBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderMasterBase}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="19" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleOEM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderOEM}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderCountry}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderLanguage}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="22" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleUpdateInfo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateInfo}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="23" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleUpdateFileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateFileName}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
+
+                                                    <CheckBox Grid.Row="24" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SettingsCheckBoxSettingStyle}"
+                                                              IsChecked="{Binding Source={x:Static jcprops:Settings.Default}, Path=DefaultDataGridColumnVisibleUpdateLastChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        <TextBlock Text="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateLastChecked}" Style="{StaticResource SettingsCheckBoxTextBlockStyle}"/>
+                                                    </CheckBox>
                                                 </Grid>
-                                                
                                             </DockPanel>
                                         </ScrollViewer>
                                     </Border>
                                 </DockPanel>
                             </Border>
                         </fluent:BackstageTabItem>
-                        <fluent:Button Command="jc:MainWindow.Backstage_CmdAbout" Header="{x:Static lang:JCstring.BackstageButtonTextAbout}" ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipAbout}"/>
-                        <fluent:Button Command="jc:MainWindow.Backstage_CmdExit"  Header="{x:Static lang:JCstring.BackstageButtonTextExit}"  ToolTip="{x:Static lang:JCstring.BackstageButtonTooltipExit}" />
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdAbout" Header="{x:Static jclang:JCstring.BackstageButtonTextAbout}" Icon="{StaticResource imgButtonAbout16}" ToolTip="{x:Static jclang:JCstring.BackstageButtonTooltipAbout}"/>
+                        <fluent:Button Command="jc:MainWindow.Backstage_CmdExit"  Header="{x:Static jclang:JCstring.BackstageButtonTextExit}"  Icon="{StaticResource imgButtonExit16}"  ToolTip="{x:Static jclang:JCstring.BackstageButtonTooltipExit}" />
                     </fluent:BackstageTabControl>
                 </fluent:Backstage>
             </fluent:Ribbon.Menu>
 
-            <fluent:RibbonTabItem Header="{x:Static lang:JCstring.RibbonTabHeaderDevices}">
-                <fluent:RibbonGroupBox Header="{x:Static lang:JCstring.RibbonGroupBoxTextDevices}">
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddJUIS"    LargeIcon="{StaticResource imgDevicesButtonAdd32}"        Header="{x:Static lang:JCstring.RibbonButtonTextAddJUIS}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddJUIS}"   />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddDECT"    LargeIcon="{StaticResource imgDevicesButtonAdd32}"        Header="{x:Static lang:JCstring.RibbonButtonTextAddDECT}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipAddDECT}"   />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdDelete"     LargeIcon="{StaticResource imgDevicesButtonDelete32}"     Header="{x:Static lang:JCstring.RibbonButtonTextDelete}"       ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipDelete}"    />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdEdit"       LargeIcon="{StaticResource imgDevicesButtonEdit32}"       Header="{x:Static lang:JCstring.RibbonButtonTextEdit}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipEdit}"      />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopy"       LargeIcon="{StaticResource imgDevicesButtonCopy32}"       Header="{x:Static lang:JCstring.RibbonButtonTextCopy}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopy}"      />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectAll"  LargeIcon="{StaticResource imgDevicesButtonSelectAll32}"  Header="{x:Static lang:JCstring.RibbonButtonTextSelectAll}"    ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectAll}" />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectNone" LargeIcon="{StaticResource imgDevicesButtonSelectNone32}" Header="{x:Static lang:JCstring.RibbonButtonTextSelectNone}"   ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipSelectNone}"/>
+            <fluent:RibbonTabItem Header="{x:Static jclang:JCstring.RibbonTabHeaderDevices}">
+                <fluent:RibbonGroupBox Header="{x:Static jclang:JCstring.RibbonGroupBoxTextDevices}">
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddJUIS"    LargeIcon="{StaticResource imgDevicesButtonAdd32}"        Header="{x:Static jclang:JCstring.RibbonButtonTextAddJUIS}"      ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipAddJUIS}"   />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdAddDECT"    LargeIcon="{StaticResource imgDevicesButtonAdd32}"        Header="{x:Static jclang:JCstring.RibbonButtonTextAddDECT}"      ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipAddDECT}"   />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdDelete"     LargeIcon="{StaticResource imgDevicesButtonDelete32}"     Header="{x:Static jclang:JCstring.RibbonButtonTextDelete}"       ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipDelete}"    />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdEdit"       LargeIcon="{StaticResource imgDevicesButtonEdit32}"       Header="{x:Static jclang:JCstring.RibbonButtonTextEdit}"         ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipEdit}"      />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopy"       LargeIcon="{StaticResource imgDevicesButtonCopy32}"       Header="{x:Static jclang:JCstring.RibbonButtonTextCopy}"         ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipCopy}"      />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectAll"  LargeIcon="{StaticResource imgDevicesButtonSelectAll32}"  Header="{x:Static jclang:JCstring.RibbonButtonTextSelectAll}"    ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipSelectAll}" />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdSelectNone" LargeIcon="{StaticResource imgDevicesButtonSelectNone32}" Header="{x:Static jclang:JCstring.RibbonButtonTextSelectNone}"   ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipSelectNone}"/>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="{x:Static lang:JCstring.RibbonGroupBoxTextFirmwareUpdate}">
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdFindUpdates"      LargeIcon="{StaticResource imgDevicesButtonFindUpdates32}"      Header="{x:Static lang:JCstring.RibbonButtonTextFindUpdates}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipFindUpdates}"     />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopyURLs"         LargeIcon="{StaticResource imgDevicesButtonCopyURLs32}"         Header="{x:Static lang:JCstring.RibbonButtonTextCopyURLs}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipCopyURLs}"        />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdDownloadFirmware" LargeIcon="{StaticResource imgDevicesButtonDownloadFirmware32}" Header="{x:Static lang:JCstring.RibbonButtonTextDownloadFirmware}" ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipDownloadFirmware}"/>
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdViewInfo"         LargeIcon="{StaticResource imgDevicesButtonViewInfo32}"         Header="{x:Static lang:JCstring.RibbonButtonTextViewInfo}"         ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipViewInfo}"        />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdMakeCurrent"      LargeIcon="{StaticResource imgDevicesButtonMakeCurrent32}"      Header="{x:Static lang:JCstring.RibbonButtonTextMakeCurrent}"      ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipMakeCurrent}"     />
-                    <fluent:Button Command="jc:MainWindow.Devices_CmdClearUpdates"     LargeIcon="{StaticResource imgDevicesButtonClearUpdates32}"     Header="{x:Static lang:JCstring.RibbonButtonTextClearUpdates}"     ToolTip="{x:Static lang:JCstring.RibbonButtonTooltipClearUpdates}"    />
+                <fluent:RibbonGroupBox Header="{x:Static jclang:JCstring.RibbonGroupBoxTextFirmwareUpdate}">
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdFindUpdates"      LargeIcon="{StaticResource imgDevicesButtonFindUpdates32}"      Header="{x:Static jclang:JCstring.RibbonButtonTextFindUpdates}"      ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipFindUpdates}"     />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdCopyURLs"         LargeIcon="{StaticResource imgDevicesButtonCopyURLs32}"         Header="{x:Static jclang:JCstring.RibbonButtonTextCopyURLs}"         ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipCopyURLs}"        />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdDownloadFirmware" LargeIcon="{StaticResource imgDevicesButtonDownloadFirmware32}" Header="{x:Static jclang:JCstring.RibbonButtonTextDownloadFirmware}" ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipDownloadFirmware}"/>
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdViewInfo"         LargeIcon="{StaticResource imgDevicesButtonViewInfo32}"         Header="{x:Static jclang:JCstring.RibbonButtonTextViewInfo}"         ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipViewInfo}"        />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdMakeCurrent"      LargeIcon="{StaticResource imgDevicesButtonMakeCurrent32}"      Header="{x:Static jclang:JCstring.RibbonButtonTextMakeCurrent}"      ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipMakeCurrent}"     />
+                    <fluent:Button Command="jc:MainWindow.Devices_CmdClearUpdates"     LargeIcon="{StaticResource imgDevicesButtonClearUpdates32}"     Header="{x:Static jclang:JCstring.RibbonButtonTextClearUpdates}"     ToolTip="{x:Static jclang:JCstring.RibbonButtonTooltipClearUpdates}"    />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
 
         </fluent:Ribbon>
 
-        <jc:MultiSelectDataGrid DockPanel.Dock="Top" ItemsSource="{Binding Devices}" x:Name="dgDevices" MouseDoubleClick="Devices_DataGrid_MouseDoubleClick_Handler" Sorting="Devices_DataGrid_Sorting_Handler">
+        <jc:MultiSelectDataGrid DockPanel.Dock="Top" ItemsSource="{Binding Source={StaticResource cvsDevices}}" x:Name="dgDevices" MouseDoubleClick="Devices_DataGrid_MouseDoubleClick_Handler" Sorting="Devices_DataGrid_Sorting_Handler">
             <DataGrid.Columns>
                 <DataGridTemplateColumn x:Name="dgcDeviceName"
-                                        Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceName}"
+                                        Header="{x:Static jclang:JCstring.DataGridColumnHeaderDeviceName}"
                                         CellTemplate="{StaticResource DeviceNameCellTemplate}"
                                         SortMemberPath="DeviceName"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderDeviceAddress}"
-                                        Binding="{Binding Path=DeviceAddress}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleDeviceAddress, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderProductName}"
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderDeviceAddress}"
+                                        Binding="{Binding Path=DeviceAddressStr}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleDeviceAddress, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderProductName}"
                                         Binding="{Binding Path=ProductName}"
-                                        SortMemberPath="ProductName"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleProductName, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderHardware}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleProductName, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderHardware}"
                                         Binding="{Binding Path=HardwareStr}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleHardware, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmware}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleHardware, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderFirmware}"
                                         Binding="{Binding Path=FirmwareStr}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmware, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderFirmwareBuildType}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleFirmware, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderFirmwareBuildType}"
                                         Binding="{Binding Path=FirmwareBuildTypeStr}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleFirmwareBuildType, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderOEM}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleFirmwareBuildType, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderMasterBase}"
+                                        Binding="{Binding Path=MasterBaseStr}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleMasterBase, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderOEM}"
                                         Binding="{Binding Path=OEM}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleOEM, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderCountry}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleOEM, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderCountry}"
                                         Binding="{Binding Path=Country}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleCountry, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderLanguage}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleCountry, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderLanguage}"
                                         Binding="{Binding Path=Language}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleLanguage, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderBaseFritzOS}"
-                                        Binding="{Binding Path=BaseFritzOS}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleBaseFritzOS, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateInfo}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleLanguage, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateInfo}"
                                         Binding="{Binding Path=UpdateInfo}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateFileName}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateFileName}"
                                         Binding="{Binding Path=UpdateFileName}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateFileName, Converter={StaticResource cnvBoolToVisibility}}"/>
-                <DataGridTextColumn     Header="{x:Static lang:JCstring.DataGridColumnHeaderUpdateLastChecked}"
-                                        Binding="{Binding Path=UpdateLastChecked, Converter={StaticResource cnvDateTimeToString}}"
-                                        Visibility="{Binding Source={x:Static properties:Settings.Default}, Path=DataGridColumnVisibleUpdateLastChecked, Converter={StaticResource cnvBoolToVisibility}}"/>
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleUpdateFileName, Converter={StaticResource cnvBoolToVisibility}}"/>
+                <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateLastChecked}"
+                                        Binding="{Binding Path=UpdateLastChecked, Converter={StaticResource cnvNullableDateTimeToString}}"
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleUpdateLastChecked, Converter={StaticResource cnvBoolToVisibility}}"/>
             </DataGrid.Columns>
         </jc:MultiSelectDataGrid>
 

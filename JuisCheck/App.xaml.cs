@@ -1,14 +1,20 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
 using Muon.DotNetExtensions;
 using Muon.Windows;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Threading;
@@ -24,9 +30,43 @@ namespace JuisCheck
 	/// </summary>
 	public partial class App : Application
 	{
-		public static string GetVersion()
+		public const string				defaultDataFileName            = "default.xml";
+		public const string				portableProgramFileName        = "JuisCheckPortable.exe";
+		public const string				programName                    = "JuisCheck";
+		public const string				programVersionSuffix           = "";	// BETA, RC1, etc.
+
+		public const StringComparison	defaultDisplayStringComparison = StringComparison.CurrentCultureIgnoreCase;
+		public const StringComparison	defaultFileNameComparison      = StringComparison.OrdinalIgnoreCase;
+
+		public static bool				IsLanguageSelectionEnabled	{ get; private set; }
+		public static bool				IsPortableMode				{ get; private set; }
+		public static bool				RestartPending				{ get; private set; }
+
+		public static List<string>		AdditionalLanguages			{ get; } = new List<string>() { "de", "es", "fr", "it", "nl", "pl" };
+
+		/*****************/
+		/* Other methods */
+		/*****************/
+
+		public static void CancelRestart()
 		{
-			return Assembly.GetExecutingAssembly().GetVersion(3);
+			RestartPending = false;
+		}
+
+		public static string		GetAssemblyName()		{ return Assembly.GetExecutingAssembly().GetName().Name; }
+		public static string		GetCopyright()			{ return Assembly.GetExecutingAssembly().GetCopyright(); }
+		public static string		GetDefaultDirectory()	{ return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); }
+		public static string		GetLocation()			{ return Assembly.GetExecutingAssembly().Location; }
+		public static string		GetProgramDirectory()	{ return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); }
+		public static string		GetProgramFileName()	{ return Path.GetFileName(Assembly.GetExecutingAssembly().Location); }
+		public static string		GetProgramInfo()		{ return $"{programName} {GetVersion()}{programVersionSuffix}"; }
+		public static MainWindow	GetMainWindow()			{ return (MainWindow)Current.MainWindow; }
+		public static string		GetVersion()			{ return Assembly.GetExecutingAssembly().GetVersion(3); }
+
+		public static void Restart()
+		{
+			RestartPending = true;
+			GetMainWindow().Close();
 		}
 
 		public static bool SafeClipboardSetText( string text )
@@ -41,50 +81,100 @@ namespace JuisCheck
 			}
 		}
 
-		// Event: Exit
+		// Event handler: Exit
 
 		private void Exit_Handler( object sender, ExitEventArgs evt )
 		{
-			RecentFiles.Save();
-			Settings.Default.Save();
+			if (!IsPortableMode) {
+				RecentFiles.Save();
+				Settings.Default.Save();
+			}
+
+			if (RestartPending) {
+				Process.Start(App.GetLocation());
+			}
 		}
 
-		// Event: Startup
+		// Event handler: Startup
 
 		private void Startup_Handler( object sender, StartupEventArgs evt )
 		{
-			Settings settings = Settings.Default;
+			Settings	settings         = Settings.Default;
+			string		assemblyName     = GetAssemblyName();
+			string		programDirectory = GetProgramDirectory();
+			string		programName      = GetProgramFileName();
 
+			// Portable mode
+
+			IsPortableMode = string.Compare(programName, portableProgramFileName, defaultFileNameComparison) == 0;
+
+			// Initialize settings
+
+			if (IsPortableMode) {
+				settings.Reset();
+				settings.AutoLoadFile = Path.Combine(programDirectory, defaultDataFileName);
+				settings.LastDocumentDirectory = programDirectory;
+				settings.LastDownloadDirectory = programDirectory;
+			} else
 			if (settings.SettingsUpgradeRequired) {
 				settings.Upgrade();
 				settings.SettingsUpgradeRequired = false;
 			}
+
+			// Additional languages (using resource dictionaries)
+
+			if (IsPortableMode) {
+				IsLanguageSelectionEnabled = false;
+			} else {
+				foreach (string language in AdditionalLanguages.ToList()) {
+					if (!File.Exists(Path.Combine(programDirectory, language, $"{assemblyName}.resources.dll"))) {
+						AdditionalLanguages.Remove(language);
+					}
+				}
+
+				if (AdditionalLanguages.Count == 0) {
+					settings.UserInterfaceLanguage = "auto";
+				}
+
+				IsLanguageSelectionEnabled = AdditionalLanguages.Count != 0;
+			}
+
+			// Set user interface language
+
+			CultureInfo cultureInfo;
+			try {
+				cultureInfo = new CultureInfo(settings.UserInterfaceLanguage);
+			}
+			catch (CultureNotFoundException) {
+				cultureInfo = CultureInfo.InstalledUICulture;
+			}
+			Thread.CurrentThread.CurrentUICulture = cultureInfo;
 		}
 
-		// Event: DispatcherUnhandledException
+		// Event handler: DispatcherUnhandledException
 
 		private void DispatcherUnhandledException_Handler( object sender, DispatcherUnhandledExceptionEventArgs evt )
         {
 			string exceptionText = string.Empty;
 
 			for (Exception exception = evt.Exception; exception != null; exception = exception.InnerException) {
-				exceptionText += string.Format("Type      = {0}\r\n", exception.GetType().Name);
-				exceptionText += string.Format("Message   = {0}\r\n", exception.Message);
+				exceptionText += $"Type      = {exception.GetType().Name}\r\n";
+				exceptionText += $"Message   = {exception.Message}\r\n";
 
 				if (exception is ExternalException externalException) {
-					exceptionText += string.Format("HResult   = 0x{0:X8}", externalException.ErrorCode);
+					exceptionText += $"HResult   = 0x{externalException.ErrorCode:X8}";
 				}
 
 				if (exception is XamlParseException xamlParseException) {
-					exceptionText += string.Format("XAML URI  = {0}\r\n", xamlParseException.BaseUri.ToString());
-					exceptionText += string.Format("XAML line = {0}\r\n", xamlParseException.LineNumber);
-					exceptionText += string.Format("XAML pos  = {0}\r\n", xamlParseException.LinePosition);
-					exceptionText += string.Format("XAML key  = {0}\r\n", xamlParseException.KeyContext);
-					exceptionText += string.Format("XAML name = {0}\r\n", xamlParseException.NameContext);
+					exceptionText += $"XAML URI  = {xamlParseException.BaseUri}\r\n";
+					exceptionText += $"XAML line = {xamlParseException.LineNumber}\r\n";
+					exceptionText += $"XAML pos  = {xamlParseException.LinePosition}\r\n";
+					exceptionText += $"XAML key  = {xamlParseException.KeyContext}\r\n";
+					exceptionText += $"XAML name = {xamlParseException.NameContext}\r\n";
 				}
 
-				exceptionText += string.Format("HasInner  = {0}\r\n", exception.InnerException != null);
-				exceptionText += string.Format("{0}\r\n\r\n", exception.StackTrace);
+				exceptionText += $"HasInner  = {exception.InnerException != null}\r\n";
+				exceptionText += $"{exception.StackTrace}\r\n\r\n";
 			}
 
 			string message;
@@ -94,14 +184,12 @@ namespace JuisCheck
 				message = JCstring.MessageTextUnhandledExceptionCopyFailure.Unescape();
 			}
 
-			MessageBoxEx.Show(
-				new MessageBoxExParams {
-					CaptionText = JCstring.MessageCaptionFatalError,
-					MessageText = string.Format(message, evt.Exception.GetType().Name),
-					Image       = MessageBoxExImage.Error,
-					Button      = MessageBoxExButton.OK
-				}
-			);
+			MessageBoxEx2.Show(new MessageBoxEx2Params {
+				CaptionText = JCstring.MessageCaptionFatalError,
+				MessageText = string.Format(CultureInfo.CurrentCulture, message, evt.Exception.GetType().Name),
+				Image       = MessageBoxEx2Image.Error,
+				ButtonText  = new string[] { JCstring.DialogButtonTextOk }
+			});
 
 			Environment.Exit(1);
 		}

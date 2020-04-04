@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:jccnv="clr-namespace:JuisCheck.Resources.Converters">
+
+    <jccnv:NullableDateTimeToStringConverter x:Key="cnvNullableDateTimeToString"/>
+    <jccnv:InverseBooleanConverter           x:Key="cnvInverseBoolean"          />
+    <jccnv:BoolToVisibilityConverter         x:Key="cnvBoolToVisibility"        />
+
+</ResourceDictionary>

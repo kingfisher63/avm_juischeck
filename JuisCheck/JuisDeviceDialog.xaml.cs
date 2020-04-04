@@ -1,6 +1,6 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
@@ -8,6 +8,8 @@ using Muon.DotNetExtensions;
 using Muon.Windows;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -21,29 +23,50 @@ namespace JuisCheck
 	/// </summary>
 	public sealed partial class JuisDeviceDialog : Window
 	{
-		private	Device	origDevice;
+		private	readonly JuisDevice	origDevice;
 
-		public	Device	DeviceData		{ get;         private set; } = new Device(DeviceKind.JUIS, NotifyPropertyChanged.Always);
-		public	int		SelectedIndex	{ private get; set;         } // Dummy for ComboBox SelectedIndex validation
+		public	JuisDevice			DeviceData			{ get; private set; }
+		public	int					SelectedIndex		{ get; set;         }	// Dummy for ComboBox SelectedIndex validation
 
-		public	List<ComboBoxValue>	AnnexValues     => Device.GetAnnexValues().AppendMissingValueAsUnknown(DeviceData.Annex);
-		public	List<ComboBoxValue>	BuildTypeValues => Device.GetFirmwareBuildTypeValues().AppendMissingValueAsUnknown(DeviceData.FirmwareBuildType);
-		public	List<ComboBoxValue>	CountryValues   => Device.GetCountryValues().AppendMissingValueAsUnknown(DeviceData.Country);
-		public	List<ComboBoxValue>	LanguageValues  => Device.GetLanguageValues().AppendMissingValueAsUnknown(DeviceData.Language);
-		public	List<ComboBoxValue>	OEMValues       => Device.GetOemValues().AppendMissingValueAsUnknown(DeviceData.OEM);
+		public	List<ComboBoxValue>	AnnexValues			{ get; private set; }
+		public	List<ComboBoxValue>	BuildTypeValues		{ get; private set; }
+		public	List<ComboBoxValue>	CountryValues		{ get; private set; }
+		public	List<ComboBoxValue>	LanguageValues		{ get; private set; }
+		public	List<ComboBoxValue> MeshMasterValues	{ get; private set; }
+		public	List<ComboBoxValue>	OEMValues			{ get; private set; }
 
-		public JuisDeviceDialog( Device device )
+		public JuisDeviceDialog( JuisDevice device )
 		{
-			origDevice = device;
-			origDevice.CopyTo(DeviceData);
+			origDevice = device ?? throw new ArgumentNullException(nameof(device));
+			DeviceData = new JuisDevice(device);
 
-			DataContext = this;
+			InitComboBoxValues(device);
 			InitializeComponent();
+			DataContext = this;
+		}
+
+		// Initialize the Mesh Master Values list
+
+		private void InitComboBoxValues( JuisDevice device )
+		{
+			AnnexValues     = JuisDevice.GetAnnexValues().AppendMissingAsUnknown(device.Annex);
+			BuildTypeValues = JuisDevice.GetFirmwareBuildTypeValues().AppendMissingAsUnknown(device.FirmwareBuildType);
+			CountryValues   = Device.GetCountryValues().AppendMissingAsUnknown(device.Country);
+			LanguageValues  = Device.GetLanguageValues().AppendMissingAsUnknown(device.Language);
+			OEMValues       = Device.GetOemValues().AppendMissingAsUnknown(device.OEM);
+
+			MeshMasterValues = new List<ComboBoxValue>();
+			foreach (JuisDevice masterDevice in App.GetMainWindow().Devices.Where(d => d is JuisDevice && d.ID != device.ID)) {
+				MeshMasterValues.Add(new ComboBoxValue(masterDevice.ID, masterDevice.DeviceName));
+			}
+			MeshMasterValues.Sort(new ComboBoxValueComparer(new NaturalStringComparer(App.defaultDisplayStringComparison)));
+			MeshMasterValues.Prepend(string.Empty, JCstring.ComboBoxValueNoMaster);
+			MeshMasterValues.AppendMissingAsUnknown(device.MeshMaster);
 		}
 
 		// Routed command: CmdOk
 
-		public static RoutedCommand CmdOK = new RoutedCommand();
+		public static readonly RoutedCommand CmdOK = new RoutedCommand();
 
 		private void CmdOK_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -52,13 +75,15 @@ namespace JuisCheck
 
 		private void CmdOK_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			DeviceData.CopyTo(origDevice, false, true);
+			DeviceData.TrimStrings();
+			origDevice.CopyFrom(DeviceData);
+
 			DialogResult = true;
 		}
 
 		// Routed command: CmdQuery
 
-		public static RoutedCommand CmdQuery = new RoutedCommand();
+		public static readonly RoutedCommand CmdQuery = new RoutedCommand();
 
 		private void CmdQuery_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -71,15 +96,13 @@ namespace JuisCheck
 				DeviceData.QueryDevice();
 			}
 			catch (Exception ex) {
-				MessageBoxEx.Show(
-					new MessageBoxExParams {
-						CaptionText = JCstring.MessageCaptionError,
-						MessageText = string.Format(JCstring.MessageTextDeviceQueryFailed.Unescape(), ex.Message),
-						Image       = MessageBoxExImage.Error,
-						Button      = MessageBoxExButton.OK,
-						Owner       = this
-					}
-				);
+				MessageBoxEx2.Show(new MessageBoxEx2Params {
+					CaptionText = JCstring.MessageCaptionError,
+					MessageText = string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDeviceQueryFailed.Unescape(), ex.Message),
+					Image       = MessageBoxEx2Image.Error,
+					ButtonText  = new string[] { JCstring.DialogButtonTextOk },
+					Owner       = this
+				});
 			}
 		}
 

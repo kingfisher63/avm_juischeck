@@ -1,6 +1,6 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
@@ -20,7 +20,7 @@ namespace JuisCheck
 		{
 			LoadFileNames();
 
-			int index = fileNames.FindIndex(rf => string.Compare(rf, fileName, true) == 0);
+			int index = fileNames.FindIndex(rf => string.Compare(rf, fileName, App.defaultFileNameComparison) == 0);
 			if (index >= 0) {
 				fileNames.RemoveAt(index);
 			}
@@ -52,7 +52,7 @@ namespace JuisCheck
         {
             LoadFileNames();
 
-            int index = fileNames.FindIndex(rf => string.Compare(rf, fileName, true) == 0);
+            int index = fileNames.FindIndex(rf => string.Compare(rf, fileName, App.defaultFileNameComparison) == 0);
 			if (index >= 0)	{
 				fileNames.RemoveAt(index);
 			}

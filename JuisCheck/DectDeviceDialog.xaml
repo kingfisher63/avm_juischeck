@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:jc="clr-namespace:JuisCheck"
-        xmlns:lang="clr-namespace:JuisCheck.Lang"
-        xmlns:rules="clr-namespace:JuisCheck.Rules"
+        xmlns:jclang="clr-namespace:JuisCheck.Lang"
+        xmlns:jcvld="clr-namespace:JuisCheck.Resources.ValidationRules"
         FocusManager.FocusedElement="{Binding ElementName=tbDeviceName}"
         ResizeMode="NoResize"
         SizeToContent="WidthAndHeight"
         SnapsToDevicePixels="True"
-        Title="{x:Static lang:JCstring.DialogCaptionDeviceProperties}">
+        Title="{x:Static jclang:JCstring.DialogCaptionDeviceProperties}">
 
     <Window.CommandBindings>
         <CommandBinding Command="jc:DectDeviceDialog.CmdOK" CanExecute="CmdOK_CanExecute" Executed="CmdOK_Executed"/>
@@ -20,11 +20,11 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/BaseStyles.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/BaseStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <Style TargetType="{x:Type Border}" x:Key="FieldsGridBorderStyle">
-                <Setter Property="BorderBrush"     Value="Black"  />
+            <Style TargetType="{x:Type Border}" x:Key="InnerGridBorderStyle">
+                <Setter Property="BorderBrush"     Value="{StaticResource DialogInnerGridBorderBrush}"/>
                 <Setter Property="BorderThickness" Value="0,0,0,1"/>
                 <Setter Property="Padding"         Value="5"      />
             </Style>
@@ -34,9 +34,8 @@
             </Style>
 
             <Style TargetType="{x:Type jc:ComboBoxEx}" BasedOn="{StaticResource ComboBoxExBaseStyle}" x:Key="ComboBoxExStyle">
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="Margin"              Value="3"   />
-                <Setter Property="Width"               Value="210" />
+                <Setter Property="Margin" Value="3"  />
+                <Setter Property="Width"  Value="250"/>
             </Style>
 
             <Style TargetType="{x:Type Grid}" BasedOn="{StaticResource DialogGridBaseStyle}" x:Key="DialogGridStyle"/>
@@ -49,10 +48,6 @@
                 <EventSetter Event="GotFocus"  Handler="TextBox_GotFocus_Handler"/>
                 <Setter      Property="Margin" Value="3"                         />
             </Style>
-            
-            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBoxStyle}" x:Key="LeftTextBoxStyle">
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-            </Style>
 
             <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBoxStyle}" x:Key="StretchedTextBoxStyle">
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -62,24 +57,24 @@
 
     <Grid Grid.IsSharedSizeScope="True" Style="{StaticResource DialogGridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Style="{StaticResource FieldsGridBorderStyle}">
+        <Border Grid.Row="0" Style="{StaticResource InnerGridBorderStyle}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn"/>
                     <ColumnDefinition Width="400"                               />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelDeviceName}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelDeviceName}" Style="{StaticResource LabelTextBlockStyle}"/>
                 <TextBox   Grid.Row="0" Grid.Column="1" MaxLength="40" Style="{StaticResource StretchedTextBoxStyle}" x:Name="tbDeviceName">
                     <TextBox.Text>
                         <Binding Path="DeviceData.DeviceName" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <rules:StringNotNullOrWhiteSpaceRule ValidatesOnTargetUpdated="True"/>
+                                <jcvld:StringNotNullOrWhiteSpaceRule ValidatesOnTargetUpdated="True"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
@@ -87,9 +82,10 @@
             </Grid>
         </Border>
 
-        <Border Grid.Row="1" Style="{StaticResource FieldsGridBorderStyle}">
+        <Border Grid.Row="1" Style="{StaticResource InnerGridBorderStyle}">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -103,66 +99,66 @@
                     <ColumnDefinition Width="400"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelProductName}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelProductName}" Style="{StaticResource LabelTextBlockStyle}"/>
                 <TextBox   Grid.Row="0" Grid.Column="1" MaxLength="30" Style="{StaticResource StretchedTextBoxStyle}">
                     <TextBox.Text>
                         <Binding Path="DeviceData.ProductName" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <rules:StringNotNullOrWhiteSpaceRule ValidatesOnTargetUpdated="True"/>
+                                <jcvld:StringNotNullOrWhiteSpaceRule ValidatesOnTargetUpdated="True"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
 
-                <TextBlock  Grid.Row="1" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelHardwareType}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <TextBlock  Grid.Row="1" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelHardwareType}" Style="{StaticResource LabelTextBlockStyle}"/>
                 <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
 
-                    <TextBox MaxLength="2" Width="24" Style="{StaticResource LeftTextBoxStyle}">
+                    <TextBox MaxLength="2" Width="26" Style="{StaticResource TextBoxStyle}">
                         <TextBox.Text>
                             <Binding Path="DeviceData.HardwareMajor" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <rules:Int32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
+                                    <jcvld:StringInt32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
 
-                    <TextBox MaxLength="2" Width="24" Style="{StaticResource LeftTextBoxStyle}">
+                    <TextBox MaxLength="2" Width="26" Style="{StaticResource TextBoxStyle}">
                         <TextBox.Text>
                             <Binding Path="DeviceData.HardwareMinor" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <rules:Int32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
+                                    <jcvld:StringInt32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
                 </StackPanel>
 
-                <TextBlock  Grid.Row="2" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelFirmwareVersion}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <TextBlock  Grid.Row="2" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelFirmwareVersion}" Style="{StaticResource LabelTextBlockStyle}"/>
                 <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
 
-                    <TextBox MaxLength="2" Width="24" Style="{StaticResource LeftTextBoxStyle}">
+                    <TextBox MaxLength="2" Width="26" Style="{StaticResource TextBoxStyle}">
                         <TextBox.Text>
                             <Binding Path="DeviceData.FirmwareMajor" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <rules:Int32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
+                                    <jcvld:StringInt32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
 
-                    <TextBox MaxLength="2" Width="24" Style="{StaticResource LeftTextBoxStyle}">
+                    <TextBox MaxLength="2" Width="26" Style="{StaticResource TextBoxStyle}">
                         <TextBox.Text>
                             <Binding Path="DeviceData.FirmwareMinor" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <rules:Int32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
+                                    <jcvld:StringInt32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
                 </StackPanel>
 
-                <TextBlock      Grid.Row="3" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelOEM}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <TextBlock     Grid.Row="3" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelOEM}" Style="{StaticResource LabelTextBlockStyle}"/>
                 <jc:ComboBoxEx Grid.Row="3" Grid.Column="1" Style="{StaticResource ComboBoxExStyle}"
                           ItemsSource="{Binding Path=OEMValues, Mode=OneTime}"
                           SelectedValue="{Binding Path=DeviceData.OEM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -171,13 +167,13 @@
                     <jc:ComboBoxEx.SelectedIndex>
                         <Binding Path="SelectedIndex" Mode="OneWayToSource">
                             <Binding.ValidationRules>
-                                <rules:ComboBoxValueSelectedRule ValidatesOnTargetUpdated="True"/>
+                                <jcvld:ComboBoxValueSelectedRule ValidatesOnTargetUpdated="True"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </jc:ComboBoxEx.SelectedIndex>
                 </jc:ComboBoxEx>
 
-                <TextBlock      Grid.Row="4" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelCountry}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <TextBlock     Grid.Row="4" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelCountry}" Style="{StaticResource LabelTextBlockStyle}"/>
                 <jc:ComboBoxEx Grid.Row="4" Grid.Column="1" Style="{StaticResource ComboBoxExStyle}"
                           ItemsSource="{Binding Path=CountryValues, Mode=OneTime}"
                           SelectedValue="{Binding Path=DeviceData.Country, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -186,13 +182,13 @@
                     <jc:ComboBoxEx.SelectedIndex>
                         <Binding Path="SelectedIndex" Mode="OneWayToSource">
                             <Binding.ValidationRules>
-                                <rules:ComboBoxValueSelectedRule ValidatesOnTargetUpdated="True"/>
+                                <jcvld:ComboBoxValueSelectedRule ValidatesOnTargetUpdated="True"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </jc:ComboBoxEx.SelectedIndex>
                 </jc:ComboBoxEx>
 
-                <TextBlock      Grid.Row="5" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelLanguage}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <TextBlock     Grid.Row="5" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelLanguage}" Style="{StaticResource LabelTextBlockStyle}"/>
                 <jc:ComboBoxEx Grid.Row="5" Grid.Column="1" Style="{StaticResource ComboBoxExStyle}"
                           ItemsSource="{Binding Path=LanguageValues, Mode=OneTime}"
                           SelectedValue="{Binding Path=DeviceData.Language, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -201,22 +197,26 @@
                     <jc:ComboBoxEx.SelectedIndex>
                         <Binding Path="SelectedIndex" Mode="OneWayToSource">
                             <Binding.ValidationRules>
-                                <rules:ComboBoxValueSelectedRule ValidatesOnTargetUpdated="True"/>
+                                <jcvld:ComboBoxValueSelectedRule ValidatesOnTargetUpdated="True"/>
                             </Binding.ValidationRules>
                         </Binding>
                     </jc:ComboBoxEx.SelectedIndex>
                 </jc:ComboBoxEx>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static lang:JCstring.DeviceFieldLabelBaseFritzOS}" Style="{StaticResource LabelTextBlockStyle}"/>
-                <TextBox   Grid.Row="6" Grid.Column="1" MaxLength="10" Width="80" Style="{StaticResource LeftTextBoxStyle}">
-                    <TextBox.Text>
-                        <Binding Path="DeviceData.BaseFritzOS" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                <TextBlock     Grid.Row="6" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelDectBase}" Style="{StaticResource LabelTextBlockStyle}"/>
+                <jc:ComboBoxEx Grid.Row="6" Grid.Column="1" Style="{StaticResource ComboBoxExStyle}"
+                          ItemsSource="{Binding Path=DectBaseValues, Mode=OneTime}"
+                          SelectedValue="{Binding Path=DeviceData.DectBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          DisplayMemberPath="DisplayString"
+                          SelectedValuePath="Value">
+                    <jc:ComboBoxEx.SelectedIndex>
+                        <Binding Path="SelectedIndex" Mode="OneWayToSource">
                             <Binding.ValidationRules>
-                                <rules:FritzOSversionRule ValidatesOnTargetUpdated="True"/>
+                                <jcvld:ComboBoxValueSelectedRule ValidatesOnTargetUpdated="True"/>
                             </Binding.ValidationRules>
                         </Binding>
-                    </TextBox.Text>
-                </TextBox>
+                    </jc:ComboBoxEx.SelectedIndex>
+                </jc:ComboBoxEx>
             </Grid>
         </Border>
 
@@ -225,8 +225,8 @@
                 <ColumnDefinition Width="Auto" SharedSizeGroup="Buttons"/>
                 <ColumnDefinition Width="Auto" SharedSizeGroup="Buttons"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Command="jc:DectDeviceDialog.CmdOK" Content="{x:Static lang:JCstring.DialogButtonTextOk}"     Style="{StaticResource ButtonStyle}" IsDefault="True"/>
-            <Button Grid.Column="1"                                     Content="{x:Static lang:JCstring.DialogButtonTextCancel}" Style="{StaticResource ButtonStyle}" IsCancel="True" />
+            <Button Grid.Column="0" Command="jc:DectDeviceDialog.CmdOK" Content="{x:Static jclang:JCstring.DialogButtonTextOk}"     Style="{StaticResource ButtonStyle}" IsDefault="True"/>
+            <Button Grid.Column="1"                                     Content="{x:Static jclang:JCstring.DialogButtonTextCancel}" Style="{StaticResource ButtonStyle}" IsCancel="True" />
         </Grid>
     </Grid>
 </Window>

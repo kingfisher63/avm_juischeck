@@ -1,6 +1,6 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
@@ -30,15 +30,13 @@ namespace JuisCheck
 			base.OnDropDownOpened(evt);
 
 			if (MaxDropDownItems > 0) {
-				Dispatcher.BeginInvoke(DispatcherPriority.Normal,
-					new Action(() => {
-						if (ItemContainerGenerator.ContainerFromIndex(0) is UIElement container) {
-							if (container.RenderSize.Height > 0) {
-								MaxDropDownHeight = container.RenderSize.Height * MaxDropDownItems + 2;
-							}
+				Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() => {
+					if (ItemContainerGenerator.ContainerFromIndex(0) is UIElement container) {
+						if (container.RenderSize.Height > 0) {
+							MaxDropDownHeight = container.RenderSize.Height * MaxDropDownItems + 2;
 						}
-					})
-				);
+					}
+				}));
 			}
 		}
 	}

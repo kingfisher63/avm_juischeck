@@ -4,13 +4,14 @@
              Exit="Exit_Handler"
              Startup="Startup_Handler"
              StartupUri="MainWindow.xaml" DispatcherUnhandledException="DispatcherUnhandledException_Handler">
-    
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Themes/Light.Steel.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
-    
+
 </Application>

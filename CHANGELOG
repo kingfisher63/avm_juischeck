@@ -1,4 +1,45 @@
-﻿v1.4.2 (2019/06/23)
+﻿v2.0.0 (2020/04/04)
+-------------------
+
+Note: JuisCheck v2 is a major release that comes with some breaking changes.
+      Please consult the README.md file for details about upgrading from
+      JuisCheck v1.x.
+
+Change: Requires .NET Framework 4.5 or later (Windows Vista or later).
+Change: New collection XML file format (incompatible with JuisCheck 1.x).
+Change: Column visibility is saved in the collection XML file.
+Change: Use built-in engine to download firmware images instead of launching
+        the default web browser as web browsers are dropping FTP support.
+Change: No firmware major version warning if Hardware == FirmwareMajor for
+        Hardware >= 252 (FRITZ!Box 6660 Cable). This limit is an educated
+        guess and may change in the future.
+
+New: Select device as Mesh master for non-DECT devices.
+New: Select device as DECT base for DECT devices.
+New: Column for Mesh master / DECT base (replaces Base Fritz!OS column).
+New: Select default columns for new collections (in backstage settings).
+New: Select user interface language (default: automatic).
+New: Italian localization (thanks bovirus).
+New: Support for build type 1006 (TEST beta).
+New: Support for devices like DECT 500 which have a different firmware
+     file name format (5 version parts instead of 4).
+New: Portable mode.
+New: Menu item icons in backstage.
+New: Exit the program with Ctrl-X.
+
+Fix: Device information tooltip is not updated after data change.
+Fix: Device infomration tooltip date/time format is inconsistent with
+     table date/time format.
+Fix: FileNotFoundException is thrown at startup when trying to autoload
+     a file that does not exist (eg. because it has been renamed or
+     deleted).
+Fix: Firmware version string is not updated after build type change under
+     certain circumstances.
+Fix: Some version formats in the update info cannot not be parsed. JuisCheck
+     can now handle a wide variety of formats.
+Fix: Flags text box height is too small on Windows 10.
+
+v1.4.2 (2019/06/23)
 -------------------
 New: Support for build type 1007 (PLUS beta).
 Fix: Update version 149.07.08-67660Labor for FRITZ!Box 7560 could not be

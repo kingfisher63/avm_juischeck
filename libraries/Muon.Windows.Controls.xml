@@ -15,7 +15,7 @@
             context menu to which an object belongs. The object must be in the logical tree of a
             <see cref="T:System.Windows.Controls.ContextMenu"/> element.
             </summary>
-            <param name="obj">The object for which to find the placement target element.</param>
+            <param name="o">The object for which to find the placement target element.</param>
             <returns>
             The <see cref="T:System.Windows.UIElement"/> to which the context menu belongs or <b>null</b> if the
             placement target could not be found.

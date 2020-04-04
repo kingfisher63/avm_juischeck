@@ -4,6 +4,205 @@
         <name>Muon.Windows</name>
     </assembly>
     <members>
+        <member name="T:Muon.Windows.MessageBoxEx2">
+            <summary>
+            Diplays a message box. The message text is left aligned and left-to-right. This class is intended for WPF applications.
+            </summary>
+            <summary>
+            MessageBoxEx2
+            </summary>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.Show(Muon.Windows.MessageBoxEx2Params)">
+            <summary>
+            Displays a dialog box with a message.
+            </summary>
+            <param name="msgParams">The message box parameters.</param>
+            <returns>
+            The index of the button clicked by the user. If the user closes the message box without clicking a button, this method returns -1.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            The <see cref="P:Muon.Windows.MessageBoxEx2Params.MessageText"/> parameter is <b>null</b>.
+            </exception>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.Show(Muon.Windows.MessageBoxEx2Params,System.Boolean@)">
+            <summary>
+            Displays a dialog box with a message. The dialog box also has a checkbox for an additional result.
+            </summary>
+            <param name="msgParams">The message box parameters.</param>
+            <param name="cbValue">Upon return <b>true</b> if the checkbox was checked when the message dialog was closed, <b>false</b> otherwise.</param>
+            <returns>
+            The index of the button clicked by the user. If the user closes the message box without clicking a button, this method returns -1.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            The <see cref="P:Muon.Windows.MessageBoxEx2Params.MessageText"/> parameter is <b>null</b> or the <see cref="P:Muon.Windows.MessageBoxEx2Params.CheckboxText"/> parameter is <b>null</b>.
+            </exception>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.Show(Muon.Windows.MessageBoxEx2Params,System.Boolean,System.Boolean@)">
+            <summary>
+            Displays a dialog box with a message. The dialog box also optionally has a checkbox for an additional result.
+            </summary>
+            <param name="msgParams">The messagebox parameters</param>
+            <param name="cbShow">If <b>true</b> the checkbox is shown.</param>
+            <param name="cbValue">Upon return <b>true</b> if the checkbox was checked when the message dialog was closed, <b>false</b> otherwise.</param>
+            <returns>
+            The index of the button clicked by the user. If the user closes the message box without clicking a button, this method returns -1.
+            </returns>
+        </member>
+        <member name="F:Muon.Windows.MessageBoxEx2.result">
+            <summary>
+            The messagebox result. This value is set to its default when the message dialog
+            is created and updated when the user clicks a button.
+            </summary>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Muon.Windows.MessageBoxEx2"/> class. This function
+            is for internal use only: application programs must call the static methods.
+            </summary>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.AddButton(System.String,System.Int32)">
+            <summary>
+            Adds a button to the message dialog.
+            </summary>
+            <param name="text">The button text.</param>
+            <param name="result">The messagebox result for the button.</param>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.SetButtons(System.String[])">
+            <summary>
+            Initializes the buttons of the message dialog.
+            </summary>
+            <param name="buttonText">An array with the button text for each button.</param>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.SetCheckbox(System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Initializes the checkbox and the checkbox text of the message dialog.
+            </summary>
+            <param name="cbShow">If <b>true</b> the checkbox and the checkbox text are shown.</param>
+            <param name="cbText">The checkbox text.</param>
+            <param name="cbValue">The checkbox value.</param>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.SetImage(Muon.Windows.MessageBoxEx2Image)">
+            <summary>
+            Initializes the optional image of the message dialog (from the <see cref="T:System.Drawing.SystemIcons"/> collection).
+            </summary>
+            <param name="image">The icon identifier.</param>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.SetMessage(System.String)">
+            <summary>
+            Set the message text of the message dialog. The message text can contain of
+            multiple lines separated by newlines.
+            </summary>
+            <param name="text">The message text.</param>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.Button_Click_Handler(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the event that is raised when the user clicks a button.
+            </summary>
+            <param name="sender">The object from which the event originated.</param>
+            <param name="evt">The event data.</param>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.KeyUp_Handler(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Handles the event that is raised when the user presses a key.
+            </summary>
+            <param name="sender">The object from which the event originated.</param>
+            <param name="evt">The event data.</param>
+        </member>
+        <member name="M:Muon.Windows.MessageBoxEx2.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Muon.Windows.MessageBoxEx2Image">
+            <summary>
+            Specifies the icon that is displayed by a message dialog.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.MessageBoxEx2Image.None">
+            <summary>
+            The message dialog does not contain an icon.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.MessageBoxEx2Image.Question">
+            <summary>
+            The message dialog contains a symbol consisting of a question mark in a circle.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.MessageBoxEx2Image.Information">
+            <summary>
+            The message dialog contains a symbol consisting of a lowercase letter i in a circle.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.MessageBoxEx2Image.Warning">
+            <summary>
+            The message dialog contains a symbol consisting of an exclamation point in a triangle with a yellow background.
+            </summary>
+        </member>
+        <member name="F:Muon.Windows.MessageBoxEx2Image.Error">
+            <summary>
+            The message dialog contains a symbol consisting of white X in a circle with a red background.
+            </summary>
+        </member>
+        <member name="T:Muon.Windows.MessageBoxEx2Params">
+            <summary>
+            The parameters that define the message dialog.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.ButtonText">
+            <summary>
+            Gets or sets the text of the button(s). The default is a single <em>OK</em> button.
+            This property should not be indexed as an array.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.CaptionText">
+            <summary>
+            Gets or sets the text that is displayed in the message window title bar. The default value is <b>null</b> (no caption).
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.CheckboxText">
+            <summary>
+            Gets or sets the text that is displayed with the checkbox in the message dialog. The text may consist of
+            multiple lines separated by newlines. The default value is <b>null</b>.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.CheckboxValue">
+            <summary>
+            Get or sets a value that specifies if the checkbox is checked when the message dialog is shown. If <b>true</b>
+            the checkbox is checked. The default value is <b>false</b>.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.DefaultButton">
+            <summary>
+            Gets or sets the index of the default button (the button that is treated as clicked when the user presses Enter). The default value is -1 (no default button).
+            </summary>
+            <remarks>
+            This value is currently no supported (reserved for future use).
+            </remarks>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.Image">
+            <summary>
+            Get or sets a value that specifies the icon to display in the message dialog. De default value is <see cref="F:Muon.Windows.MessageBoxEx2Image.None"/>.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.MessageText">
+            <summary>
+            Gets or sets the message text. The text may consist of multiple lines separated by newlines. The default
+            value is <b>null</b>.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.Owner">
+            <summary>
+            Gets or sets the owning window. If this value is set, the message dialog is centered on the owner window.
+            If this value is <b>null</b>, the message dialog is centered on the desktop. You can only set this value
+            if the owning window has been shown at least once.  The default value is <b>null</b>.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MessageBoxEx2Params.Sound">
+            <summary>
+            Get or sets the sound to play when the message dialog is shown. The sound must be an item from the
+            <see cref="T:System.Media.SystemSounds"/> collection. The default value is <b>null</b>.
+            </summary>
+        </member>
         <member name="T:Muon.Windows.MessageBoxExButton">
             <summary>
             Specifies the buttons that are displayed on a message dialog. Used in the <see cref="P:Muon.Windows.MessageBoxExParams.Button"/> parameter.
@@ -61,7 +260,7 @@
         </member>
         <member name="T:Muon.Windows.MessageBoxExParams">
             <summary>
-            The parameters the define the message dialog.
+            The parameters that define the message dialog.
             </summary>
         </member>
         <member name="P:Muon.Windows.MessageBoxExParams.Button">
@@ -169,9 +368,56 @@
             (Input only) The default result value of the message dialog is determined by the <see cref="P:Muon.Windows.MessageBoxExParams.Button"/> parameter.
             </summary>
         </member>
+        <member name="T:Muon.Windows.MWstrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.ButtonTextCancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.ButtonTextNo">
+            <summary>
+              Looks up a localized string similar to No.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.ButtonTextOK">
+            <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.ButtonTextYes">
+            <summary>
+              Looks up a localized string similar to Yes.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.MessageParameterEmpty">
+            <summary>
+              Looks up a localized string similar to Message parameter must not be empty.
+            </summary>
+        </member>
+        <member name="P:Muon.Windows.MWstrings.MessageParameterNull">
+            <summary>
+              Looks up a localized string similar to Message parameter must not be null.
+            </summary>
+        </member>
         <member name="T:Muon.Windows.MessageBoxEx">
             <summary>
             Diplays a message box. The message text is left aligned and left-to-right. This class is intended for WPF applications.
+            This class is deprecated. New applications should use <see cref="T:Muon.Windows.MessageBoxEx2"/>.
             </summary>
             <summary>
             MessageBoxEx
@@ -228,24 +474,24 @@
         </member>
         <member name="M:Muon.Windows.MessageBoxEx.AddButton(System.String,Muon.Windows.MessageBoxExResult)">
             <summary>
-            Adds a single button to the message dialog.
+            Adds a button to the message dialog.
             </summary>
             <param name="text">The button text.</param>
             <param name="result">The messagebox result for the button.</param>
         </member>
-        <member name="M:Muon.Windows.MessageBoxEx.SetButton(Muon.Windows.MessageBoxExButton)">
+        <member name="M:Muon.Windows.MessageBoxEx.SetButtons(Muon.Windows.MessageBoxExButton)">
             <summary>
-            Initializes the button(s) of the message dialog.
+            Initializes the buttons of the message dialog.
             </summary>
-            <param name="button">The desired button set.</param>
+            <param name="buttons">The desired button set.</param>
         </member>
         <member name="M:Muon.Windows.MessageBoxEx.SetCheckbox(System.Boolean,System.String,System.Boolean)">
             <summary>
             Initializes the checkbox and the checkbox text of the message dialog.
             </summary>
             <param name="cbShow">If <b>true</b> the checkbox and the checkbox text are shown.</param>
-            <param name="cbText"></param>
-            <param name="cbValue"></param>
+            <param name="cbText">The checkbox text.</param>
+            <param name="cbValue">The checkbox value.</param>
         </member>
         <member name="M:Muon.Windows.MessageBoxEx.SetImage(Muon.Windows.MessageBoxExImage)">
             <summary>
