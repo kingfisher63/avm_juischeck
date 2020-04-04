@@ -25,6 +25,7 @@ FRITZ!DECT, FRITZ!Powerline and FRITZ!WLAN).
   with JuisCheck v1.x). If you want to retain files in the old v1 format, make sure
   to backup your data first. After loading a v1 file, the data is automatically
   marked as modified so that you will be prompted to save it.
+<<<<<<< HEAD
 
 + After loading a JuisCheck v1 file, DECT devices will have no DECT base selected:
   you must edit each DECT device and select a DECT base before you can search for
@@ -44,6 +45,27 @@ FRITZ!DECT, FRITZ!Powerline and FRITZ!WLAN).
 
 ## File tab (backstage)
 
+=======
+
++ After loading a JuisCheck v1 file, DECT devices will have no DECT base selected:
+  you must edit each DECT device and select a DECT base before you can search for
+  updates (see *Device dialogs* below).
+
+
+# Program usage
+
+## The basics
+
+1. Start the program.
+2. Add your devices.
+3. Select one or more devices.
+4. Click *Find updates* to seach for firmware updates.
+5. If an update is found, select one device and click *Download firmware* to get
+   the firmware file.
+
+## File tab (backstage)
+
+>>>>>>> 40d2bc6790ffee00a5a34b81b426510fe9ef19a2
 ### Backstage menu
 
 + *Save* (Ctrl+S). Save the device collection to the file from which it was loaded.
@@ -159,6 +181,7 @@ The primary user interface language is English. If addtional languages are insta
 interface language in the settings panel. The default is automatic language selection.
 
 Currently only an Italian localization is available (by *bovirus*).
+<<<<<<< HEAD
 
 ## Portable mode
 
@@ -180,6 +203,26 @@ in any per language subfolder! Portable mode has the following effects:
 
 + A collection file *default.xml* will be loaded at startup if present in the program
   directory.
+=======
+
+## Portable mode
+
+You can use JuisCheck in *portable mode* (e.g. to run it from a thumb drive) by renaming
+the program to *JuisCheckPortable.exe*. Do not rename the *JuisCheck.resource.dll* files
+in any per language subfolder! Portable mode has the following effects:
+
++ Settings are not saved when JuisCheck exits (leave no traces behind). All settings are
+  default at every program start. As a result the last document directory, the last
+  download directory and recent files will not be remembered across program sessions
+  (but are remembered as long as the program is running).
+
++ Settings that have only effect after a program restart are disabled.
+
++ The user interface language is always selected automatically.
+
++ The default document directory and the default download directory will be the program
+  directory instead of the Documents directory of the user.
+>>>>>>> 40d2bc6790ffee00a5a34b81b426510fe9ef19a2
 
 
 # Device collection files
