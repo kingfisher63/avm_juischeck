@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="BackstageButtonBackgroundBrush"             Color="White"    />
+    <SolidColorBrush x:Key="BackstageButtonBorderBrush"                 Color="Black"    />
+    <SolidColorBrush x:Key="BackstageInnerBorderBrush"                  Color="LightGray"/>
+    <SolidColorBrush x:Key="BackstageOuterBorderBrush"                  Color="LightGray"/>
+    <SolidColorBrush x:Key="ControlDisabledBorderBrush"                 Color="Gray"     />
+    <SolidColorBrush x:Key="ControlDisabledForegroundBrush"             Color="Gray"     />
+    <SolidColorBrush x:Key="DataGridBackgroundBrush"                    Color="White"    />
+    <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundBrushDefault" Color="#FFB0B0B0"/>
+    <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundBrushSorted"  Color="#FFA0A0A0"/>
+    <SolidColorBrush x:Key="DataGridColumnHeaderBorderBrush"            Color="#FF808080"/>
+    <SolidColorBrush x:Key="DataGridRowBackgroundBrush"                 Color="#FFF8F8F8"/>
+    <SolidColorBrush x:Key="DataGridRowBackgroundBrushAlternate"        Color="#FFE0E0E0"/>
+    <SolidColorBrush x:Key="DialogBackgroundBrush"                      Color="#FFE8E8E8"/>
+    <SolidColorBrush x:Key="DialogInnerGridBorderBrush"                 Color="Black"    />
+    <SolidColorBrush x:Key="ProgressBarBackgroundBrush"                 Color="White"    />
+    <SolidColorBrush x:Key="ToolTipBackgroundBrush"                     Color="Beige"    />
+
+</ResourceDictionary>

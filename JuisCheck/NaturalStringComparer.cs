@@ -1,6 +1,6 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
@@ -105,7 +105,7 @@ namespace JuisCheck
 		private readonly StringParser		mParser2;
 		private readonly StringComparison	mStringComparison;
 
-		public NaturalStringComparer( StringComparison stringComparison = StringComparison.CurrentCulture )
+		public NaturalStringComparer( StringComparison stringComparison )
 		{
 			mParser1          = new StringParser();
 			mParser2          = new StringParser();
@@ -119,7 +119,7 @@ namespace JuisCheck
 			mParser1.Init(str1);
 			mParser2.Init(str2);
 
-			do { 
+			do {
 				mParser1.NextToken();
 				mParser2.NextToken();
 
@@ -136,7 +136,7 @@ namespace JuisCheck
 				}
 			}
 			while (mParser1.TokenType != TokenType.End || mParser2.TokenType != TokenType.End);
-			
+
 			return 0;
 		}
 	}

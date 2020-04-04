@@ -4,39 +4,6 @@
         <name>Muon.DotNetExtensions</name>
     </assembly>
     <members>
-        <member name="T:Muon.DotNetExtensions.System_String_Ext">
-            <summary>
-            Defines extensions to the <see cref="T:System.String"/> class.
-            </summary>
-        </member>
-        <member name="M:Muon.DotNetExtensions.System_String_Ext.Unescape(System.String)">
-            <summary>
-            Returns the unescaped version of a string. See <see cref="M:System.Text.RegularExpressions.Regex.Unescape(System.String)"/> for the supported escape sequences.
-            </summary>
-            <param name="str">The original string.</param>
-            <returns>The unescaped string.</returns>
-        </member>
-        <member name="M:Muon.DotNetExtensions.System_String_Ext.Truncate(System.String,System.Int32)">
-            <summary>
-            Returns a new string that contains at most the specified number of
-            characters of the current instance.
-            </summary>
-            <param name="str">The original string.</param>
-            <param name="length">The maximum number of characters to return.</param>
-            <returns>The new string.</returns>
-        </member>
-        <member name="T:Muon.DotNetExtensions.System_Windows_DependencyObject_Ext">
-            <summary>
-            Defines extensions to the <see cref="T:System.Windows.DependencyObject"/> class.
-            </summary>
-        </member>
-        <member name="M:Muon.DotNetExtensions.System_Windows_DependencyObject_Ext.GetTreeHasError(System.Windows.DependencyObject)">
-            <summary>
-            Determines if any DependenctObject node in a DependencyObject tree has an error.
-            </summary>
-            <param name="node">The root node of the DependencyObject tree.</param>
-            <returns><b>True</b> if the DependencyObject tree has an error.</returns>
-        </member>
         <member name="T:Muon.DotNetExtensions.System_Reflection_Assembly_Ext">
             <summary>
             Defines extensions to the <see cref="T:System.Reflection.Assembly"/> class.
@@ -49,6 +16,13 @@
             <param name="assembly">The assembly.</param>
             <returns>The Company attribute.</returns>
             <exception cref="T:System.ArgumentNullException"><em>assembly</em> is <b>null</b>.</exception>
+        </member>
+        <member name="M:Muon.DotNetExtensions.System_Reflection_Assembly_Ext.GetCopyright(System.Reflection.Assembly)">
+            <summary>
+            Gets the <em>Copyright</em> attribute of an assembly.
+            </summary>
+            <param name="assembly">The assembly.</param>
+            <returns>The Copyright attribute.</returns>
         </member>
         <member name="M:Muon.DotNetExtensions.System_Reflection_Assembly_Ext.GetDescription(System.Reflection.Assembly)">
             <summary>
@@ -82,6 +56,39 @@
             <param name="parts">The number of version parts to get (1-4). The default is 4.</param>
             <returns>The Version attribute.</returns>
             <exception cref="T:System.ArgumentNullException"><em>assembly</em> is <b>null</b>.</exception>
+        </member>
+        <member name="T:Muon.DotNetExtensions.System_String_Ext">
+            <summary>
+            Defines extensions to the <see cref="T:System.String"/> class.
+            </summary>
+        </member>
+        <member name="M:Muon.DotNetExtensions.System_String_Ext.Unescape(System.String)">
+            <summary>
+            Returns the unescaped version of a string. See <see cref="M:System.Text.RegularExpressions.Regex.Unescape(System.String)"/> for the supported escape sequences.
+            </summary>
+            <param name="str">The original string.</param>
+            <returns>The unescaped string.</returns>
+        </member>
+        <member name="M:Muon.DotNetExtensions.System_String_Ext.Truncate(System.String,System.Int32)">
+            <summary>
+            Returns a new string that contains at most the specified number of
+            characters of the current instance.
+            </summary>
+            <param name="str">The original string.</param>
+            <param name="length">The maximum number of characters to return.</param>
+            <returns>The new string.</returns>
+        </member>
+        <member name="T:Muon.DotNetExtensions.System_Windows_DependencyObject_Ext">
+            <summary>
+            Defines extensions to the <see cref="T:System.Windows.DependencyObject"/> class.
+            </summary>
+        </member>
+        <member name="M:Muon.DotNetExtensions.System_Windows_DependencyObject_Ext.GetTreeHasError(System.Windows.DependencyObject)">
+            <summary>
+            Determines if any DependenctObject node in a DependencyObject tree has an error.
+            </summary>
+            <param name="node">The root node of the DependencyObject tree.</param>
+            <returns><b>True</b> if the DependencyObject tree has an error.</returns>
         </member>
     </members>
 </doc>

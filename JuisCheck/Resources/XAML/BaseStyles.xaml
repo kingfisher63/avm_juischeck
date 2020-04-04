@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:jc="clr-namespace:JuisCheck">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ColorsAndBrushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type Control}" x:Key="ControlBaseStyle">
+        <Setter Property="FontSize" Value="13"   />
+    </Style>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ControlBaseStyle}" x:Key="ButtonBaseStyle">
+        <Setter Property="MinWidth" Value="60"     />
+        <Setter Property="Padding"  Value="3,1,3,1"/>
+    </Style>
+
+    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource ControlBaseStyle}" x:Key="CheckBoxBaseStyle">
+    </Style>
+
+    <Style TargetType="{x:Type jc:ComboBoxEx}" BasedOn="{StaticResource ControlBaseStyle}" x:Key="ComboBoxExBaseStyle">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="IsEditable"          Value="False"/>
+        <Setter Property="IsReadOnly"          Value="False"/>
+        <Setter Property="MaxDropDownItems"    Value="10"   />
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)/ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Grid}" x:Key="DialogGridBaseStyle">
+        <Setter Property="Background" Value="{StaticResource DialogBackgroundBrush}"/>
+    </Style>
+
+    <Style TargetType="{x:Type ProgressBar}" BasedOn="{StaticResource ControlBaseStyle}" x:Key="ProgessBarBaseStyle">
+        <Setter Property="Background" Value="{StaticResource ProgressBarBackgroundBrush}"/>
+        <Setter Property="IsIndeterminate" Value="False"/>
+    </Style>
+
+    <!-- TextBlock is not a control, so we cannot base this style on ControlBaseStyle -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockBaseStyle">
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource ControlBaseStyle}" x:Key="TextBoxBaseStyle">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding"             Value="2"   />
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)/ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

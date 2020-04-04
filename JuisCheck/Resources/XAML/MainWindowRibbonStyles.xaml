@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fluent="urn:fluent-ribbon">
+
+    <BitmapImage x:Key="imgDevicesButtonAdd32"              UriSource="../Images/32x32/oxygen-document-new.png"      />
+    <BitmapImage x:Key="imgDevicesButtonClearUpdates32"     UriSource="../Images/32x32/oxygen-run-build-clean.png"   />
+    <BitmapImage x:Key="imgDevicesButtonCopy32"             UriSource="../Images/32x32/oxygen-edit-copy.png"         />
+    <BitmapImage x:Key="imgDevicesButtonCopyURLs32"         UriSource="../Images/32x32/oxygen-edit-paste.png"        />
+    <BitmapImage x:Key="imgDevicesButtonDelete32"           UriSource="../Images/32x32/oxygen-document-close.png"    />
+    <BitmapImage x:Key="imgDevicesButtonEdit32"             UriSource="../Images/32x32/oxygen-document-edit.png"     />
+    <BitmapImage x:Key="imgDevicesButtonSelectAll32"        UriSource="../Images/32x32/oxygen-edit-select-all.png"   />
+    <BitmapImage x:Key="imgDevicesButtonSelectNone32"       UriSource="../Images/32x32/oxygen-edit-clear-list.png"   />
+    <BitmapImage x:Key="imgDevicesButtonFindUpdates32"      UriSource="../Images/32x32/oxygen-system-search.png"     />
+    <BitmapImage x:Key="imgDevicesButtonDownloadFirmware32" UriSource="../Images/32x32/oxygen-download.png"          />
+    <BitmapImage x:Key="imgDevicesButtonMakeCurrent32"      UriSource="../Images/32x32/oxygen-dialog-ok-apply.png"   />
+    <BitmapImage x:Key="imgDevicesButtonViewInfo32"         UriSource="../Images/32x32/oxygen-dialog-information.png"/>
+
+    <Style TargetType="{x:Type fluent:Button}">
+        <Setter Property="Margin"   Value="0,5,0,0"/>
+        <Setter Property="MinWidth" Value="60"     />
+    </Style>
+
+    <Style TargetType="{x:Type fluent:Ribbon}">
+        <Setter Property="CanMinimize"                 Value="False"/>
+        <Setter Property="IsQuickAccessToolBarVisible" Value="False"/>
+    </Style>
+
+</ResourceDictionary>

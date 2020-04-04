@@ -145,13 +145,13 @@
     <value>Exit</value>
   </data>
   <data name="RibbonButtonTextFindUpdates" xml:space="preserve">
-    <value>Find Updates</value>
+    <value>Find updates</value>
   </data>
   <data name="RibbonGroupBoxTextFirmwareUpdate" xml:space="preserve">
-    <value>Firmware Update</value>
+    <value>Firmware update</value>
   </data>
   <data name="RibbonButtonTextMakeCurrent" xml:space="preserve">
-    <value>Make Current</value>
+    <value>Make current</value>
   </data>
   <data name="DialogButtonTextOk" xml:space="preserve">
     <value>OK</value>
@@ -172,10 +172,10 @@
     <value>Save As...</value>
   </data>
   <data name="RibbonButtonTextSelectAll" xml:space="preserve">
-    <value>Select All</value>
+    <value>Select all</value>
   </data>
   <data name="RibbonButtonTextSelectNone" xml:space="preserve">
-    <value>Select None</value>
+    <value>Select none</value>
   </data>
   <data name="MessageTextUnsavedData" xml:space="preserve">
     <value>The data is modified. Changes will be\nlost if you do not save the data.\n\nSave the data now?</value>
@@ -209,9 +209,6 @@
   </data>
   <data name="MessageTextSaveDeviceCollectionFailed" xml:space="preserve">
     <value>The device collection could not be saved.\n\n{0}</value>
-  </data>
-  <data name="ProgramName" xml:space="preserve">
-    <value>JuisCheck for Windows</value>
   </data>
   <data name="FileNameNew" xml:space="preserve">
     <value>New</value>
@@ -255,9 +252,6 @@
   <data name="MessageCaptionAbout" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="MessageTextAbout" xml:space="preserve">
-    <value>JuisCheck for Windows v{0}\n\nCopyright (C) 2018 Roger Hünen</value>
-  </data>
   <data name="MessageCaptionDelete" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -280,7 +274,7 @@
     <value>Device properties</value>
   </data>
   <data name="DeviceTooltipUnusualFirmwareMajorWarning" xml:space="preserve">
-    <value>Unusual firmware major version (should be hardware type - 72)</value>
+    <value>Unusual firmware major version</value>
   </data>
   <data name="DeviceFieldLabelFirmwareBuildType" xml:space="preserve">
     <value>Firmware type</value>
@@ -493,19 +487,19 @@
     <value>None</value>
   </data>
   <data name="RibbonButtonTextClearUpdates" xml:space="preserve">
-    <value>Clear Updates</value>
+    <value>Clear updates</value>
   </data>
   <data name="RibbonButtonTooltipClearUpdates" xml:space="preserve">
     <value>Clear the update information for the selected devices [Shift+U]</value>
   </data>
   <data name="RibbonButtonTextDownloadFirmware" xml:space="preserve">
-    <value>Download Firmware</value>
+    <value>Download firmware</value>
   </data>
   <data name="RibbonButtonTooltipDownloadFirmware" xml:space="preserve">
-    <value>Launch the default browser to download the firmware image for the selected device [Ctrl+D]</value>
+    <value>Download the firmware image for the selected device [Ctrl+D]</value>
   </data>
   <data name="RibbonButtonTextViewInfo" xml:space="preserve">
-    <value>View Info</value>
+    <value>View info</value>
   </data>
   <data name="RibbonButtonTooltipViewInfo" xml:space="preserve">
     <value>Launch the default browser to view the firmware release notes for the selected device [Ctrl+I]</value>
@@ -540,8 +534,8 @@
   <data name="BackstageTabTextSettings" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="BackstageSectionHeaderDefaults" xml:space="preserve">
-    <value>Defaults</value>
+  <data name="BackstageSectionHeaderDefaultValues" xml:space="preserve">
+    <value>Default values</value>
   </data>
   <data name="BackstageSectionHeaderGeneral" xml:space="preserve">
     <value>General</value>
@@ -551,15 +545,6 @@
   </data>
   <data name="SettingLabelMainWindowRestoreMetrics" xml:space="preserve">
     <value>Restore window size and position on startup</value>
-  </data>
-  <data name="DataGridColumnHeaderBaseFritzOS" xml:space="preserve">
-    <value>Base Fritz!OS</value>
-  </data>
-  <data name="DeviceFieldLabelBaseFritzOS" xml:space="preserve">
-    <value>Base Fritz!OS</value>
-  </data>
-  <data name="SettingLabelDefaultBaseFritzOS" xml:space="preserve">
-    <value>DECT base Fritz!OS</value>
   </data>
   <data name="UpdateInfoUnknown" xml:space="preserve">
     <value>Unknown</value>
@@ -589,7 +574,7 @@
     <value>Maximum number of recent files</value>
   </data>
   <data name="RibbonButtonTextAddJUIS" xml:space="preserve">
-    <value>Add Device</value>
+    <value>Add device</value>
   </data>
   <data name="RibbonButtonTooltipAddJUIS" xml:space="preserve">
     <value>Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN) [Insert]</value>
@@ -607,7 +592,7 @@
     <value>Close the device collection [Ctrl+W]</value>
   </data>
   <data name="BackstageButtonTooltipExit" xml:space="preserve">
-    <value>Exit the program</value>
+    <value>Exit the program [Ctrl+X]</value>
   </data>
   <data name="BackstageButtonTooltipOpen" xml:space="preserve">
     <value>Load a device collection from a file [Ctrl+O]</value>
@@ -674,5 +659,59 @@
   </data>
   <data name="ComboBoxValueBuildtypeBetaPLUS" xml:space="preserve">
     <value>PLUS beta (1007)</value>
+  </data>
+  <data name="DialogButtonTextNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="DialogButtonTextYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="DeviceFieldLabelMeshMaster" xml:space="preserve">
+    <value>Mesh master</value>
+  </data>
+  <data name="ComboBoxValueNoMaster" xml:space="preserve">
+    <value>(no master)</value>
+  </data>
+  <data name="DeviceFieldLabelDectBase" xml:space="preserve">
+    <value>DECT base</value>
+  </data>
+  <data name="DialogButtonTextSkip" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="MessageTextDectBaseNotFound" xml:space="preserve">
+    <value>{0}: DECT base not found.\nPlease set the DECT base for this device.</value>
+  </data>
+  <data name="MessageTextDectBaseNotSet" xml:space="preserve">
+    <value>{0}: DECT base not set.\nPlease set the DECT base for this device.</value>
+  </data>
+  <data name="ComboBoxValueAutomatic" xml:space="preserve">
+    <value>(automatic)</value>
+  </data>
+  <data name="MessageCaptionProgramRestartRequired" xml:space="preserve">
+    <value>Program restart required</value>
+  </data>
+  <data name="MessageTextRestartLanguageChange" xml:space="preserve">
+    <value>You must restart the program for the language setting to take effect.\n\nRestart the program now?</value>
+  </data>
+  <data name="BackstageSectionHeaderDefaultColumns" xml:space="preserve">
+    <value>Default columns</value>
+  </data>
+  <data name="ComboBoxValueBuildtypeBetaTest" xml:space="preserve">
+    <value>TEST beta (1006)</value>
+  </data>
+  <data name="DialogCaptionDownloadFirmware" xml:space="preserve">
+    <value>Download firmware</value>
+  </data>
+  <data name="FilterFilesAll" xml:space="preserve">
+    <value>All files (*.*)|*.*</value>
+  </data>
+  <data name="FilterFilesXML" xml:space="preserve">
+    <value>XML files (*.xml)|*.xml</value>
+  </data>
+  <data name="DataGridColumnHeaderMasterBase" xml:space="preserve">
+    <value>Master / Base</value>
+  </data>
+  <data name="SettingLabelUserInterfaceLanguage" xml:space="preserve">
+    <value>Language</value>
   </data>
 </root>

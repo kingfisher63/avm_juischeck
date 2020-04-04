@@ -12,7 +12,7 @@ namespace JuisCheck.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,6 +20,348 @@ namespace JuisCheck.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoLoad {
+            get {
+                return ((bool)(this["AutoLoad"]));
+            }
+            set {
+                this["AutoLoad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AutoLoadFile {
+            get {
+                return ((string)(this["AutoLoadFile"]));
+            }
+            set {
+                this["AutoLoadFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://jws.avm.de/cgi-bin/cati")]
+        public string AvmCatiServiceURL {
+            get {
+                return ((string)(this["AvmCatiServiceURL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://jws.avm.de:80/Jason/UpdateInfoService")]
+        public string AvmJuisServiceURL {
+            get {
+                return ((string)(this["AvmJuisServiceURL"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultAnnex {
+            get {
+                return ((string)(this["DefaultAnnex"]));
+            }
+            set {
+                this["DefaultAnnex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultCountry {
+            get {
+                return ((string)(this["DefaultCountry"]));
+            }
+            set {
+                this["DefaultCountry"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultDataGridColumnVisibleCountry {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleCountry"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleCountry"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DefaultDataGridColumnVisibleDeviceAddress {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleDeviceAddress"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleDeviceAddress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DefaultDataGridColumnVisibleFirmware {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleFirmware"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleFirmware"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DefaultDataGridColumnVisibleFirmwareBuildType {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleFirmwareBuildType"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleFirmwareBuildType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultDataGridColumnVisibleHardware {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleHardware"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleHardware"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultDataGridColumnVisibleLanguage {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleLanguage"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DefaultDataGridColumnVisibleOEM {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleOEM"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleOEM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DefaultDataGridColumnVisibleProductName {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleProductName"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleProductName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultDataGridColumnVisibleUpdateFileName {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleUpdateFileName"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleUpdateFileName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DefaultDataGridColumnVisibleUpdateInfo {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleUpdateInfo"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleUpdateInfo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DefaultDataGridColumnVisibleUpdateLastChecked {
+            get {
+                return ((bool)(this["DefaultDataGridColumnVisibleUpdateLastChecked"]));
+            }
+            set {
+                this["DefaultDataGridColumnVisibleUpdateLastChecked"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int DefaultFirmwareBuildType {
+            get {
+                return ((int)(this["DefaultFirmwareBuildType"]));
+            }
+            set {
+                this["DefaultFirmwareBuildType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultLanguage {
+            get {
+                return ((string)(this["DefaultLanguage"]));
+            }
+            set {
+                this["DefaultLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultOEM {
+            get {
+                return ((string)(this["DefaultOEM"]));
+            }
+            set {
+                this["DefaultOEM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuisReleaseShowBuildNumber {
+            get {
+                return ((bool)(this["JuisReleaseShowBuildNumber"]));
+            }
+            set {
+                this["JuisReleaseShowBuildNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastDocumentDirectory {
+            get {
+                return ((string)(this["LastDocumentDirectory"]));
+            }
+            set {
+                this["LastDocumentDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastDownloadDirectory {
+            get {
+                return ((string)(this["LastDownloadDirectory"]));
+            }
+            set {
+                this["LastDownloadDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
+        public double MainWindowHeight {
+            get {
+                return ((double)(this["MainWindowHeight"]));
+            }
+            set {
+                this["MainWindowHeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
+        public double MainWindowLeft {
+            get {
+                return ((double)(this["MainWindowLeft"]));
+            }
+            set {
+                this["MainWindowLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MainWindowMaximized {
+            get {
+                return ((bool)(this["MainWindowMaximized"]));
+            }
+            set {
+                this["MainWindowMaximized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MainWindowRestoreMetrics {
+            get {
+                return ((bool)(this["MainWindowRestoreMetrics"]));
+            }
+            set {
+                this["MainWindowRestoreMetrics"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
+        public double MainWindowTop {
+            get {
+                return ((double)(this["MainWindowTop"]));
+            }
+            set {
+                this["MainWindowTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
+        public double MainWindowWidth {
+            get {
+                return ((double)(this["MainWindowWidth"]));
+            }
+            set {
+                this["MainWindowWidth"] = value;
             }
         }
         
@@ -61,355 +403,25 @@ namespace JuisCheck.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
-        public double MainWindowLeft {
+        [global::System.Configuration.DefaultSettingValueAttribute("auto")]
+        public string UserInterfaceLanguage {
             get {
-                return ((double)(this["MainWindowLeft"]));
+                return ((string)(this["UserInterfaceLanguage"]));
             }
             set {
-                this["MainWindowLeft"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
-        public double MainWindowTop {
-            get {
-                return ((double)(this["MainWindowTop"]));
-            }
-            set {
-                this["MainWindowTop"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
-        public double MainWindowWidth {
-            get {
-                return ((double)(this["MainWindowWidth"]));
-            }
-            set {
-                this["MainWindowWidth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NaN")]
-        public double MainWindowHeight {
-            get {
-                return ((double)(this["MainWindowHeight"]));
-            }
-            set {
-                this["MainWindowHeight"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MainWindowRestoreMetrics {
-            get {
-                return ((bool)(this["MainWindowRestoreMetrics"]));
-            }
-            set {
-                this["MainWindowRestoreMetrics"] = value;
+                this["UserInterfaceLanguage"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool JuisReleaseShowBuildNumber {
+        public bool DefaultDataGridColumnVisibleMasterBase {
             get {
-                return ((bool)(this["JuisReleaseShowBuildNumber"]));
+                return ((bool)(this["DefaultDataGridColumnVisibleMasterBase"]));
             }
             set {
-                this["JuisReleaseShowBuildNumber"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DefaultBaseFritzOS {
-            get {
-                return ((string)(this["DefaultBaseFritzOS"]));
-            }
-            set {
-                this["DefaultBaseFritzOS"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
-        public int DefaultFirmwareBuildType {
-            get {
-                return ((int)(this["DefaultFirmwareBuildType"]));
-            }
-            set {
-                this["DefaultFirmwareBuildType"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DefaultCountry {
-            get {
-                return ((string)(this["DefaultCountry"]));
-            }
-            set {
-                this["DefaultCountry"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DefaultLanguage {
-            get {
-                return ((string)(this["DefaultLanguage"]));
-            }
-            set {
-                this["DefaultLanguage"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DefaultOEM {
-            get {
-                return ((string)(this["DefaultOEM"]));
-            }
-            set {
-                this["DefaultOEM"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DefaultAnnex {
-            get {
-                return ((string)(this["DefaultAnnex"]));
-            }
-            set {
-                this["DefaultAnnex"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://jws.avm.de/cgi-bin/cati")]
-        public string AvmCatiServiceURL {
-            get {
-                return ((string)(this["AvmCatiServiceURL"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://jws.avm.de:80/Jason/UpdateInfoService")]
-        public string AvmJuisServiceURL {
-            get {
-                return ((string)(this["AvmJuisServiceURL"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MainWindowMaximized {
-            get {
-                return ((bool)(this["MainWindowMaximized"]));
-            }
-            set {
-                this["MainWindowMaximized"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DataGridColumnVisibleDeviceAddress {
-            get {
-                return ((bool)(this["DataGridColumnVisibleDeviceAddress"]));
-            }
-            set {
-                this["DataGridColumnVisibleDeviceAddress"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DataGridColumnVisibleProductName {
-            get {
-                return ((bool)(this["DataGridColumnVisibleProductName"]));
-            }
-            set {
-                this["DataGridColumnVisibleProductName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DataGridColumnVisibleFirmware {
-            get {
-                return ((bool)(this["DataGridColumnVisibleFirmware"]));
-            }
-            set {
-                this["DataGridColumnVisibleFirmware"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DataGridColumnVisibleFirmwareBuildType {
-            get {
-                return ((bool)(this["DataGridColumnVisibleFirmwareBuildType"]));
-            }
-            set {
-                this["DataGridColumnVisibleFirmwareBuildType"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DataGridColumnVisibleOEM {
-            get {
-                return ((bool)(this["DataGridColumnVisibleOEM"]));
-            }
-            set {
-                this["DataGridColumnVisibleOEM"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool DataGridColumnVisibleBaseFritzOS {
-            get {
-                return ((bool)(this["DataGridColumnVisibleBaseFritzOS"]));
-            }
-            set {
-                this["DataGridColumnVisibleBaseFritzOS"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DataGridColumnVisibleUpdateInfo {
-            get {
-                return ((bool)(this["DataGridColumnVisibleUpdateInfo"]));
-            }
-            set {
-                this["DataGridColumnVisibleUpdateInfo"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DataGridColumnVisibleUpdateLastChecked {
-            get {
-                return ((bool)(this["DataGridColumnVisibleUpdateLastChecked"]));
-            }
-            set {
-                this["DataGridColumnVisibleUpdateLastChecked"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool DataGridColumnVisibleHardware {
-            get {
-                return ((bool)(this["DataGridColumnVisibleHardware"]));
-            }
-            set {
-                this["DataGridColumnVisibleHardware"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool DataGridColumnVisibleCountry {
-            get {
-                return ((bool)(this["DataGridColumnVisibleCountry"]));
-            }
-            set {
-                this["DataGridColumnVisibleCountry"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool DataGridColumnVisibleLanguage {
-            get {
-                return ((bool)(this["DataGridColumnVisibleLanguage"]));
-            }
-            set {
-                this["DataGridColumnVisibleLanguage"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool DataGridColumnVisibleUpdateFileName {
-            get {
-                return ((bool)(this["DataGridColumnVisibleUpdateFileName"]));
-            }
-            set {
-                this["DataGridColumnVisibleUpdateFileName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AutoLoad {
-            get {
-                return ((bool)(this["AutoLoad"]));
-            }
-            set {
-                this["AutoLoad"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AutoLoadFile {
-            get {
-                return ((string)(this["AutoLoadFile"]));
-            }
-            set {
-                this["AutoLoadFile"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastDirectoryPath {
-            get {
-                return ((string)(this["LastDirectoryPath"]));
-            }
-            set {
-                this["LastDirectoryPath"] = value;
+                this["DefaultDataGridColumnVisibleMasterBase"] = value;
             }
         }
     }

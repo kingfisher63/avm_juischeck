@@ -19,7 +19,7 @@ namespace JuisCheck.Lang {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class JCstring {
@@ -160,7 +160,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exit the program.
+        ///   Looks up a localized string similar to Exit the program [Ctrl+X].
         /// </summary>
         public static string BackstageButtonTooltipExit {
             get {
@@ -214,11 +214,20 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Defaults.
+        ///   Looks up a localized string similar to Default columns.
         /// </summary>
-        public static string BackstageSectionHeaderDefaults {
+        public static string BackstageSectionHeaderDefaultColumns {
             get {
-                return ResourceManager.GetString("BackstageSectionHeaderDefaults", resourceCulture);
+                return ResourceManager.GetString("BackstageSectionHeaderDefaultColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default values.
+        /// </summary>
+        public static string BackstageSectionHeaderDefaultValues {
+            get {
+                return ResourceManager.GetString("BackstageSectionHeaderDefaultValues", resourceCulture);
             }
         }
         
@@ -313,6 +322,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (automatic).
+        /// </summary>
+        public static string ComboBoxValueAutomatic {
+            get {
+                return ResourceManager.GetString("ComboBoxValueAutomatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inhouse beta (1000).
         /// </summary>
         public static string ComboBoxValueBuildtypeBetaInhouse {
@@ -336,6 +354,15 @@ namespace JuisCheck.Lang {
         public static string ComboBoxValueBuildtypeBetaPublic {
             get {
                 return ResourceManager.GetString("ComboBoxValueBuildtypeBetaPublic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TEST beta (1006).
+        /// </summary>
+        public static string ComboBoxValueBuildtypeBetaTest {
+            get {
+                return ResourceManager.GetString("ComboBoxValueBuildtypeBetaTest", resourceCulture);
             }
         }
         
@@ -781,6 +808,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (no master).
+        /// </summary>
+        public static string ComboBoxValueNoMaster {
+            get {
+                return ResourceManager.GetString("ComboBoxValueNoMaster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to (not set).
         /// </summary>
         public static string ComboBoxValueNotSet {
@@ -804,15 +840,6 @@ namespace JuisCheck.Lang {
         public static string ContextMenuTitleTextSelectColumns {
             get {
                 return ResourceManager.GetString("ContextMenuTitleTextSelectColumns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Base Fritz!OS.
-        /// </summary>
-        public static string DataGridColumnHeaderBaseFritzOS {
-            get {
-                return ResourceManager.GetString("DataGridColumnHeaderBaseFritzOS", resourceCulture);
             }
         }
         
@@ -880,6 +907,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Master / Base.
+        /// </summary>
+        public static string DataGridColumnHeaderMasterBase {
+            get {
+                return ResourceManager.GetString("DataGridColumnHeaderMasterBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OEM.
         /// </summary>
         public static string DataGridColumnHeaderOEM {
@@ -934,20 +970,20 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Base Fritz!OS.
-        /// </summary>
-        public static string DeviceFieldLabelBaseFritzOS {
-            get {
-                return ResourceManager.GetString("DeviceFieldLabelBaseFritzOS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string DeviceFieldLabelCountry {
             get {
                 return ResourceManager.GetString("DeviceFieldLabelCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DECT base.
+        /// </summary>
+        public static string DeviceFieldLabelDectBase {
+            get {
+                return ResourceManager.GetString("DeviceFieldLabelDectBase", resourceCulture);
             }
         }
         
@@ -1024,6 +1060,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mesh master.
+        /// </summary>
+        public static string DeviceFieldLabelMeshMaster {
+            get {
+                return ResourceManager.GetString("DeviceFieldLabelMeshMaster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OEM.
         /// </summary>
         public static string DeviceFieldLabelOEM {
@@ -1069,7 +1114,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unusual firmware major version (should be hardware type - 72).
+        ///   Looks up a localized string similar to Unusual firmware major version.
         /// </summary>
         public static string DeviceTooltipUnusualFirmwareMajorWarning {
             get {
@@ -1083,6 +1128,15 @@ namespace JuisCheck.Lang {
         public static string DialogButtonTextCancel {
             get {
                 return ResourceManager.GetString("DialogButtonTextCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string DialogButtonTextNo {
+            get {
+                return ResourceManager.GetString("DialogButtonTextNo", resourceCulture);
             }
         }
         
@@ -1105,11 +1159,38 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skip.
+        /// </summary>
+        public static string DialogButtonTextSkip {
+            get {
+                return ResourceManager.GetString("DialogButtonTextSkip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string DialogButtonTextYes {
+            get {
+                return ResourceManager.GetString("DialogButtonTextYes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Device properties.
         /// </summary>
         public static string DialogCaptionDeviceProperties {
             get {
                 return ResourceManager.GetString("DialogCaptionDeviceProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download firmware.
+        /// </summary>
+        public static string DialogCaptionDownloadFirmware {
+            get {
+                return ResourceManager.GetString("DialogCaptionDownloadFirmware", resourceCulture);
             }
         }
         
@@ -1150,6 +1231,24 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All files (*.*)|*.*.
+        /// </summary>
+        public static string FilterFilesAll {
+            get {
+                return ResourceManager.GetString("FilterFilesAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XML files (*.xml)|*.xml.
+        /// </summary>
+        public static string FilterFilesXML {
+            get {
+                return ResourceManager.GetString("FilterFilesXML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string MessageCaptionAbout {
@@ -1186,6 +1285,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Program restart required.
+        /// </summary>
+        public static string MessageCaptionProgramRestartRequired {
+            get {
+                return ResourceManager.GetString("MessageCaptionProgramRestartRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unsaved data.
         /// </summary>
         public static string MessageCaptionUnsavedData {
@@ -1195,20 +1303,29 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to JuisCheck for Windows v{0}\n\nCopyright (C) 2018 Roger Hünen.
-        /// </summary>
-        public static string MessageTextAbout {
-            get {
-                return ResourceManager.GetString("MessageTextAbout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The data could not be copied to the clipboard.\nThe clipboard may be locked by another program..
         /// </summary>
         public static string MessageTextClipboardCopyFailure {
             get {
                 return ResourceManager.GetString("MessageTextClipboardCopyFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: DECT base not found.\nPlease set the DECT base for this device..
+        /// </summary>
+        public static string MessageTextDectBaseNotFound {
+            get {
+                return ResourceManager.GetString("MessageTextDectBaseNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: DECT base not set.\nPlease set the DECT base for this device..
+        /// </summary>
+        public static string MessageTextDectBaseNotSet {
+            get {
+                return ResourceManager.GetString("MessageTextDectBaseNotSet", resourceCulture);
             }
         }
         
@@ -1258,6 +1375,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must restart the program for the language setting to take effect.\n\nRestart the program now?.
+        /// </summary>
+        public static string MessageTextRestartLanguageChange {
+            get {
+                return ResourceManager.GetString("MessageTextRestartLanguageChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The device collection could not be saved.\n\n{0}.
         /// </summary>
         public static string MessageTextSaveDeviceCollectionFailed {
@@ -1294,15 +1420,6 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to JuisCheck for Windows.
-        /// </summary>
-        public static string ProgramName {
-            get {
-                return ResourceManager.GetString("ProgramName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add DECT.
         /// </summary>
         public static string RibbonButtonTextAddDECT {
@@ -1312,7 +1429,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Device.
+        ///   Looks up a localized string similar to Add device.
         /// </summary>
         public static string RibbonButtonTextAddJUIS {
             get {
@@ -1321,7 +1438,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear Updates.
+        ///   Looks up a localized string similar to Clear updates.
         /// </summary>
         public static string RibbonButtonTextClearUpdates {
             get {
@@ -1357,7 +1474,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download Firmware.
+        ///   Looks up a localized string similar to Download firmware.
         /// </summary>
         public static string RibbonButtonTextDownloadFirmware {
             get {
@@ -1375,7 +1492,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find Updates.
+        ///   Looks up a localized string similar to Find updates.
         /// </summary>
         public static string RibbonButtonTextFindUpdates {
             get {
@@ -1384,7 +1501,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Make Current.
+        ///   Looks up a localized string similar to Make current.
         /// </summary>
         public static string RibbonButtonTextMakeCurrent {
             get {
@@ -1393,7 +1510,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select All.
+        ///   Looks up a localized string similar to Select all.
         /// </summary>
         public static string RibbonButtonTextSelectAll {
             get {
@@ -1402,7 +1519,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select None.
+        ///   Looks up a localized string similar to Select none.
         /// </summary>
         public static string RibbonButtonTextSelectNone {
             get {
@@ -1411,7 +1528,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View Info.
+        ///   Looks up a localized string similar to View info.
         /// </summary>
         public static string RibbonButtonTextViewInfo {
             get {
@@ -1474,7 +1591,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Launch the default browser to download the firmware image for the selected device [Ctrl+D].
+        ///   Looks up a localized string similar to Download the firmware image for the selected device [Ctrl+D].
         /// </summary>
         public static string RibbonButtonTooltipDownloadFirmware {
             get {
@@ -1546,7 +1663,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Firmware Update.
+        ///   Looks up a localized string similar to Firmware update.
         /// </summary>
         public static string RibbonGroupBoxTextFirmwareUpdate {
             get {
@@ -1587,15 +1704,6 @@ namespace JuisCheck.Lang {
         public static string SettingLabelDefaultAnnex {
             get {
                 return ResourceManager.GetString("SettingLabelDefaultAnnex", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DECT base Fritz!OS.
-        /// </summary>
-        public static string SettingLabelDefaultBaseFritzOS {
-            get {
-                return ResourceManager.GetString("SettingLabelDefaultBaseFritzOS", resourceCulture);
             }
         }
         
@@ -1659,6 +1767,15 @@ namespace JuisCheck.Lang {
         public static string SettingLabelRecentFilesMax {
             get {
                 return ResourceManager.GetString("SettingLabelRecentFilesMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string SettingLabelUserInterfaceLanguage {
+            get {
+                return ResourceManager.GetString("SettingLabelUserInterfaceLanguage", resourceCulture);
             }
         }
         

@@ -1,0 +1,4 @@
+# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
+
+# CA1062: Validate arguments of public methods
+dotnet_code_quality.CA1062.exclude_extension_method_this_parameter = true

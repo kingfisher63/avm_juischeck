@@ -1,11 +1,13 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
 using Muon.DotNetExtensions;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -15,29 +17,45 @@ namespace JuisCheck
 	/// <summary>
 	/// Interaction logic for DectDeviceDialog.xaml
 	/// </summary>
-	public partial class DectDeviceDialog : Window
+	public sealed partial class DectDeviceDialog : Window
 	{
-		private	Device	origDevice;
+		private	readonly DectDevice	origDevice;
 
-		public	Device	DeviceData		{ get;         private set; } = new Device(DeviceKind.DECT, NotifyPropertyChanged.Always);
-		public	int		SelectedIndex	{ private get; set;         } // Dummy for ComboBox SelectedIndex validation
+		public	DectDevice			DeviceData		{ get; private set; }
+		public	int					SelectedIndex	{ get; set;         }	// Dummy for ComboBox SelectedIndex validation
 
-		public	List<ComboBoxValue>	CountryValues  => Device.GetCountryValues().AppendMissingValueAsUnknown(DeviceData.Country);
-		public	List<ComboBoxValue>	LanguageValues => Device.GetLanguageValues().AppendMissingValueAsUnknown(DeviceData.Language);
-		public	List<ComboBoxValue>	OEMValues      => Device.GetOemValues().AppendMissingValueAsUnknown(DeviceData.OEM);
+		public	List<ComboBoxValue>	CountryValues	{ get; private set; }
+		public	List<ComboBoxValue>	DectBaseValues	{ get; private set; }
+		public	List<ComboBoxValue>	LanguageValues	{ get; private set; }
+		public	List<ComboBoxValue>	OEMValues		{ get; private set; }
 
-		public DectDeviceDialog( Device device )
+		public DectDeviceDialog( DectDevice device )
 		{
-			origDevice = device;
-			origDevice.CopyTo(DeviceData);
+			origDevice = device ?? throw new ArgumentNullException(nameof(device));
+			DeviceData = new DectDevice(device);
 
-			DataContext = this;
+			InitComboBoxValues(device);
 			InitializeComponent();
+			DataContext = this;
+		}
+
+		private void InitComboBoxValues(DectDevice device)
+		{
+			CountryValues  = Device.GetCountryValues().AppendMissingAsUnknown(device.Country);
+			LanguageValues = Device.GetLanguageValues().AppendMissingAsUnknown(device.Language);
+			OEMValues      = Device.GetOemValues().AppendMissingAsUnknown(device.OEM);
+
+			DectBaseValues = new List<ComboBoxValue>();
+			foreach (JuisDevice baseDevice in App.GetMainWindow().Devices.Where(d => d is JuisDevice)) {
+				DectBaseValues.Add(new ComboBoxValue(baseDevice.ID, baseDevice.DeviceName));
+			}
+			DectBaseValues.Sort(new ComboBoxValueComparer(new NaturalStringComparer(App.defaultDisplayStringComparison)));
+			DectBaseValues.AppendMissingAsUnknown(device.DectBase);
 		}
 
 		// Routed command: CmdOk
 
-		public static RoutedCommand CmdOK = new RoutedCommand();
+		public static readonly RoutedCommand CmdOK = new RoutedCommand();
 
 		private void CmdOK_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -46,7 +64,9 @@ namespace JuisCheck
 
 		private void CmdOK_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			DeviceData.CopyTo(origDevice, false, true);
+			DeviceData.TrimStrings();
+			origDevice.CopyFrom(DeviceData);
+
 			DialogResult = true;
 		}
 

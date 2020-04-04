@@ -1,6 +1,6 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
@@ -10,6 +10,7 @@ using Muon.Windows;
 using Muon.Windows.Controls;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,18 +18,49 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 using JuisCheck.Lang;
+using JuisCheck.Properties;
 
 namespace JuisCheck
 {
 	public sealed partial class MainWindow : RibbonWindow
 	{
-		public List<ComboBoxValue>	Backstage_AnnexValues     => Device.GetAnnexValues().PrependNotSet();
-		public List<ComboBoxValue>	Backstage_BuildTypeValues => Device.GetFirmwareBuildTypeValues().PrependNotSet("-1");
-		public List<ComboBoxValue>	Backstage_CountryValues   => Device.GetCountryValues().PrependNotSet();
-		public List<ComboBoxValue>	Backstage_LanguageValues  => Device.GetLanguageValues().PrependNotSet();
-		public List<ComboBoxValue>	Backstage_OEMValues       => Device.GetOemValues().PrependNotSet();
+		private static readonly Dictionary<string, string> languageDictionary = new Dictionary<string, string>() {
+			{ "de", JCstring.ComboBoxValueLanguageDE },
+			{ "en", JCstring.ComboBoxValueLanguageEN },
+			{ "es", JCstring.ComboBoxValueLanguageES },
+			{ "fr", JCstring.ComboBoxValueLanguageFR },
+			{ "it", JCstring.ComboBoxValueLanguageIT },
+			{ "nl", JCstring.ComboBoxValueLanguageNL },
+			{ "pl", JCstring.ComboBoxValueLanguagePL }
+		};
 
-		private void Backstage_Init()
+		public List<ComboBoxValue>	Backstage_DefaultAnnexValues		{ get; private set; }
+		public List<ComboBoxValue>	Backstage_DefaultBuildTypeValues	{ get; private set; }
+		public List<ComboBoxValue>	Backstage_DefaultCountryValues		{ get; private set; }
+		public List<ComboBoxValue>	Backstage_DefaultLanguageValues		{ get; private set; }
+		public List<ComboBoxValue>	Backstage_DefaultOEMValues			{ get; private set; }
+		public List<ComboBoxValue>	Backstage_UILanguageValues 			{ get; private set; }
+
+		private void Backstage_Init1()
+		{
+			Backstage_DefaultAnnexValues     = JuisDevice.GetAnnexValues().Prepend(string.Empty, JCstring.ComboBoxValueNotSet);
+			Backstage_DefaultBuildTypeValues = JuisDevice.GetFirmwareBuildTypeValues().Prepend("-1", JCstring.ComboBoxValueNotSet);
+			Backstage_DefaultCountryValues   = Device.GetCountryValues().Prepend(string.Empty, JCstring.ComboBoxValueNotSet);
+			Backstage_DefaultLanguageValues  = Device.GetLanguageValues().Prepend(string.Empty, JCstring.ComboBoxValueNotSet);
+			Backstage_DefaultOEMValues       = Device.GetOemValues().Prepend(string.Empty, JCstring.ComboBoxValueNotSet);
+
+			Backstage_UILanguageValues = new List<ComboBoxValue>();
+			foreach (string language in App.AdditionalLanguages) {
+				if (languageDictionary.TryGetValue(language, out string languageFull)) {
+					Backstage_UILanguageValues.Add(new ComboBoxValue(language, languageFull));
+				}
+			}
+			Backstage_UILanguageValues.Add(new ComboBoxValue("en", JCstring.ComboBoxValueLanguageEN)); // Main language
+			Backstage_UILanguageValues.Prepend("auto", JCstring.ComboBoxValueAutomatic);
+			Backstage_UILanguageValues.Sort(1, Backstage_UILanguageValues.Count-1, new ComboBoxValueComparer(App.defaultDisplayStringComparison));
+		}
+
+		private void Backstage_Init2()
 		{
 		}
 
@@ -37,7 +69,7 @@ namespace JuisCheck
 			foreach (UIElement element in dpRecentFiles.Children) {
 				if (element is RecentFileButton button) {
 					if (!button.IsEnabled) {
-						RecentFiles.Remove(button.Tag as string);
+						RecentFiles.Remove((string)button.Tag);
 					}
 				}
 			}
@@ -61,18 +93,18 @@ namespace JuisCheck
 
 					dpRecentFiles.Children.Add(button);
 				}
-				catch (Exception ex) {
-					if (ex is ArgumentException) {
-						// Path is apparently invalid path
-						RecentFiles.Remove(path);
-					}
+				catch (ArgumentException) {
+					RecentFiles.Remove(path);
+				}
+				catch (PathTooLongException) {
+					RecentFiles.Remove(path);
 				}
 			}
 		}
 
 		// Command: Backstage_CmdAbout
 
-		public static RoutedCommand Backstage_CmdAbout = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdAbout = new RoutedCommand();
 
 		private void Backstage_CmdAbout_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -81,24 +113,20 @@ namespace JuisCheck
 
 		private void Backstage_CmdAbout_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background,
-				new Action(() => {
-					MessageBoxEx.Show(
-						new MessageBoxExParams {
-							CaptionText = JCstring.MessageCaptionAbout,
-							MessageText = string.Format(JCstring.MessageTextAbout.Unescape(), App.GetVersion()),
-							Image       = MessageBoxExImage.Information,
-							Button      = MessageBoxExButton.OK,
-							Owner       = this
-						}
-					);
-				})
-			);
+			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+				MessageBoxEx2.Show(new MessageBoxEx2Params {
+					CaptionText = JCstring.MessageCaptionAbout,
+					MessageText = $"{App.GetProgramInfo()}\n\n{App.GetCopyright()}",
+					Image       = MessageBoxEx2Image.Information,
+					ButtonText  = new string[] { JCstring.DialogButtonTextOk },
+					Owner       = this
+				});
+			}));
 		}
 
 		// Command: Backstage_CmdClose
 
-		public static RoutedCommand Backstage_CmdClose = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdClose = new RoutedCommand();
 
 		private void Backstage_CmdClose_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -107,12 +135,14 @@ namespace JuisCheck
 
 		private void Backstage_CmdClose_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => CloseDeviceCollection()));
+			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+				CloseDeviceCollection();
+			}));
 		}
 
 		// Command: Backstage_CmdExit
 
-		public static RoutedCommand Backstage_CmdExit = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdExit = new RoutedCommand();
 
 		private void Backstage_CmdExit_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -121,12 +151,14 @@ namespace JuisCheck
 
 		private void Backstage_CmdExit_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => Close()));
+			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+				Close();
+			}));
 		}
 
 		// Command: Backstage_CmdOpen
 
-		public static RoutedCommand Backstage_CmdOpen = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdOpen = new RoutedCommand();
 
 		private void Backstage_CmdOpen_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -135,12 +167,14 @@ namespace JuisCheck
 
 		private void Backstage_CmdOpen_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => OpenDeviceCollection()));
+			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+				OpenDeviceCollection();
+			}));
 		}
 
 		// Command: Backstage_CmdRecentFilesClean
 
-		public static RoutedCommand Backstage_CmdRecentFilesClean = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdRecentFilesClean = new RoutedCommand();
 
 		private void Backstage_CmdRecentFilesClean_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -164,7 +198,7 @@ namespace JuisCheck
 
 		// Command: Backstage_CmdRecentFilesClear
 
-		public static RoutedCommand Backstage_CmdRecentFilesClear = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdRecentFilesClear = new RoutedCommand();
 
 		private void Backstage_CmdRecentFilesClear_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -184,7 +218,7 @@ namespace JuisCheck
 
 		// Command: Backstage_CmdRecentFileOpen
 
-		public static RoutedCommand Backstage_CmdRecentFileOpen = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdRecentFileOpen = new RoutedCommand();
 
 		private void Backstage_CmdRecentFileOpen_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -195,13 +229,15 @@ namespace JuisCheck
 		{
 			PopupService.RaiseDismissPopupEvent(evt.Source, DismissPopupMode.Always);
 			if (evt.Source is RecentFileButton button) {
-				Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => OpenDeviceCollection(button.Tag as string)));
+				Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+					OpenDeviceCollection((string)button.Tag);
+				}));
 			}
 		}
 
 		// Command: Backstage_CmdRecentFileRemove
 
-		public static RoutedCommand Backstage_CmdRecentFileRemove = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdRecentFileRemove = new RoutedCommand();
 
 		private void Backstage_CmdRecentFileRemove_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -211,14 +247,14 @@ namespace JuisCheck
 		private void Backstage_CmdRecentFileRemove_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
 			if (evt.Source is RecentFileButton button) {
-				RecentFiles.Remove(button.Tag as string);
+				RecentFiles.Remove((string)button.Tag);
 				Backstage_PopulateRecentFiles();
 			}
 		}
 
 		// Command: Backstage_CmdSave
 
-		public static RoutedCommand Backstage_CmdSave = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdSave = new RoutedCommand();
 
 		private void Backstage_CmdSave_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -227,12 +263,14 @@ namespace JuisCheck
 
 		private void Backstage_CmdSave_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => SaveDeviceCollection()));
+			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+				SaveDeviceCollection();
+			}));
 		}
 
 		// Command: Backstage_CmdSaveAs
 
-		public static RoutedCommand Backstage_CmdSaveAs = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdSaveAs = new RoutedCommand();
 
 		private void Backstage_CmdSaveAs_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -241,12 +279,14 @@ namespace JuisCheck
 
 		private void Backstage_CmdSaveAs_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => SaveDeviceCollectionAs()));
+			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+				SaveDeviceCollectionAs();
+			}));
 		}
 
 		// Command: Backstage_CmdSettingsDefault
 
-		public static RoutedCommand Backstage_CmdSettingsDefault = new RoutedCommand();
+		public static readonly RoutedCommand Backstage_CmdSettingsDefault = new RoutedCommand();
 
 		private void Backstage_CmdSettingsDefault_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
@@ -255,20 +295,22 @@ namespace JuisCheck
 
 		private void Backstage_CmdSettingsDefault_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			AppSettings.Reset();
+			Settings.Default.Reset();
 		}
 
 		// Event: Backstage_IsOpenChanged
 
+		#pragma warning disable CA1801 // Code analysis does not recognize this method as an event hander...
 		private void Backstage_IsOpenChanged_Handler( object sender, DependencyPropertyChangedEventArgs evt )
 		{
-			if ((sender as Backstage).IsOpen) {
+			if ((bool)evt.NewValue) {
 				backstageTabRecentFiles.IsSelected = true;
 				Backstage_PopulateRecentFiles();
 			} else {
 				SetDataGridFocus();
 			}
 		}
+		#pragma warning restore CA1801
 
 		// Event: RecentFile_ContextMenuOpenClick
 

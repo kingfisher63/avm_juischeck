@@ -1,6 +1,6 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
@@ -11,9 +11,11 @@ using Muon.Windows;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 using WinForms = System.Windows.Forms;
 
 using JuisCheck.Lang;
@@ -26,40 +28,43 @@ namespace JuisCheck
 	/// </summary>
 	public sealed partial class MainWindow : RibbonWindow
 	{
-		public DeviceCollection	Devices		{ get; private set; } = new DeviceCollection();
-		public Settings			AppSettings	{ get; private set; } = Settings.Default;
-
 		public MainWindow()
 		{
-			DataContext = this;
-			InitializeComponent();
+			Backstage_Init1();
+			Devices_Init1();
 
-			Backstage_Init();
-			Devices_Init();
+			InitializeComponent();
+			DataContext = this;
+
+			Backstage_Init2();
+			Devices_Init2();
 
 			RestoreWindowMetrics();
 			SetWindowTitle();
 
-			AppSettings.PropertyChanged += Settings_PropertyChanged_Handler;
-			Devices.IsModifiedChanged   += Devices_IsModifiedChanged_Handler;
+			Settings.Default.PropertyChanged  += Settings_PropertyChanged_Handler;
+			Devices.CollectionPropertyChanged += Devices_CollectionPropertyChanged_Handler;
 		}
 
 		private void CloseDeviceCollection()
 		{
 			if (SaveUnsavedData()) {
+				Devices.Settings.Reset();
 				Devices.Empty();
 				Devices_InitDataGrid();
 			}
 		}
 
-		private bool IsInfinityOrNaN( double number )
+		private static bool IsInfinityOrNaN( double number )
 		{
 			return double.IsInfinity(number) || double.IsNaN(number);
 		}
 
 		private void OpenDeviceCollection( string fileName = null )
 		{
-			if (fileName != null && string.Compare(fileName, Devices.FileName, true) == 0) {
+			Settings settings = Settings.Default;
+
+			if (fileName != null && string.Compare(fileName, Devices.FileName, App.defaultFileNameComparison) == 0) {
 				return;
 			}
 
@@ -72,8 +77,8 @@ namespace JuisCheck
 					AddExtension     = false,
 					CheckFileExists  = true,
 					CheckPathExists  = true,
-					Filter           = "XML files (*.xml)|*.xml",
-					InitialDirectory = Directory.Exists(AppSettings.LastDirectoryPath) ? AppSettings.LastDirectoryPath : Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+					Filter           = JCstring.FilterFilesXML,
+					InitialDirectory = Directory.Exists(settings.LastDocumentDirectory) ? settings.LastDocumentDirectory : App.GetDefaultDirectory(),
 					ReadOnlyChecked  = false,
 					ShowReadOnly     = false,
 					Title            = JCstring.DialogCaptionOpen,
@@ -83,7 +88,7 @@ namespace JuisCheck
 				if (ofd.ShowDialog(this) != true ) {
 					return;
 				}
-				AppSettings.LastDirectoryPath = Path.GetDirectoryName(ofd.FileName);
+				settings.LastDocumentDirectory = Path.GetDirectoryName(ofd.FileName);
 
 				fileName = ofd.FileName;
 			}
@@ -94,19 +99,21 @@ namespace JuisCheck
 				RecentFiles.Add(fileName);
 			}
 			catch (Exception ex) {
-				ShowErrorMessage(string.Format(JCstring.MessageTextOpenDeviceCollectionFailed.Unescape(), ex.Message));
+				ShowErrorMessage(string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextOpenDeviceCollectionFailed.Unescape(), ex.Message));
 			}
 		}
 
 		private void RestoreWindowMetrics()
 		{
-			if (AppSettings.MainWindowRestoreMetrics) {
+			Settings settings = Settings.Default;
+
+			if (settings.MainWindowRestoreMetrics) {
 				Rectangle restoreBounds = new Rectangle(int.MinValue, int.MinValue, int.MinValue, int.MinValue);
 
-				if (!IsInfinityOrNaN(AppSettings.MainWindowLeft  )) { restoreBounds.X      = (int)AppSettings.MainWindowLeft;   }
-				if (!IsInfinityOrNaN(AppSettings.MainWindowTop   )) { restoreBounds.Y      = (int)AppSettings.MainWindowTop;    }
-				if (!IsInfinityOrNaN(AppSettings.MainWindowWidth )) { restoreBounds.Width  = (int)AppSettings.MainWindowWidth;  }
-				if (!IsInfinityOrNaN(AppSettings.MainWindowHeight)) { restoreBounds.Height = (int)AppSettings.MainWindowHeight; }
+				if (!IsInfinityOrNaN(settings.MainWindowLeft  )) { restoreBounds.X      = (int)settings.MainWindowLeft;   }
+				if (!IsInfinityOrNaN(settings.MainWindowTop   )) { restoreBounds.Y      = (int)settings.MainWindowTop;    }
+				if (!IsInfinityOrNaN(settings.MainWindowWidth )) { restoreBounds.Width  = (int)settings.MainWindowWidth;  }
+				if (!IsInfinityOrNaN(settings.MainWindowHeight)) { restoreBounds.Height = (int)settings.MainWindowHeight; }
 
 				// Window position: prevent window from being positioned off screen
 
@@ -129,7 +136,7 @@ namespace JuisCheck
 
 				// Window state
 
-				WindowState = AppSettings.MainWindowMaximized ? WindowState.Maximized : WindowState.Normal;
+				WindowState = settings.MainWindowMaximized ? WindowState.Maximized : WindowState.Normal;
 			}
 		}
 
@@ -138,28 +145,30 @@ namespace JuisCheck
 			try {
 				Devices.Save();
 				return true;
-			} catch {
 			}
-
-			return SaveDeviceCollectionAs();
+			catch {
+				return SaveDeviceCollectionAs();
+			}
 		}
 
 		private bool SaveDeviceCollectionAs()
 		{
+			Settings settings = Settings.Default;
+
 			SaveFileDialog sfd = new SaveFileDialog {
-				AddExtension    = true, 
+				AddExtension    = true,
 				CheckFileExists = false,
 				CheckPathExists = true,
 				CreatePrompt    = false,
 				DefaultExt      = "xml",
-				Filter          = "XML files (*.xml)|*.xml",
+				Filter          = JCstring.FilterFilesXML,
 				OverwritePrompt = true,
 				Title           = JCstring.DialogCaptionSave,
 				ValidateNames   = true
 			};
 
 			if (Devices.FileName == null) {
-				sfd.InitialDirectory = Directory.Exists(AppSettings.LastDirectoryPath) ? AppSettings.LastDirectoryPath : Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+				sfd.InitialDirectory = Directory.Exists(settings.LastDocumentDirectory) ? settings.LastDocumentDirectory : App.GetDefaultDirectory();
 				sfd.FileName         = string.Empty;
 			} else {
 				sfd.InitialDirectory = Path.GetDirectoryName(Devices.FileName);
@@ -169,7 +178,7 @@ namespace JuisCheck
 			if (sfd.ShowDialog(this) != true) {
 				return false;
 			}
-			AppSettings.LastDirectoryPath = Path.GetDirectoryName(sfd.FileName);
+			settings.LastDocumentDirectory = Path.GetDirectoryName(sfd.FileName);
 
 			try {
 				Devices.Save(sfd.FileName);
@@ -177,18 +186,20 @@ namespace JuisCheck
 				return true;
 			}
 			catch (Exception ex) {
-				ShowErrorMessage(string.Format(JCstring.MessageTextSaveDeviceCollectionFailed.Unescape(), ex.Message));
+				ShowErrorMessage(string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextSaveDeviceCollectionFailed.Unescape(), ex.Message));
 				return false;
 			}
 		}
 
 		private void SaveWindowMetrics()
 		{
-			if (!IsInfinityOrNaN(RestoreBounds.Left  )) { AppSettings.MainWindowLeft   = RestoreBounds.Left;   }
-			if (!IsInfinityOrNaN(RestoreBounds.Top   )) { AppSettings.MainWindowTop    = RestoreBounds.Top;    }
-			if (!IsInfinityOrNaN(RestoreBounds.Width )) { AppSettings.MainWindowWidth  = RestoreBounds.Width;  }
-			if (!IsInfinityOrNaN(RestoreBounds.Height)) { AppSettings.MainWindowHeight = RestoreBounds.Height; }
-			AppSettings.MainWindowMaximized = WindowState == WindowState.Maximized;
+			Settings settings = Settings.Default;
+
+			if (!IsInfinityOrNaN(RestoreBounds.Left  )) { settings.MainWindowLeft   = RestoreBounds.Left;   }
+			if (!IsInfinityOrNaN(RestoreBounds.Top   )) { settings.MainWindowTop    = RestoreBounds.Top;    }
+			if (!IsInfinityOrNaN(RestoreBounds.Width )) { settings.MainWindowWidth  = RestoreBounds.Width;  }
+			if (!IsInfinityOrNaN(RestoreBounds.Height)) { settings.MainWindowHeight = RestoreBounds.Height; }
+			settings.MainWindowMaximized = WindowState == WindowState.Maximized;
 		}
 
 		private bool SaveUnsavedData()
@@ -198,27 +209,25 @@ namespace JuisCheck
 			}
 
 			while (true) {
-				MessageBoxExResult result =	MessageBoxEx.Show(
-					new MessageBoxExParams {
-						CaptionText = JCstring.MessageCaptionUnsavedData,
-						MessageText = JCstring.MessageTextUnsavedData.Unescape(),
-						Image       = MessageBoxExImage.Warning,
-						Button      = MessageBoxExButton.YesNoCancel,
-						Owner       = this
-					}
-				);
+				int result = MessageBoxEx2.Show(new MessageBoxEx2Params {
+					CaptionText = JCstring.MessageCaptionUnsavedData,
+					MessageText = JCstring.MessageTextUnsavedData.Unescape(),
+					Image       = MessageBoxEx2Image.Warning,
+					ButtonText  = new string[] { JCstring.DialogButtonTextYes, JCstring.DialogButtonTextNo, JCstring.DialogButtonTextCancel },
+					Owner       = this
+				});
 
 				switch (result) {
-					case MessageBoxExResult.Yes:
+					case 0:		// Yes button
 						if (SaveDeviceCollection()) {
 							return true;
 						}
 						break;
 
-					case MessageBoxExResult.No:
+					case 1:		// No button
 						return true;
 
-					case MessageBoxExResult.Cancel:
+					default:	// Cancel button, close box
 						return false;
 				}
 			}
@@ -234,47 +243,55 @@ namespace JuisCheck
 			string modifiedInfo = Devices.IsModified ? "*" : string.Empty;
 			string fileInfo     = Devices.FileName ?? JCstring.FileNameNew;
 
-			Title = string.Format("{0} - {1} {2}", modifiedInfo + fileInfo, JCstring.ProgramName, App.GetVersion());
+			Title = $"{modifiedInfo+fileInfo} - {App.GetProgramInfo()}";
 		}
 
 		private void ShowErrorMessage( string message )
 		{
-			MessageBoxEx.Show(
-				new MessageBoxExParams {
-					CaptionText = JCstring.MessageCaptionError,
-					MessageText = message,
-					Image       = MessageBoxExImage.Error,
-					Button      = MessageBoxExButton.OK,
-					Owner       = this
-				}
-			);
+			MessageBoxEx2.Show(new MessageBoxEx2Params {
+				CaptionText = JCstring.MessageCaptionError,
+				MessageText = message,
+				Image       = MessageBoxEx2Image.Error,
+				ButtonText  = new string[] { JCstring.DialogButtonTextOk },
+				Owner       = this
+			});
 		}
 
-		// Event: Closing
-		
+		// Event handler: Closing
+
 		private void Closing_Handler( object sender, CancelEventArgs evt )
 		{
+			Settings settings = Settings.Default;
+
 			if (!SaveUnsavedData()) {
+				App.CancelRestart();
 				evt.Cancel = true;
 				return;
 			}
 
-			AppSettings.AutoLoadFile = AppSettings.AutoLoad && !string.IsNullOrWhiteSpace(Devices.FileName) ? Devices.FileName : string.Empty;
+			if (settings.AutoLoad || App.RestartPending) {
+				settings.AutoLoadFile = !string.IsNullOrWhiteSpace(Devices.FileName) ? Devices.FileName : string.Empty;
+			} else {
+				settings.AutoLoadFile = string.Empty;
+			}
+
 			SaveWindowMetrics();
 
 			evt.Cancel = false;
 		}
 
-		// Event: Loaded
+		// Event handler: Loaded
 
 		private void Loaded_Handler( object sender, RoutedEventArgs evt )
 		{
-			if (!string.IsNullOrWhiteSpace(AppSettings.AutoLoadFile)) {
-				OpenDeviceCollection(AppSettings.AutoLoadFile);
+			Settings settings = Settings.Default;
+
+			if (File.Exists(settings.AutoLoadFile)) {
+				OpenDeviceCollection(settings.AutoLoadFile);
 			}
 		}
 
-		// Event: PreviewKeyDown
+		// Event handler: PreviewKeyDown
 		//
 		// We handle the key input bindings ourself because some keypresses are consumed
 		// by controls deep down in the tree.
@@ -292,24 +309,48 @@ namespace JuisCheck
 			}
 		}
 
-		// Event: Devices_IsModifiedChanged
+		// Event handler: Devices_CollectionPropertyChanged
 
-		private void Devices_IsModifiedChanged_Handler( object sender, EventArgs evt )
+		private void Devices_CollectionPropertyChanged_Handler( object sender, PropertyChangedEventArgs evt )
 		{
-			SetWindowTitle();
+			switch (evt.PropertyName) {
+				case nameof(DeviceCollection.FileName):
+				case nameof(DeviceCollection.IsModified):
+					SetWindowTitle();
+					break;
+			}
 		}
 
-		// Event: Settings_PropertyChanged
+		// Event handler: Settings_PropertyChanged
 
 		private void Settings_PropertyChanged_Handler( object sender, PropertyChangedEventArgs evt )
 		{
+			Settings settings = Settings.Default;
+
 			switch (evt.PropertyName) {
-				case nameof(AppSettings.JuisReleaseShowBuildNumber):
+				case nameof(settings.JuisReleaseShowBuildNumber):
 					Devices_RefreshView();
 					break;
 
-				case nameof(AppSettings.RecentFilesMax):
+				case nameof(settings.RecentFilesMax):
 					Backstage_PopulateRecentFiles();
+					break;
+
+				case nameof(settings.UserInterfaceLanguage):
+					// Display message _after_ the setting has been updated on screen regardless of event handler order.
+					Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
+						int result = MessageBoxEx2.Show(new MessageBoxEx2Params() {
+							MessageText = JCstring.MessageTextRestartLanguageChange.Unescape(),
+							CaptionText = JCstring.MessageCaptionProgramRestartRequired,
+							Image       = MessageBoxEx2Image.Warning,
+							ButtonText  = new string[] { JCstring.DialogButtonTextYes, JCstring.DialogButtonTextNo },
+							Owner       = this
+						});
+					
+						if (result == 0) {	// Yes button
+							App.Restart();
+						}
+					}));
 					break;
 			}
 		}

@@ -1,95 +1,136 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Devices xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Device kind="JUIS">
-    <DeviceName>FRITZ!Powerline 540E</DeviceName>
-    <DeviceAddress />
-    <ProductName>FRITZ!Powerline 540E</ProductName>
-    <HardwareMajor>201</HardwareMajor>
-    <HardwareMinor>0</HardwareMinor>
-    <SerialNumber />
-    <FirmwareMajor>129</FirmwareMajor>
-    <FirmwareMinor>6</FirmwareMinor>
-    <FirmwarePatch>92</FirmwarePatch>
-    <FirmwareBuildNumber>47358</FirmwareBuildNumber>
-    <FirmwareBuildType>1</FirmwareBuildType>
-    <OEM>avm</OEM>
-    <Annex>Ohne</Annex>
-    <Country>049</Country>
-    <Language>de</Language>
-    <BaseFritzOS />
-    <UpdateAvailable>false</UpdateAvailable>
-    <UpdateInfo>None</UpdateInfo>
-    <UpdateImageURL />
-    <UpdateInfoURL />
-    <UpdateLastChecked>2018-12-21T11:06:50.143649+01:00</UpdateLastChecked>
-  </Device>
-  <Device kind="JUIS">
-    <DeviceName>FRITZ!Powerline 546E</DeviceName>
-    <DeviceAddress />
-    <ProductName>FRITZ!Powerline 546E</ProductName>
-    <HardwareMajor>190</HardwareMajor>
-    <HardwareMinor>0</HardwareMinor>
-    <SerialNumber />
-    <FirmwareMajor>118</FirmwareMajor>
-    <FirmwareMinor>6</FirmwareMinor>
-    <FirmwarePatch>92</FirmwarePatch>
-    <FirmwareBuildNumber>47429</FirmwareBuildNumber>
-    <FirmwareBuildType>1</FirmwareBuildType>
-    <OEM>avm</OEM>
-    <Annex>Ohne</Annex>
-    <Country>049</Country>
-    <Language>de</Language>
-    <BaseFritzOS />
-    <UpdateAvailable>false</UpdateAvailable>
-    <UpdateInfo>None</UpdateInfo>
-    <UpdateImageURL />
-    <UpdateInfoURL />
-    <UpdateLastChecked>2018-12-21T11:06:50.2096528+01:00</UpdateLastChecked>
-  </Device>
-  <Device kind="JUIS">
-    <DeviceName>FRITZ!Powerline 1240E</DeviceName>
-    <DeviceAddress />
-    <ProductName>FRITZ!Powerline 1240E</ProductName>
-    <HardwareMajor>222</HardwareMajor>
-    <HardwareMinor>0</HardwareMinor>
-    <SerialNumber />
-    <FirmwareMajor>150</FirmwareMajor>
-    <FirmwareMinor>7</FirmwareMinor>
-    <FirmwarePatch>1</FirmwarePatch>
-    <FirmwareBuildNumber>63180</FirmwareBuildNumber>
-    <FirmwareBuildType>1</FirmwareBuildType>
-    <OEM>avm</OEM>
-    <Annex>Ohne</Annex>
-    <Country>049</Country>
-    <Language>de</Language>
-    <BaseFritzOS />
-    <UpdateAvailable>false</UpdateAvailable>
-    <UpdateInfo>None</UpdateInfo>
-    <UpdateImageURL />
-    <UpdateInfoURL />
-    <UpdateLastChecked>2018-12-21T11:06:50.2746565+01:00</UpdateLastChecked>
-  </Device>
-  <Device kind="JUIS">
-    <DeviceName>FRITZ!Powerline 1260E</DeviceName>
-    <DeviceAddress />
-    <ProductName>FRITZ!Powerline 1260E</ProductName>
-    <HardwareMajor>229</HardwareMajor>
-    <HardwareMinor>0</HardwareMinor>
-    <SerialNumber />
-    <FirmwareMajor>157</FirmwareMajor>
-    <FirmwareMinor>7</FirmwareMinor>
-    <FirmwarePatch>1</FirmwarePatch>
-    <FirmwareBuildNumber>63181</FirmwareBuildNumber>
-    <FirmwareBuildType>1</FirmwareBuildType>
-    <OEM>avm</OEM>
-    <Annex>Ohne</Annex>
-    <Country>049</Country>
-    <Language>de</Language>
-    <BaseFritzOS />
-    <UpdateAvailable>false</UpdateAvailable>
-    <UpdateInfo>None</UpdateInfo>
-    <UpdateImageURL />
-    <UpdateInfoURL />
-    <UpdateLastChecked>2018-12-21T11:06:50.3446605+01:00</UpdateLastChecked>
-  </Device>
-</Devices>
+<JuisCheck2 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DectDevices />
+  <JuisDevices>
+    <JuisDevice id="a693a039-6db2-4415-8c3e-ef7b7d6a3da3">
+      <DeviceName>FRITZ!Powerline 540E</DeviceName>
+      <DeviceAddress />
+      <ProductName>FRITZ!Powerline 540E</ProductName>
+      <Hardware>201</Hardware>
+      <SerialNumber />
+      <FirmwareMajor>129</FirmwareMajor>
+      <FirmwareMinor>7</FirmwareMinor>
+      <FirmwarePatch>12</FirmwarePatch>
+      <FirmwareBuildNumber>70667</FirmwareBuildNumber>
+      <FirmwareBuildType>1</FirmwareBuildType>
+      <OEM>avm</OEM>
+      <Annex>Ohne</Annex>
+      <Country>049</Country>
+      <Language>de</Language>
+      <Flags />
+      <MeshMaster />
+      <UpdateAvailable>false</UpdateAvailable>
+      <UpdateInfo />
+      <UpdateImageURL />
+      <UpdateInfoURL />
+      <UpdateLastChecked xsi:nil="true" />
+    </JuisDevice>
+    <JuisDevice id="d2c4e49e-e151-4764-8bf9-49f560264a24">
+      <DeviceName>FRITZ!Powerline 546E</DeviceName>
+      <DeviceAddress />
+      <ProductName>FRITZ!Powerline 546E</ProductName>
+      <Hardware>190</Hardware>
+      <SerialNumber />
+      <FirmwareMajor>118</FirmwareMajor>
+      <FirmwareMinor>7</FirmwareMinor>
+      <FirmwarePatch>12</FirmwarePatch>
+      <FirmwareBuildNumber>70668</FirmwareBuildNumber>
+      <FirmwareBuildType>1</FirmwareBuildType>
+      <OEM>avm</OEM>
+      <Annex>Ohne</Annex>
+      <Country>049</Country>
+      <Language>de</Language>
+      <Flags />
+      <MeshMaster />
+      <UpdateAvailable>false</UpdateAvailable>
+      <UpdateInfo />
+      <UpdateImageURL />
+      <UpdateInfoURL />
+      <UpdateLastChecked xsi:nil="true" />
+    </JuisDevice>
+    <JuisDevice id="c75db467-fea9-47c3-807f-d8fb929a2dc5">
+      <DeviceName>FRITZ!Powerline 1240E</DeviceName>
+      <DeviceAddress />
+      <ProductName>FRITZ!Powerline 1240E</ProductName>
+      <Hardware>222</Hardware>
+      <SerialNumber />
+      <FirmwareMajor>150</FirmwareMajor>
+      <FirmwareMinor>7</FirmwareMinor>
+      <FirmwarePatch>12</FirmwarePatch>
+      <FirmwareBuildNumber>70669</FirmwareBuildNumber>
+      <FirmwareBuildType>1</FirmwareBuildType>
+      <OEM>avm</OEM>
+      <Annex>Ohne</Annex>
+      <Country>049</Country>
+      <Language>de</Language>
+      <Flags />
+      <MeshMaster />
+      <UpdateAvailable>false</UpdateAvailable>
+      <UpdateInfo />
+      <UpdateImageURL />
+      <UpdateInfoURL />
+      <UpdateLastChecked xsi:nil="true" />
+    </JuisDevice>
+    <JuisDevice id="7b2329ff-8b84-4482-aa79-60fe131ec536">
+      <DeviceName>FRITZ!Powerline 1260E</DeviceName>
+      <DeviceAddress />
+      <ProductName>FRITZ!Powerline 1260E</ProductName>
+      <Hardware>229</Hardware>
+      <SerialNumber />
+      <FirmwareMajor>157</FirmwareMajor>
+      <FirmwareMinor>7</FirmwareMinor>
+      <FirmwarePatch>12</FirmwarePatch>
+      <FirmwareBuildNumber>70670</FirmwareBuildNumber>
+      <FirmwareBuildType>1</FirmwareBuildType>
+      <OEM>avm</OEM>
+      <Annex>Ohne</Annex>
+      <Country>049</Country>
+      <Language>de</Language>
+      <Flags />
+      <MeshMaster />
+      <UpdateAvailable>false</UpdateAvailable>
+      <UpdateInfo />
+      <UpdateImageURL />
+      <UpdateInfoURL />
+      <UpdateLastChecked xsi:nil="true" />
+    </JuisDevice>
+  </JuisDevices>
+  <Settings>
+    <Setting name="DataGridColumnVisibleCountry">
+      <Value>False</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleDeviceAddress">
+      <Value>False</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleFirmware">
+      <Value>True</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleFirmwareBuildType">
+      <Value>True</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleHardware">
+      <Value>False</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleLanguage">
+      <Value>False</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleMasterBase">
+      <Value>False</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleOEM">
+      <Value>True</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleProductName">
+      <Value>True</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleUpdateFileName">
+      <Value>False</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleUpdateInfo">
+      <Value>True</Value>
+    </Setting>
+    <Setting name="DataGridColumnVisibleUpdateLastChecked">
+      <Value>True</Value>
+    </Setting>
+  </Settings>
+</JuisCheck2>

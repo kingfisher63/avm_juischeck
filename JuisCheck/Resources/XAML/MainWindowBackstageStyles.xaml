@@ -1,0 +1,159 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:jc="clr-namespace:JuisCheck"
+                    xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="BaseStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <BitmapImage x:Key="imgButtonAbout16"    UriSource="../Images/16x16/oxygen-help-about.png"          />
+    <BitmapImage x:Key="imgButtonClose16"    UriSource="../Images/16x16/oxygen-document-close.png"      />
+    <BitmapImage x:Key="imgButtonExit16"     UriSource="../Images/16x16/oxygen-application-exit.png"    />
+    <BitmapImage x:Key="imgButtonOpen16"     UriSource="../Images/16x16/oxygen-document-open.png"       />
+    <BitmapImage x:Key="imgButtonRecent16"   UriSource="../Images/16x16/oxygen-document-open-recent.png"/>
+    <BitmapImage x:Key="imgButtonSave16"     UriSource="../Images/16x16/oxygen-document-save.png"       />
+    <BitmapImage x:Key="imgButtonSaveAs16"   UriSource="../Images/16x16/oxygen-document-save-as.png"    />
+    <BitmapImage x:Key="imgButtonSettings16" UriSource="../Images/16x16/oxygen-preferences-system.png"  />
+    <BitmapImage x:Key="imgRecentFile32"     UriSource="../Images/32x32/oxygen-document-open-recent.png"/>
+
+    <Style TargetType="{x:Type Border}" x:Key="BackstageOuterBorderStyle">
+        <Setter Property="BorderBrush"         Value="{StaticResource BackstageOuterBorderBrush}"/>
+        <Setter Property="BorderThickness"     Value="0,0,1,0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"   />
+        <Setter Property="Margin"              Value="0,5,0,5"/>
+        <Setter Property="Width"               Value="500"    />
+        <!-- Prevent BackstageTabItem ToolTip from being shown on the tab item content -->
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Visibility="Collapsed"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}" x:Key="BackstageButtonStyle">
+        <Setter Property="Background"      Value="{StaticResource BackstageButtonBackgroundBrush}"/>
+        <Setter Property="BorderBrush"     Value="{StaticResource BackstageButtonBorderBrush}"    />
+        <Setter Property="BorderThickness" Value="2"       />
+        <Setter Property="Margin"          Value="0,0,10,0"/>
+        <Setter Property="Padding"         Value="5,3,5,3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background=     "{TemplateBinding Background}"
+                            BorderBrush=    "{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding=        "{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}"   />
+                            <Setter Property="Foreground"  Value="{StaticResource ControlDisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type DockPanel}" x:Key="BackstageOuterDockPanelStyle">
+        <Setter Property="LastChildFill" Value="True"     />
+        <Setter Property="Margin"        Value="10,0,10,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type DockPanel}" x:Key="BackstageInnerDockPanelStyle">
+        <Setter Property="LastChildFill" Value="False"/>
+    </Style>
+
+    <Style TargetType="{x:Type ScrollViewer}" x:Key="BackstageScrollViewerStyle">
+        <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"   />
+        <Setter Property="VerticalScrollBarVisibility"   Value="Auto"     />
+        <Setter Property="Margin"                        Value="0,10,0,10"/>
+        <Style.Triggers>
+            <Trigger Property="ComputedVerticalScrollBarVisibility" Value="Visible">
+                <Setter Property="Padding" Value="0,0,5,0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type StackPanel}" x:Key="BackstageButtonsStackPanelStyle">
+        <Setter Property="DockPanel.Dock"      Value="Bottom"    />
+        <Setter Property="Margin"              Value="0,10,0,5"  />
+        <Setter Property="HorizontalAlignment" Value="Left"      />
+        <Setter Property="Orientation"         Value="Horizontal"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="BackstageSectionHeaderTextBlockBaseStyle">
+        <Setter Property="DockPanel.Dock" Value="Top"     />
+        <Setter Property="FontSize"       Value="18"      />
+        <Setter Property="FontWeight"     Value="DemiBold"/>
+        <Setter Property="Foreground"     Value="Black"   />
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BackstageSectionHeaderTextBlockBaseStyle}" x:Key="BackstageFirstSectionHeaderTextBlockStyle">
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BackstageSectionHeaderTextBlockBaseStyle}" x:Key="BackstageNextSectionHeaderTextBlockStyle">
+        <Setter Property="Margin" Value="0,15,0,0"/>
+    </Style>
+
+    <!-- Recent files tab -->
+
+    <Style TargetType="{x:Type Border}" x:Key="RecentFilesInnerBorderStyle">
+        <Setter Property="BorderBrush"     Value="{StaticResource BackstageInnerBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="0,1,0,1" />
+        <Setter Property="DockPanel.Dock"  Value="Top"     />
+        <Setter Property="Margin"          Value="0,10,0,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type mwc:RecentFileButton}" x:Key="RecentFileButtonStyle">
+        <Setter Property="Command"        Value="{x:Static jc:MainWindow.Backstage_CmdRecentFileOpen}"/>
+        <Setter Property="DockPanel.Dock" Value="Top"                                                 />
+        <Setter Property="Image"          Value="{StaticResource imgRecentFile32}"                    />
+    </Style>
+
+    <!-- Settings tab -->
+
+    <Style TargetType="{x:Type Border}" x:Key="SettingsInnerBorderStyle">
+        <Setter Property="BorderBrush"     Value="{StaticResource BackstageInnerBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="DockPanel.Dock"  Value="Top"     />
+        <Setter Property="Margin"          Value="0,10,0,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource CheckBoxBaseStyle}" x:Key="SettingsCheckBoxSettingStyle">
+        <Setter Property="DockPanel.Dock" Value="Top"    />
+        <Setter Property="Margin"         Value="2,5,5,0"/>
+        <Setter Property="Padding"        Value="4,0,0,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type jc:ComboBoxEx}" BasedOn="{StaticResource ComboBoxExBaseStyle}" x:Key="SettingsComboBoxExStyle">
+        <Setter Property="Margin" Value="3"   />
+        <Setter Property="Width"  Value="250" />
+    </Style>
+
+    <Style TargetType="{x:Type Grid}" x:Key="SettingsGridStyle">
+        <Setter Property="DockPanel.Dock"      Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style TargetType="{x:Type StackPanel}" x:Key="SettingsStackPanelStyle">
+        <Setter Property="DockPanel.Dock" Value="Top"       />
+        <Setter Property="Orientation"    Value="Horizontal"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}" x:Key="SettingsTextBlockStyle">
+        <Setter Property="Margin" Value="0,7,3,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}" x:Key="SettingsCheckBoxTextBlockStyle">
+        <Setter Property="Margin" Value="3,0,0,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBoxBaseStyle}" x:Key="SettingsTextBoxStyle">
+        <Setter Property="Margin" Value="3,4,3,3"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,23 +1,19 @@
 ﻿/*
  * Program   : JuisCheck for Windows
- * Copyright : Copyright (C) 2018 Roger Hünen
+ * Copyright : Copyright (C) Roger Hünen
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
+using Muon.DotNetExtensions;
+using Muon.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.ServiceModel;
-using System.Text;
-using System.Text.RegularExpressions;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Threading;
 
-using JuisCheck.JUIS;
 using JuisCheck.Lang;
-using JuisCheck.Properties;
 
 namespace JuisCheck
 {
@@ -26,147 +22,31 @@ namespace JuisCheck
 	/// </summary>
 	public sealed partial class FindUpdatesDialog : Window, IDisposable
 	{
-		private List<Device>		queryDevices;
-		private BackgroundWorker	queryWorker;
-		private bool				completed = false;
-		private	bool				disposed  = false;
+		private readonly List<Device>		queryDevices;
+		private readonly BackgroundWorker	queryWorker;
+		private bool						completed = false;
+		private	bool						disposed  = false;
 
 		public FindUpdatesDialog( List<Device> devices )
 		{
-			queryDevices = devices;
+			queryDevices = devices ?? throw new ArgumentNullException(nameof(devices));
 			queryWorker  = new BackgroundWorker() {
 				WorkerReportsProgress      = true,
 				WorkerSupportsCancellation = true
 			};
-			queryWorker.DoWork             += Searcher_DoWork_Handler;
-			queryWorker.ProgressChanged    += Searcher_ProgressChanged_Handler;
-			queryWorker.RunWorkerCompleted += Searcher_RunWorkerCompleted_Handler;
+			queryWorker.DoWork             += Worker_DoWork_Handler;
+			queryWorker.ProgressChanged    += Worker_ProgressChanged_Handler;
+			queryWorker.RunWorkerCompleted += Worker_RunWorkerCompleted_Handler;
 
 			InitializeComponent();
+			DataContext = this;
 
 			pbProgress.Minimum = 0;
 			pbProgress.Maximum = queryDevices.Count;
 			pbProgress.Value   = 0;
-
-			Closing += Closing_Handler;
-			Loaded  += Loaded_Handler;
 		}
 
-		private void QueryDectSoftwareUpdate( Device device )
-		{
-			WebClient webClient = new WebClient();
-			webClient.QueryString.Add("hw",      device.HardwareStr);
-			webClient.QueryString.Add("sw",      device.FirmwareStr);
-			webClient.QueryString.Add("oem",     device.OEM         );
-			webClient.QueryString.Add("country", device.Country     );
-			webClient.QueryString.Add("lang",    device.Language    );
-			webClient.QueryString.Add("fw",      device.BaseFritzOS );
-
-			try {
-				string response = webClient.DownloadString(Settings.Default.AvmCatiServiceURL);
-
-				Match match = Regex.Match(response, "URL=\"(.+)\"", RegexOptions.IgnoreCase);
-				if (match.Success) {
-					string		updateURL = match.Groups[1].ToString();
-					string		fileName  = updateURL.Split('/').Last();
-					string[]	parts     = fileName.Split('.');
-
-					Dispatcher.Invoke(DispatcherPriority.Normal,
-						new Action(() => {
-							device.ClearUpdateInfo();
-							device.UpdateAvailable   = true;
-							device.UpdateInfo        = parts.Length >= 4 ? string.Format("{0}.{1}", parts[2], parts[3]) : JCstring.UpdateInfoUnknown;
- 							device.UpdateImageURL    = updateURL;
-							device.UpdateLastChecked = DateTime.Now;
-						})
-					);
-				} else {
-					Dispatcher.Invoke(DispatcherPriority.Normal,
-						new Action(() => {
-							device.ClearUpdateInfo();
-							device.UpdateInfo        = JCstring.UpdateInfoNone;
-							device.UpdateLastChecked = DateTime.Now;
-						})
-					);
-				}
-			}
-			catch {
-				Dispatcher.Invoke(DispatcherPriority.Normal,
-					new Action(() => {
-						device.ClearUpdateInfo();
-						device.UpdateInfo        = JCstring.UpdateInfoError;
-						device.UpdateLastChecked = DateTime.Now;
-					})
-				);
-			}
-		}
-
-		private void QueryJuisSoftwareUpdate( Device device )
-		{
-			string timestamp = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-
-			RequestHeader requestHeader = new RequestHeader {
-				ManualRequest = true,
-				Nonce         = Convert.ToBase64String(Encoding.UTF8.GetBytes(timestamp)),
-				UserAgent     = "Box"
-			};
-
-			BoxInfo boxInfo = new BoxInfo {
-				Name         = device.ProductName,																		// Never empty
-				HW           = device.HardwareMajor,
-				Major        = device.FirmwareMajor,
-				Minor        = device.FirmwareMinor,
-				Patch        = device.FirmwarePatch,
-				Buildnumber  = device.FirmwareBuildNumber,
-				Buildtype    = device.FirmwareBuildType,
-				Serial       = string.IsNullOrWhiteSpace(device.SerialNumber) ? "9CC7A6123456" : device.SerialNumber,	// Must not be empty (use fake AVM MAC address if needed)
-				OEM          = device.OEM,																				// Never empty
-				Lang         = device.Language,																			// Never empty
-				Country      = device.Country,																			// Never empty
-				Annex        = device.Annex,																			// Never empty
-				Flag         = device.Flag.Length == 0 ? new string[] { string.Empty } : device.Flag,					// Need at least one flag (empty flag OK)
-				UpdateConfig = 1,
-				Provider     = string.Empty,
-				ProviderName = string.Empty
-			};
-
-			try {
-				UpdateInfoServiceClient client = new UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(Settings.Default.AvmJuisServiceURL));
-
-				UpdateInfo updateInfo = client.BoxFirmwareUpdateCheck(requestHeader, boxInfo, null).UpdateInfo;
-				if (updateInfo.Found) {
-					Dispatcher.Invoke(DispatcherPriority.Normal,
-						new Action(() => {
-							device.ClearUpdateInfo();
-							device.UpdateAvailable   = true;
-							device.UpdateInfo        = updateInfo.Version;
-							device.UpdateImageURL    = updateInfo.DownloadURL;
-							device.UpdateInfoURL     = updateInfo.InfoURL;
-							device.UpdateLastChecked = DateTime.Now;
-						})
-					);
-				} else {
-					Dispatcher.Invoke(DispatcherPriority.Normal,
-						new Action(() => {
-							device.ClearUpdateInfo();
-							device.UpdateInfo        = JCstring.UpdateInfoNone;
-							device.UpdateLastChecked = DateTime.Now;
-						})
-					);
-				}
-			}
-			catch {
-				Dispatcher.Invoke(DispatcherPriority.Normal,
-					new Action(() => {
-						device.ClearUpdateInfo();
-						device.UpdateInfo        = JCstring.UpdateInfoError;
-						device.UpdateLastChecked = DateTime.Now;
-					})
-				);
-			}
-		}
-
-		// Event: Closing
+		// Event handler: Closing
 
 		private void Closing_Handler( object sender, CancelEventArgs evt )
 		{
@@ -177,51 +57,97 @@ namespace JuisCheck
 			}
 		}
 
-		// Event: Loaded
+		// Event handler: Loaded
 
 		private void Loaded_Handler( object sender, RoutedEventArgs evt )
 		{
-			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => queryWorker.RunWorkerAsync()));
+			queryWorker.RunWorkerAsync();
 		}
 
-		// Event: Searcher_DoWork
+		// Event handler: Worker_DoWork
 
-		private void Searcher_DoWork_Handler( object sender, DoWorkEventArgs evt )
+		private void Worker_DoWork_Handler( object sender, DoWorkEventArgs evt )
 		{
-			BackgroundWorker	bw       = sender as BackgroundWorker;
+			BackgroundWorker	worker   = (BackgroundWorker)sender;
 			int					progress = 0;
 
 			foreach (Device device in queryDevices) {
-				switch (device.DeviceKind) {
-					case DeviceKind.DECT:
-						QueryDectSoftwareUpdate(device);
-						break;
+				if (device is DectDevice dectDevice) {
+					JuisDevice dectBase = null;
+					Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+						dectBase = App.GetMainWindow().Devices.FindByID(dectDevice.DectBase) as JuisDevice;
+					}));
 
-					case DeviceKind.JUIS:
-						QueryJuisSoftwareUpdate(device);
-						break;
+					string message = null;
+					if (string.IsNullOrWhiteSpace(dectDevice.DectBase)) {
+						message = string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotSet, dectDevice.DeviceName);
+					} else
+					if (dectBase == null) {
+						message = string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotFound, dectDevice.DeviceName);
+					}
 
-					default:
-						throw new InvalidOperationException("Unsupported device kind");
+					if (message != null) {
+						int result = -1;
+						Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+							result = MessageBoxEx2.Show(new MessageBoxEx2Params {
+								CaptionText = JCstring.MessageCaptionError,
+								MessageText = message.Unescape(),
+								Image       = MessageBoxEx2Image.Error,
+								ButtonText  = new string[] { JCstring.DialogButtonTextSkip, JCstring.DialogButtonTextCancel },
+								Owner       = this
+							});
+						}));
+
+						if (result == 0) {	// Skip button
+							continue;
+						} else {			// Cancel button, close box
+							break;
+						}
+					}
+
+					string queryUpdateResponse = dectDevice.QueryFirmwareUpdate(dectBase);
+
+					Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+						dectDevice.SetFirmwareUpdate(queryUpdateResponse);
+					}));
 				}
 
-				bw.ReportProgress(++progress);
-				if (bw.CancellationPending) {
+				if (device is JuisDevice juisDevice) {
+					JuisDevice meshMaster = null;
+					Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+						meshMaster = App.GetMainWindow().Devices.FindByID(juisDevice.MeshMaster) as JuisDevice;
+					}));
+
+					try {
+						JUIS.UpdateInfo queryUpdateResponse = juisDevice.QueryFirmwareUpdate(meshMaster);
+						Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+							juisDevice.SetFirmwareUpdate(queryUpdateResponse);
+						}));
+					}
+					catch {
+						Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+							juisDevice.SetFirmwareUpdate(null);
+						}));
+					}
+				}
+
+				worker.ReportProgress(++progress);
+				if (worker.CancellationPending) {
 					break;
 				}
 			}
 		}
 
-		// Event: Searcher_ProgressChanged
+		// Event handler: Worker_ProgressChanged
 
-		private void Searcher_ProgressChanged_Handler( object sender, ProgressChangedEventArgs evt )
+		private void Worker_ProgressChanged_Handler( object sender, ProgressChangedEventArgs evt )
 		{
 			pbProgress.Value = evt.ProgressPercentage;
 		}
 
-		// Event: Searcher_RunWorkerCompleted
+		// Event handler: Worker_RunWorkerCompleted
 
-		private void Searcher_RunWorkerCompleted_Handler( object sender, RunWorkerCompletedEventArgs evt )
+		private void Worker_RunWorkerCompleted_Handler( object sender, RunWorkerCompletedEventArgs evt )
 		{
 			completed = true;
 			Close();
