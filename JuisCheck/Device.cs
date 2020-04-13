@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Threading;
 
 using JuisCheck.Lang;
 
@@ -379,9 +380,10 @@ namespace JuisCheck
 		/* Abstract methods */
 		/********************/
 
-		public abstract void	NotifyDeviceNameChanged( string deviceID );
 		public abstract bool	Edit( Window owner = null );
+		public abstract string	FindFirmwareUpdate( Dispatcher dispatcher );
 		public abstract void	MakeUpdateCurrent();
+		public abstract void	NotifyDeviceNameChanged( string deviceID );
 
 		// Interface: INotifyPropertyChanged
 

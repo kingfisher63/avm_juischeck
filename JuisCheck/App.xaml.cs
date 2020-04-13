@@ -30,19 +30,21 @@ namespace JuisCheck
 	/// </summary>
 	public partial class App : Application
 	{
-		public const string				defaultDataFileName            = "default.xml";
-		public const string				portableProgramFileName        = "JuisCheckPortable.exe";
-		public const string				programName                    = "JuisCheck";
-		public const string				programVersionSuffix           = "";	// BETA, RC1, etc.
+		public const string					defaultDataFileName            = "default.xml";
+		public const string					portableProgramFileName        = "JuisCheckPortable.exe";
+		public const string					programName                    = "JuisCheck";
+		public const string					programVersionSuffix           = "";	// BETA, RC1, etc.
 
-		public const StringComparison	defaultDisplayStringComparison = StringComparison.CurrentCultureIgnoreCase;
-		public const StringComparison	defaultFileNameComparison      = StringComparison.OrdinalIgnoreCase;
+		public const StringComparison		defaultDisplayStringComparison = StringComparison.CurrentCultureIgnoreCase;
+		public const StringComparison		defaultFileNameComparison      = StringComparison.OrdinalIgnoreCase;
 
-		public static bool				IsLanguageSelectionEnabled	{ get; private set; }
-		public static bool				IsPortableMode				{ get; private set; }
-		public static bool				RestartPending				{ get; private set; }
+		private static readonly Settings	programSettings                = Settings.Default;
 
-		public static List<string>		AdditionalLanguages			{ get; } = new List<string>() { "de", "es", "fr", "it", "nl", "pl" };
+		public static bool					IsLanguageSelectionEnabled	{ get; private set; }
+		public static bool					IsPortableMode				{ get; private set; }
+		public static bool					RestartPending				{ get; private set; }
+
+		public static List<string>			AdditionalLanguages			{ get; } = new List<string>() { "de", "es", "fr", "it", "nl", "pl" };
 
 		/*****************/
 		/* Other methods */
@@ -86,8 +88,7 @@ namespace JuisCheck
 		private void Exit_Handler( object sender, ExitEventArgs evt )
 		{
 			if (!IsPortableMode) {
-				RecentFiles.Save();
-				Settings.Default.Save();
+				programSettings.Save();
 			}
 
 			if (RestartPending) {
@@ -99,10 +100,9 @@ namespace JuisCheck
 
 		private void Startup_Handler( object sender, StartupEventArgs evt )
 		{
-			Settings	settings         = Settings.Default;
-			string		assemblyName     = GetAssemblyName();
-			string		programDirectory = GetProgramDirectory();
-			string		programName      = GetProgramFileName();
+			string	assemblyName     = GetAssemblyName();
+			string	programDirectory = GetProgramDirectory();
+			string	programName      = GetProgramFileName();
 
 			// Portable mode
 
@@ -111,14 +111,14 @@ namespace JuisCheck
 			// Initialize settings
 
 			if (IsPortableMode) {
-				settings.Reset();
-				settings.AutoLoadFile = Path.Combine(programDirectory, defaultDataFileName);
-				settings.LastDocumentDirectory = programDirectory;
-				settings.LastDownloadDirectory = programDirectory;
+				programSettings.Reset();
+				programSettings.AutoLoadFile = Path.Combine(programDirectory, defaultDataFileName);
+				programSettings.LastDocumentDirectory = programDirectory;
+				programSettings.LastDownloadDirectory = programDirectory;
 			} else
-			if (settings.SettingsUpgradeRequired) {
-				settings.Upgrade();
-				settings.SettingsUpgradeRequired = false;
+			if (programSettings.SettingsUpgradeRequired) {
+				programSettings.Upgrade();
+				programSettings.SettingsUpgradeRequired = false;
 			}
 
 			// Additional languages (using resource dictionaries)
@@ -133,7 +133,7 @@ namespace JuisCheck
 				}
 
 				if (AdditionalLanguages.Count == 0) {
-					settings.UserInterfaceLanguage = "auto";
+					programSettings.UserInterfaceLanguage = "auto";
 				}
 
 				IsLanguageSelectionEnabled = AdditionalLanguages.Count != 0;
@@ -143,7 +143,7 @@ namespace JuisCheck
 
 			CultureInfo cultureInfo;
 			try {
-				cultureInfo = new CultureInfo(settings.UserInterfaceLanguage);
+				cultureInfo = new CultureInfo(programSettings.UserInterfaceLanguage);
 			}
 			catch (CultureNotFoundException) {
 				cultureInfo = CultureInfo.InstalledUICulture;

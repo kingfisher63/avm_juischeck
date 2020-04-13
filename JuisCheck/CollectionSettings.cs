@@ -16,7 +16,8 @@ namespace JuisCheck
 {
 	public sealed class CollectionSettings : INotifyPropertyChanged
 	{
-		private readonly Dictionary<string,string> settings = new Dictionary<string, string>();
+		private static readonly Settings					programSettings = Settings.Default;
+		private readonly		Dictionary<string,string>	settings        = new Dictionary<string, string>();
 
 		public const string keyDataGridColumnVisibleCountry = "DataGridColumnVisibleCountry";
 		public bool DataGridColumnVisibleCountry
@@ -199,20 +200,18 @@ namespace JuisCheck
 
 		private void SetDefaultsValues()
 		{
-			Settings settings = Settings.Default;
-
-			DataGridColumnVisibleCountry           = settings.DefaultDataGridColumnVisibleCountry;
-			DataGridColumnVisibleDeviceAddress     = settings.DefaultDataGridColumnVisibleDeviceAddress;
-			DataGridColumnVisibleFirmware          = settings.DefaultDataGridColumnVisibleFirmware;
-			DataGridColumnVisibleFirmwareBuildType = settings.DefaultDataGridColumnVisibleFirmwareBuildType;
-			DataGridColumnVisibleHardware          = settings.DefaultDataGridColumnVisibleHardware;
-			DataGridColumnVisibleLanguage          = settings.DefaultDataGridColumnVisibleLanguage;
-			DataGridColumnVisibleMasterBase        = settings.DefaultDataGridColumnVisibleMasterBase;
-			DataGridColumnVisibleOEM               = settings.DefaultDataGridColumnVisibleOEM;
-			DataGridColumnVisibleProductName       = settings.DefaultDataGridColumnVisibleProductName;
-			DataGridColumnVisibleUpdateFileName    = settings.DefaultDataGridColumnVisibleUpdateFileName;
-			DataGridColumnVisibleUpdateInfo        = settings.DefaultDataGridColumnVisibleUpdateInfo;
-			DataGridColumnVisibleUpdateLastChecked = settings.DefaultDataGridColumnVisibleUpdateLastChecked;
+			DataGridColumnVisibleCountry           = programSettings.DefaultDataGridColumnVisibleCountry;
+			DataGridColumnVisibleDeviceAddress     = programSettings.DefaultDataGridColumnVisibleDeviceAddress;
+			DataGridColumnVisibleFirmware          = programSettings.DefaultDataGridColumnVisibleFirmware;
+			DataGridColumnVisibleFirmwareBuildType = programSettings.DefaultDataGridColumnVisibleFirmwareBuildType;
+			DataGridColumnVisibleHardware          = programSettings.DefaultDataGridColumnVisibleHardware;
+			DataGridColumnVisibleLanguage          = programSettings.DefaultDataGridColumnVisibleLanguage;
+			DataGridColumnVisibleMasterBase        = programSettings.DefaultDataGridColumnVisibleMasterBase;
+			DataGridColumnVisibleOEM               = programSettings.DefaultDataGridColumnVisibleOEM;
+			DataGridColumnVisibleProductName       = programSettings.DefaultDataGridColumnVisibleProductName;
+			DataGridColumnVisibleUpdateFileName    = programSettings.DefaultDataGridColumnVisibleUpdateFileName;
+			DataGridColumnVisibleUpdateInfo        = programSettings.DefaultDataGridColumnVisibleUpdateInfo;
+			DataGridColumnVisibleUpdateLastChecked = programSettings.DefaultDataGridColumnVisibleUpdateLastChecked;
 		}
 
 		// Interface: INotifyPropertyChanged

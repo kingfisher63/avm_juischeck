@@ -682,7 +682,7 @@
     <value>Sì</value>
   </data>
   <data name="DialogCaptionDownloadFirmware" xml:space="preserve">
-    <value>Download firmware</value>
+    <value>Download firmware - {0}</value>
   </data>
   <data name="FilterFilesAll" xml:space="preserve">
     <value>Tutti i file (*.*)|*.*</value>
@@ -713,5 +713,8 @@
   </data>
   <data name="SettingLabelUserInterfaceLanguage" xml:space="preserve">
     <value>Lingua</value>
+  </data>
+  <data name="ComboBoxValuePredefinedDectBase" xml:space="preserve">
+    <value>{0} (predefinito, {1})</value>
   </data>
 </root>

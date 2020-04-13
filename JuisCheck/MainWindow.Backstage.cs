@@ -69,7 +69,7 @@ namespace JuisCheck
 			foreach (UIElement element in dpRecentFiles.Children) {
 				if (element is RecentFileButton button) {
 					if (!button.IsEnabled) {
-						RecentFiles.Remove((string)button.Tag);
+						recentFiles.Remove((string)button.Tag);
 					}
 				}
 			}
@@ -77,27 +77,25 @@ namespace JuisCheck
 
 		private void Backstage_PopulateRecentFiles()
 		{
-			List<string> paths = RecentFiles.GetFileNames();
-
 			dpRecentFiles.Children.Clear();
-			foreach (string path in paths) {
+			foreach (string recentFile in recentFiles.GetMaxItems(programSettings.RecentFilesMax)) {
 				try {
 					RecentFileButton button = new RecentFileButton {
-						DirPath   = Path.GetDirectoryName(path),
-						FileName  = Path.GetFileName(path),
-						IsEnabled = File.Exists(path),
-						Tag       = path,
-						ToolTip   = path
+						DirPath   = Path.GetDirectoryName(recentFile),
+						FileName  = Path.GetFileName(recentFile),
+						IsEnabled = File.Exists(recentFile),
+						Tag       = recentFile,
+						ToolTip   = recentFile
 					};
 					DockPanel.SetDock(button, Dock.Top);
 
 					dpRecentFiles.Children.Add(button);
 				}
 				catch (ArgumentException) {
-					RecentFiles.Remove(path);
+					recentFiles.Remove(recentFile);
 				}
 				catch (PathTooLongException) {
-					RecentFiles.Remove(path);
+					recentFiles.Remove(recentFile);
 				}
 			}
 		}
@@ -212,7 +210,7 @@ namespace JuisCheck
 
 		private void Backstage_CmdRecentFilesClear_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			RecentFiles.Clear();
+			recentFiles.Clear();
 			Backstage_PopulateRecentFiles();
 		}
 
@@ -247,7 +245,7 @@ namespace JuisCheck
 		private void Backstage_CmdRecentFileRemove_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
 			if (evt.Source is RecentFileButton button) {
-				RecentFiles.Remove((string)button.Tag);
+				recentFiles.Remove((string)button.Tag);
 				Backstage_PopulateRecentFiles();
 			}
 		}
@@ -295,7 +293,7 @@ namespace JuisCheck
 
 		private void Backstage_CmdSettingsDefault_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Settings.Default.Reset();
+			programSettings.Reset();
 		}
 
 		// Event: Backstage_IsOpenChanged

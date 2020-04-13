@@ -118,214 +118,214 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BackstageButtonTextAbout" xml:space="preserve">
-    <value>About</value>
+    <value>Über</value>
   </data>
   <data name="RibbonButtonTextAddDECT" xml:space="preserve">
-    <value>Add DECT</value>
+    <value>DECT hinzufügen</value>
   </data>
   <data name="DeviceFieldLabelDeviceAddress" xml:space="preserve">
-    <value>Device address</value>
+    <value>Geräteadresse</value>
   </data>
   <data name="DialogButtonTextCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Abbrechen</value>
   </data>
   <data name="BackstageButtonTextClose" xml:space="preserve">
-    <value>Close</value>
+    <value>Schließen</value>
   </data>
   <data name="RibbonButtonTextDelete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Löschen</value>
   </data>
   <data name="DeviceFieldLabelDeviceName" xml:space="preserve">
-    <value>Device name</value>
+    <value>Gerätename</value>
   </data>
   <data name="RibbonButtonTextEdit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Bearbeiten</value>
   </data>
   <data name="BackstageButtonTextExit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Verlassen</value>
   </data>
   <data name="RibbonButtonTextFindUpdates" xml:space="preserve">
-    <value>Find updates</value>
+    <value>Suche Updates</value>
   </data>
   <data name="RibbonGroupBoxTextFirmwareUpdate" xml:space="preserve">
-    <value>Firmware update</value>
+    <value>Firmware Update</value>
   </data>
   <data name="RibbonButtonTextMakeCurrent" xml:space="preserve">
-    <value>Make current</value>
+    <value>Setze aktuell</value>
   </data>
   <data name="DialogButtonTextOk" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="BackstageButtonTextOpen" xml:space="preserve">
-    <value>Open...</value>
+    <value>Öffnen...</value>
   </data>
   <data name="DeviceFieldLabelProductName" xml:space="preserve">
-    <value>Product name</value>
+    <value>Produktname</value>
   </data>
   <data name="DialogButtonTextQuery" xml:space="preserve">
-    <value>Query</value>
+    <value>Suche</value>
   </data>
   <data name="BackstageButtonTextSave" xml:space="preserve">
-    <value>Save</value>
+    <value>Speichern</value>
   </data>
   <data name="BackstageButtonTextSaveAs" xml:space="preserve">
-    <value>Save As...</value>
+    <value>Speichern als...</value>
   </data>
   <data name="RibbonButtonTextSelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>Alles auswählen</value>
   </data>
   <data name="RibbonButtonTextSelectNone" xml:space="preserve">
-    <value>Select none</value>
+    <value>Auswahl aufheben</value>
   </data>
   <data name="MessageTextUnsavedData" xml:space="preserve">
-    <value>The data is modified. Changes will be\nlost if you do not save the data.\n\nSave the data now?</value>
+    <value>Die Daten wurden geändert. Änderungen gehen\nverloren, wenn Sie die Daten nicht speichern.\n\nJetzt speichern?</value>
   </data>
   <data name="MessageCaptionUnsavedData" xml:space="preserve">
-    <value>Unsaved data</value>
+    <value>Nicht gespeichert</value>
   </data>
   <data name="RibbonButtonTooltipAddDECT" xml:space="preserve">
-    <value>Add a new device to the list (FRITZ!DECT) [Sihft+Insert]</value>
+    <value>Ein neues Gerät zur Liste hinzufügen (FRITZ!DECT) [Umschalt+Einfügen]</value>
   </data>
   <data name="RibbonButtonTooltipDelete" xml:space="preserve">
-    <value>Remove the selected devices from the device collection [Delete]</value>
+    <value>Entfernen der ausgewählten Geräte aus der Gerätesammlung [Löschen]</value>
   </data>
   <data name="RibbonButtonTooltipEdit" xml:space="preserve">
-    <value>Edit the selected device [Ctrl+E]</value>
+    <value>Das ausgewählte Gerät bearbeiten [Strg+E]</value>
   </data>
   <data name="RibbonButtonTooltipFindUpdates" xml:space="preserve">
-    <value>Query the AVM update service to find new firmware for the selected devices [Ctrl+F]</value>
+    <value>Abfrage des AVM-Aktualisierungsdienstes, um neue Firmware für die ausgewählten Geräte zu finden [Strg+F]</value>
   </data>
   <data name="RibbonButtonTooltipMakeCurrent" xml:space="preserve">
-    <value>Make the latest firmware the current firmware for the selected devices [Ctrl+M]</value>
+    <value>Mache die neueste Firmware zur aktuellen Firmware für die ausgewählten Geräte [Strg+M]</value>
   </data>
   <data name="RibbonButtonTooltipSelectAll" xml:space="preserve">
-    <value>Select all devices [Ctrl+A]</value>
+    <value>Alle Geräte auswählen [Strg+A]</value>
   </data>
   <data name="RibbonButtonTooltipSelectNone" xml:space="preserve">
-    <value>Select no device [Ctrl+N]</value>
+    <value>Kein Gerät auswählen [Strg+N]</value>
   </data>
   <data name="MessageCaptionError" xml:space="preserve">
-    <value>Error</value>
+    <value>Fehler</value>
   </data>
   <data name="MessageTextSaveDeviceCollectionFailed" xml:space="preserve">
-    <value>The device collection could not be saved.\n\n{0}</value>
+    <value>Die Gerätesammlung konnte nicht gespeichert werden.\n\n{0}</value>
   </data>
   <data name="FileNameNew" xml:space="preserve">
-    <value>New</value>
+    <value>Neu</value>
   </data>
   <data name="MessageTextOpenDeviceCollectionFailed" xml:space="preserve">
-    <value>The device collection could not be loaded.\n\n{0}</value>
+    <value>Die Gerätesammlung konnte nicht geladen werden.\n\n{0}</value>
   </data>
   <data name="MessageTextDeleteMultipleDevices" xml:space="preserve">
-    <value>Delete {0} selected devices?</value>
+    <value>Lösche {0} ausgewählte Geräte?</value>
   </data>
   <data name="MessageTextDeleteOneDevice" xml:space="preserve">
-    <value>Delete 1 selected device?</value>
+    <value>Lösche 1 ausgewähltes Gerät?</value>
   </data>
   <data name="MessageTextDeviceQueryFailed" xml:space="preserve">
-    <value>Could not get data from device.\n\n{0}</value>
+    <value>Konnte keine Daten vom Gerät erhalten.\n\n{0}</value>
   </data>
   <data name="RribbontabHeaderFile" xml:space="preserve">
-    <value>File</value>
+    <value>Datei</value>
   </data>
   <data name="DeviceFieldLabelHardwareType" xml:space="preserve">
-    <value>Hardware type</value>
+    <value>Hardware-Typ</value>
   </data>
   <data name="DataGridColumnHeaderDeviceAddress" xml:space="preserve">
-    <value>Address</value>
+    <value>Adresse</value>
   </data>
   <data name="DataGridColumnHeaderDeviceName" xml:space="preserve">
-    <value>Device name</value>
+    <value>Gerätename</value>
   </data>
   <data name="DataGridColumnHeaderProductName" xml:space="preserve">
-    <value>Product name</value>
+    <value>Produktname</value>
   </data>
   <data name="RibbonGroupBoxTextDevices" xml:space="preserve">
-    <value>Devices</value>
+    <value>Geräte</value>
   </data>
   <data name="DialogCaptionOpen" xml:space="preserve">
-    <value>Open</value>
+    <value>Öffnen</value>
   </data>
   <data name="DialogCaptionSave" xml:space="preserve">
-    <value>Save As</value>
+    <value>Speichern als</value>
   </data>
   <data name="MessageCaptionAbout" xml:space="preserve">
-    <value>About</value>
+    <value>Über</value>
   </data>
   <data name="MessageCaptionDelete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Löschen</value>
   </data>
   <data name="ValidationErrorEmptyOrWhiteSpace" xml:space="preserve">
-    <value>The input is empty or white space</value>
+    <value>Die Eingabe ist leer oder enthält Leerzeichen</value>
   </data>
   <data name="ValidationErrorInvalidCharacters" xml:space="preserve">
-    <value>The input contains invalid characters</value>
+    <value>Die Eingabe enthält ungültige Zeichen</value>
   </data>
   <data name="ValidationErrorValueOutOfRange" xml:space="preserve">
-    <value>The input is out of range ({0}-{1})</value>
+    <value>Die Eingabe liegt außerhalb des Bereichs  ({0}-{1})</value>
   </data>
   <data name="DeviceFieldLabelFirmwareVersion" xml:space="preserve">
-    <value>Firmware version</value>
+    <value>Firmware-Version</value>
   </data>
   <data name="DataGridColumnHeaderFirmware" xml:space="preserve">
     <value>Firmware</value>
   </data>
   <data name="DialogCaptionDeviceProperties" xml:space="preserve">
-    <value>Device properties</value>
+    <value>Geräte-Eigenschaften</value>
   </data>
   <data name="DeviceTooltipUnusualFirmwareMajorWarning" xml:space="preserve">
-    <value>Unusual firmware major version</value>
+    <value>Ungewöhnliche Firmware-Hauptversion</value>
   </data>
   <data name="DeviceFieldLabelFirmwareBuildType" xml:space="preserve">
-    <value>Firmware type</value>
+    <value>Firmware-Typ</value>
   </data>
   <data name="DeviceFieldLabelOEM" xml:space="preserve">
     <value>OEM</value>
   </data>
   <data name="DataGridColumnHeaderFirmwareBuildType" xml:space="preserve">
-    <value>Type</value>
+    <value>Typ</value>
   </data>
   <data name="DataGridColumnHeaderOEM" xml:space="preserve">
     <value>OEM</value>
   </data>
   <data name="ValidationErrorNoValueSelected" xml:space="preserve">
-    <value>No value selected</value>
+    <value>Kein Wert gewählt</value>
   </data>
   <data name="ComboBoxValueBuildtypeBetaInhouse" xml:space="preserve">
-    <value>Inhouse beta (1000)</value>
+    <value>Inhaus Beta (1000)</value>
   </data>
   <data name="ComboBoxValueBuildtypeBetaPublic" xml:space="preserve">
-    <value>Public beta (1001)</value>
+    <value>Öffentlicher Beta (1001)</value>
   </data>
   <data name="ComboBoxValueBuildtypeRelease" xml:space="preserve">
     <value>Release (1)</value>
   </data>
   <data name="ComboBoxValueUnknown" xml:space="preserve">
-    <value>UNKNOWN ({0})</value>
+    <value>UNBEKANNT ({0})</value>
   </data>
   <data name="ComboBoxValueLanguageDE" xml:space="preserve">
-    <value>German (de)</value>
+    <value>Deutsch (de)</value>
   </data>
   <data name="ComboBoxValueLanguageEN" xml:space="preserve">
-    <value>English (en)</value>
+    <value>Englisch (en)</value>
   </data>
   <data name="ComboBoxValueLanguageES" xml:space="preserve">
-    <value>Spanish (es)</value>
+    <value>Spanisch (es)</value>
   </data>
   <data name="ComboBoxValueLanguageFR" xml:space="preserve">
-    <value>French (fr)</value>
+    <value>Französisch (fr)</value>
   </data>
   <data name="ComboBoxValueLanguageIT" xml:space="preserve">
-    <value>Italian (it)</value>
+    <value>Italienisch (it)</value>
   </data>
   <data name="ComboBoxValueLanguageNL" xml:space="preserve">
-    <value>Dutch (nl)</value>
+    <value>Niederländisch (nl)</value>
   </data>
   <data name="ComboBoxValueLanguagePL" xml:space="preserve">
-    <value>Polish (pl)</value>
+    <value>Polnisch (pl)</value>
   </data>
   <data name="DeviceFieldLabelLanguage" xml:space="preserve">
-    <value>Language</value>
+    <value>Sprache</value>
   </data>
   <data name="ComboBoxValueCountry0234" xml:space="preserve">
     <value>Nigeria (0234)</value>
@@ -340,19 +340,19 @@
     <value>Namibia (0264)</value>
   </data>
   <data name="ComboBoxValueCountry027" xml:space="preserve">
-    <value>South Africa (027)</value>
+    <value>Süd Afrika (027)</value>
   </data>
   <data name="ComboBoxValueCountry030" xml:space="preserve">
-    <value>Greece (030)</value>
+    <value>Griechenland (030)</value>
   </data>
   <data name="ComboBoxValueCountry031" xml:space="preserve">
-    <value>Netherlands (031)</value>
+    <value>Niederlande (031)</value>
   </data>
   <data name="ComboBoxValueCountry032" xml:space="preserve">
-    <value>Belgium (032)</value>
+    <value>Belgien (032)</value>
   </data>
   <data name="ComboBoxValueCountry033" xml:space="preserve">
-    <value>France (033)</value>
+    <value>Frankreich (033)</value>
   </data>
   <data name="ComboBoxValueCountry034" xml:space="preserve">
     <value>Spain (034)</value>
@@ -364,22 +364,22 @@
     <value>Luxembourg (0352)</value>
   </data>
   <data name="ComboBoxValueCountry0353" xml:space="preserve">
-    <value>Ireland (0353)</value>
+    <value>Irland (0353)</value>
   </data>
   <data name="ComboBoxValueCountry0357" xml:space="preserve">
-    <value>Cyprus (0357)</value>
+    <value>Zypern (0357)</value>
   </data>
   <data name="ComboBoxValueCountry0358" xml:space="preserve">
-    <value>Finland (0358)</value>
+    <value>Finnland (0358)</value>
   </data>
   <data name="ComboBoxValueCountry036" xml:space="preserve">
-    <value>Hungary (036)</value>
+    <value>Ungarn (036)</value>
   </data>
   <data name="ComboBoxValueCountry0371" xml:space="preserve">
-    <value>Latvia (0371)</value>
+    <value>Lettland (0371)</value>
   </data>
   <data name="ComboBoxValueCountry0372" xml:space="preserve">
-    <value>Estonia (0372)</value>
+    <value>Estland (0372)</value>
   </data>
   <data name="ComboBoxValueCountry0376" xml:space="preserve">
     <value>Andorra (0376)</value>
@@ -388,58 +388,58 @@
     <value>Montenegro (0382)</value>
   </data>
   <data name="ComboBoxValueCountry0385" xml:space="preserve">
-    <value>Croatia (0385)</value>
+    <value>Kroatien (0385)</value>
   </data>
   <data name="ComboBoxValueCountry0386" xml:space="preserve">
-    <value>Slovenia (0386)</value>
+    <value>Slowenien (0386)</value>
   </data>
   <data name="ComboBoxValueCountry0387" xml:space="preserve">
-    <value>Bosnia and Herzegovina (0387)</value>
+    <value>Bosnien und Herzegovina (0387)</value>
   </data>
   <data name="ComboBoxValueCountry0389" xml:space="preserve">
     <value>Macedonia (0389)</value>
   </data>
   <data name="ComboBoxValueCountry039" xml:space="preserve">
-    <value>Italy (039)</value>
+    <value>Italien (039)</value>
   </data>
   <data name="ComboBoxValueCountry041" xml:space="preserve">
-    <value>Switzerland (041)</value>
+    <value>Schweiz (041)</value>
   </data>
   <data name="ComboBoxValueCountry0420" xml:space="preserve">
-    <value>Czech Republic (0420)</value>
+    <value>Tschechische Republik (0420)</value>
   </data>
   <data name="ComboBoxValueCountry0421" xml:space="preserve">
-    <value>Slovakia (0421)</value>
+    <value>Slowakei (0421)</value>
   </data>
   <data name="ComboBoxValueCountry043" xml:space="preserve">
-    <value>Austria (043)</value>
+    <value>Österreich (043)</value>
   </data>
   <data name="ComboBoxValueCountry044" xml:space="preserve">
-    <value>United Kingdom (044)</value>
+    <value>Groß Britannien (044)</value>
   </data>
   <data name="ComboBoxValueCountry045" xml:space="preserve">
-    <value>Denmark (045)</value>
+    <value>Dänemark (045)</value>
   </data>
   <data name="ComboBoxValueCountry046" xml:space="preserve">
-    <value>Sweden (046)</value>
+    <value>Schweden (046)</value>
   </data>
   <data name="ComboBoxValueCountry047" xml:space="preserve">
-    <value>Norway (047)</value>
+    <value>Norwegen (047)</value>
   </data>
   <data name="ComboBoxValueCountry048" xml:space="preserve">
-    <value>Poland (048)</value>
+    <value>Polen (048)</value>
   </data>
   <data name="ComboBoxValueCountry049" xml:space="preserve">
-    <value>Germany (049)</value>
+    <value>Deutschland (049)</value>
   </data>
   <data name="ComboBoxValueCountry054" xml:space="preserve">
-    <value>Argentina (054)</value>
+    <value>Argentinien (054)</value>
   </data>
   <data name="ComboBoxValueCountry061" xml:space="preserve">
-    <value>Australia (061)</value>
+    <value>Australien (061)</value>
   </data>
   <data name="ComboBoxValueCountry064" xml:space="preserve">
-    <value>New Zealand (064)</value>
+    <value>Neuseeland (064)</value>
   </data>
   <data name="ComboBoxValueCountry066" xml:space="preserve">
     <value>Thailand (066)</value>
@@ -448,10 +448,10 @@
     <value>Israel (0972)</value>
   </data>
   <data name="ComboBoxValueCountry99" xml:space="preserve">
-    <value>Other country (99)</value>
+    <value>Anderes Land (99)</value>
   </data>
   <data name="DeviceFieldLabelCountry" xml:space="preserve">
-    <value>Country</value>
+    <value>Land</value>
   </data>
   <data name="ComboBoxValueAnnexA" xml:space="preserve">
     <value>A (A)</value>
@@ -460,261 +460,261 @@
     <value>B (B)</value>
   </data>
   <data name="ComboBoxValueAnnexNone" xml:space="preserve">
-    <value>No annex (Ohne)</value>
+    <value>Kein Annex (Ohne)</value>
   </data>
   <data name="DeviceFieldLabelAnnex" xml:space="preserve">
     <value>Annex</value>
   </data>
   <data name="DeviceFieldLabelFlags" xml:space="preserve">
-    <value>Flags</value>
+    <value>Werte</value>
   </data>
   <data name="DataGridColumnHeaderUpdateInfo" xml:space="preserve">
     <value>Update</value>
   </data>
   <data name="DialogCaptionFindUpdates" xml:space="preserve">
-    <value>Find updates</value>
+    <value>Suche Updates</value>
   </data>
   <data name="DeviceFieldLabelSerialNumber" xml:space="preserve">
-    <value>Serial number</value>
+    <value>Seriennummer</value>
   </data>
   <data name="DeviceFieldLabelUpdateInfo" xml:space="preserve">
-    <value>Update info</value>
+    <value>Update-Info</value>
   </data>
   <data name="UpdateInfoError" xml:space="preserve">
-    <value>Error</value>
+    <value>Fehler</value>
   </data>
   <data name="UpdateInfoNone" xml:space="preserve">
-    <value>None</value>
+    <value>Keine</value>
   </data>
   <data name="RibbonButtonTextClearUpdates" xml:space="preserve">
-    <value>Clear updates</value>
+    <value>Leere Updates</value>
   </data>
   <data name="RibbonButtonTooltipClearUpdates" xml:space="preserve">
-    <value>Clear the update information for the selected devices [Shift+U]</value>
+    <value>Löschen der Aktualisierungsinformationen für die ausgewählten Geräte [Umschalt+U]</value>
   </data>
   <data name="RibbonButtonTextDownloadFirmware" xml:space="preserve">
-    <value>Download firmware</value>
+    <value>Firmware herunterladen</value>
   </data>
   <data name="RibbonButtonTooltipDownloadFirmware" xml:space="preserve">
-    <value>Download the firmware image for the selected device [Ctrl+D]</value>
+    <value>Lade das Firmware-Image für das ausgewählte Gerät herunter [Strg+D]</value>
   </data>
   <data name="RibbonButtonTextViewInfo" xml:space="preserve">
-    <value>View info</value>
+    <value>Information anzeigen</value>
   </data>
   <data name="RibbonButtonTooltipViewInfo" xml:space="preserve">
-    <value>Launch the default browser to view the firmware release notes for the selected device [Ctrl+I]</value>
+    <value>Starte den Standardbrowser, um die Firmware-Versionshinweise für das ausgewählte Gerät anzuzeigen [Strg+I]</value>
   </data>
   <data name="MessageTextInvalidUpdateVersion" xml:space="preserve">
-    <value>Invalid firmware update version.\n\nDevice: {0}\nVersion: {1}</value>
+    <value>Ungültige Firmware-Update-Version.\n\nGerät: {0}\nVersion: {1}</value>
   </data>
   <data name="BackstageButtonTextRemoveNonExistingFiles" xml:space="preserve">
-    <value>Remove non-existing files from list</value>
+    <value>Nicht existierende Dateien aus der Liste entfernen</value>
   </data>
   <data name="BackstageSectionHeaderRecentFiles" xml:space="preserve">
-    <value>Recent device collections</value>
+    <value>Neueste Gerätesammlungen</value>
   </data>
   <data name="BackstageTabTextRecent" xml:space="preserve">
-    <value>Recent</value>
+    <value>Neueste</value>
   </data>
   <data name="ComboBoxValueAnnexCable" xml:space="preserve">
-    <value>Cable (Kabel)</value>
+    <value>Kabel</value>
   </data>
   <data name="DeviceFieldLabelUpdateFileName" xml:space="preserve">
-    <value>Update file name</value>
+    <value>Update-Dateiname</value>
   </data>
   <data name="DeviceFieldLabelLastChecked" xml:space="preserve">
-    <value>Last checked</value>
+    <value>Letzte Prüfung</value>
   </data>
   <data name="DataGridColumnHeaderUpdateLastChecked" xml:space="preserve">
-    <value>Last checked</value>
+    <value>Letzte Prüfung</value>
   </data>
   <data name="RibbonTabHeaderDevices" xml:space="preserve">
-    <value>Devices</value>
+    <value>Geräte</value>
   </data>
   <data name="BackstageTabTextSettings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Einstellungen</value>
   </data>
   <data name="BackstageSectionHeaderDefaultValues" xml:space="preserve">
-    <value>Default values</value>
+    <value>Standardwerte</value>
   </data>
   <data name="BackstageSectionHeaderGeneral" xml:space="preserve">
-    <value>General</value>
+    <value>Allgemein</value>
   </data>
   <data name="SettingLabelJuisReleaseShowBuildNumber" xml:space="preserve">
-    <value>Show build number for release versions (if available)</value>
+    <value>Build-Nummer für Release-Versionen anzeigen (falls verfügbar)</value>
   </data>
   <data name="SettingLabelMainWindowRestoreMetrics" xml:space="preserve">
-    <value>Restore window size and position on startup</value>
+    <value>Fenstergröße und -position beim Start wiederherstellen</value>
   </data>
   <data name="UpdateInfoUnknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>Unbekannt</value>
   </data>
   <data name="ValidationErrorInvalidFritzOSversion" xml:space="preserve">
-    <value>This Fritz!OS version format is invalid (example: 113.07.01)</value>
+    <value>Dieses Format der Fritz!OS-Version ist ungültig (Beispiel: 113.07.01)</value>
   </data>
   <data name="SettingLabelDefaultAnnex" xml:space="preserve">
     <value>Annex</value>
   </data>
   <data name="SettingLabelDefaultCountry" xml:space="preserve">
-    <value>Country</value>
+    <value>Land</value>
   </data>
   <data name="SettingLabelDefaultFirmwareBuildType" xml:space="preserve">
-    <value>Firmware type</value>
+    <value>Firmware-Typ</value>
   </data>
   <data name="SettingLabelDefaultLanguage" xml:space="preserve">
-    <value>Language</value>
+    <value>Sprache</value>
   </data>
   <data name="SettingLabelDefaultOEM" xml:space="preserve">
     <value>OEM</value>
   </data>
   <data name="ComboBoxValueNotSet" xml:space="preserve">
-    <value>(not set)</value>
+    <value>(nicht gesetzt)</value>
   </data>
   <data name="SettingLabelRecentFilesMax" xml:space="preserve">
-    <value>Maximum number of recent files</value>
+    <value>Maximale Anzahl der jüngsten Dateien</value>
   </data>
   <data name="RibbonButtonTextAddJUIS" xml:space="preserve">
-    <value>Add device</value>
+    <value>Gerät hinzufügen</value>
   </data>
   <data name="RibbonButtonTooltipAddJUIS" xml:space="preserve">
-    <value>Add a new device to the list (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN) [Insert]</value>
+    <value>Ein neues Gerät zur Liste hinzufügen (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN) [Einfg]</value>
   </data>
   <data name="RibbonButtonTextCopyURLs" xml:space="preserve">
-    <value>Copy URLs</value>
+    <value>URLs kopieren</value>
   </data>
   <data name="RibbonButtonTooltipCopyURLs" xml:space="preserve">
-    <value>Copy the image download URLs of the selected devices to the clipboard [Ctrl+U]</value>
+    <value>Kopieren Sie die Bild-Download-URLs der ausgewählten Geräte in die Zwischenablage [Strg+U]</value>
   </data>
   <data name="BackstageButtonTooltipAbout" xml:space="preserve">
-    <value>Display program information</value>
+    <value>Programminformationen anzeigen</value>
   </data>
   <data name="BackstageButtonTooltipClose" xml:space="preserve">
-    <value>Close the device collection [Ctrl+W]</value>
+    <value>Die Gerätesammlung schließen [Strg+W]</value>
   </data>
   <data name="BackstageButtonTooltipExit" xml:space="preserve">
-    <value>Exit the program [Ctrl+X]</value>
+    <value>Anwendung schließen [Strg+X]</value>
   </data>
   <data name="BackstageButtonTooltipOpen" xml:space="preserve">
-    <value>Load a device collection from a file [Ctrl+O]</value>
+    <value>Laden einer Gerätesammlung aus einer Datei [Strg+O]</value>
   </data>
   <data name="BackstageButtonTooltipSave" xml:space="preserve">
-    <value>Save the device collection to the file from which it was loaded [Ctrl+S]</value>
+    <value>Speichern der Gerätesammlung in der Datei, aus der sie geladen wurde [Strg+S]</value>
   </data>
   <data name="BackstageButtonTooltipSaveAs" xml:space="preserve">
-    <value>Save the device collection to a different file [Ctrl+Alt+S]</value>
+    <value>Speichern der Gerätesammlung in einer anderen Datei [Strg+Alt+S]</value>
   </data>
   <data name="BackstageTabTooltipRecent" xml:space="preserve">
-    <value>Open the Recent Files panel</value>
+    <value>Bereich der Neueste Dateien öffnen</value>
   </data>
   <data name="BackstageTabTooltipSettings" xml:space="preserve">
-    <value>Open the Settings panel</value>
+    <value>Einstellungen öffnen</value>
   </data>
   <data name="MessageCaptionFatalError" xml:space="preserve">
-    <value>Fatal error</value>
+    <value>Fataler Fehler</value>
   </data>
   <data name="MessageTextUnhandledExceptionCopySuccess" xml:space="preserve">
-    <value>Unhandled exception: {0}\n\nException information has been copied to the clipboard.</value>
+    <value>Unbehandelte Ausnahme: {0}\n\nDie Ausnahmeinformationen wurden in die Zwischenablage kopiert.</value>
   </data>
   <data name="MessageTextClipboardCopyFailure" xml:space="preserve">
-    <value>The data could not be copied to the clipboard.\nThe clipboard may be locked by another program.</value>
+    <value>Die Daten konnten nicht in die Zwischenablage kopiert werden.\nDie Zwischenablage kann durch ein anderes Programm gesperrt sein.</value>
   </data>
   <data name="MessageTextUnhandledExceptionCopyFailure" xml:space="preserve">
-    <value>Unhandled exception: {0}\n\nException information could not be copied to the clipboard.</value>
+    <value>Unbehandelte Ausnahme: {0}\n\nAusnahmeinformationen konnten nicht in die Zwischenablage kopiert werden.</value>
   </data>
   <data name="BackstageContextMenuItemTextOpen" xml:space="preserve">
-    <value>Open</value>
+    <value>Öffnen</value>
   </data>
   <data name="BackstageContextMenuItemTextRemove" xml:space="preserve">
-    <value>Remove from list</value>
+    <value>Von der Liste entfernen</value>
   </data>
   <data name="BackstageButtonTextRemoveAllFiles" xml:space="preserve">
-    <value>Remove all files from list</value>
+    <value>Alle Dateien von der Liste entfernen</value>
   </data>
   <data name="ContextMenuTitleTextSelectColumns" xml:space="preserve">
-    <value>Select columns</value>
+    <value>Spalten auswählen</value>
   </data>
   <data name="DataGridColumnHeaderCountry" xml:space="preserve">
-    <value>Country</value>
+    <value>Land</value>
   </data>
   <data name="DataGridColumnHeaderHardware" xml:space="preserve">
     <value>HW</value>
   </data>
   <data name="DataGridColumnHeaderLanguage" xml:space="preserve">
-    <value>Lang</value>
+    <value>Sprache</value>
   </data>
   <data name="DataGridColumnHeaderUpdateFileName" xml:space="preserve">
-    <value>Update file name</value>
+    <value>Dateiname aktualisieren</value>
   </data>
   <data name="BackstageButtonTextResetToDefaults" xml:space="preserve">
-    <value>Reset to defaults</value>
+    <value>Auf Standardwerte zurücksetzen</value>
   </data>
   <data name="SettingLabelAutoLoad" xml:space="preserve">
-    <value>Automatically load the current device collection at next program start</value>
+    <value>Automatisches Laden der aktuellen Gerätesammlung beim nächsten Programmstart</value>
   </data>
   <data name="RibbonButtonTextCopy" xml:space="preserve">
-    <value>Copy</value>
+    <value>Kopieren</value>
   </data>
   <data name="RibbonButtonTooltipCopy" xml:space="preserve">
-    <value>Add a device that is a copy of the selected device [Ctrl+C]</value>
+    <value>Ein Gerät hinzufügen, das eine Kopie des ausgewählten Geräts ist [Strg+C]</value>
   </data>
   <data name="ComboBoxValueBuildtypeBetaPLUS" xml:space="preserve">
-    <value>PLUS beta (1007)</value>
+    <value>PLUS Beta (1007)</value>
   </data>
   <data name="DialogButtonTextNo" xml:space="preserve">
-    <value>No</value>
+    <value>Nein</value>
   </data>
   <data name="DialogButtonTextYes" xml:space="preserve">
-    <value>Yes</value>
+    <value>Ja</value>
   </data>
   <data name="DeviceFieldLabelMeshMaster" xml:space="preserve">
-    <value>Mesh master</value>
+    <value>Mesh-Master</value>
   </data>
   <data name="ComboBoxValueNoMaster" xml:space="preserve">
-    <value>(no master)</value>
+    <value>(kein Master)</value>
   </data>
   <data name="DeviceFieldLabelDectBase" xml:space="preserve">
-    <value>DECT base</value>
+    <value>DECT Basis</value>
   </data>
   <data name="DialogButtonTextSkip" xml:space="preserve">
-    <value>Skip</value>
+    <value>Überspringen</value>
   </data>
   <data name="MessageTextDectBaseNotFound" xml:space="preserve">
-    <value>{0}: DECT base not found.\nPlease set the DECT base for this device.</value>
+    <value>{0}: DECT Basis nicht gefunden.\nBitte setzen Sie die DECT Basis für dieses Gerät.</value>
   </data>
   <data name="MessageTextDectBaseNotSet" xml:space="preserve">
-    <value>{0}: DECT base not set.\nPlease set the DECT base for this device.</value>
+    <value>{0}: DECT nicht gesetzt.\nBitte setzen Sie die DECT Basis für dieses Gerät.</value>
   </data>
   <data name="ComboBoxValueAutomatic" xml:space="preserve">
-    <value>(automatic)</value>
+    <value>(automatisch)</value>
   </data>
   <data name="MessageCaptionProgramRestartRequired" xml:space="preserve">
-    <value>Program restart required</value>
+    <value>Programm Neustart erforderlich</value>
   </data>
   <data name="MessageTextRestartLanguageChange" xml:space="preserve">
-    <value>You must restart the program for the language setting to take effect.\n\nRestart the program now?</value>
+    <value>Sie müssen das Programm neu starten, damit die Spracheinstellung wirksam wird..\n\nProgramm jetzt Neustarten?</value>
   </data>
   <data name="BackstageSectionHeaderDefaultColumns" xml:space="preserve">
-    <value>Default columns</value>
+    <value>Standardspalten</value>
   </data>
   <data name="ComboBoxValueBuildtypeBetaTest" xml:space="preserve">
-    <value>TEST beta (1006)</value>
+    <value>TEST Beta (1006)</value>
   </data>
   <data name="DialogCaptionDownloadFirmware" xml:space="preserve">
-    <value>Download firmware - {0}</value>
+    <value>Firmware herunterladen - {0}</value>
   </data>
   <data name="FilterFilesAll" xml:space="preserve">
-    <value>All files (*.*)|*.*</value>
+    <value>Alle Dateien (*.*)|*.*</value>
   </data>
   <data name="FilterFilesXML" xml:space="preserve">
-    <value>XML files (*.xml)|*.xml</value>
+    <value>XML-Dateien (*.xml)|*.xml</value>
   </data>
   <data name="DataGridColumnHeaderMasterBase" xml:space="preserve">
-    <value>Master / Base</value>
+    <value>Master / Basis</value>
   </data>
   <data name="SettingLabelUserInterfaceLanguage" xml:space="preserve">
-    <value>Language</value>
+    <value>Sprache</value>
   </data>
   <data name="ComboBoxValuePredefinedDectBase" xml:space="preserve">
-    <value>{0} (predefined, {1})</value>
+    <value>{0} (vordefiniert, {1})</value>
   </data>
 </root>

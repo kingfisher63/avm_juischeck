@@ -45,7 +45,8 @@
     <ApplicationIcon>Resources\Images\48x48\JuisCheck.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>JuisCheck.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -111,8 +112,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="NaturalStringComparer.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="RecentFiles.cs" />
+    <Compile Include="RecentItemsCollection.cs" />
     <Compile Include="Resources\Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Resources\Converters\InverseBooleanConverter.cs" />
     <Compile Include="Resources\Converters\NullableDateTimeToStringConverter.cs" />
@@ -221,6 +221,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>JCmessage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lang\JCstring.de.resx" />
     <EmbeddedResource Include="Lang\JCstring.it.resx" />
     <EmbeddedResource Include="Lang\JCstring.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -304,6 +305,9 @@
     <Resource Include="Resources\Images\16x16\oxygen-document-open.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Costura.Fody">
+      <Version>4.1.0</Version>
+    </PackageReference>
     <PackageReference Include="Fluent.Ribbon">
       <Version>7.1.0</Version>
     </PackageReference>
@@ -314,19 +318,12 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterResolveReferences">
-    <ItemGroup>
-      <EmbeddedResource Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)' == '.dll'">
-        <LogicalName>%(ReferenceCopyLocalPaths.DestinationSubDirectory)%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)</LogicalName>
-      </EmbeddedResource>
-    </ItemGroup>
-  </Target>
   <PropertyGroup>
     <PostBuildEvent>rmdir /S /Q "$(SolutionDir)bin\$(ConfigurationName)"
 mkdir "$(SolutionDir)bin\$(ConfigurationName)"
 copy "$(TargetPath)" "$(SolutionDir)bin\$(ConfigurationName)"
 
-for /D %25%25i in (it) do (
+for /D %25%25i in (de it) do (
   mkdir "$(SolutionDir)bin\$(ConfigurationName)\%25%25i"
   copy "$(TargetDir)%25%25i\*.*" "$(SolutionDir)bin\$(ConfigurationName)\%25%25i"
 )

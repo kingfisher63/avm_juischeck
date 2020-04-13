@@ -49,6 +49,7 @@ namespace JuisCheck
 			foreach (JuisDevice baseDevice in App.GetMainWindow().Devices.Where(d => d is JuisDevice)) {
 				DectBaseValues.Add(new ComboBoxValue(baseDevice.ID, baseDevice.DeviceName));
 			}
+			DectBaseValues.Add(new ComboBoxValue(DectDevice.predefinedDectBaseID, DectDevice.GetPredefinedDectBaseText()));
 			DectBaseValues.Sort(new ComboBoxValueComparer(new NaturalStringComparer(App.defaultDisplayStringComparison)));
 			DectBaseValues.AppendMissingAsUnknown(device.DectBase);
 		}

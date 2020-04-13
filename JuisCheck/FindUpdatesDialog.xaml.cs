@@ -9,7 +9,6 @@ using Muon.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -72,62 +71,22 @@ namespace JuisCheck
 			int					progress = 0;
 
 			foreach (Device device in queryDevices) {
-				if (device is DectDevice dectDevice) {
-					JuisDevice dectBase = null;
+				string errorMessage = device.FindFirmwareUpdate(Dispatcher);
+
+				if (errorMessage != null) {
+					int result = -1;
 					Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-						dectBase = App.GetMainWindow().Devices.FindByID(dectDevice.DectBase) as JuisDevice;
+						result = MessageBoxEx2.Show(new MessageBoxEx2Params {
+							CaptionText = JCstring.MessageCaptionError,
+							MessageText = errorMessage.Unescape(),
+							Image       = MessageBoxEx2Image.Error,
+							ButtonText  = new string[] { JCstring.DialogButtonTextSkip, JCstring.DialogButtonTextCancel },
+							Owner       = this
+						});
 					}));
 
-					string message = null;
-					if (string.IsNullOrWhiteSpace(dectDevice.DectBase)) {
-						message = string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotSet, dectDevice.DeviceName);
-					} else
-					if (dectBase == null) {
-						message = string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotFound, dectDevice.DeviceName);
-					}
-
-					if (message != null) {
-						int result = -1;
-						Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-							result = MessageBoxEx2.Show(new MessageBoxEx2Params {
-								CaptionText = JCstring.MessageCaptionError,
-								MessageText = message.Unescape(),
-								Image       = MessageBoxEx2Image.Error,
-								ButtonText  = new string[] { JCstring.DialogButtonTextSkip, JCstring.DialogButtonTextCancel },
-								Owner       = this
-							});
-						}));
-
-						if (result == 0) {	// Skip button
-							continue;
-						} else {			// Cancel button, close box
-							break;
-						}
-					}
-
-					string queryUpdateResponse = dectDevice.QueryFirmwareUpdate(dectBase);
-
-					Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-						dectDevice.SetFirmwareUpdate(queryUpdateResponse);
-					}));
-				}
-
-				if (device is JuisDevice juisDevice) {
-					JuisDevice meshMaster = null;
-					Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-						meshMaster = App.GetMainWindow().Devices.FindByID(juisDevice.MeshMaster) as JuisDevice;
-					}));
-
-					try {
-						JUIS.UpdateInfo queryUpdateResponse = juisDevice.QueryFirmwareUpdate(meshMaster);
-						Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-							juisDevice.SetFirmwareUpdate(queryUpdateResponse);
-						}));
-					}
-					catch {
-						Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-							juisDevice.SetFirmwareUpdate(null);
-						}));
+					if (result != 0) {	// Cancel button, close box
+						break;
 					}
 				}
 

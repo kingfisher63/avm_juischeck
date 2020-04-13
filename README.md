@@ -139,14 +139,16 @@ Input fields are checked for valid input. A field with invalid input will have a
 red border. In this case the field has a tooltip that explains the reason for this.
 If any field has invalid input, you cannot click the *OK* button.
 
-For DECT devices you must select a device in the same device collection as a DECT
-base (for example a FRITZ!Box 7590). The FRITZ!OS version of the DECT base is used
-in update queries to the CATI service.
+For DECT devices you must select a FRITZ!Box as the DECT base. The FRITZ!OS version
+of the DECT base is used in update queries to the CATI service. A predefined DECT
+base device is available for your convenience (a FRITZ!Box 7590 with FRITZ!OS 7.12),
+but it is recommended that you add your own FRITZ!Box to the collection and configure
+DECT devices to use is as the DECT base.
 
 For non-DECT devices you can optionally select another device in the same device
-collection as a Mesh master. The information of the Mesh Master is used to augment
-the update query. At the moment of writing it is unknown if this information is
-actually used by the JUIS service.
+collection as a Mesh master. The information of the Mesh master is used to augment
+the update query. Some firmware updates are only found if you select a Mesh master
+with an appropriate firmware version.
 
 For non-DECT devices you can also supply a network address (IP address or DNS name)
 and click the *Query* button. JuisCheck will then populate the device properties
@@ -157,8 +159,6 @@ from the *juis_boxinfo.xml* or *jason_boxinfo.xml* file retrieved from the devic
 The primary user interface language is English. If addtional languages are installed
 (*JuisCheck.resources.dll* files in per language subfolders) you can select the user
 interface language in the settings panel. The default is automatic language selection.
-
-Currently only an Italian localization is available (by *bovirus*).
 
 ## Portable mode
 

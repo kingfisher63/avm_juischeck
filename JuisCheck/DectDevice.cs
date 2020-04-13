@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Threading;
 
 using JuisCheck.Lang;
 using JuisCheck.Properties;
@@ -18,6 +19,13 @@ namespace JuisCheck
 {
 	public class DectDevice : Device
 	{
+		public const string					predefinedDectBaseID       = "63022b32-3ecb-436d-bc6c-00861df70fff";
+		public const string					predefinedDectBaseProduct  = "FRITZ!Box 7590";
+		public const string					predefinedDectBaseFritzOS  = "7.12";
+		public const string					predefinedDectBaseFirmware = "154.07.12";
+
+		private static readonly Settings	programSettings            = Settings.Default;
+
 		/***********************************/
 		/* Device type specific properties */
 		/* - including derived properties  */
@@ -102,7 +110,13 @@ namespace JuisCheck
 		public override string MasterBaseStr
 		{
 			get {
-				return !(App.GetMainWindow().Devices.FindByID(DectBase) is JuisDevice dectBase) ? string.Empty : dectBase.DeviceName;
+				if (App.GetMainWindow().Devices.FindByID(DectBase) is JuisDevice dectBase) {
+					return dectBase.DeviceName;
+				}
+				if (DectBase == predefinedDectBaseID) {
+					return GetPredefinedDectBaseText();
+				}
+				return string.Empty;
 			}
 		}
 
@@ -207,6 +221,53 @@ namespace JuisCheck
 			return dialog.ShowDialog() == true;
 		}
 
+		public override string FindFirmwareUpdate( Dispatcher dispatcher )
+		{
+			if (dispatcher == null) {
+				throw new ArgumentNullException(nameof(dispatcher));
+			}
+
+			string dectBaseFirmware;
+
+			if (DectBase == predefinedDectBaseID) {
+				dectBaseFirmware = predefinedDectBaseFirmware;
+			} else {
+				if (string.IsNullOrWhiteSpace(DectBase)) {
+					return string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotSet, DeviceName);
+				}
+
+				JuisDevice dectBase = null;
+				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+					dectBase = App.GetMainWindow().Devices.FindByID(DectBase) as JuisDevice;
+				}));
+
+				if (dectBase == null) {
+					return string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotFound, DeviceName);
+				}
+
+				if (dectBase.FirmwareBuildType == 1) {
+					// Release firmware
+					dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}";
+				} else {
+					// Labor firmware (note: this format is to be confirmed)
+					dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}-{dectBase.FirmwareBuildNumber}";
+				}
+			}
+
+			string queryUpdateResponse = QueryFirmwareUpdate(dectBaseFirmware);
+
+			dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+				SetFirmwareUpdate(queryUpdateResponse);
+			}));
+
+			return null;
+		}
+
+		public static string GetPredefinedDectBaseText()
+		{
+			return string.Format(CultureInfo.CurrentCulture, JCstring.ComboBoxValuePredefinedDectBase, predefinedDectBaseProduct, predefinedDectBaseFritzOS);
+		}
+
 		public override void MakeUpdateCurrent()
 		{
 			if (!UpdateAvailable) {
@@ -231,19 +292,10 @@ namespace JuisCheck
 			}
 		}
 
-		public string QueryFirmwareUpdate( JuisDevice dectBase )
+		public string QueryFirmwareUpdate( string dectBaseFirmware )
 		{
-			if (dectBase == null ) {
-				throw new ArgumentNullException(nameof(dectBase));
-			}
-
-			string dectBaseFirmware;
-			if (dectBase.FirmwareBuildType == 1) {
-				// Release firmware
-				dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}";
-			} else {
-				// Labor firmware (note: this format is to be confirmed)
-				dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}-{dectBase.FirmwareBuildNumber}";
+			if (dectBaseFirmware == null ) {
+				throw new ArgumentNullException(nameof(dectBaseFirmware));
 			}
 
 			try {
@@ -255,7 +307,7 @@ namespace JuisCheck
 					webClient.QueryString.Add("lang",    Language   );
 					webClient.QueryString.Add("fw",      dectBaseFirmware);
 
-					return webClient.DownloadString(Settings.Default.AvmCatiServiceURL);
+					return webClient.DownloadString(programSettings.AvmCatiServiceURL);
 				}
 			}
 			catch (WebException) {

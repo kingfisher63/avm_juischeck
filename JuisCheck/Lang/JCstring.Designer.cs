@@ -826,6 +826,15 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} (predefined, {1}).
+        /// </summary>
+        public static string ComboBoxValuePredefinedDectBase {
+            get {
+                return ResourceManager.GetString("ComboBoxValuePredefinedDectBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UNKNOWN ({0}).
         /// </summary>
         public static string ComboBoxValueUnknown {
@@ -1186,7 +1195,7 @@ namespace JuisCheck.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download firmware.
+        ///   Looks up a localized string similar to Download firmware - {0}.
         /// </summary>
         public static string DialogCaptionDownloadFirmware {
             get {

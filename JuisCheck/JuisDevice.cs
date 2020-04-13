@@ -13,6 +13,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -23,6 +24,8 @@ namespace JuisCheck
 {
 	public class JuisDevice : Device
 	{
+		private static readonly Settings programSettings = Settings.Default;
+
 		/************************************/
 		/* Annex values and display strings */
 		/************************************/
@@ -205,7 +208,7 @@ namespace JuisCheck
 		public override string FirmwareStr
 		{
 			get {
-				if (FirmwareBuildNumber !=0 && (FirmwareBuildType != firmwareBuildTypeRelease || Settings.Default.JuisReleaseShowBuildNumber)) {
+				if (FirmwareBuildNumber !=0 && (FirmwareBuildType != firmwareBuildTypeRelease || programSettings.JuisReleaseShowBuildNumber)) {
 					return $"{FirmwareMajor}.{FirmwareMinor:D2}.{FirmwarePatch:D2}-{FirmwareBuildNumber}";
 				} else {
 					return $"{FirmwareMajor}.{FirmwareMinor:D2}.{FirmwarePatch:D2}";
@@ -260,7 +263,10 @@ namespace JuisCheck
 		public override string MasterBaseStr
 		{
 			get {
-				return !(App.GetMainWindow().Devices.FindByID(MeshMaster) is JuisDevice meshMaster) ? string.Empty : meshMaster.DeviceName;
+				if (App.GetMainWindow().Devices.FindByID(MeshMaster) is JuisDevice meshMaster) {
+					return meshMaster.DeviceName;
+				}
+				return string.Empty;
 			}
 		}
 
@@ -391,6 +397,32 @@ namespace JuisCheck
 			}
 
 			return dialog.ShowDialog() == true;
+		}
+
+		public override string FindFirmwareUpdate( Dispatcher dispatcher )
+		{
+			if (dispatcher == null) {
+				throw new ArgumentNullException(nameof(dispatcher));
+			}
+
+			JuisDevice meshMaster = null;
+			dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+				meshMaster = App.GetMainWindow().Devices.FindByID(MeshMaster) as JuisDevice;
+			}));
+
+			try {
+				JUIS.UpdateInfo queryUpdateResponse = QueryFirmwareUpdate(meshMaster);
+				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+					SetFirmwareUpdate(queryUpdateResponse);
+				}));
+			}
+			catch {
+				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+					SetFirmwareUpdate(null);
+				}));
+			}
+
+			return null;
 		}
 
 		protected static int GetFirmwareBuildType( string buildTypeStr, int defaultBuildType )
@@ -578,7 +610,7 @@ namespace JuisCheck
 				UserAgent     = "Box"
 			};
 
-			using (JUIS.UpdateInfoServiceClient client = new JUIS.UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(Settings.Default.AvmJuisServiceURL))) {
+			using (JUIS.UpdateInfoServiceClient client = new JUIS.UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(programSettings.AvmJuisServiceURL))) {
 				return client.BoxFirmwareUpdateCheck(requestHeader, ToBoxInfo(), meshMaster?.ToBoxInfo()).UpdateInfo;
 			}
 		}

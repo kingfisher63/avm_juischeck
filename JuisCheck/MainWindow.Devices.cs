@@ -136,12 +136,10 @@ namespace JuisCheck
 
 		private void Devices_CmdAddDECT_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Settings settings = Settings.Default;
-
 			DectDevice newDevice = new DectDevice() {
-				Country  = settings.DefaultCountry,
-				Language = settings.DefaultLanguage,
-				OEM      = settings.DefaultOEM
+				Country  = programSettings.DefaultCountry,
+				Language = programSettings.DefaultLanguage,
+				OEM      = programSettings.DefaultOEM
 			};
 
 			if (newDevice.Edit(this)) {
@@ -163,14 +161,12 @@ namespace JuisCheck
 
 		private void Devices_CmdAddJUIS_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Settings settings = Settings.Default;
-
 			JuisDevice newDevice = new JuisDevice() {
-				Annex             = settings.DefaultAnnex,
-				FirmwareBuildType = settings.DefaultFirmwareBuildType,
-				Country           = settings.DefaultCountry,
-				Language          = settings.DefaultLanguage,
-				OEM               = settings.DefaultOEM
+				Annex             = programSettings.DefaultAnnex,
+				FirmwareBuildType = programSettings.DefaultFirmwareBuildType,
+				Country           = programSettings.DefaultCountry,
+				Language          = programSettings.DefaultLanguage,
+				OEM               = programSettings.DefaultOEM
 			};
 
 			if (newDevice.Edit(this)) {
@@ -303,8 +299,7 @@ namespace JuisCheck
 
 		private void Devices_CmdDownloadFirmware_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			Uri			downloadUri = new Uri(Devices.First(d => IsSelectedDevice(d)).UpdateImageURL);
-			Settings	settings    = Settings.Default;
+			Uri downloadUri = new Uri(Devices.First(d => IsSelectedDevice(d)).UpdateImageURL);
 
 			SaveFileDialog sfd = new SaveFileDialog {
 				AddExtension     = false,
@@ -313,7 +308,7 @@ namespace JuisCheck
 				CreatePrompt     = false,
 				Filter           = JCstring.FilterFilesAll,
 				FileName         = downloadUri.Segments.Last(),
-				InitialDirectory = Directory.Exists(settings.LastDownloadDirectory) ? settings.LastDownloadDirectory : App.GetDefaultDirectory(),
+				InitialDirectory = Directory.Exists(programSettings.LastDownloadDirectory) ? programSettings.LastDownloadDirectory : App.GetDefaultDirectory(),
 				OverwritePrompt  = true,
 				Title            = JCstring.DialogCaptionSave,
 				ValidateNames    = true
@@ -322,9 +317,10 @@ namespace JuisCheck
 			if (sfd.ShowDialog(this) != true) {
 				return;
 			}
-			settings.LastDownloadDirectory = Path.GetDirectoryName(sfd.FileName);
+			programSettings.LastDownloadDirectory = Path.GetDirectoryName(sfd.FileName);
 
-			DownloadDialog downloadDialog = new DownloadDialog(downloadUri, sfd.FileName, JCstring.DialogCaptionDownloadFirmware) {
+			string dialogCaption = string.Format(CultureInfo.CurrentCulture, JCstring.DialogCaptionDownloadFirmware, Path.GetFileName(sfd.FileName));
+			DownloadDialog downloadDialog = new DownloadDialog(downloadUri, sfd.FileName, dialogCaption) {
 				Owner                 = this,
 				WindowStartupLocation = WindowStartupLocation.CenterOwner
 			};
