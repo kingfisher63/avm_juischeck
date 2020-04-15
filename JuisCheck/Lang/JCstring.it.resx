@@ -184,10 +184,10 @@
     <value>Dati non salvati</value>
   </data>
   <data name="RibbonButtonTooltipAddDECT" xml:space="preserve">
-    <value>Aggiunge un nuovo dispositivo all'elenco (FRITZ!DECT) [Shift+Ins]</value>
+    <value>Aggiungi un nuovo dispositivo all'elenco (FRITZ!DECT) [Shift+Ins]</value>
   </data>
   <data name="RibbonButtonTooltipDelete" xml:space="preserve">
-    <value>Rimuove il dispositivo selezionato dall'elenco [Canc]</value>
+    <value>Rimuovi il dispositivo selezionato dall'elenco [Canc]</value>
   </data>
   <data name="RibbonButtonTooltipEdit" xml:space="preserve">
     <value>Modifica il dispositivo selezionato [Ctrl+E]</value>
@@ -196,7 +196,7 @@
     <value>Interroga il servizio aggiornamenti AVM per trovare nuove versioni per i dispositivi selezionati [Ctrl+F]</value>
   </data>
   <data name="RibbonButtonTooltipMakeCurrent" xml:space="preserve">
-    <value>Rende il firmware più recente il firmware attuale per i dispositivi selezionati [Ctrl+M]</value>
+    <value>Rendi il firmware più recente il firmware attuale per i dispositivi selezionati [Ctrl+M]</value>
   </data>
   <data name="RibbonButtonTooltipSelectAll" xml:space="preserve">
     <value>Seleziona tutti i dispositivi [Ctrl+A]</value>
@@ -478,7 +478,7 @@
     <value>Numero seriale</value>
   </data>
   <data name="DeviceFieldLabelUpdateInfo" xml:space="preserve">
-    <value>Info aggironamento</value>
+    <value>Info aggiornamento</value>
   </data>
   <data name="UpdateInfoError" xml:space="preserve">
     <value>Errore</value>
@@ -502,7 +502,7 @@
     <value>Visualizza info</value>
   </data>
   <data name="RibbonButtonTooltipViewInfo" xml:space="preserve">
-    <value>Esegue il browser predefinito per visualizzare le note di rilascio del firmware per il dispositivo selezionato [Ctrl+I]</value>
+    <value>Apri il browser predefinito per visualizzare le note di rilascio del firmware per il dispositivo selezionato [Ctrl+I]</value>
   </data>
   <data name="MessageTextInvalidUpdateVersion" xml:space="preserve">
     <value>Versione firmware aggiornamento non valida.\n\nDispositivo: {0}\nVersione: {1}</value>
@@ -550,7 +550,7 @@
     <value>Sconosciuta</value>
   </data>
   <data name="ValidationErrorInvalidFritzOSversion" xml:space="preserve">
-    <value>Questo formato versione Fritz!OS non è valida (esempio: 113.07.01)</value>
+    <value>Questo formato versione Fritz!OS non è valido (esempio: 113.07.01)</value>
   </data>
   <data name="SettingLabelDefaultAnnex" xml:space="preserve">
     <value>Annex</value>
@@ -577,7 +577,7 @@
     <value>Aggiungi dispositivo</value>
   </data>
   <data name="RibbonButtonTooltipAddJUIS" xml:space="preserve">
-    <value>Aggiunge un nuovo dispositivo all'elenco (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN) [Ins]</value>
+    <value>Aggiungi un nuovo dispositivo all'elenco (FRITZ!Box, FRITZ!Powerline, FRITZ!WLAN) [Ins]</value>
   </data>
   <data name="RibbonButtonTextCopyURLs" xml:space="preserve">
     <value>Copia URL</value>
@@ -616,7 +616,7 @@
     <value>Eccezione non gestita: {0}\n\nLe informazioni dell'eccezione sono state copiate negli Appunti.</value>
   </data>
   <data name="MessageTextClipboardCopyFailure" xml:space="preserve">
-    <value>I dati non possono essere copiati negli Apopunti.\nGli Appunti potrebbero essere bloccati da un altro programma.</value>
+    <value>I dati non possono essere copiati negli Appunti.\nGli Appunti potrebbero essere bloccati da un altro programma.</value>
   </data>
   <data name="MessageTextUnhandledExceptionCopyFailure" xml:space="preserve">
     <value>Eccezione non gestita: {0}\n\nLe informazioni dell'eccezione non possono essere copiate negli Appunti.</value>
@@ -655,31 +655,49 @@
     <value>Copia</value>
   </data>
   <data name="RibbonButtonTooltipCopy" xml:space="preserve">
-    <value>Aggiunge un nuovo dispositivo che è una copia del dispositivo selezionato [Ctrl+C]</value>
+    <value>Aggiungi un nuovo dispositivo che è una copia del dispositivo selezionato [Ctrl+C]</value>
   </data>
   <data name="ComboBoxValueBuildtypeBetaPLUS" xml:space="preserve">
     <value>Beta PLUS (1007)</value>
   </data>
-  <data name="ComboBoxValueNoMaster" xml:space="preserve">
-    <value>(nessun master)</value>
+  <data name="DialogButtonTextNo" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="DataGridColumnHeaderMasterBase" xml:space="preserve">
-    <value>Master/base</value>
-  </data>
-  <data name="DeviceFieldLabelDectBase" xml:space="preserve">
-    <value>Base DECT</value>
+  <data name="DialogButtonTextYes" xml:space="preserve">
+    <value>Sì</value>
   </data>
   <data name="DeviceFieldLabelMeshMaster" xml:space="preserve">
     <value>Mesh master</value>
   </data>
-  <data name="DialogButtonTextNo" xml:space="preserve">
-    <value>No</value>
+  <data name="ComboBoxValueNoMaster" xml:space="preserve">
+    <value>(nessun master)</value>
+  </data>
+  <data name="DeviceFieldLabelDectBase" xml:space="preserve">
+    <value>Base DECT</value>
   </data>
   <data name="DialogButtonTextSkip" xml:space="preserve">
     <value>Ignora</value>
   </data>
-  <data name="DialogButtonTextYes" xml:space="preserve">
-    <value>Sì</value>
+  <data name="MessageTextDectBaseNotFound" xml:space="preserve">
+    <value>{0}: Base DECT non rilevata.\nImposta la base DECT per questo dispositivo.</value>
+  </data>
+  <data name="MessageTextDectBaseNotSet" xml:space="preserve">
+    <value>{0}: Base DECT non impostata.\nImposta la base DECT per questo dispositivo.</value>
+  </data>
+  <data name="ComboBoxValueAutomatic" xml:space="preserve">
+    <value>(selezione automatica)</value>
+  </data>
+  <data name="MessageCaptionProgramRestartRequired" xml:space="preserve">
+    <value>È richiesto il riavvio del programma</value>
+  </data>
+  <data name="MessageTextRestartLanguageChange" xml:space="preserve">
+    <value>Per rendere effettive le impostazioni lingua devi riavviare il programma.\n\nVuoi riavviare ora il programma?</value>
+  </data>
+  <data name="BackstageSectionHeaderDefaultColumns" xml:space="preserve">
+    <value>Colonne predefinite</value>
+  </data>
+  <data name="ComboBoxValueBuildtypeBetaTest" xml:space="preserve">
+    <value>Beta TEST (1006)</value>
   </data>
   <data name="DialogCaptionDownloadFirmware" xml:space="preserve">
     <value>Download firmware - {0}</value>
@@ -690,26 +708,8 @@
   <data name="FilterFilesXML" xml:space="preserve">
     <value>File XML (*.xml)|*.xml</value>
   </data>
-  <data name="MessageCaptionProgramRestartRequired" xml:space="preserve">
-    <value>È richiesto il riavvio del programma</value>
-  </data>
-  <data name="MessageTextDectBaseNotFound" xml:space="preserve">
-    <value>{0}: Base DECT non rilevata.\nImposta la base DECT per questo dispositivo.</value>
-  </data>
-  <data name="MessageTextDectBaseNotSet" xml:space="preserve">
-    <value>{0}: Base DECT non impostata.\nImposta la base DECT per questo dispositivo.</value>
-  </data>
-  <data name="MessageTextRestartLanguageChange" xml:space="preserve">
-    <value>Per rendere effettive le impostazioni lingua devi riavviare il programma.\n\nVuoi riavviare ora il programma?</value>
-  </data>
-  <data name="BackstageSectionHeaderDefaultColumns" xml:space="preserve">
-    <value>Colonne predefinite</value>
-  </data>
-  <data name="ComboBoxValueAutomatic" xml:space="preserve">
-    <value>(selezione automatica)</value>
-  </data>
-  <data name="ComboBoxValueBuildtypeBetaTest" xml:space="preserve">
-    <value>Beta TEST (1006)</value>
+  <data name="DataGridColumnHeaderMasterBase" xml:space="preserve">
+    <value>Master/base</value>
   </data>
   <data name="SettingLabelUserInterfaceLanguage" xml:space="preserve">
     <value>Lingua</value>
