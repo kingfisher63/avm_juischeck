@@ -1,0 +1,8 @@
+# Configuration for Repo Lockdown - https://github.com/dessant/repo-lockdown
+
+only: pulls
+
+pulls:
+  comment: >
+    This repository does not accept pull requests.
+    If necessary create a new issue and attach a file there.
