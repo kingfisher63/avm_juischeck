@@ -660,26 +660,44 @@
   <data name="ComboBoxValueBuildtypeBetaPLUS" xml:space="preserve">
     <value>Beta PLUS (1007)</value>
   </data>
-  <data name="ComboBoxValueNoMaster" xml:space="preserve">
-    <value>(nessun master)</value>
+  <data name="DialogButtonTextNo" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="DataGridColumnHeaderMasterBase" xml:space="preserve">
-    <value>Master/base</value>
-  </data>
-  <data name="DeviceFieldLabelDectBase" xml:space="preserve">
-    <value>Base DECT</value>
+  <data name="DialogButtonTextYes" xml:space="preserve">
+    <value>Sì</value>
   </data>
   <data name="DeviceFieldLabelMeshMaster" xml:space="preserve">
     <value>Mesh master</value>
   </data>
-  <data name="DialogButtonTextNo" xml:space="preserve">
-    <value>No</value>
+  <data name="ComboBoxValueNoMaster" xml:space="preserve">
+    <value>(nessun master)</value>
+  </data>
+  <data name="DeviceFieldLabelDectBase" xml:space="preserve">
+    <value>Base DECT</value>
   </data>
   <data name="DialogButtonTextSkip" xml:space="preserve">
     <value>Ignora</value>
   </data>
-  <data name="DialogButtonTextYes" xml:space="preserve">
-    <value>Sì</value>
+  <data name="MessageTextDectBaseNotFound" xml:space="preserve">
+    <value>{0}: Base DECT non rilevata.\nImposta la base DECT per questo dispositivo.</value>
+  </data>
+  <data name="MessageTextDectBaseNotSet" xml:space="preserve">
+    <value>{0}: Base DECT non impostata.\nImposta la base DECT per questo dispositivo.</value>
+  </data>
+  <data name="ComboBoxValueAutomatic" xml:space="preserve">
+    <value>(selezione automatica)</value>
+  </data>
+  <data name="MessageCaptionProgramRestartRequired" xml:space="preserve">
+    <value>È richiesto il riavvio del programma</value>
+  </data>
+  <data name="MessageTextRestartLanguageChange" xml:space="preserve">
+    <value>Per rendere effettive le impostazioni lingua devi riavviare il programma.\n\nVuoi riavviare ora il programma?</value>
+  </data>
+  <data name="BackstageSectionHeaderDefaultColumns" xml:space="preserve">
+    <value>Colonne predefinite</value>
+  </data>
+  <data name="ComboBoxValueBuildtypeBetaTest" xml:space="preserve">
+    <value>Beta TEST (1006)</value>
   </data>
   <data name="DialogCaptionDownloadFirmware" xml:space="preserve">
     <value>Download firmware - {0}</value>
@@ -690,26 +708,8 @@
   <data name="FilterFilesXML" xml:space="preserve">
     <value>File XML (*.xml)|*.xml</value>
   </data>
-  <data name="MessageCaptionProgramRestartRequired" xml:space="preserve">
-    <value>È richiesto il riavvio del programma</value>
-  </data>
-  <data name="MessageTextDectBaseNotFound" xml:space="preserve">
-    <value>{0}: Base DECT non rilevata.\nImposta la base DECT per questo dispositivo.</value>
-  </data>
-  <data name="MessageTextDectBaseNotSet" xml:space="preserve">
-    <value>{0}: Base DECT non impostata.\nImposta la base DECT per questo dispositivo.</value>
-  </data>
-  <data name="MessageTextRestartLanguageChange" xml:space="preserve">
-    <value>Per rendere effettive le impostazioni lingua devi riavviare il programma.\n\nVuoi riavviare ora il programma?</value>
-  </data>
-  <data name="BackstageSectionHeaderDefaultColumns" xml:space="preserve">
-    <value>Colonne predefinite</value>
-  </data>
-  <data name="ComboBoxValueAutomatic" xml:space="preserve">
-    <value>(selezione automatica)</value>
-  </data>
-  <data name="ComboBoxValueBuildtypeBetaTest" xml:space="preserve">
-    <value>Beta TEST (1006)</value>
+  <data name="DataGridColumnHeaderMasterBase" xml:space="preserve">
+    <value>Master/base</value>
   </data>
   <data name="SettingLabelUserInterfaceLanguage" xml:space="preserve">
     <value>Lingua</value>
