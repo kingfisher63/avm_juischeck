@@ -4,6 +4,9 @@ JuisCheck is a tool to query the AVM update information services (JUIS and CATI)
 for device firmware updates. JuisCheck supports all types of AVM devices (FRITZ!Box,
 FRITZ!DECT, FRITZ!Powerline and FRITZ!WLAN).
 
+**Please read the [CONTRIBUTING](CONTRIBUTING.md) document for information about
+bug reports, feature requests, (no) pull requests and user interface translation.**
+
 ## System requirements
 
 + Microsoft Windows Vista or later (32-bit or 64-bit).

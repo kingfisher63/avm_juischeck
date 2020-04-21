@@ -19,10 +19,10 @@ namespace JuisCheck.Resources.Converters
 		public object Convert( object value, Type targetType, object parameter, CultureInfo culture )
 		{
 			if (targetType != typeof(Visibility)) {
-				throw new InvalidOperationException(JCmessage.InvalidTargetType);
+				throw new InvalidOperationException("Invalid target type");
 			}
 			if (!(value is bool)) {
-				throw new InvalidOperationException(JCmessage.InvalidValueType);
+				throw new InvalidOperationException("Invalid value type");
 			}
 
 			return (bool)value ? Visibility.Visible : Visibility.Collapsed;

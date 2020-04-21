@@ -18,13 +18,13 @@ namespace JuisCheck.Resources.Converters
 		public object Convert( object value, Type targetType, object parameter, CultureInfo culture )
 		{
 			if (targetType != typeof(string)) {
-				throw new InvalidOperationException(JCmessage.InvalidTargetType);
+				throw new InvalidOperationException("Invalid target type");
 			}
 			if (value == null) {
 				return string.Empty;
 			}
 			if (!(value is DateTime)) {
-				throw new InvalidOperationException(JCmessage.InvalidValueType);
+				throw new InvalidOperationException("Invalid value type");
 			}
 
 			return ((DateTime)value).ToString("G", CultureInfo.CurrentCulture);

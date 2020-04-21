@@ -103,11 +103,6 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Jason\BoxInfo.cs" />
     <Compile Include="JuisDevice.cs" />
-    <Compile Include="Lang\JCmessage.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JCmessage.resx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.Devices.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -217,10 +212,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Lang\JCmessage.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>JCmessage.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Lang\JCstring.de.resx" />
     <EmbeddedResource Include="Lang\JCstring.it.resx" />
     <EmbeddedResource Include="Lang\JCstring.resx">

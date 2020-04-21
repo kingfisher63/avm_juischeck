@@ -5,4 +5,4 @@ only: pulls
 pulls:
   comment: >
     This repository does not accept pull requests.
-    If necessary create a new issue and attach a file there.
+    Please read the CONTRIBUTING document at https://github.com/kingfisher63/avm_juischeck for guidance.

@@ -296,6 +296,18 @@ namespace JuisCheck
 			}
 		}
 
+		private bool _UpdateInfoIsNew;
+		public  bool  UpdateInfoIsNew
+		{
+			get => _UpdateInfoIsNew;
+			set {
+				if (_UpdateInfoIsNew != value) {
+					_UpdateInfoIsNew  = value;
+					NotifyPropertyChanged();
+				}
+			}
+		}
+
 		private string _UpdateInfoURL;
 		public  string  UpdateInfoURL
 		{
@@ -338,6 +350,7 @@ namespace JuisCheck
 		public void ClearUpdate()
 		{
 			UpdateAvailable   = false;
+			UpdateInfoIsNew   = false;
 			UpdateInfo        = string.Empty;
 			UpdateImageURL    = string.Empty;
 			UpdateInfoURL     = string.Empty;

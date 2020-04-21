@@ -48,7 +48,7 @@ namespace JuisCheck
 				case DeviceProperty.DeviceName:			result = stringComparer.Compare(device1.DeviceName,       device2.DeviceName);       break;
 				case DeviceProperty.FirmwareStr:		result = stringComparer.Compare(device1.FirmwareStr,      device2.FirmwareStr);      break;
 				case DeviceProperty.ProductName:		result = stringComparer.Compare(device1.ProductName,      device2.ProductName);      break;
-				default:								throw new ApplicationException(JCmessage.UnsupportedComparison);
+				default:								throw new ApplicationException("Unsupported comparison");
 			}
 
 			return sortDirection == ListSortDirection.Ascending ? result : -result;

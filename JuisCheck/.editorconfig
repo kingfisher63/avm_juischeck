@@ -2,3 +2,8 @@
 
 # CA1062: Validate arguments of public methods
 dotnet_code_quality.CA1062.exclude_extension_method_this_parameter = true
+
+[*.cs]
+
+# CA1303: Do not pass literals as localized parameters
+dotnet_diagnostic.CA1303.severity = none

@@ -362,6 +362,8 @@ namespace JuisCheck
 				WindowStartupLocation = WindowStartupLocation.CenterOwner
 			};
 
+			devices.ForEach( d => d.UpdateInfoIsNew = false );
+
 			findDialog.ShowDialog();
 			findDialog.Dispose();
 

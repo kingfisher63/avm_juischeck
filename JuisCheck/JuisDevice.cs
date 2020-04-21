@@ -618,7 +618,7 @@ namespace JuisCheck
 		protected void QueryJasonDevice()
 		{
 			if (string.IsNullOrWhiteSpace(DeviceAddress)) {
-				throw new ArgumentException(JCmessage.InvalidDeviceAddress);
+				throw new ArgumentException("Invalid device address");
 			}
 
 			XmlReaderSettings	xmlReaderSettings = new XmlReaderSettings() { IgnoreComments = true, IgnoreWhitespace = true };
@@ -653,7 +653,7 @@ namespace JuisCheck
 		protected void QueryJuisDevice()
 		{
 			if (string.IsNullOrWhiteSpace(DeviceAddress)) {
-				throw new ArgumentException(JCmessage.InvalidDeviceAddress);
+				throw new ArgumentException("Invalid device address");
 			}
 
 			XmlReaderSettings	xmlReaderSettings = new XmlReaderSettings() { IgnoreComments = true, IgnoreWhitespace = true };
@@ -681,18 +681,19 @@ namespace JuisCheck
 
 		public void SetFirmwareUpdate( JUIS.UpdateInfo queryUpdateReponse )
 		{
-			ClearUpdate();
-
 			if (queryUpdateReponse != null) {
 				if (queryUpdateReponse.Found) {
 					UpdateAvailable = true;
+					UpdateInfoIsNew = queryUpdateReponse.Version != UpdateInfo;
 					UpdateInfo      = queryUpdateReponse.Version;
 					UpdateImageURL  = queryUpdateReponse.DownloadURL;
 					UpdateInfoURL   = queryUpdateReponse.InfoURL;
 				} else {
+					ClearUpdate();
 					UpdateInfo = JCstring.UpdateInfoNone;
 				}
 			} else {
+				ClearUpdate();
 				UpdateInfo = JCstring.UpdateInfoError;
 			}
 

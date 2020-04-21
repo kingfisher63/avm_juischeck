@@ -17,7 +17,7 @@ namespace JuisCheck.Resources.ValidationRules
 		public override ValidationResult Validate( object value, CultureInfo cultureInfo )
 		{
 			if (!(value is int intval)) {
-				throw new InvalidOperationException(JCmessage.InvalidValueType);
+				throw new InvalidOperationException("Invalid value type");
 			}
 
 			if (intval < 0) {

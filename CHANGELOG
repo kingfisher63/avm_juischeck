@@ -1,4 +1,12 @@
-﻿v2.0.1 (2020/04/13)
+﻿v2.0.2 (2020/04/21)
+-------------------
+Change: Updated Italian localization (thanks bovirus).
+New: Highlight new updates (i.e. updates that differ from the current
+     value in the Update column).
+Doc: updated README.md
+Doc: added CONTRIBUTING.md
+
+v2.0.1 (2020/04/13)
 -------------------
 
 New: Predefined DECT base device (FRITZ!Box 7590 with FRITZ!OS 7.12).
@@ -7,7 +15,6 @@ New: Show download file name in download window caption.
 Fix: Application restart message is shown when resetting settings to
      default even if the UI language setting is already default.
 Fix: Backstage panel width is too small for German localization.
-
 
 v2.0.0 (2020/04/04)
 -------------------

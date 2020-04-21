@@ -386,7 +386,17 @@
                                         Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleLanguage, Converter={StaticResource cnvBoolToVisibility}}"/>
                 <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateInfo}"
                                         Binding="{Binding Path=UpdateInfo}"
-                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}"/>
+                                        Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=UpdateInfoIsNew}" Value="True">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
                 <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateFileName}"
                                         Binding="{Binding Path=UpdateFileName}"
                                         Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleUpdateFileName, Converter={StaticResource cnvBoolToVisibility}}"/>

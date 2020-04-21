@@ -17,7 +17,7 @@ namespace JuisCheck.Resources.ValidationRules
 		public override ValidationResult Validate( object value, CultureInfo cultureInfo )
 		{
 			if (!(value is string strval)) {
-				throw new InvalidOperationException(JCmessage.InvalidValueType);
+				throw new InvalidOperationException("Invalid value type");
 			}
 
 			if (string.IsNullOrWhiteSpace(strval)) {
