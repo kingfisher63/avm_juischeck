@@ -33,7 +33,7 @@ namespace JuisCheck
 		public const string					defaultDataFileName            = "default.xml";
 		public const string					portableProgramFileName        = "JuisCheckPortable.exe";
 		public const string					programName                    = "JuisCheck";
-		public const string					programVersionSuffix           = "";	// BETA, RC1, etc.
+		public const string					programVersionSuffix           = ""; // BETA, RC1, etc.
 
 		public const StringComparison		defaultDisplayStringComparison = StringComparison.CurrentCultureIgnoreCase;
 		public const StringComparison		defaultFileNameComparison      = StringComparison.OrdinalIgnoreCase;

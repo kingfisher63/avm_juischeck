@@ -21,8 +21,8 @@ namespace JuisCheck
 	{
 		public const string					predefinedDectBaseID       = "63022b32-3ecb-436d-bc6c-00861df70fff";
 		public const string					predefinedDectBaseProduct  = "FRITZ!Box 7590";
-		public const string					predefinedDectBaseFritzOS  = "7.12";
-		public const string					predefinedDectBaseFirmware = "154.07.12";
+		public const string					predefinedDectBaseFritzOS  = "7.21";
+		public const string					predefinedDectBaseFirmware = "154.07.21";
 
 		private static readonly Settings	programSettings            = Settings.Default;
 
@@ -250,7 +250,7 @@ namespace JuisCheck
 					dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}";
 				} else {
 					// Labor firmware (note: this format is to be confirmed)
-					dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}-{dectBase.FirmwareBuildNumber}";
+					dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}.{dectBase.FirmwareBuildNumber}";
 				}
 			}
 
@@ -327,15 +327,17 @@ namespace JuisCheck
 
 					Match fileMatch = Regex.Match(fileName, @".+\.(\d+)\.(\d+)\.avm\.de\.upd$");
 					if (fileMatch.Success) {
-						// For products the update server returns an URL even if the device is up to date.
-						// So we compare firmware versions to see if there is really an update.
-						int firmwareMajor = Convert.ToInt32(fileMatch.Groups[1].Value, CultureInfo.InvariantCulture);
-						int firmwareMinor = Convert.ToInt32(fileMatch.Groups[2].Value, CultureInfo.InvariantCulture);
+						int    firmwareMajor = Convert.ToInt32(fileMatch.Groups[1].Value, CultureInfo.InvariantCulture);
+						int    firmwareMinor = Convert.ToInt32(fileMatch.Groups[2].Value, CultureInfo.InvariantCulture);
+						string updateInfo    = $"{firmwareMajor:D2}.{firmwareMinor:D2}";
 
+						// For some products the update server returns a URL even if the device is up to date.
+						// So we compare firmware versions to see if there is really an update.
 						if (firmwareMajor != FirmwareMajor || firmwareMinor != FirmwareMinor) {
 							UpdateAvailable = true;
-		 					UpdateImageURL  = updateURL;
+							UpdateInfoIsNew = updateInfo != UpdateInfo;
 							UpdateInfo      = $"{fileMatch.Groups[1]}.{fileMatch.Groups[2]}";
+		 					UpdateImageURL  = updateURL;
 						} else {
 							UpdateInfo = JCstring.UpdateInfoNone;
 						}

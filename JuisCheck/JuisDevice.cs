@@ -182,9 +182,13 @@ namespace JuisCheck
 		public bool FirmwareMajorWarning
 		{
 			get {
-				// 252 is the hardware ID of the FRITZ!Box 6660 Cable. This is the first known model
-				// where FirmwareMajor == Hardware. 252 is therefore no more than an educated guess.
-				if (Hardware >= 252) {
+				// 249 is the hardware ID of the FRITZ!Powerline 1260v2. This is the lowest known
+				// hardware ID where FirmwareMajor == Hardware ID. 249 is therefore no more than
+				// an educated guess.
+				//
+				// Note: this number was previously 252 (FRITZ!Box 6660 Cable).
+
+				if (Hardware >= 249) {
 					return Hardware != FirmwareMajor;
 				} else {
 					return Hardware != FirmwareMajor + 72;
@@ -448,6 +452,7 @@ namespace JuisCheck
 				case "TEST":
 					return firmwareBuildTypeBetaTEST;
 
+				case "LABPLUS":
 				case "PLUS":
 					return firmwareBuildTypeBetaPLUS;
 
