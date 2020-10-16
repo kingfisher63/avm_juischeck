@@ -338,6 +338,7 @@ namespace JuisCheck
 							UpdateInfoIsNew = updateInfo != UpdateInfo;
 							UpdateInfo      = $"{fileMatch.Groups[1]}.{fileMatch.Groups[2]}";
 		 					UpdateImageURL  = updateURL;
+							UpdateInfoURL   = updateURL.Replace(updateURL.Split('/').Last(), "info_" + updateURL.Split('/').Last().Replace(".avm.de.upd", ".txt"));
 						} else {
 							UpdateInfo = JCstring.UpdateInfoNone;
 						}
