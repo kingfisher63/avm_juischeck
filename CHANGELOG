@@ -1,4 +1,15 @@
-﻿v2.0.2 (2020/04/21)
+﻿v2.0.3 (2020/10/16)
+-------------------
+Change: 'Upgrade' predefined DECT base to FRITZ!OS 7.21.
+Change: No firmware major version warning if Hardware == FirmwareMajor
+        for Hardware >= 249 (FRITZ!Powerline 1260v2). This limit is an
+        educated guess and may change in the future.
+New: Support for LabPLUS firmware type string (build type 1007)
+Fix: Highlight new updates also for DECT devices.
+Fix: Beta (Labor) DECT firmware cannot be found with beta (Labor)
+     FRITZ!OS version (wrong FRITZ!OS version format in query).
+
+v2.0.2 (2020/04/21)
 -------------------
 Change: Updated Italian localization (thanks bovirus).
 New: Highlight new updates (i.e. updates that differ from the current
@@ -8,7 +19,6 @@ Doc: added CONTRIBUTING.md
 
 v2.0.1 (2020/04/13)
 -------------------
-
 New: Predefined DECT base device (FRITZ!Box 7590 with FRITZ!OS 7.12).
 New: German localization.
 New: Show download file name in download window caption.
@@ -18,11 +28,9 @@ Fix: Backstage panel width is too small for German localization.
 
 v2.0.0 (2020/04/04)
 -------------------
-
 Note: JuisCheck v2 is a major release that comes with some breaking changes.
       Please consult the README.md file for details about upgrading from
       JuisCheck v1.x.
-
 Change: Requires .NET Framework 4.5 or later (Windows Vista or later).
 Change: New collection XML file format (incompatible with JuisCheck 1.x).
 Change: Column visibility is saved in the collection XML file.
@@ -31,7 +39,6 @@ Change: Use built-in engine to download firmware images instead of launching
 Change: No firmware major version warning if Hardware == FirmwareMajor for
         Hardware >= 252 (FRITZ!Box 6660 Cable). This limit is an educated
         guess and may change in the future.
-
 New: Select device as Mesh master for non-DECT devices.
 New: Select device as DECT base for DECT devices.
 New: Column for Mesh master / DECT base (replaces Base Fritz!OS column).
@@ -44,9 +51,8 @@ New: Support for devices like DECT 500 which have a different firmware
 New: Portable mode.
 New: Menu item icons in backstage.
 New: Exit the program with Ctrl-X.
-
 Fix: Device information tooltip is not updated after data change.
-Fix: Device infomration tooltip date/time format is inconsistent with
+Fix: Device information tooltip date/time format is inconsistent with
      table date/time format.
 Fix: FileNotFoundException is thrown at startup when trying to autoload
      a file that does not exist (eg. because it has been renamed or
@@ -59,7 +65,6 @@ Fix: Flags text box height is too small on Windows 10.
 
 v1.4.2 (2019/06/23)
 -------------------
-
 New: Support for build type 1007 (PLUS beta).
 Fix: Update version 149.07.08-67660Labor for FRITZ!Box 7560 could not be
      made current due to missing white space between the build number (67660)
@@ -69,7 +74,6 @@ Fix: Update version 149.07.08-67660Labor for FRITZ!Box 7560 could not be
 
 v1.4.1 (2019/03/07)
 -------------------
-
 New: Keyboard shortcuts for all ribbon buttons.
 Fix: Datagrid keyboard navigation did not work correctly when focus was
      returned to the datagrid (e.g. after adding or editing a device).
@@ -78,7 +82,6 @@ Fix: Update version 105.06.85i for FRITZ!Box 6840 LTE International could
 
 v1.4.0 (2018/12/29)
 -------------------
-
 New: Add a device that is a copy of the selected device.
 New: JuisCheck remembers the directory of the last successful 'Open' or
      'Save As' dialog. Opening a device collection from the Recent Files
@@ -95,13 +98,11 @@ Fix: The 'Update file name' column was not cleared in the data grid when
 
 v1.3.0 (2018/12/28)
 -------------------
-
 New: Setting to automatically load the current device collection at next
      program start.
 
 v1.2.0 (2018/12/27)
 -------------------
-
 New: Support for the legacy jason_boxinfo.xml device information. When a
      request for juis_boxinfo.xml fails with HTTP error 404 (Not Found),
      JuisCheck will make a request for jason_boxinfo.xml. A heuristic is
@@ -110,7 +111,6 @@ New: Support for the legacy jason_boxinfo.xml device information. When a
 
 v1.1.0 (2018/12/25)
 -------------------
-
 New: Recent files context menu: open file, remove file from the list.
 New: Recent files: button to remove all files from the list.
 New: Hide/show datagrid columns via a context menu on the column headers.
@@ -123,7 +123,6 @@ Change: Base Fritz!OS column is hidden by default.
 
 v1.0.1 (2018/12/24)
 -------------------
-
 Fix: JuisCheck would exit silently in case of an unhandled exception. It now
      displays an error message and attempts to copy the exception data to the
      clipboard before exiting.
@@ -139,5 +138,4 @@ Fix: The tooltips of the Recent and Settings backstage menu buttons would
 
 v1.0.0 (2018/12/20)
 -------------------
-
 Initial release
