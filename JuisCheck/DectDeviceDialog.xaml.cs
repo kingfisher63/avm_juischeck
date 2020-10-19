@@ -60,7 +60,7 @@ namespace JuisCheck
 
 		private void CmdOK_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
-			evt.CanExecute = !this.GetTreeHasError();
+			evt.CanExecute = !this.GetTreeHasError(true, true);
 		}
 
 		private void CmdOK_Executed( object sender, ExecutedRoutedEventArgs evt )

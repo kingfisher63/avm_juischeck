@@ -8,16 +8,18 @@
       <HardwareMinor>1</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
       <FirmwareMinor>16</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.5206604+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="a002e7f7-0c22-4df6-adb0-3e668349b705">
       <DeviceName>FRITZ!DECT 200</DeviceName>
@@ -26,16 +28,18 @@
       <HardwareMinor>2</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
       <FirmwareMinor>16</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.6907776+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="6943ee96-3911-4048-8f25-db124198e307">
       <DeviceName>FRITZ!DECT 210</DeviceName>
@@ -44,16 +48,18 @@
       <HardwareMinor>4</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
       <FirmwareMinor>17</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.7733395+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="0ad1b3ba-37de-4a55-9beb-c11cb67c21f0">
       <DeviceName>FRITZ!DECT 300 HKR</DeviceName>
@@ -62,16 +68,18 @@
       <HardwareMinor>5</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
       <FirmwareMinor>85</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.8554659+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="87e8518e-f811-490e-a9ae-8a70cc2ed1ae">
       <DeviceName>FRITZ!DECT 301 HKR v1</DeviceName>
@@ -79,17 +87,19 @@
       <HardwareMajor>6</HardwareMajor>
       <HardwareMinor>6</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
-      <FirmwareMinor>89</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor>94</FirmwareMinor>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.9363966+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="b01054e2-7eb5-46d1-9d9e-a1075c28cbed">
       <DeviceName>FRITZ!Fon M2</DeviceName>
@@ -98,16 +108,18 @@
       <HardwareMinor>1</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
       <FirmwareMinor>26</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.6019148+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="9f98b944-0699-4a8b-9999-b8f58ae85cca">
       <DeviceName>FRITZ!Fon C3 v1</DeviceName>
@@ -116,16 +128,18 @@
       <HardwareMinor>1</HardwareMinor>
       <FirmwareMajor>3</FirmwareMajor>
       <FirmwareMinor>47</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.1827819+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="c3a5b736-f043-4e7d-b60c-8d42a28d1a93">
       <DeviceName>FRITZ!Fon C3 v2</DeviceName>
@@ -134,16 +148,18 @@
       <HardwareMinor>2</HardwareMinor>
       <FirmwareMajor>3</FirmwareMajor>
       <FirmwareMinor>47</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.2659211+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="a14e1883-4770-4a1d-acab-ea76165e0a07">
       <DeviceName>FRITZ!Fon C4</DeviceName>
@@ -151,17 +167,19 @@
       <HardwareMajor>8</HardwareMajor>
       <HardwareMinor>1</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
-      <FirmwareMinor>25</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor>57</FirmwareMinor>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.3486707+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="37baa64b-dee5-4bf7-acff-4c88fc9dcbc1">
       <DeviceName>FRITZ!Fon C5</DeviceName>
@@ -169,17 +187,19 @@
       <HardwareMajor>8</HardwareMajor>
       <HardwareMinor>2</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
-      <FirmwareMinor>25</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor>57</FirmwareMinor>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.4346192+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="d6269f79-8a5c-4168-97da-4cfb33c654c4">
       <DeviceName>FRITZ!Fon MT-F</DeviceName>
@@ -188,16 +208,18 @@
       <HardwareMinor>1</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
       <FirmwareMinor>8</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.6826072+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="c8aec473-f3f8-49e5-862e-261bf21072b5">
       <DeviceName>Comet HKR</DeviceName>
@@ -206,16 +228,18 @@
       <HardwareMinor>4</HardwareMinor>
       <FirmwareMajor>3</FirmwareMajor>
       <FirmwareMinor>54</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.3387244+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="9b271cee-5e30-4565-ae7e-e2caa23c78cc">
       <DeviceName>FRITZ!Fon C6</DeviceName>
@@ -223,17 +247,19 @@
       <HardwareMajor>8</HardwareMajor>
       <HardwareMinor>3</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
-      <FirmwareMinor>25</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor>57</FirmwareMinor>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.5147894+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="ee114645-c6d7-48b9-9d5c-4a1d886884e0">
       <DeviceName>FRITZ!DECT 100 v2</DeviceName>
@@ -242,16 +268,18 @@
       <HardwareMinor>3</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
       <FirmwareMinor>16</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.6062244+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="749cc30b-de40-41c8-86e7-bd241aa55976">
       <DeviceName>FRITZ!DECT 301 HKR v2</DeviceName>
@@ -259,35 +287,39 @@
       <HardwareMajor>6</HardwareMajor>
       <HardwareMinor>7</HardwareMinor>
       <FirmwareMajor>4</FirmwareMajor>
-      <FirmwareMinor>89</FirmwareMinor>
-      <FirmwareMinorLen>0</FirmwareMinorLen>
+      <FirmwareMinor>94</FirmwareMinor>
+      <FirmwareMinor2>0</FirmwareMinor2>
+      <FirmwareMinor3>0</FirmwareMinor3>
+      <FirmwareMinor4>0</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.020381+02:00</UpdateLastChecked>
     </DectDevice>
     <DectDevice id="7f45b745-3006-45d9-afdb-7e94878d940f">
       <DeviceName>FRITZ!DECT 500</DeviceName>
       <ProductName>FRITZ!DECT 500</ProductName>
       <HardwareMajor>10</HardwareMajor>
       <HardwareMinor>1</HardwareMinor>
-      <FirmwareMajor>16</FirmwareMajor>
-      <FirmwareMinor>11</FirmwareMinor>
-      <FirmwareMinorLen>3</FirmwareMinorLen>
+      <FirmwareMajor>34</FirmwareMajor>
+      <FirmwareMinor>10</FirmwareMinor>
+      <FirmwareMinor2>16</FirmwareMinor2>
+      <FirmwareMinor3>16</FirmwareMinor3>
+      <FirmwareMinor4>12</FirmwareMinor4>
       <OEM>avm</OEM>
       <Country>049</Country>
       <Language>de</Language>
       <DectBase>3832589d-54b5-4e1e-9245-5549211e488c</DectBase>
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:09.1013142+02:00</UpdateLastChecked>
     </DectDevice>
   </DectDevices>
   <JuisDevices>
@@ -299,7 +331,7 @@
       <SerialNumber />
       <FirmwareMajor>154</FirmwareMajor>
       <FirmwareMinor>7</FirmwareMinor>
-      <FirmwarePatch>12</FirmwarePatch>
+      <FirmwarePatch>21</FirmwarePatch>
       <FirmwareBuildNumber>0</FirmwareBuildNumber>
       <FirmwareBuildType>1</FirmwareBuildType>
       <OEM>avm</OEM>
@@ -309,10 +341,10 @@
       <Flags />
       <MeshMaster />
       <UpdateAvailable>false</UpdateAvailable>
-      <UpdateInfo />
+      <UpdateInfo>None</UpdateInfo>
       <UpdateImageURL />
       <UpdateInfoURL />
-      <UpdateLastChecked xsi:nil="true" />
+      <UpdateLastChecked>2020-10-19T07:57:08.4298998+02:00</UpdateLastChecked>
     </JuisDevice>
   </JuisDevices>
   <Settings>

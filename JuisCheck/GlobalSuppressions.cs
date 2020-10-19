@@ -10,7 +10,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:JuisCheck.MainWindow.OpenDeviceCollection(System.String)")]
 [assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:JuisCheck.MainWindow.SaveDeviceCollection~System.Boolean")]
 [assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:JuisCheck.MainWindow.SaveDeviceCollectionAs~System.Boolean")]
-[assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:JuisCheck.Program.Main")]
+[assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:JuisCheck.DectDevice.FindFirmwareUpdate(System.Windows.Threading.Dispatcher)~System.String")]
 [assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:JuisCheck.JuisDevice.FindFirmwareUpdate(System.Windows.Threading.Dispatcher)~System.String")]
 [assembly: SuppressMessage("Design", "CA1056:Uri properties should not be strings", Justification = "<Pending>", Scope = "member", Target = "~P:JuisCheck.XML.JC1Device.UpdateImageURL")]
 [assembly: SuppressMessage("Design", "CA1056:Uri properties should not be strings", Justification = "<Pending>", Scope = "member", Target = "~P:JuisCheck.XML.JC1Device.UpdateInfoURL")]

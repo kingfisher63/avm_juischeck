@@ -10,7 +10,6 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Threading;
@@ -415,10 +414,13 @@ namespace JuisCheck
 			}));
 
 			try {
-				JUIS.UpdateInfo queryUpdateResponse = QueryFirmwareUpdate(meshMaster);
-				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-					SetFirmwareUpdate(queryUpdateResponse);
-				}));
+				using (JUIS.UpdateInfoServiceClient client = new JUIS.UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(programSettings.AvmJuisServiceURL))) {
+					JUIS.UpdateInfo updateInfo = client.BoxFirmwareUpdateCheck(GetJuisRequestHeader(), ToBoxInfo(), meshMaster?.ToBoxInfo()).UpdateInfo;
+
+					dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+						SetFirmwareUpdate(updateInfo);
+					}));
+				}
 			}
 			catch {
 				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
@@ -605,21 +607,6 @@ namespace JuisCheck
 			ClearUpdate();
 		}
 
-		public JUIS.UpdateInfo QueryFirmwareUpdate( JuisDevice meshMaster = null )
-		{
-			string timestamp = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
-
-			JUIS.RequestHeader requestHeader = new JUIS.RequestHeader {
-				ManualRequest = true,
-				Nonce         = Convert.ToBase64String(Encoding.UTF8.GetBytes(timestamp)),
-				UserAgent     = "Box"
-			};
-
-			using (JUIS.UpdateInfoServiceClient client = new JUIS.UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(programSettings.AvmJuisServiceURL))) {
-				return client.BoxFirmwareUpdateCheck(requestHeader, ToBoxInfo(), meshMaster?.ToBoxInfo()).UpdateInfo;
-			}
-		}
-
 		protected void QueryJasonDevice()
 		{
 			if (string.IsNullOrWhiteSpace(DeviceAddress)) {
@@ -682,27 +669,6 @@ namespace JuisCheck
 				Language            = boxInfo.Lang;
 				Flags               = FlagsToString(boxInfo.Flag);
 			}
-		}
-
-		public void SetFirmwareUpdate( JUIS.UpdateInfo queryUpdateReponse )
-		{
-			if (queryUpdateReponse != null) {
-				if (queryUpdateReponse.Found) {
-					UpdateAvailable = true;
-					UpdateInfoIsNew = queryUpdateReponse.Version != UpdateInfo;
-					UpdateInfo      = queryUpdateReponse.Version;
-					UpdateImageURL  = queryUpdateReponse.DownloadURL;
-					UpdateInfoURL   = queryUpdateReponse.InfoURL;
-				} else {
-					ClearUpdate();
-					UpdateInfo = JCstring.UpdateInfoNone;
-				}
-			} else {
-				ClearUpdate();
-				UpdateInfo = JCstring.UpdateInfoError;
-			}
-
-			UpdateLastChecked = DateTime.Now;
 		}
 
 		public JUIS.BoxInfo ToBoxInfo()

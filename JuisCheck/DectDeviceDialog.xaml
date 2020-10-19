@@ -21,6 +21,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/XAML/BaseStyles.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/Converters.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="{x:Type Border}" x:Key="InnerGridBorderStyle">
@@ -151,11 +152,45 @@
                         <TextBox.Text>
                             <Binding Path="DeviceData.FirmwareMinor" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <jcvld:StringInt32RangeRule Min="1" Max="99" ValidatesOnTargetUpdated="True"/>
+                                    <jcvld:StringInt32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
+                    
+                    <TextBox MaxLength="2" Width="26" Style="{StaticResource TextBoxStyle}"
+                             Visibility="{Binding Path=DeviceData.IsFivePartVersion, Converter={StaticResource cnvBoolToVisibility}}">
+                        <TextBox.Text>
+                            <Binding Path="DeviceData.FirmwareMinor2" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <jcvld:StringInt32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+
+                    <TextBox MaxLength="2" Width="26" Style="{StaticResource TextBoxStyle}"
+                             Visibility="{Binding Path=DeviceData.IsFivePartVersion, Converter={StaticResource cnvBoolToVisibility}}">
+                        <TextBox.Text>
+                            <Binding Path="DeviceData.FirmwareMinor3" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <jcvld:StringInt32RangeRule Min="0" Max="99" ValidatesOnTargetUpdated="True"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+
+                    <TextBox MaxLength="3" Width="34" Style="{StaticResource TextBoxStyle}"
+                             Visibility="{Binding Path=DeviceData.IsFivePartVersion, Converter={StaticResource cnvBoolToVisibility}}">
+                        <TextBox.Text>
+                            <Binding Path="DeviceData.FirmwareMinor4" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <jcvld:StringInt32RangeRule Min="0" Max="999" ValidatesOnTargetUpdated="True"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+
                 </StackPanel>
 
                 <TextBlock     Grid.Row="3" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelOEM}" Style="{StaticResource LabelTextBlockStyle}"/>

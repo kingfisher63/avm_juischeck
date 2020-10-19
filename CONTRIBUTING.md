@@ -1,5 +1,10 @@
 # Contributing
 
+JuisCheck is *Open Source* (so that you can inspect the code or create your own
+version if you like). However it is not *Open Collaboration*. This repository
+offers JuisCheck 'as is' and does not accept pull requests. **Pull requests are
+closed automatically.**
+
 ## Bug reports
 
 Create a new issue if you wish to report a bug. Please include any error messages
@@ -10,11 +15,6 @@ Create a new issue if you wish to report a bug. Please include any error message
 Create a new issue if you wish to suggest a new feature. Feature requests will be
 considered if they are within the scope of the program as outlined at the top of
 the [README](README.md) document.
-
-## No pull requests
-
-This repository is intented to offer JuisCheck 'as is'. Therefore this repository
-does not accept pull requests. **Pull requests are closed automatically.**
 
 ## User interface translation (localization)
 

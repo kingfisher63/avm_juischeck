@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -375,6 +376,38 @@ namespace JuisCheck
 			UpdateInfo        = srcDevice.UpdateInfo;
 			UpdateInfoURL     = srcDevice.UpdateInfoURL;
 			UpdateLastChecked = srcDevice.UpdateLastChecked;
+		}
+
+		protected static JUIS.RequestHeader GetJuisRequestHeader()
+		{
+			string timestamp = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
+
+			return new JUIS.RequestHeader {
+				ManualRequest = true,
+				Nonce         = Convert.ToBase64String(Encoding.UTF8.GetBytes(timestamp)),
+				UserAgent     = "Box"
+			};
+		}
+
+		public void SetFirmwareUpdate( JUIS.UpdateInfo updateInfo )
+		{
+			if (updateInfo != null) {
+				if (updateInfo.Found) {
+					UpdateAvailable = true;
+					UpdateInfoIsNew = updateInfo.Version != UpdateInfo;
+					UpdateInfo      = updateInfo.Version;
+					UpdateImageURL  = updateInfo.DownloadURL;
+					UpdateInfoURL   = updateInfo.InfoURL;
+				} else {
+					ClearUpdate();
+					UpdateInfo = JCstring.UpdateInfoNone;
+				}
+			} else {
+				ClearUpdate();
+				UpdateInfo = JCstring.UpdateInfoError;
+			}
+
+			UpdateLastChecked = DateTime.Now;
 		}
 
 		protected void TrimStrings()

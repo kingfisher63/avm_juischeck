@@ -18,7 +18,9 @@ namespace JuisCheck.XML
 		[XmlElement("HardwareMinor")]		public int			HardwareMinor		{ get; set; }
 		[XmlElement("FirmwareMajor")]		public int			FirmwareMajor		{ get; set; }
 		[XmlElement("FirmwareMinor")]		public int			FirmwareMinor		{ get; set; }
-		[XmlElement("FirmwareMinorLen")]	public int			FirmwareMinorLen	{ get; set; }
+		[XmlElement("FirmwareMinor2")]		public int			FirmwareMinor2		{ get; set; }
+		[XmlElement("FirmwareMinor3")]		public int			FirmwareMinor3		{ get; set; }
+		[XmlElement("FirmwareMinor4")]		public int			FirmwareMinor4		{ get; set; }
 		[XmlElement("OEM")]					public string		OEM					{ get; set; }
 		[XmlElement("Country")]				public string		Country				{ get; set; }
 		[XmlElement("Language")]			public string		Language			{ get; set; }
@@ -47,7 +49,9 @@ namespace JuisCheck.XML
 			HardwareMinor     = dectDevice.HardwareMinor;
 			FirmwareMajor     = dectDevice.FirmwareMajor;
 			FirmwareMinor     = dectDevice.FirmwareMinor;
-			FirmwareMinorLen  = dectDevice.FirmwareMinorLen;
+			FirmwareMinor2    = dectDevice.FirmwareMinor2;
+			FirmwareMinor3    = dectDevice.FirmwareMinor3;
+			FirmwareMinor4    = dectDevice.FirmwareMinor4;
 			OEM               = dectDevice.OEM;
 			Country           = dectDevice.Country;
 			Language          = dectDevice.Language;

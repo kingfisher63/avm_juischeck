@@ -1,8 +1,8 @@
 # JuisCheck
 
-JuisCheck is a tool to query the AVM update information services (JUIS and CATI)
-for device firmware updates. JuisCheck supports all types of AVM devices (FRITZ!Box,
-FRITZ!DECT, FRITZ!Powerline and FRITZ!WLAN).
+JuisCheck is a tool to query the AVM update information service (JUIS) for device
+firmware updates. JuisCheck supports all types of AVM devices (FRITZ!Box, FRITZ!DECT,
+FRITZ!Powerline and FRITZ!WLAN).
 
 **Please read the [CONTRIBUTING](CONTRIBUTING.md) document for information about
 bug reports, feature requests, (no) pull requests and user interface translation.**
@@ -91,10 +91,8 @@ The Settings panel has one button at the bottom:
 
 #### Ribbon buttons: Devices section
 
-+ *Add device* (Insert). Add a FRITZ!Box, FRITZ!Powerline or FRITZ!WLAN device. Firmware
-  update information for these devices is retrieved from the AVM JUIS service.
-+ *Add DECT* (Ctrl+Insert). Add a FRITZ!DECT device. Firmware update information for DECT devices
-  is retrieved from the AVM CATI service.
++ *Add device* (Insert). Add a FRITZ!Box, FRITZ!Powerline or FRITZ!WLAN device.
++ *Add DECT* (Ctrl+Insert). Add a FRITZ!DECT device.
 + *Delete* (Delete). Remove the selected device(s) from the device collection.
 + *Edit* (Ctrl+E). Edit the selected device.
 + *Copy* (Ctrl+C). Add a device that is a copy of the selected device.
@@ -142,11 +140,14 @@ Input fields are checked for valid input. A field with invalid input will have a
 red border. In this case the field has a tooltip that explains the reason for this.
 If any field has invalid input, you cannot click the *OK* button.
 
-For DECT devices you must select a FRITZ!Box as the DECT base. The FRITZ!OS version
-of the DECT base is used in update queries to the CATI service. A predefined DECT
-base device is available for your convenience (a FRITZ!Box 7590 with FRITZ!OS 7.12),
-but it is recommended that you add your own FRITZ!Box to the collection and configure
-DECT devices to use is as the DECT base.
+For DECT devices you must select a FRITZ!Box as the DECT base. A predefined DECT base
+device is available for your convenience (a FRITZ!Box 7590 with FRITZ!OS 7.21), but
+it is recommended that you add your own FRITZ!Box to the collection and configure DECT
+devices to use is as the DECT base.
+
+A DECT firmware version has either 2 parts or 5 parts depending on the device type.
+JuisCheck automatically adjusts the number of input fields depending on the hardware
+version. Currently only the FRITZ!DECT 500 LED-Lamp has a 5-part firmware version.
 
 For non-DECT devices you can optionally select another device in the same device
 collection as a Mesh master. The information of the Mesh master is used to augment

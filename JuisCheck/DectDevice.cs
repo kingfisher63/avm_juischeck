@@ -6,8 +6,7 @@
 
 using System;
 using System.Globalization;
-using System.Linq;
-using System.Net;
+using System.ServiceModel;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Threading;
@@ -19,12 +18,17 @@ namespace JuisCheck
 {
 	public class DectDevice : Device
 	{
-		public const string					predefinedDectBaseID       = "63022b32-3ecb-436d-bc6c-00861df70fff";
-		public const string					predefinedDectBaseProduct  = "FRITZ!Box 7590";
-		public const string					predefinedDectBaseFritzOS  = "7.21";
-		public const string					predefinedDectBaseFirmware = "154.07.21";
+		public const string					predefinedDectBaseID            = "63022b32-3ecb-436d-bc6c-00861df70fff";
+		public const string					predefinedDectBaseName          = "FRITZ!Box 7590";
+		public const int					predefinedDectBaseHW            = 226;
+		public const int					predefinedDectBaseFirmwareMajor = 154;
+		public const int					predefinedDectBaseFirmwareMinor = 7;
+		public const int					predefinedDectBaseFirmwarePatch = 21;
+		public const int					predefinedDectBaseBuildNumber   = 82154;
+		public const int					predefinedDectBaseBuildType     = JuisDevice.firmwareBuildTypeRelease;
+		public const string					predefinedDectBaseAnnex         = "B";
 
-		private static readonly Settings	programSettings            = Settings.Default;
+		private static readonly Settings	programSettings                 = Settings.Default;
 
 		/***********************************/
 		/* Device type specific properties */
@@ -55,13 +59,39 @@ namespace JuisCheck
 			get => string.Empty;
 		}
 
-		private int _FirmwareMinorLen;
-		public  int  FirmwareMinorLen
+		private int _FirmwareMinor2;
+		public  int  FirmwareMinor2
 		{
-			get => _FirmwareMinorLen;
+			get => _FirmwareMinor2;
 			set {
-				if (_FirmwareMinorLen != value) {
-					_FirmwareMinorLen  = value;
+				if (_FirmwareMinor2 != value) {
+					_FirmwareMinor2  = value;
+					NotifyPropertyChanged();
+					NotifyPropertyChanged(nameof(FirmwareStr));
+				}
+			}
+		}
+
+		private int _FirmwareMinor3;
+		public  int  FirmwareMinor3
+		{
+			get => _FirmwareMinor3;
+			set {
+				if (_FirmwareMinor3 != value) {
+					_FirmwareMinor3  = value;
+					NotifyPropertyChanged();
+					NotifyPropertyChanged(nameof(FirmwareStr));
+				}
+			}
+		}
+
+		private int _FirmwareMinor4;
+		public  int  FirmwareMinor4
+		{
+			get => _FirmwareMinor4;
+			set {
+				if (_FirmwareMinor4 != value) {
+					_FirmwareMinor4  = value;
 					NotifyPropertyChanged();
 					NotifyPropertyChanged(nameof(FirmwareStr));
 				}
@@ -71,8 +101,11 @@ namespace JuisCheck
 		public override string FirmwareStr
 		{
 			get {
-				int minorDigits = FirmwareMinorLen != 0 ? FirmwareMinorLen : 2;
-				return $"{FirmwareMajor:D2}.{FirmwareMinor.ToString(CultureInfo.InvariantCulture).PadLeft(minorDigits, '0')}";
+				if (HardwareMajor == 10) {
+					return $"{FirmwareMajor}.{FirmwareMinor:D2}.{FirmwareMinor2:D2}.{FirmwareMinor3:D2}-{FirmwareMinor4:D3}";
+				} else {
+					return $"{FirmwareMajor}.{FirmwareMinor:D2}";
+				}
 			}
 		}
 
@@ -85,6 +118,7 @@ namespace JuisCheck
 					_HardwareMajor  = value;
 					NotifyPropertyChanged();
 					NotifyPropertyChanged(nameof(HardwareStr));
+					NotifyPropertyChanged(nameof(IsFivePartVersion));
 				}
 			}
 		}
@@ -105,6 +139,12 @@ namespace JuisCheck
 		public override string HardwareStr
 		{
 			get => $"{HardwareMajor:D2}.{HardwareMinor:D2}";
+		}
+
+		public bool IsFivePartVersion {
+			get {
+				return HardwareMajor == 10;
+			}
 		}
 
 		public override string MasterBaseStr
@@ -158,6 +198,9 @@ namespace JuisCheck
 			HardwareMinor     = jc1device.HardwareMinor;
 			FirmwareMajor     = jc1device.FirmwareMajor;
 			FirmwareMinor     = jc1device.FirmwareMinor;
+			FirmwareMinor2    = 0;
+			FirmwareMinor3    = 0;
+			FirmwareMinor4    = 0;
 			OEM               = jc1device.OEM;
 			Country           = jc1device.Country;
 			Language          = jc1device.Language;
@@ -182,7 +225,9 @@ namespace JuisCheck
 			HardwareMinor     = jc2dectDevice.HardwareMinor;
 			FirmwareMajor     = jc2dectDevice.FirmwareMajor;
 			FirmwareMinor     = jc2dectDevice.FirmwareMinor;
-			FirmwareMinorLen  = jc2dectDevice.FirmwareMinorLen;
+			FirmwareMinor2    = jc2dectDevice.FirmwareMinor2;
+			FirmwareMinor3    = jc2dectDevice.FirmwareMinor3;
+			FirmwareMinor4    = jc2dectDevice.FirmwareMinor4;
 			OEM               = jc2dectDevice.OEM;
 			Country           = jc2dectDevice.Country;
 			Language          = jc2dectDevice.Language;
@@ -202,10 +247,12 @@ namespace JuisCheck
 		{
 			base.CopyFrom(srcDevice);
 
-			DectBase         = srcDevice.DectBase;
-			FirmwareMinorLen = srcDevice.FirmwareMinorLen;
-			HardwareMajor    = srcDevice.HardwareMajor;
-			HardwareMinor    = srcDevice.HardwareMinor;
+			DectBase       = srcDevice.DectBase;
+			FirmwareMinor2 = srcDevice.FirmwareMinor2;
+			FirmwareMinor3 = srcDevice.FirmwareMinor3;
+			FirmwareMinor4 = srcDevice.FirmwareMinor4;
+			HardwareMajor  = srcDevice.HardwareMajor;
+			HardwareMinor  = srcDevice.HardwareMinor;
 		}
 
 		public override bool Edit( Window owner = null )
@@ -227,10 +274,10 @@ namespace JuisCheck
 				throw new ArgumentNullException(nameof(dispatcher));
 			}
 
-			string dectBaseFirmware;
+			JUIS.BoxInfo dectBaseBoxInfo;
 
 			if (DectBase == predefinedDectBaseID) {
-				dectBaseFirmware = predefinedDectBaseFirmware;
+				dectBaseBoxInfo = GetPredefinedDectBaseBoxInfo();
 			} else {
 				if (string.IsNullOrWhiteSpace(DectBase)) {
 					return string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotSet, DeviceName);
@@ -245,27 +292,53 @@ namespace JuisCheck
 					return string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDectBaseNotFound, DeviceName);
 				}
 
-				if (dectBase.FirmwareBuildType == 1) {
-					// Release firmware
-					dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}";
-				} else {
-					// Labor firmware (note: this format is to be confirmed)
-					dectBaseFirmware = $"{dectBase.FirmwareMajor}.{dectBase.FirmwareMinor:D2}.{dectBase.FirmwarePatch:D2}.{dectBase.FirmwareBuildNumber}";
-				}
+				dectBaseBoxInfo = dectBase.ToBoxInfo();
 			}
 
-			string queryUpdateResponse = QueryFirmwareUpdate(dectBaseFirmware);
+			try {
+				using (JUIS.UpdateInfoServiceClient client = new JUIS.UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(programSettings.AvmJuisServiceURL))) {
+					JUIS.UpdateInfo updateInfo = client.DeviceFirmwareUpdateCheck(GetJuisRequestHeader(), dectBaseBoxInfo, ToDeviceInfo()).UpdateInfo;
 
-			dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-				SetFirmwareUpdate(queryUpdateResponse);
-			}));
+					dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+						SetFirmwareUpdate(updateInfo);
+					}));
+				}
+
+			}
+			catch {
+				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+					SetFirmwareUpdate(null);
+				}));
+			}
 
 			return null;
 		}
 
+		public JUIS.BoxInfo GetPredefinedDectBaseBoxInfo()
+		{
+			return new JUIS.BoxInfo {
+				Name         = predefinedDectBaseName,
+				HW           = predefinedDectBaseHW,
+				Major        = predefinedDectBaseFirmwareMajor,
+				Minor        = predefinedDectBaseFirmwareMinor,
+				Patch        = predefinedDectBaseFirmwarePatch,
+				Buildnumber  = predefinedDectBaseBuildNumber,
+				Buildtype    = predefinedDectBaseBuildType,
+				Serial       = "000000000000",
+				OEM          = OEM,								// Use same as DECT device
+				Lang         = Language,						// Use same as DECT device
+				Country      = Country,							// Use same as DECT device
+				Annex        = predefinedDectBaseAnnex,
+				Flag         = new string[] { string.Empty },	// Need at least one flag (empty flag OK)
+				UpdateConfig = 1,
+				Provider     = string.Empty,
+				ProviderName = string.Empty
+			};
+		}
+
 		public static string GetPredefinedDectBaseText()
 		{
-			return string.Format(CultureInfo.CurrentCulture, JCstring.ComboBoxValuePredefinedDectBase, predefinedDectBaseProduct, predefinedDectBaseFritzOS);
+			return string.Format(CultureInfo.CurrentCulture, JCstring.ComboBoxValuePredefinedDectBase, predefinedDectBaseName, $"{predefinedDectBaseFirmwareMinor}.{predefinedDectBaseFirmwarePatch}");
 		}
 
 		public override void MakeUpdateCurrent()
@@ -274,12 +347,25 @@ namespace JuisCheck
 				return;
 			}
 
-			Match match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)$");
-			if (match.Success) {
-				FirmwareMajor = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
-				FirmwareMinor = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
-				ClearUpdate();
-				return;
+			if (HardwareMajor == 10) {
+				Match match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)\.(\d+)-(\d+)$");
+				if (match.Success) {
+					FirmwareMajor  = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
+					FirmwareMinor  = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
+					FirmwareMinor2 = Convert.ToInt32(match.Groups[3].Value, CultureInfo.InvariantCulture);
+					FirmwareMinor3 = Convert.ToInt32(match.Groups[4].Value, CultureInfo.InvariantCulture);
+					FirmwareMinor4 = Convert.ToInt32(match.Groups[5].Value, CultureInfo.InvariantCulture);
+					ClearUpdate();
+					return;
+				}
+			} else {
+				Match match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)$");
+				if (match.Success) {
+					FirmwareMajor = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
+					FirmwareMinor = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
+					ClearUpdate();
+					return;
+				}
 			}
 
 			throw new FormatException();
@@ -292,68 +378,15 @@ namespace JuisCheck
 			}
 		}
 
-		public string QueryFirmwareUpdate( string dectBaseFirmware )
+		public JUIS.DeviceInfo ToDeviceInfo()
 		{
-			if (dectBaseFirmware == null ) {
-				throw new ArgumentNullException(nameof(dectBaseFirmware));
-			}
-
-			try {
-				using (WebClient webClient = new WebClient()) {
-					webClient.QueryString.Add("hw",      HardwareStr);
-					webClient.QueryString.Add("sw",      FirmwareStr);
-					webClient.QueryString.Add("oem",     OEM        );
-					webClient.QueryString.Add("country", Country    );
-					webClient.QueryString.Add("lang",    Language   );
-					webClient.QueryString.Add("fw",      dectBaseFirmware);
-
-					return webClient.DownloadString(programSettings.AvmCatiServiceURL);
-				}
-			}
-			catch (WebException) {
-				return null;
-			}
-		}
-
-		public void SetFirmwareUpdate( string queryUpdateResponse )
-		{
-			ClearUpdate();
-
-			if (queryUpdateResponse != null) {
-				Match urlMatch = Regex.Match(queryUpdateResponse, @"URL=""(.+)""", RegexOptions.IgnoreCase);
-				if (urlMatch.Success) {
-					string	updateURL = urlMatch.Groups[1].ToString();
-					string	fileName  = updateURL.Split('/').Last();
-
-					Match fileMatch = Regex.Match(fileName, @".+\.(\d+)\.(\d+)\.avm\.de\.upd$");
-					if (fileMatch.Success) {
-						int    firmwareMajor = Convert.ToInt32(fileMatch.Groups[1].Value, CultureInfo.InvariantCulture);
-						int    firmwareMinor = Convert.ToInt32(fileMatch.Groups[2].Value, CultureInfo.InvariantCulture);
-						string updateInfo    = $"{firmwareMajor:D2}.{firmwareMinor:D2}";
-
-						// For some products the update server returns a URL even if the device is up to date.
-						// So we compare firmware versions to see if there is really an update.
-						if (firmwareMajor != FirmwareMajor || firmwareMinor != FirmwareMinor) {
-							UpdateAvailable = true;
-							UpdateInfoIsNew = updateInfo != UpdateInfo;
-							UpdateInfo      = $"{fileMatch.Groups[1]}.{fileMatch.Groups[2]}";
-		 					UpdateImageURL  = updateURL;
-						} else {
-							UpdateInfo = JCstring.UpdateInfoNone;
-						}
-
-						FirmwareMinorLen = fileMatch.Groups[2].Value.Length;
-					} else {
-						UpdateInfo = JCstring.UpdateInfoError;
-					}
-				} else {
-					UpdateInfo = JCstring.UpdateInfoNone;
-				}
-			} else {
-				UpdateInfo = JCstring.UpdateInfoError;
-			}
-
-			UpdateLastChecked = DateTime.Now;
+			return new JUIS.DeviceInfo {
+				Lang    = Language,
+				MHW     = HardwareStr,
+				Serial  = "000000000000",
+				Type    = 1,
+				Version = FirmwareStr
+			};
 		}
 
 		public new void TrimStrings()
