@@ -361,7 +361,7 @@
     <value>Portogallo (0351)</value>
   </data>
   <data name="ComboBoxValueCountry0352" xml:space="preserve">
-    <value>Lussmburgo (0352)</value>
+    <value>Lussemburgo (0352)</value>
   </data>
   <data name="ComboBoxValueCountry0353" xml:space="preserve">
     <value>Irlanda (0353)</value>
@@ -511,7 +511,7 @@
     <value>Rimuovi file non esistenti dall'elenco</value>
   </data>
   <data name="BackstageSectionHeaderRecentFiles" xml:space="preserve">
-    <value>Elenco dispositivi recente</value>
+    <value>Elenco dispositivi recenti</value>
   </data>
   <data name="BackstageTabTextRecent" xml:space="preserve">
     <value>Recenti</value>
