@@ -1,4 +1,12 @@
-﻿v2.1.0 (2020/10/19)
+﻿v2.1.1 (2021/04/02)
+-------------------
+Change: Updated Italian localization (thanks bovirus).
+Fix: HTTPS downloads failed because TLS1.2 was not enabled.
+
+Note: HTTPS downloads require Windows 7 or later as Windows
+      Vista and earlier do not support TLS1.2.
+
+v2.1.0 (2020/10/19)
 -------------------
 Change: DECT: use JUIS instead of CATI server to search for updates.
 New: DECT: view update info (release notes) in web browser.
@@ -9,7 +17,7 @@ Fix: DECT: support for 5-part version numbers (FRITZ!DECT 500).
 Note: If you have a FRITZ!DECT 500 in a device collection, you must
       either correct the firmware version manually or do an update
       search and make the found version current. JuisCheck did not
-      handle 5-part version number correctly prior to v2.1.0.
+      handle 5-part version numbers correctly prior to v2.1.0.
 
 v2.0.3 (2020/10/16)
 -------------------

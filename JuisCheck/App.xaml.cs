@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -149,6 +150,13 @@ namespace JuisCheck
 				cultureInfo = CultureInfo.InstalledUICulture;
 			}
 			Thread.CurrentThread.CurrentUICulture = cultureInfo;
+
+			// SSL/TLS
+
+			ServicePointManager.SecurityProtocol &= ~SecurityProtocolType.Ssl3;  // Deprecated
+			ServicePointManager.SecurityProtocol &= ~SecurityProtocolType.Tls;   // Deprecated
+			ServicePointManager.SecurityProtocol &= ~SecurityProtocolType.Tls11; // Deprecated
+			ServicePointManager.SecurityProtocol |=  SecurityProtocolType.Tls12;
 		}
 
 		// Event handler: DispatcherUnhandledException

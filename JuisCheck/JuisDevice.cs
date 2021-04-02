@@ -449,6 +449,7 @@ namespace JuisCheck
 				case "EXTERN":
 				case "LABBETA":
 				case "LABOR":
+				case "LABTEST":
 					return firmwareBuildTypeBetaPublic;
 
 				case "TEST":
