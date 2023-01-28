@@ -1,4 +1,10 @@
-﻿v2.1.1 (2021/04/02)
+﻿v2.1.2 (2023/01/28)
+-------------------
+Change: 'Upgrade' predefined DECT base to FRITZ!OS 7.50.
+Fix: handle leading/trailing whitespace in update version (triggered
+     'Invalid firmware update version' error during 'Make current').
+
+v2.1.1 (2021/04/02)
 -------------------
 Change: Updated Italian localization (thanks bovirus).
 Fix: HTTPS downloads failed because TLS1.2 was not enabled.
