@@ -57,8 +57,8 @@ namespace JuisCheck.XML
 			Language          = dectDevice.Language;
 			DectBase          = dectDevice.DectBase;
 			UpdateAvailable   = dectDevice.UpdateAvailable;
-			UpdateInfo        = dectDevice.UpdateInfo;
 			UpdateImageURL    = dectDevice.UpdateImageURL;
+			UpdateInfo        = dectDevice.UpdateVersion;
 			UpdateInfoURL     = dectDevice.UpdateInfoURL;
 			UpdateLastChecked = dectDevice.UpdateLastChecked;
 		}

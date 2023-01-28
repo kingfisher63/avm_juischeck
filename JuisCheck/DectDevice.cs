@@ -37,8 +37,7 @@ namespace JuisCheck
 		/***********************************/
 
 		private string _DectBase;
-		public  string  DectBase
-		{
+		public  string  DectBase {
 			get => _DectBase ?? string.Empty;
 			set {
 				if (_DectBase != value) {
@@ -49,19 +48,12 @@ namespace JuisCheck
 			}
 		}
 
-		public override string DeviceAddressStr
-		{
-			get => string.Empty;
-		}
+		public override string DeviceAddressStr => string.Empty;
 
-		public override string FirmwareBuildTypeStr
-		{
-			get => string.Empty;
-		}
+		public override string FirmwareBuildTypeStr => string.Empty;
 
 		private int _FirmwareMinor2;
-		public  int  FirmwareMinor2
-		{
+		public  int  FirmwareMinor2	{
 			get => _FirmwareMinor2;
 			set {
 				if (_FirmwareMinor2 != value) {
@@ -73,8 +65,7 @@ namespace JuisCheck
 		}
 
 		private int _FirmwareMinor3;
-		public  int  FirmwareMinor3
-		{
+		public  int  FirmwareMinor3 {
 			get => _FirmwareMinor3;
 			set {
 				if (_FirmwareMinor3 != value) {
@@ -86,8 +77,7 @@ namespace JuisCheck
 		}
 
 		private int _FirmwareMinor4;
-		public  int  FirmwareMinor4
-		{
+		public  int  FirmwareMinor4 {
 			get => _FirmwareMinor4;
 			set {
 				if (_FirmwareMinor4 != value) {
@@ -98,8 +88,7 @@ namespace JuisCheck
 			}
 		}
 
-		public override string FirmwareStr
-		{
+		public override string FirmwareStr {
 			get {
 				if (HardwareMajor == 10) {
 					return $"{FirmwareMajor}.{FirmwareMinor:D2}.{FirmwareMinor2:D2}.{FirmwareMinor3:D2}-{FirmwareMinor4:D3}";
@@ -110,8 +99,7 @@ namespace JuisCheck
 		}
 
 		private int _HardwareMajor;
-		public  int  HardwareMajor
-		{
+		public  int  HardwareMajor {
 			get => _HardwareMajor;
 			set {
 				if (_HardwareMajor != value) {
@@ -124,8 +112,7 @@ namespace JuisCheck
 		}
 
 		private int _HardwareMinor;
-		public  int  HardwareMinor
-		{
+		public  int  HardwareMinor {
 			get => _HardwareMinor;
 			set {
 				if (_HardwareMinor != value) {
@@ -136,19 +123,11 @@ namespace JuisCheck
 			}
 		}
 
-		public override string HardwareStr
-		{
-			get => $"{HardwareMajor:D2}.{HardwareMinor:D2}";
-		}
+		public override string HardwareStr => $"{HardwareMajor:D2}.{HardwareMinor:D2}";
 
-		public bool IsFivePartVersion {
-			get {
-				return HardwareMajor == 10;
-			}
-		}
+		public bool IsFivePartVersion => HardwareMajor == 10;
 
-		public override string MasterBaseStr
-		{
+		public override string MasterBaseStr {
 			get {
 				if (App.GetMainWindow().Devices.FindByID(DectBase) is JuisDevice dectBase) {
 					return dectBase.DeviceName;
@@ -160,10 +139,7 @@ namespace JuisCheck
 			}
 		}
 
-		public override DataTemplate ToolTipTemplate
-		{
-			get => (DataTemplate)App.GetMainWindow().Resources["DectDeviceToolTipContentTemplate"];
-		}
+		public override DataTemplate ToolTipTemplate => (DataTemplate)App.GetMainWindow().Resources["DectDeviceToolTipContentTemplate"];
 
 		/**********************/
 		/* Class constructors */
@@ -205,10 +181,10 @@ namespace JuisCheck
 			Country           = jc1device.Country;
 			Language          = jc1device.Language;
 			UpdateAvailable   = jc1device.UpdateAvailable;
-			UpdateInfo        = jc1device.UpdateInfo;
 			UpdateImageURL    = jc1device.UpdateImageURL;
 			UpdateInfoURL     = jc1device.UpdateInfoURL;
 			UpdateLastChecked = jc1device.UpdateLastChecked;
+			UpdateVersion     = jc1device.UpdateInfo;
 		}
 
 		public DectDevice( XML.JC2DectDevice jc2dectDevice )
@@ -233,10 +209,10 @@ namespace JuisCheck
 			Language          = jc2dectDevice.Language;
 			DectBase          = jc2dectDevice.DectBase;
 			UpdateAvailable   = jc2dectDevice.UpdateAvailable;
-			UpdateInfo        = jc2dectDevice.UpdateInfo;
 			UpdateImageURL    = jc2dectDevice.UpdateImageURL;
 			UpdateInfoURL     = jc2dectDevice.UpdateInfoURL;
 			UpdateLastChecked = jc2dectDevice.UpdateLastChecked;
+			UpdateVersion     = jc2dectDevice.UpdateInfo;
 		}
 
 		/*****************/
@@ -348,7 +324,7 @@ namespace JuisCheck
 			}
 
 			if (HardwareMajor == 10) {
-				Match match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)\.(\d+)-(\d+)$");
+				Match match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)\.(\d+)-(\d+)$");
 				if (match.Success) {
 					FirmwareMajor  = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 					FirmwareMinor  = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -359,7 +335,7 @@ namespace JuisCheck
 					return;
 				}
 			} else {
-				Match match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)$");
+				Match match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)$");
 				if (match.Success) {
 					FirmwareMajor = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 					FirmwareMinor = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);

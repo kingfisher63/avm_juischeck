@@ -96,8 +96,7 @@ namespace JuisCheck
 		/***********************************/
 
 		private string _Annex;
-		public  string  Annex
-		{
+		public  string  Annex {
 			get => _Annex ?? string.Empty;
 			set {
 				if (_Annex != value) {
@@ -108,8 +107,7 @@ namespace JuisCheck
 			}
 		}
 
-		public string AnnexFull
-		{
+		public string AnnexFull	{
 			get {
 				if (!annexDictionary.TryGetValue(Annex, out string value)) {
 					value = string.Format(CultureInfo.CurrentCulture, JCstring.ComboBoxValueUnknown, Annex);
@@ -119,8 +117,7 @@ namespace JuisCheck
 		}
 
 		private string _DeviceAddress;
-		public  string  DeviceAddress
-		{
+		public  string  DeviceAddress {
 			get => _DeviceAddress ?? string.Empty;
 			set {
 				if (_DeviceAddress != value) {
@@ -130,14 +127,10 @@ namespace JuisCheck
 			}
 		}
 
-		public override string DeviceAddressStr
-		{
-			get => _DeviceAddress;
-		}
+		public override string DeviceAddressStr => _DeviceAddress;
 
 		private int _FirmwareBuildNumber;
-		public  int  FirmwareBuildNumber
-		{
+		public  int  FirmwareBuildNumber {
 			get => _FirmwareBuildNumber;
 			set {
 				if (_FirmwareBuildNumber != value) {
@@ -149,8 +142,7 @@ namespace JuisCheck
 		}
 
 		private int _FirmwareBuildType;
-		public  int  FirmwareBuildType
-		{
+		public  int  FirmwareBuildType {
 			get => _FirmwareBuildType;
 			set {
 				if (_FirmwareBuildType != value) {
@@ -163,8 +155,7 @@ namespace JuisCheck
 			}
 		}
 
-		public string FirmwareBuildTypeFull
-		{
+		public string FirmwareBuildTypeFull {
 			get {
 				if (!firmwareBuildTypeDictionary.TryGetValue(FirmwareBuildType, out string value)) {
 					value = string.Format(CultureInfo.CurrentCulture, JCstring.ComboBoxValueUnknown, FirmwareBuildType);
@@ -173,13 +164,9 @@ namespace JuisCheck
 			}
 		}
 
-		public override string FirmwareBuildTypeStr
-		{
-			get => FirmwareBuildType.ToString(CultureInfo.CurrentCulture);
-		}
+		public override string FirmwareBuildTypeStr => FirmwareBuildType.ToString(CultureInfo.CurrentCulture);
 
-		public bool FirmwareMajorWarning
-		{
+		public bool FirmwareMajorWarning {
 			get {
 				// 249 is the hardware ID of the FRITZ!Powerline 1260v2. This is the lowest known
 				// hardware ID where FirmwareMajor == Hardware ID. 249 is therefore no more than
@@ -196,8 +183,7 @@ namespace JuisCheck
 		}
 
 		private int _FirmwarePatch;
-		public  int  FirmwarePatch
-		{
+		public  int  FirmwarePatch {
 			get => _FirmwarePatch;
 			set {
 				if (_FirmwarePatch != value) {
@@ -208,8 +194,7 @@ namespace JuisCheck
 			}
 		}
 
-		public override string FirmwareStr
-		{
+		public override string FirmwareStr {
 			get {
 				if (FirmwareBuildNumber !=0 && (FirmwareBuildType != firmwareBuildTypeRelease || programSettings.JuisReleaseShowBuildNumber)) {
 					return $"{FirmwareMajor}.{FirmwareMinor:D2}.{FirmwarePatch:D2}-{FirmwareBuildNumber}";
@@ -220,8 +205,7 @@ namespace JuisCheck
 		}
 
 		private string _Flags;
-		public  string  Flags
-		{
+		public  string  Flags {
 			get => _Flags ?? string.Empty;
 			set {
 				if (_Flags != value) {
@@ -232,8 +216,7 @@ namespace JuisCheck
 		}
 
 		private int _Hardware;
-		public  int  Hardware
-		{
+		public  int  Hardware {
 			get => _Hardware;
 			set {
 				if (_Hardware != value) {
@@ -245,14 +228,10 @@ namespace JuisCheck
 			}
 		}
 
-		public override string HardwareStr
-		{
-			get => Hardware.ToString(CultureInfo.CurrentCulture);
-		}
+		public override string HardwareStr => Hardware.ToString(CultureInfo.CurrentCulture);
 
 		private string _MeshMaster;
-		public  string  MeshMaster
-		{
+		public  string  MeshMaster {
 			get => _MeshMaster ?? string.Empty;
 			set {
 				if (_MeshMaster != value) {
@@ -263,8 +242,7 @@ namespace JuisCheck
 			}
 		}
 
-		public override string MasterBaseStr
-		{
+		public override string MasterBaseStr {
 			get {
 				if (App.GetMainWindow().Devices.FindByID(MeshMaster) is JuisDevice meshMaster) {
 					return meshMaster.DeviceName;
@@ -274,8 +252,7 @@ namespace JuisCheck
 		}
 
 		private string _SerialNumber;
-		public  string  SerialNumber
-		{
+		public  string  SerialNumber {
 			get => _SerialNumber ?? string.Empty;
 			set {
 				if (_SerialNumber != value) {
@@ -285,10 +262,7 @@ namespace JuisCheck
 			}
 		}
 
-		public override DataTemplate ToolTipTemplate
-		{
-			get => (DataTemplate)App.GetMainWindow().Resources["JuisDeviceToolTipContentTemplate"];
-		}
+		public override DataTemplate ToolTipTemplate => (DataTemplate)App.GetMainWindow().Resources["JuisDeviceToolTipContentTemplate"];
 
 		/**********************/
 		/* Class constructors */
@@ -333,10 +307,10 @@ namespace JuisCheck
 			Language            = jc1device.Language;
 			Flags               = FlagsToString(jc1device.Flags);
 			UpdateAvailable     = jc1device.UpdateAvailable;
-			UpdateInfo          = jc1device.UpdateInfo;
 			UpdateImageURL      = jc1device.UpdateImageURL;
 			UpdateInfoURL       = jc1device.UpdateInfoURL;
 			UpdateLastChecked   = jc1device.UpdateLastChecked;
+			UpdateVersion       = jc1device.UpdateInfo;
 		}
 
 		public JuisDevice( XML.JC2JuisDevice jc2juisDevice )
@@ -364,10 +338,10 @@ namespace JuisCheck
 			Flags               = FlagsToString(jc2juisDevice.Flags);
 			MeshMaster          = jc2juisDevice.MeshMaster;
 			UpdateAvailable     = jc2juisDevice.UpdateAvailable;
-			UpdateInfo          = jc2juisDevice.UpdateInfo;
 			UpdateImageURL      = jc2juisDevice.UpdateImageURL;
 			UpdateInfoURL       = jc2juisDevice.UpdateInfoURL;
 			UpdateLastChecked   = jc2juisDevice.UpdateLastChecked;
+			UpdateVersion       = jc2juisDevice.UpdateInfo;
 		}
 
 		/*****************/
@@ -388,7 +362,7 @@ namespace JuisCheck
 			MeshMaster          = srcDevice.MeshMaster;
 			SerialNumber        = srcDevice.SerialNumber;
 		}
-		
+
 		public override bool Edit( Window owner = null )
 		{
 			JuisDeviceDialog dialog = new JuisDeviceDialog(this);
@@ -469,9 +443,9 @@ namespace JuisCheck
 		// observed. This method tries them one by one. This includes several formats that AVM might use
 		// in the future.
 		//
-		// <MA>    Major version number. Has been seen missing in some cases.
-		// <MI>    Minor version number.
-		// <PA>    Patch version number.
+		// <MAJOR> Major version number. Has been seen missing in some cases.
+		// <MINOR> Minor version number.
+		// <PATCH> Patch version number.
 		// <BUILD> Build number. Usually not present in Release builds.
 		// <TYPE>  Build type (Labor, Inhaus, etc). May or may not be preceded by whitespace.
 
@@ -483,9 +457,9 @@ namespace JuisCheck
 
 			Match match;
 
-			// <MA>.<MI>.<PA>-<BUILD><TYPE>
+			// <MAJOR>.<MINOR>.<PATCH>-<BUILD><TYPE>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -496,9 +470,9 @@ namespace JuisCheck
 				return;
 			}
 
-			// <MA>.<MI>.<PA>-<BUILD>
+			// <MAJOR>.<MINOR>.<PATCH>-<BUILD>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)-(\d+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)-(\d+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -509,9 +483,9 @@ namespace JuisCheck
 				return;
 			}
 
-			// <MA>.<MI>.<PA><TYPE>
+			// <MAJOR>.<MINOR>.<PATCH><TYPE>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -522,9 +496,9 @@ namespace JuisCheck
 				return;
 			}
 
-			// <MA>.<MI>.<PA>
+			// <MAJOR>.<MINOR>.<PATCH>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\.(\d+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -535,9 +509,9 @@ namespace JuisCheck
 				return;
 			}
 
-			// <MI>.<PA>-<BUILD><TYPE>
+			// <MINOR>.<PATCH>-<BUILD><TYPE>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
@@ -548,9 +522,9 @@ namespace JuisCheck
 				return;
 			}
 
-			// <MI>.<PA>-<BUILD>
+			// <MINOR>.<PATCH>-<BUILD>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)-(\d+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)-(\d+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
@@ -561,9 +535,9 @@ namespace JuisCheck
 				return;
 			}
 
-			// <MI>.<PA><TYPE>
+			// <MINOR>.<PATCH><TYPE>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
@@ -574,9 +548,9 @@ namespace JuisCheck
 				return;
 			}
 
-			// <MI>.<PA>
+			// <MINOR>.<PATCH>
 
-			match = Regex.Match(UpdateInfo, @"^(\d+)\.(\d+)$");
+			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);

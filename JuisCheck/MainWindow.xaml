@@ -88,9 +88,9 @@
                     <system:String>OEM</system:String>
                     <system:String>Country</system:String>
                     <system:String>Language</system:String>
-                    <system:String>UpdateInfo</system:String>
                     <system:String>UpdateFileName</system:String>
                     <system:String>UpdateLastChecked</system:String>
+                    <system:String>UpdateVersion</system:String>
                 </CollectionViewSource.LiveSortingProperties>
             </CollectionViewSource>
 
@@ -385,12 +385,12 @@
                                         Binding="{Binding Path=Language}"
                                         Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleLanguage, Converter={StaticResource cnvBoolToVisibility}}"/>
                 <DataGridTextColumn     Header="{x:Static jclang:JCstring.DataGridColumnHeaderUpdateInfo}"
-                                        Binding="{Binding Path=UpdateInfo}"
+                                        Binding="{Binding Path=UpdateVersion}"
                                         Visibility="{Binding Source={x:Static Application.Current}, Path=MainWindow.(jc:MainWindow.Devices).Settings.DataGridColumnVisibleUpdateInfo, Converter={StaticResource cnvBoolToVisibility}}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=UpdateInfoIsNew}" Value="True">
+                                <DataTrigger Binding="{Binding Path=UpdateIsNew}" Value="True">
                                     <Setter Property="FontWeight" Value="Bold"/>
                                 </DataTrigger>
                             </Style.Triggers>

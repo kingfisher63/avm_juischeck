@@ -123,8 +123,7 @@ namespace JuisCheck
 		/**********************************/
 
 		private string _Country;
-		public  string  Country
-		{
+		public  string  Country {
 			get => _Country ?? string.Empty;
 			set {
 				if (_Country != value) {
@@ -135,8 +134,7 @@ namespace JuisCheck
 			}
 		}
 
-		public string CountryFull
-		{
+		public string CountryFull {
 			get {
 				if (!countryDictionary.TryGetValue(Country, out string value)) {
 					value = string.Format(CultureInfo.CurrentCulture, JCstring.ComboBoxValueUnknown, Country);
@@ -146,8 +144,7 @@ namespace JuisCheck
 		}
 
 		private string _DeviceName;
-		public  string  DeviceName
-		{
+		public  string  DeviceName {
 			get => _DeviceName ?? string.Empty;
 			set {
 				if (_DeviceName != value) {
@@ -158,8 +155,7 @@ namespace JuisCheck
 		}
 
 		private int _FirmwareMajor;
-		public  int  FirmwareMajor
-		{
+		public  int  FirmwareMajor {
 			get => _FirmwareMajor;
 			set {
 				if (_FirmwareMajor != value) {
@@ -185,8 +181,7 @@ namespace JuisCheck
 		}
 
 		private string _ID;
-		public  string  ID
-		{
+		public  string  ID {
 			get => _ID ?? string.Empty;
 			set {
 				if (_ID != value) {
@@ -197,8 +192,7 @@ namespace JuisCheck
 		}
 
 		private bool _IsSelected;
-		public  bool  IsSelected
-		{
+		public  bool  IsSelected {
 			get => _IsSelected;
 			set {
 				if (_IsSelected != value) {
@@ -209,8 +203,7 @@ namespace JuisCheck
 		}
 
 		private string _Language;
-		public  string  Language
-		{
+		public  string  Language {
 			get => _Language ?? string.Empty;
 			set {
 				if (_Language != value) {
@@ -221,8 +214,7 @@ namespace JuisCheck
 			}
 		}
 
-		public string LanguageFull
-		{
+		public string LanguageFull {
 			get {
 				if (!languageDictionary.TryGetValue(Language, out string value)) {
 					value = string.Format(CultureInfo.CurrentCulture, JCstring.ComboBoxValueUnknown, Language);
@@ -232,8 +224,7 @@ namespace JuisCheck
 		}
 
 		private string _OEM;
-		public  string  OEM
-		{
+		public  string  OEM {
 			get => _OEM ?? string.Empty;
 			set {
 				if (_OEM != value) {
@@ -244,8 +235,7 @@ namespace JuisCheck
 		}
 
 		private string _ProductName;
-		public  string  ProductName
-		{
+		public  string  ProductName {
 			get => _ProductName ?? string.Empty;
 			set {
 				if (_ProductName != value) {
@@ -256,8 +246,7 @@ namespace JuisCheck
 		}
 
 		private bool _UpdateAvailable;
-		public  bool  UpdateAvailable
-		{
+		public  bool  UpdateAvailable {
 			get => _UpdateAvailable;
 			set {
 				if (_UpdateAvailable != value) {
@@ -267,14 +256,10 @@ namespace JuisCheck
 			}
 		}
 
-		public string UpdateFileName
-		{
-			get => string.IsNullOrWhiteSpace(UpdateImageURL) ? string.Empty : UpdateImageURL.Split('/').Last();
-		}
+		public string UpdateFileName => string.IsNullOrWhiteSpace(UpdateImageURL) ? string.Empty : UpdateImageURL.Split('/').Last();
 
 		private string _UpdateImageURL;
-		public  string  UpdateImageURL
-		{
+		public  string  UpdateImageURL {
 			get => _UpdateImageURL ?? string.Empty;
 			set {
 				if (_UpdateImageURL != value) {
@@ -285,33 +270,8 @@ namespace JuisCheck
 			}
 		}
 
-		private string _UpdateInfo;
-		public  string  UpdateInfo
-		{
-			get => _UpdateInfo ?? string.Empty;
-			set {
-				if (_UpdateInfo != value) {
-					_UpdateInfo  = value;
-					NotifyPropertyChanged();
-				}
-			}
-		}
-
-		private bool _UpdateInfoIsNew;
-		public  bool  UpdateInfoIsNew
-		{
-			get => _UpdateInfoIsNew;
-			set {
-				if (_UpdateInfoIsNew != value) {
-					_UpdateInfoIsNew  = value;
-					NotifyPropertyChanged();
-				}
-			}
-		}
-
 		private string _UpdateInfoURL;
-		public  string  UpdateInfoURL
-		{
+		public  string  UpdateInfoURL {
 			get => _UpdateInfoURL ?? string.Empty;
 			set {
 				if (_UpdateInfoURL != value) {
@@ -321,13 +281,34 @@ namespace JuisCheck
 			}
 		}
 
+		private bool _UpdateIsNew;
+		public  bool  UpdateIsNew {
+			get => _UpdateIsNew;
+			set {
+				if (_UpdateIsNew != value) {
+					_UpdateIsNew  = value;
+					NotifyPropertyChanged();
+				}
+			}
+		}
+
 		private DateTime? _UpdateLastChecked;
-		public  DateTime?  UpdateLastChecked
-		{
+		public  DateTime?  UpdateLastChecked {
 			get => _UpdateLastChecked;
 			set {
 				if (_UpdateLastChecked != value) {
 					_UpdateLastChecked  = value;
+					NotifyPropertyChanged();
+				}
+			}
+		}
+
+		private string _UpdateVersion;
+		public  string  UpdateVersion {
+			get => _UpdateVersion ?? string.Empty;
+			set {
+				if (_UpdateVersion != value) {
+					_UpdateVersion  = value;
 					NotifyPropertyChanged();
 				}
 			}
@@ -350,12 +331,12 @@ namespace JuisCheck
 
 		public void ClearUpdate()
 		{
-			UpdateAvailable   = false;
-			UpdateInfoIsNew   = false;
-			UpdateInfo        = string.Empty;
-			UpdateImageURL    = string.Empty;
-			UpdateInfoURL     = string.Empty;
-			UpdateLastChecked = null;
+			UpdateAvailable    = false;
+			UpdateImageURL     = string.Empty;
+			UpdateInfoURL      = string.Empty;
+			UpdateIsNew        = false;
+			UpdateLastChecked  = null;
+			UpdateVersion      = string.Empty;
 		}
 
 		protected void CopyFrom( Device srcDevice )
@@ -373,7 +354,7 @@ namespace JuisCheck
 			ProductName       = srcDevice.ProductName;
 			UpdateAvailable   = srcDevice.UpdateAvailable;
 			UpdateImageURL    = srcDevice.UpdateImageURL;
-			UpdateInfo        = srcDevice.UpdateInfo;
+			UpdateVersion     = srcDevice.UpdateVersion;
 			UpdateInfoURL     = srcDevice.UpdateInfoURL;
 			UpdateLastChecked = srcDevice.UpdateLastChecked;
 		}
@@ -394,17 +375,17 @@ namespace JuisCheck
 			if (updateInfo != null) {
 				if (updateInfo.Found) {
 					UpdateAvailable = true;
-					UpdateInfoIsNew = updateInfo.Version != UpdateInfo;
-					UpdateInfo      = updateInfo.Version;
 					UpdateImageURL  = updateInfo.DownloadURL;
 					UpdateInfoURL   = updateInfo.InfoURL;
+					UpdateIsNew     = updateInfo.Version != UpdateVersion;
+					UpdateVersion   = updateInfo.Version;
 				} else {
 					ClearUpdate();
-					UpdateInfo = JCstring.UpdateInfoNone;
+					UpdateVersion = JCstring.UpdateInfoNone;
 				}
 			} else {
 				ClearUpdate();
-				UpdateInfo = JCstring.UpdateInfoError;
+				UpdateVersion = JCstring.UpdateInfoError;
 			}
 
 			UpdateLastChecked = DateTime.Now;
@@ -418,8 +399,8 @@ namespace JuisCheck
 			OEM            = OEM.Trim();
 			ProductName    = ProductName.Trim();
 			UpdateImageURL = UpdateImageURL.Trim();
-			UpdateInfo     = UpdateInfo.Trim();
 			UpdateInfoURL  = UpdateInfoURL.Trim();
+			UpdateVersion  = UpdateVersion.Trim();
 		}
 
 		/********************/

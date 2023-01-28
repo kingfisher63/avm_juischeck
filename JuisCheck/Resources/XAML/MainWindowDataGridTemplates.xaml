@@ -52,7 +52,7 @@
             <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelLanguage}"       />
             <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=LanguageFull,      Mode=OneWay}"             />
             <TextBlock Grid.Row="7" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelUpdateInfo}"     />
-            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Path=UpdateInfo,        Mode=OneWay}"             />
+            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Path=UpdateVersion,     Mode=OneWay}"             />
             <TextBlock Grid.Row="8" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelUpdateFileName}" />
             <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Path=UpdateFileName,    Mode=OneWay}"             />
             <TextBlock Grid.Row="9" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelLastChecked}"    />
@@ -110,7 +110,7 @@
             <TextBlock Grid.Row="10" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelFlags}"            />
             <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Path=Flags,                 Mode=OneWay}"           />
             <TextBlock Grid.Row="11" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelUpdateInfo}"       />
-            <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Path=UpdateInfo,            Mode=OneWay}"           />
+            <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Path=UpdateVersion,         Mode=OneWay}"           />
             <TextBlock Grid.Row="12" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelUpdateFileName}"   />
             <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding Path=UpdateFileName,        Mode=OneWay}"           />
             <TextBlock Grid.Row="13" Grid.Column="0" Text="{x:Static jclang:JCstring.DeviceFieldLabelLastChecked}"      />

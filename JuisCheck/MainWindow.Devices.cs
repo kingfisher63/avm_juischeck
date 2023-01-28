@@ -122,8 +122,8 @@ namespace JuisCheck
 		private static bool IsMeshClient						(Device device, string meshMasterID) => (device as JuisDevice)?.MeshMaster == meshMasterID;
 		private static bool IsSelectedDevice					(Device device) => device.IsSelected;
 		private static bool IsSelectedDeviceWithUpdateAvailable	(Device device) => device.IsSelected && device.UpdateAvailable;
-		private static bool IsSelectedDeviceWithUpdateInfo		(Device device) => device.IsSelected && !string.IsNullOrWhiteSpace(device.UpdateInfo);
 		private static bool IsSelectedDeviceWithUpdateImageURL	(Device device) => device.IsSelected && !string.IsNullOrWhiteSpace(device.UpdateImageURL);
+		private static bool IsSelectedDeviceWithUpdateVersion	(Device device) => device.IsSelected && !string.IsNullOrWhiteSpace(device.UpdateVersion);
 
 		// Routed command: Devices_CmdAddDECT
 
@@ -183,12 +183,12 @@ namespace JuisCheck
 
 		private void Devices_CmdClearUpdates_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
-			evt.CanExecute = Devices.Any(d => IsSelectedDeviceWithUpdateInfo(d));
+			evt.CanExecute = Devices.Any(d => IsSelectedDeviceWithUpdateVersion(d));
 		}
 
 		private void Devices_CmdClearUpdates_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
-			foreach (Device device in Devices.Where(d => IsSelectedDeviceWithUpdateInfo(d))) {
+			foreach (Device device in Devices.Where(d => IsSelectedDeviceWithUpdateVersion(d))) {
 				device.ClearUpdate();
 			}
 
@@ -362,7 +362,7 @@ namespace JuisCheck
 				WindowStartupLocation = WindowStartupLocation.CenterOwner
 			};
 
-			devices.ForEach( d => d.UpdateInfoIsNew = false );
+			devices.ForEach( d => d.UpdateIsNew = false );
 
 			findDialog.ShowDialog();
 			findDialog.Dispose();
@@ -386,7 +386,7 @@ namespace JuisCheck
 					device.MakeUpdateCurrent();
 				}
 				catch (FormatException) {
-					ShowErrorMessage(string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextInvalidUpdateVersion.Unescape(), device.DeviceName, device.UpdateInfo));
+					ShowErrorMessage(string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextInvalidUpdateVersion.Unescape(), device.DeviceName, device.UpdateVersion));
 				}
 			}
 

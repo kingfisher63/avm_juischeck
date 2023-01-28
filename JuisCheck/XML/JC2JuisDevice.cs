@@ -64,8 +64,8 @@ namespace JuisCheck.XML
 			Flags               = JuisDevice.FlagsToList(juisDevice.Flags);
 			MeshMaster          = juisDevice.MeshMaster;
 			UpdateAvailable     = juisDevice.UpdateAvailable;
-			UpdateInfo          = juisDevice.UpdateInfo;
 			UpdateImageURL      = juisDevice.UpdateImageURL;
+			UpdateInfo          = juisDevice.UpdateVersion;
 			UpdateInfoURL       = juisDevice.UpdateInfoURL;
 			UpdateLastChecked   = juisDevice.UpdateLastChecked;
 		}
