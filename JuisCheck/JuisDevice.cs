@@ -455,11 +455,12 @@ namespace JuisCheck
 				return;
 			}
 
-			Match match;
+			Match	match;
+			string	updateVersion = UpdateVersion.Trim();
 
 			// <MAJOR>.<MINOR>.<PATCH>-<BUILD><TYPE>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -472,7 +473,7 @@ namespace JuisCheck
 
 			// <MAJOR>.<MINOR>.<PATCH>-<BUILD>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)-(\d+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)\.(\d+)-(\d+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -485,7 +486,7 @@ namespace JuisCheck
 
 			// <MAJOR>.<MINOR>.<PATCH><TYPE>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)\.(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -498,7 +499,7 @@ namespace JuisCheck
 
 			// <MAJOR>.<MINOR>.<PATCH>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)\.(\d+)$");
 			if (match.Success) {
 				FirmwareMajor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 				FirmwareMinor       = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -511,7 +512,7 @@ namespace JuisCheck
 
 			// <MINOR>.<PATCH>-<BUILD><TYPE>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)-(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
@@ -524,7 +525,7 @@ namespace JuisCheck
 
 			// <MINOR>.<PATCH>-<BUILD>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)-(\d+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)-(\d+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
@@ -537,7 +538,7 @@ namespace JuisCheck
 
 			// <MINOR>.<PATCH><TYPE>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\s*([A-Za-z]+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)\s*([A-Za-z]+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
@@ -550,7 +551,7 @@ namespace JuisCheck
 
 			// <MINOR>.<PATCH>
 
-			match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)$");
+			match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)$");
 			if (match.Success) {
 				// FirmwareMajor: missing => keep current value
 				FirmwareMinor       = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);

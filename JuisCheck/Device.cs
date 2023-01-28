@@ -377,8 +377,8 @@ namespace JuisCheck
 					UpdateAvailable = true;
 					UpdateImageURL  = updateInfo.DownloadURL;
 					UpdateInfoURL   = updateInfo.InfoURL;
-					UpdateIsNew     = updateInfo.Version != UpdateVersion;
-					UpdateVersion   = updateInfo.Version;
+					UpdateIsNew     = updateInfo.Version.Trim() != UpdateVersion;
+					UpdateVersion   = updateInfo.Version.Trim();
 				} else {
 					ClearUpdate();
 					UpdateVersion = JCstring.UpdateInfoNone;

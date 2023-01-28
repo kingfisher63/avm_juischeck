@@ -323,8 +323,10 @@ namespace JuisCheck
 				return;
 			}
 
-			if (HardwareMajor == 10) {
-				Match match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)\.(\d+)\.(\d+)-(\d+)$");
+			string updateVersion = UpdateVersion.Trim();
+
+			if (IsFivePartVersion) {
+				Match match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)\.(\d+)\.(\d+)-(\d+)$");
 				if (match.Success) {
 					FirmwareMajor  = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 					FirmwareMinor  = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
@@ -335,7 +337,7 @@ namespace JuisCheck
 					return;
 				}
 			} else {
-				Match match = Regex.Match(UpdateVersion, @"^(\d+)\.(\d+)$");
+				Match match = Regex.Match(updateVersion, @"^(\d+)\.(\d+)$");
 				if (match.Success) {
 					FirmwareMajor = Convert.ToInt32(match.Groups[1].Value, CultureInfo.InvariantCulture);
 					FirmwareMinor = Convert.ToInt32(match.Groups[2].Value, CultureInfo.InvariantCulture);
