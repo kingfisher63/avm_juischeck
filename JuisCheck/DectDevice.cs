@@ -23,8 +23,8 @@ namespace JuisCheck
 		public const int					predefinedDectBaseHW            = 226;
 		public const int					predefinedDectBaseFirmwareMajor = 154;
 		public const int					predefinedDectBaseFirmwareMinor = 7;
-		public const int					predefinedDectBaseFirmwarePatch = 21;
-		public const int					predefinedDectBaseBuildNumber   = 82154;
+		public const int					predefinedDectBaseFirmwarePatch = 50;
+		public const int					predefinedDectBaseBuildNumber   = 101716;
 		public const int					predefinedDectBaseBuildType     = JuisDevice.firmwareBuildTypeRelease;
 		public const string					predefinedDectBaseAnnex         = "B";
 

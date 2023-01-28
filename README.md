@@ -141,7 +141,7 @@ red border. In this case the field has a tooltip that explains the reason for th
 If any field has invalid input, you cannot click the *OK* button.
 
 For DECT devices you must select a FRITZ!Box as the DECT base. A predefined DECT base
-device is available for your convenience (a FRITZ!Box 7590 with FRITZ!OS 7.21), but
+device is available for your convenience (a FRITZ!Box 7590 with FRITZ!OS 7.50), but
 it is recommended that you add your own FRITZ!Box to the collection and configure DECT
 devices to use is as the DECT base.
 
