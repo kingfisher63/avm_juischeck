@@ -2,7 +2,7 @@
 
 JuisCheck is a tool to query the AVM update information service (JUIS) for device
 firmware updates. JuisCheck supports all types of AVM devices (FRITZ!Box, FRITZ!DECT,
-FRITZ!Powerline and FRITZ!WLAN).
+FRITZ!Powerline and FRITZ!Repeater).
 
 **Please read the [CONTRIBUTING](CONTRIBUTING.md) document for information about
 bug reports, feature requests, (no) pull requests and user interface translation.**
@@ -14,12 +14,7 @@ bug reports, feature requests, (no) pull requests and user interface translation
 
 ## Installation
 
-- Download *JuisCheck.exe* from [bin/Release](bin/Release) and store it in a folder
-  on your computer (or on a thumb drive, see *Portable mode* below).
-
-- If you want to use a user interface language other than English, also copy the
-  corresponding language folders (see *Language selection* below) to the appplication
-  directory.
+Download the release asset *JuisCheck.zip* and extract it in a folder on your computer.
 
 ## Upgrading from JuisCheck v1.x
 
