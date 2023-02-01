@@ -14,7 +14,9 @@ bug reports, feature requests, (no) pull requests and user interface translation
 
 ## Installation
 
-Download the release asset *JuisCheck.zip* and extract it in a folder on your computer.
+Download the release asset
+[*JuisCheck.zip*](https://github.com/kingfisher63/avm_juischeck/releases/latest/download/JuisCheck.zip)
+and unzip it in a folder on your computer.
 
 ## Upgrading from JuisCheck v1.x
 
