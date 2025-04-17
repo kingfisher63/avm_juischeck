@@ -1,3 +1,9 @@
+**Notice: this project is no longer maintained.**
+
+AVM has made unknown changes to their JUIS webservice. As a result JuisCheck no longer
+finds update information for most AVM products. At the time of writing JuisCheck was
+only working for some older FRITZ!Box models like the 7530 and the 7590.
+
 # JuisCheck
 
 JuisCheck is a tool to query the AVM update information service (JUIS) for device
