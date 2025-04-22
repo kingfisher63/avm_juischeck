@@ -359,18 +359,7 @@ namespace JuisCheck
 			UpdateLastChecked = srcDevice.UpdateLastChecked;
 		}
 
-		protected static JUIS.RequestHeader GetJuisRequestHeader()
-		{
-			string timestamp = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
-
-			return new JUIS.RequestHeader {
-				ManualRequest = true,
-				Nonce         = Convert.ToBase64String(Encoding.UTF8.GetBytes(timestamp)),
-				UserAgent     = "Box"
-			};
-		}
-
-		public void SetFirmwareUpdate( JUIS.UpdateInfo updateInfo )
+		public void SetFirmwareUpdate( AVM.JUIS.UpdateInfo updateInfo )
 		{
 			if (updateInfo != null) {
 				if (updateInfo.Found) {

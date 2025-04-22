@@ -4,7 +4,6 @@
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
-using Muon.Windows;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -79,10 +78,10 @@ namespace JuisCheck
 			} else {
 				if (evt.Error is Exception ex) {
 					Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-						MessageBoxEx2.Show(new MessageBoxEx2Params {
+						MessageBoxEx.Show(new MessageBoxExParams {
 							CaptionText = JCstring.MessageCaptionError,
 							MessageText = ex.Message,
-							Image       = MessageBoxEx2Image.Error,
+							Image       = MessageBoxExImage.Error,
 							ButtonText  = new string[] { JCstring.DialogButtonTextOk },
 							Owner       = this
 						});

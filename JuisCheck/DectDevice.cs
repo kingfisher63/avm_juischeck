@@ -28,8 +28,6 @@ namespace JuisCheck
 		public const int					predefinedDectBaseBuildType     = JuisDevice.firmwareBuildTypeRelease;
 		public const string					predefinedDectBaseAnnex         = "B";
 
-		private static readonly Settings	programSettings                 = Settings.Default;
-
 		/***********************************/
 		/* Device type specific properties */
 		/* - including derived properties  */
@@ -250,7 +248,7 @@ namespace JuisCheck
 				throw new ArgumentNullException(nameof(dispatcher));
 			}
 
-			JUIS.BoxInfo dectBaseBoxInfo;
+			AVM.JUIS.BoxInfo dectBaseBoxInfo;
 
 			if (DectBase == predefinedDectBaseID) {
 				dectBaseBoxInfo = GetPredefinedDectBaseBoxInfo();
@@ -272,14 +270,11 @@ namespace JuisCheck
 			}
 
 			try {
-				using (JUIS.UpdateInfoServiceClient client = new JUIS.UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(programSettings.AvmJuisServiceURL))) {
-					JUIS.UpdateInfo updateInfo = client.DeviceFirmwareUpdateCheck(GetJuisRequestHeader(), dectBaseBoxInfo, ToDeviceInfo()).UpdateInfo;
+				var updateInfo = JUIS.DeviceFirmwareUpdateCheck(dectBaseBoxInfo, ToDeviceInfo());
 
-					dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-						SetFirmwareUpdate(updateInfo);
-					}));
-				}
-
+				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+					SetFirmwareUpdate(updateInfo);
+				}));
 			}
 			catch {
 				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
@@ -290,9 +285,9 @@ namespace JuisCheck
 			return null;
 		}
 
-		public JUIS.BoxInfo GetPredefinedDectBaseBoxInfo()
+		public AVM.JUIS.BoxInfo GetPredefinedDectBaseBoxInfo()
 		{
-			return new JUIS.BoxInfo {
+			return new AVM.JUIS.BoxInfo {
 				Name         = predefinedDectBaseName,
 				HW           = predefinedDectBaseHW,
 				Major        = predefinedDectBaseFirmwareMajor,
@@ -356,9 +351,9 @@ namespace JuisCheck
 			}
 		}
 
-		public JUIS.DeviceInfo ToDeviceInfo()
+		public AVM.JUIS.DeviceInfo ToDeviceInfo()
 		{
-			return new JUIS.DeviceInfo {
+			return new AVM.JUIS.DeviceInfo {
 				Lang    = Language,
 				MHW     = HardwareStr,
 				Serial  = "000000000000",

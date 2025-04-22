@@ -6,8 +6,7 @@
 
 using Fluent;
 using Microsoft.Win32;
-using Muon.DotNetExtensions;
-using Muon.Windows;
+using Muon.Dotnet.Extensions;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -196,10 +195,10 @@ namespace JuisCheck
 			}
 
 			while (true) {
-				int result = MessageBoxEx2.Show(new MessageBoxEx2Params {
+				int result = MessageBoxEx.Show(new MessageBoxExParams {
 					CaptionText = JCstring.MessageCaptionUnsavedData,
 					MessageText = JCstring.MessageTextUnsavedData.Unescape(),
-					Image       = MessageBoxEx2Image.Warning,
+					Image       = MessageBoxExImage.Warning,
 					ButtonText  = new string[] { JCstring.DialogButtonTextYes, JCstring.DialogButtonTextNo, JCstring.DialogButtonTextCancel },
 					Owner       = this
 				});
@@ -235,10 +234,10 @@ namespace JuisCheck
 
 		private void ShowErrorMessage( string message )
 		{
-			MessageBoxEx2.Show(new MessageBoxEx2Params {
+			MessageBoxEx.Show(new MessageBoxExParams {
 				CaptionText = JCstring.MessageCaptionError,
 				MessageText = message,
-				Image       = MessageBoxEx2Image.Error,
+				Image       = MessageBoxExImage.Error,
 				ButtonText  = new string[] { JCstring.DialogButtonTextOk },
 				Owner       = this
 			});
@@ -340,10 +339,10 @@ namespace JuisCheck
 
 						// Display message _after_ the setting has been updated on screen regardless of event handler order.
 						Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
-							int result = MessageBoxEx2.Show(new MessageBoxEx2Params() {
+							int result = MessageBoxEx.Show(new MessageBoxExParams() {
 								MessageText = JCstring.MessageTextRestartLanguageChange.Unescape(),
 								CaptionText = JCstring.MessageCaptionProgramRestartRequired,
-								Image       = MessageBoxEx2Image.Warning,
+								Image       = MessageBoxExImage.Warning,
 								ButtonText  = new string[] { JCstring.DialogButtonTextYes, JCstring.DialogButtonTextNo },
 								Owner       = this
 							});

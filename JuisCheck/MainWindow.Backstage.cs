@@ -5,9 +5,7 @@
  */
 
 using Fluent;
-using Muon.DotNetExtensions;
-using Muon.Windows;
-using Muon.Windows.Controls;
+using Muon.Dotnet.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -112,10 +110,10 @@ namespace JuisCheck
 		private void Backstage_CmdAbout_Executed( object sender, ExecutedRoutedEventArgs evt )
 		{
 			Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => {
-				MessageBoxEx2.Show(new MessageBoxEx2Params {
+				MessageBoxEx.Show(new MessageBoxExParams {
 					CaptionText = JCstring.MessageCaptionAbout,
 					MessageText = $"{App.GetProgramInfo()}\n\n{App.GetCopyright()}",
-					Image       = MessageBoxEx2Image.Information,
+					Image       = MessageBoxExImage.Information,
 					ButtonText  = new string[] { JCstring.DialogButtonTextOk },
 					Owner       = this
 				});
@@ -298,7 +296,6 @@ namespace JuisCheck
 
 		// Event: Backstage_IsOpenChanged
 
-		#pragma warning disable CA1801 // Code analysis does not recognize this method as an event hander...
 		private void Backstage_IsOpenChanged_Handler( object sender, DependencyPropertyChangedEventArgs evt )
 		{
 			if ((bool)evt.NewValue) {
@@ -308,7 +305,6 @@ namespace JuisCheck
 				SetDataGridFocus();
 			}
 		}
-		#pragma warning restore CA1801
 
 		// Event: RecentFile_ContextMenuOpenClick
 

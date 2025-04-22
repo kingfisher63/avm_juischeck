@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net;
-using System.ServiceModel;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Threading;
@@ -388,13 +387,11 @@ namespace JuisCheck
 			}));
 
 			try {
-				using (JUIS.UpdateInfoServiceClient client = new JUIS.UpdateInfoServiceClient(new BasicHttpBinding(), new EndpointAddress(programSettings.AvmJuisServiceURL))) {
-					JUIS.UpdateInfo updateInfo = client.BoxFirmwareUpdateCheck(GetJuisRequestHeader(), ToBoxInfo(), meshMaster?.ToBoxInfo()).UpdateInfo;
+				var updateInfo = JUIS.BoxFirmwareUpdateCheck(ToBoxInfo(), meshMaster?.ToBoxInfo());
 
-					dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
-						SetFirmwareUpdate(updateInfo);
-					}));
-				}
+				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
+					SetFirmwareUpdate(updateInfo);
+				}));
 			}
 			catch {
 				dispatcher.Invoke(DispatcherPriority.Normal, new Action(() => {
@@ -626,10 +623,10 @@ namespace JuisCheck
 
 			XmlReaderSettings	xmlReaderSettings = new XmlReaderSettings() { IgnoreComments = true, IgnoreWhitespace = true };
 			XmlRootAttribute	xmlRootAttribute  = new XmlRootAttribute()  { ElementName = "BoxInfo", Namespace = "http://juis.avm.de/updateinfo" };
-			XmlSerializer		xmlSerializer     = new XmlSerializer(typeof(JUIS.BoxInfo), xmlRootAttribute);
+			XmlSerializer		xmlSerializer     = new XmlSerializer(typeof(AVM.JUIS.BoxInfo), xmlRootAttribute);
 
 			using (XmlReader xmlReader = XmlReader.Create($"http://{DeviceAddress.Trim()}/juis_boxinfo.xml", xmlReaderSettings)) {
-				JUIS.BoxInfo boxInfo = (JUIS.BoxInfo)xmlSerializer.Deserialize(xmlReader);
+				var boxInfo = (AVM.JUIS.BoxInfo)xmlSerializer.Deserialize(xmlReader);
 
 				ProductName         = boxInfo.Name;
 				Hardware            = boxInfo.HW;
@@ -647,9 +644,9 @@ namespace JuisCheck
 			}
 		}
 
-		public JUIS.BoxInfo ToBoxInfo()
+		public AVM.JUIS.BoxInfo ToBoxInfo()
 		{
-			return new JUIS.BoxInfo {
+			return new AVM.JUIS.BoxInfo {
 				Name         = ProductName,																// Never empty
 				HW           = Hardware,
 				Major        = FirmwareMajor,

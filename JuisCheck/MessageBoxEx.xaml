@@ -1,0 +1,47 @@
+﻿<Window x:Class="JuisCheck.MessageBoxEx"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        KeyUp="KeyUp_Handler">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="15"       />
+            <Setter Property="Margin"   Value="3"        />
+            <Setter Property="Padding"  Value="10,3,10,3"/>
+        </Style>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Margin" Value="5,7,2,0"/>
+        </Style>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Margin"            Value="0,7,15,0"/>
+            <Setter Property="Stretch"           Value="None"    />
+            <Setter Property="VerticalAlignment" Value="Top"     />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize"            Value="15"  />
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment"   Value="Top" />
+            <Setter Property="Margin"              Value="3"   />
+        </Style>
+        <Style TargetType="{x:Type UniformGrid}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel Margin="10">
+        <DockPanel DockPanel.Dock="Top">
+            <Image DockPanel.Dock="Left" x:Name="imgMessageIcon"/>
+            <DockPanel DockPanel.Dock="Left">
+                <TextBlock DockPanel.Dock="Top" x:Name="tbkMessageText"/>
+                <DockPanel DockPanel.Dock="Top" x:Name="dpCheckbox">
+                    <CheckBox  DockPanel.Dock="Left" x:Name="cbCheckbox"/>
+                    <TextBlock DockPanel.Dock="Left" x:Name="tbkCheckboxText"/>
+                </DockPanel>
+            </DockPanel>
+        </DockPanel>
+        <UniformGrid DockPanel.Dock="Top" x:Name="ugButtons" Rows="1" Columns="0"/>
+    </DockPanel>
+</Window>

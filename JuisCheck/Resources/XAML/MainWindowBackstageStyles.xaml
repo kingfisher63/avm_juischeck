@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:jc="clr-namespace:JuisCheck"
-                    xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls">
+                    xmlns:jc="clr-namespace:JuisCheck">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="BaseStyles.xaml"/>
+        <ResourceDictionary Source="RecentFileButtonTemplate.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <BitmapImage x:Key="imgButtonAbout16"    UriSource="../Images/16x16/oxygen-help-about.png"          />
@@ -108,7 +108,7 @@
         <Setter Property="Margin"          Value="0,10,0,0"/>
     </Style>
 
-    <Style TargetType="{x:Type mwc:RecentFileButton}" x:Key="RecentFileButtonStyle">
+    <Style TargetType="{x:Type jc:RecentFileButton}" BasedOn="{StaticResource RecentFileButtonTemplate}" x:Key="RecentFileButtonStyle">
         <Setter Property="Command"        Value="{x:Static jc:MainWindow.Backstage_CmdRecentFileOpen}"/>
         <Setter Property="DockPanel.Dock" Value="Top"                                                 />
         <Setter Property="Image"          Value="{StaticResource imgRecentFile32}"                    />

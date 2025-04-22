@@ -4,7 +4,7 @@
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
-using Muon.DotNetExtensions;
+using Muon.Dotnet.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

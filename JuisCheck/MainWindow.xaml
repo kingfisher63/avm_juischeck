@@ -8,7 +8,6 @@
                      xmlns:jclang="clr-namespace:JuisCheck.Lang"
                      xmlns:jcprops="clr-namespace:JuisCheck.Properties"
                      xmlns:jcvld="clr-namespace:JuisCheck.Resources.ValidationRules"
-                     xmlns:mwc="clr-namespace:Muon.Windows.Controls;assembly=Muon.Windows.Controls"
                      xmlns:system="clr-namespace:System;assembly=mscorlib"
                      mc:Ignorable="d"
                      Width="900" Height="700"
@@ -99,7 +98,7 @@
                 <MenuItem Header="{x:Static jclang:JCstring.BackstageContextMenuItemTextRemove}"                   Click="Backstage_RecentFile_ContextMenuRemoveClick_Handler"/>
             </ContextMenu>
 
-            <Style TargetType="{x:Type mwc:RecentFileButton}" BasedOn="{StaticResource RecentFileButtonStyle}">
+            <Style TargetType="{x:Type jc:RecentFileButton}" BasedOn="{StaticResource RecentFileButtonStyle}">
                 <Setter Property="ContextMenu" Value="{StaticResource cmRecentFileContextMenu}"/>
             </Style>
 

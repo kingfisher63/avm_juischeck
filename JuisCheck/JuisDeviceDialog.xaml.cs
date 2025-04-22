@@ -4,8 +4,7 @@
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
-using Muon.DotNetExtensions;
-using Muon.Windows;
+using Muon.Dotnet.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -70,7 +69,7 @@ namespace JuisCheck
 
 		private void CmdOK_CanExecute( object sender, CanExecuteRoutedEventArgs evt )
 		{
-			evt.CanExecute = !this.GetTreeHasError();
+			evt.CanExecute = !this.GetTreeHasError(false, false);
 		}
 
 		private void CmdOK_Executed( object sender, ExecutedRoutedEventArgs evt )
@@ -96,10 +95,10 @@ namespace JuisCheck
 				DeviceData.QueryDevice();
 			}
 			catch (Exception ex) {
-				MessageBoxEx2.Show(new MessageBoxEx2Params {
+				MessageBoxEx.Show(new MessageBoxExParams {
 					CaptionText = JCstring.MessageCaptionError,
 					MessageText = string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDeviceQueryFailed.Unescape(), ex.Message),
-					Image       = MessageBoxEx2Image.Error,
+					Image       = MessageBoxExImage.Error,
 					ButtonText  = new string[] { JCstring.DialogButtonTextOk },
 					Owner       = this
 				});

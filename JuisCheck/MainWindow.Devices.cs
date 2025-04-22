@@ -6,8 +6,7 @@
 
 using Fluent;
 using Microsoft.Win32;
-using Muon.DotNetExtensions;
-using Muon.Windows;
+using Muon.Dotnet.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -258,10 +257,10 @@ namespace JuisCheck
 			int		count   = Devices.Count(d => IsSelectedDevice(d));
 			string	message = count == 1 ? JCstring.MessageTextDeleteOneDevice : string.Format(CultureInfo.CurrentCulture, JCstring.MessageTextDeleteMultipleDevices, count);
 
-			int result = MessageBoxEx2.Show(new MessageBoxEx2Params {
+			int result = MessageBoxEx.Show(new MessageBoxExParams {
 				CaptionText = JCstring.MessageCaptionDelete,
 				MessageText = message,
-				Image       = MessageBoxEx2Image.Question,
+				Image       = MessageBoxExImage.Question,
 				ButtonText  = new string[] { JCstring.DialogButtonTextYes, JCstring.DialogButtonTextNo },
 				Owner       = this
 			});

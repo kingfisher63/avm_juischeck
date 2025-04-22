@@ -4,8 +4,7 @@
  * License   : GNU General Public License version 3 (see LICENSE)
  */
 
-using Muon.DotNetExtensions;
-using Muon.Windows;
+using Muon.Dotnet.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,8 +12,10 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Security;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Windows;
 using System.Windows.Markup;
@@ -64,7 +65,7 @@ namespace JuisCheck
 		public static string		GetProgramFileName()	{ return Path.GetFileName(Assembly.GetExecutingAssembly().Location); }
 		public static string		GetProgramInfo()		{ return $"{programName} {GetVersion()}{programVersionSuffix}"; }
 		public static MainWindow	GetMainWindow()			{ return (MainWindow)Current.MainWindow; }
-		public static string		GetVersion()			{ return Assembly.GetExecutingAssembly().GetVersion(3); }
+		public static string		GetVersion()			{ return Assembly.GetExecutingAssembly().GetName().Version.ToString(3); }
 
 		public static void Restart()
 		{
@@ -82,6 +83,22 @@ namespace JuisCheck
 			catch (ExternalException) {
 				return false;
 			}
+		}
+
+		private static bool ServiceCertificateValidationCallback(object obt, X509Certificate cert, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+		{
+			if (sslPolicyErrors == SslPolicyErrors.None) {
+				return true;
+			}
+
+			var cert2      = new X509Certificate2(cert);
+			var commonName = cert2.GetNameInfo(X509NameType.SimpleName, false);
+
+			if (commonName == JUIS.GetServerName()) {
+				return true;
+			}
+
+			return false;
 		}
 
 		// Event handler: Exit
@@ -157,6 +174,10 @@ namespace JuisCheck
 			ServicePointManager.SecurityProtocol &= ~SecurityProtocolType.Tls;   // Deprecated
 			ServicePointManager.SecurityProtocol &= ~SecurityProtocolType.Tls11; // Deprecated
 			ServicePointManager.SecurityProtocol |=  SecurityProtocolType.Tls12;
+
+			// Ignore certificate errors for JUIS queries (AVM uses a private root CA that is not globally trused)
+
+			ServicePointManager.ServerCertificateValidationCallback += ServiceCertificateValidationCallback;
 		}
 
 		// Event handler: DispatcherUnhandledException
@@ -192,12 +213,12 @@ namespace JuisCheck
 				message = JCstring.MessageTextUnhandledExceptionCopyFailure.Unescape();
 			}
 
-			MessageBoxEx2.Show(new MessageBoxEx2Params {
-				CaptionText = JCstring.MessageCaptionFatalError,
-				MessageText = string.Format(CultureInfo.CurrentCulture, message, evt.Exception.GetType().Name),
-				Image       = MessageBoxEx2Image.Error,
-				ButtonText  = new string[] { JCstring.DialogButtonTextOk }
-			});
+			_ = MessageBoxEx.Show(new MessageBoxExParams {
+					CaptionText = JCstring.MessageCaptionFatalError,
+					MessageText = string.Format(CultureInfo.CurrentCulture, message, evt.Exception.GetType().Name),
+					Image       = MessageBoxExImage.Error,
+					ButtonText  = new string[] { JCstring.DialogButtonTextOk }
+				});
 
 			Environment.Exit(1);
 		}

@@ -7,3 +7,6 @@ dotnet_code_quality.CA1062.exclude_extension_method_this_parameter = true
 
 # CA1303: Do not pass literals as localized parameters
 dotnet_diagnostic.CA1303.severity = none
+
+# Default severity for analyzer diagnostics with category 'Style'
+dotnet_analyzer_diagnostic.category-Style.severity = none
